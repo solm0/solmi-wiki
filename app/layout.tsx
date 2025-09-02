@@ -73,7 +73,7 @@ export default async function RootLayout({
 
           <InternalLinkTooltip />
 
-          <Alert />
+          {/* <Alert /> */}
         </ThemeProvider>
       </body>
     </html>
