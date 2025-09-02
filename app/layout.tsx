@@ -9,7 +9,7 @@ import InternalLinkTooltip from "./component/internallink-tooltip";
 import fs from 'fs';
 import path from 'path';
 import SideNav from "./component/side-nav";
-import { Alert } from "./component/alert";
+// import { Alert } from "./component/alert";
 import Header from "./component/header";
 import { gql, GraphQLClient } from "graphql-request";
 import { Suspense } from "react";
