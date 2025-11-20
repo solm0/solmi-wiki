@@ -1,6 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import type { Metadata } from "next";
 import "./globals.css";
 import { pretendard } from "./lib/localfont";
@@ -8,11 +5,11 @@ import { ThemeProvider } from "next-themes";
 import InternalLinkTooltip from "./component/internallink-tooltip";
 import fs from 'fs';
 import path from 'path';
-import SideNav from "./component/side-nav";
-// import { Alert } from "./component/alert";
 import Header from "./component/header";
 import { gql, GraphQLClient } from "graphql-request";
 import { Suspense } from "react";
+import Inspector from "./component/inspector/inspector";
+import { Post } from "./lib/type";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -48,7 +45,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const data = await client.request(GET_ALL_POSTS);
+  const data:{posts: Post[]} = await client.request(GET_ALL_POSTS);
   const posts = data.posts;
 
   const tags = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/all-tags.json'), 'utf8'));
@@ -60,20 +57,28 @@ export default async function RootLayout({
         className={`${pretendard.className} antialiased font-normal md:overflow-hidden`}
       >
         <ThemeProvider disableTransitionOnChange>
-          <div className="flex flex-col md:flex-row h-screen w-full px-5 md:p-8 gap-4">
+          <div className="flex h-screen w-full px-5 md:p-8 gap-8">
+
+            <h1 className="hidden">page</h1>
+
+            {/* 헤더 */}
             <Suspense>
               <Header />
             </Suspense>
-            <h1 className="hidden">page</h1>
-            <SideNav posts={posts} tags={tags} kwByTag={keywordsTag} />
-            <main className="relative left-0 top-0 md:absolute md:left-[24rem] flex flex-col h-full w-full md:w-[calc(100vw-26rem)] flex-1 items-start overflow-hidden focus:outline-hidden">
+
+            {/* 왼쪽 사이드 */}
+            <Suspense>
+              <Inspector posts={posts} tags={tags} kwByTag={keywordsTag} />
+            </Suspense>
+
+            {/* 가운데 */}
+            <main className="flex-1 flex flex-col h-full w-full md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
               {children}
             </main>
           </div>
 
+          {/* 내부링크 툴팁 */}
           <InternalLinkTooltip />
-
-          {/* <Alert /> */}
         </ThemeProvider>
       </body>
     </html>
