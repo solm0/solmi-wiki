@@ -12,7 +12,7 @@ export default function Giscus() {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', 'solm0/solmee-xyz-nextjs');
+    script.setAttribute('data-repo', 'solm0/solmi-wiki');
     script.setAttribute('data-repo-id', 'R_kgDOO7JeOQ');
     script.setAttribute('data-category', 'Announcements');
     script.setAttribute('data-category-id', 'DIC_kwDOO7JeOc4Cr__s');
