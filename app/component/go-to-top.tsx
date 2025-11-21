@@ -17,8 +17,8 @@ export default function GoToTop({
   }
   
   return (
-    <div className="h-8 w-full flex items-center gap-4">
-      <div className='text-sm h-8 w-auto rounded-sm items-center pointer-events-auto hidden md:flex'>
+    <div className="h-auto w-full flex items-start gap-4">
+      <div className='text-sm h-auto w-auto rounded-sm items-center pointer-events-auto break-keep'>
         {title}
       </div>
 

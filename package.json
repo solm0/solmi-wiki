@@ -17,11 +17,13 @@
     "graphql": "^16.11.0",
     "graphql-request": "^7.2.0",
     "lucide-react": "^0.519.0",
+    "maplibre-gl": "^5.13.0",
     "next": "15.3.3",
     "next-themes": "^0.4.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-force-graph-2d": "^1.28.0",
+    "react-map-gl": "^8.1.0",
     "use-debounce": "^10.0.5",
     "zustand": "^5.0.5"
   },
