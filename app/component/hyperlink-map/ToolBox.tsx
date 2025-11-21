@@ -75,7 +75,9 @@ export default function ToolBox({
         cmp={{ value: 'toc', name: '목차' }}
       >
         <GoToTop title={post.title} />
-        <Toc post={post} />
+        <Suspense>
+          <Toc post={post} />
+        </Suspense>
       </ToolComponents>
 
       {/* music */}
