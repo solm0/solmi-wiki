@@ -5,7 +5,7 @@ import { ThemeProvider } from "next-themes";
 import InternalLinkTooltip from "./component/internallink-tooltip";
 import fs from 'fs';
 import path from 'path';
-import Header from "./component/header";
+import Header from "./component/header/header";
 import { gql, GraphQLClient } from "graphql-request";
 import { Suspense } from "react";
 import Inspector from "./component/inspector/inspector";
@@ -57,7 +57,7 @@ export default async function RootLayout({
         className={`${pretendard.className} antialiased font-normal md:overflow-hidden`}
       >
         <ThemeProvider disableTransitionOnChange>
-          <div className="flex h-screen w-full px-5 md:p-8 gap-8">
+          <div className="flex h-screen w-full px-5 md:p-8 gap-0 md:gap-8">
 
             <h1 className="hidden">page</h1>
 

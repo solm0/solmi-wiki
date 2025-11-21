@@ -34,8 +34,8 @@ export default function LinkButton({
     <button
       onClick={() => handleClick(href)}
       className={clsx(
-        "w-auto h-4 text-text-900 flex items-center rounded-sm hover:text-text-700 transition-colors duration-300",
-        rootPath === href ? "underline underline-offset-4 decoration-text-900 decoration-[1px]" : "font-normal",
+        "w-auto h-auto text-text-900 flex items-center rounded-sm hover:bg-button-100 px-2 py-1 transition-colors duration-300",
+        rootPath === href ? "bg-button-100" : "bg-transparent",
       )}
     >
       {name}

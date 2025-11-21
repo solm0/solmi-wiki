@@ -65,7 +65,7 @@ export default function InspectResultList({
         <div
           key={note.id}
           className={clsx (
-            "shrink-0 pointer-events-auto relative text-nowrap pl-5 h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal",
+            "shrink-0 pointer-events-auto relative text-nowrap pl-5 h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg",
             hovered && hovered !== note.id && "opacity-40!"
           )}
           onMouseEnter={() => onMouseEnter(note.id)}

@@ -43,7 +43,7 @@ export default async function GraphPage() {
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center">
-      <Suspense>
+      <Suspense fallback={<div>로딩 중</div>}>
         <GlobalGraphRenderer posts={posts} />
         <BackButton />
       </Suspense>

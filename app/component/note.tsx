@@ -81,7 +81,7 @@ export default function Note({
     <div className={`${post.tags.name === '코딩' ? `${pretendard.className} font-sans` : `${maruburi.className} font-serif`} flex flex-col gap-12 w-full max-w-[47rem]`}>
       <h1
         ref={headRef}
-        className={`leading-12 text-3xl text-text-950 ${post.tags.name === '코딩' ? `font-bold ${pretendard.className}` : maruburi_bold.className}`}
+        className={`leading-[1.5em] text-4xl text-text-950 ${post.tags.name === '코딩' ? `font-medium ${pretendard.className}` : maruburi_bold.className}`}
       >
         {post?.title}
       </h1>
