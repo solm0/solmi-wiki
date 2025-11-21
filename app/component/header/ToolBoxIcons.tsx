@@ -1,9 +1,6 @@
 'use client'
 
-import ThemeButton from "../atoms/theme-button";
 import EnableButton from "../atoms/enable-button";
-import { Settings as SettingsIcon } from "lucide-react";
-import ExpandButton from "../atoms/expand-button";
 import { FlaskConical } from "lucide-react";
 import { useEffect } from "react";
 import { useToggleStore } from "@/app/lib/use-enabled";
@@ -19,7 +16,7 @@ export function ToolBoxIcons() {
 
   return (
     <div className={`
-      flex h-8 justify-between gap-1 transition-[width] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]
+      flex h-8 transition-[width] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]
       items-start origin-top
       ${isEnabled ? 'w-85' : 'w-8'}
     `}>
@@ -29,12 +26,6 @@ export function ToolBoxIcons() {
           name: <FlaskConical className="w-4 h-4 shrink-0"/>,
         }}
       />
-      
-      {isEnabled &&
-        <ExpandButton name={<SettingsIcon className="w-4 h-4 shrink-0"/>}>
-          <ThemeButton />
-        </ExpandButton>
-      }
     </div>
   )
 }

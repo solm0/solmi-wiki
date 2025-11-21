@@ -69,7 +69,6 @@ export default function Toc({
     };
   });
 
-  const [isVisible, setIsVisible] = useState(false);
   const [hoverHeading, setHoverHeading] = useState<string | null>();
   const [activeHeading, setActiveHeading] = useState<string | null>();
   
@@ -81,8 +80,6 @@ export default function Toc({
         `${pretendard.className} text-xs`,
         "w-full flex flex-col h-auto text-text-900",
       )}
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
     >
       {headings && headings.map(({ slug, text, level }, idx) => (
         <div
@@ -92,7 +89,7 @@ export default function Toc({
             ${level === 3 ? 'ml-7' : 'ml-0'}
           `}
           style={{ top: `calc(2rem * ${idx})` }}
-          onMouseEnter={() => setHoverHeading(slug)}
+          onMouseEnter={() => { console.log('enter', hoverHeading); setHoverHeading(slug)}}
           onMouseLeave={() => setHoverHeading(null)}
           onClick={(e) => {
             e.preventDefault();
@@ -131,10 +128,10 @@ export default function Toc({
             ></div>
           </div>
           <p
-            className={clsx(
-              "leading-8 truncate bg-background rounded-sm px-2 transition-all duration-300",
-              !isVisible ? 'hidden md:block' : 'text-text-700'
-            )}
+            className={`
+              leading-7 truncate bg-background rounded-sm px-2 transition-all duration-300
+              ${hoverHeading ? slug === hoverHeading ? 'text-text-900': 'text-text-700' : 'text-text-900'}
+            `}
           >
             {text}
           </p>

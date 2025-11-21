@@ -10,8 +10,11 @@ type State = {
 
 export const useToggleStore = create<State>((set) => ({
   toggles: {
-    noteInspector: false, // fallback defaults
+    noteInspector: false,
     toolBox: true,
+    graph: true,
+    toc: true,
+    music: true,
   },
 
   setToggle: (key, value) => {
@@ -30,8 +33,11 @@ export const useToggleStore = create<State>((set) => ({
     if (typeof window === 'undefined') return;
     set(() => ({
       toggles: {
-        noteInspector: JSON.parse(localStorage.getItem('noteInspector') || 'true'),
+        noteInspector: JSON.parse(localStorage.getItem('noteInspector') || 'false'),
         toolBox: JSON.parse(localStorage.getItem('toolBox') || 'true'),
+        graph: JSON.parse(localStorage.getItem('graph') || 'true'),
+        toc: JSON.parse(localStorage.getItem('toc') || 'true'),
+        music: JSON.parse(localStorage.getItem('music') || 'true'),
       },
     }));
   },

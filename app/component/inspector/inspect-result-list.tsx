@@ -65,7 +65,7 @@ export default function InspectResultList({
         <div
           key={note.id}
           className={clsx (
-            "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg",
+            "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2",
             hovered && hovered !== note.id && "opacity-40!"
           )}
           onMouseEnter={() => onMouseEnter(note.id)}
@@ -74,7 +74,7 @@ export default function InspectResultList({
         >
           {rootPath === note.id &&
             <ChevronRight className={clsx(
-              "absolute left-0 text-text-900 w-4 h-4",
+              "left-0 text-text-900 w-4 h-4",
               hovered && hovered !== note.id && "text-text-600",
             )} />
           }
