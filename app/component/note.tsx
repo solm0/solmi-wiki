@@ -3,14 +3,12 @@
 import { Post } from "../lib/type";
 import Content from '@/app/component/content';
 import Footer from '@/app/component/footer';
-import Toc from '@/app/component/toc';
 import Metadata from '@/app/component/metadata';
 import { maruburi, maruburi_bold } from '@/app/lib/localfont';
 import { pretendard } from "@/app/lib/localfont";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import RingLinks from "./ring-links";
 import SequenceNav from "./sequence-nav";
-import GoToTop from "./go-to-top";
 
 export default function Note({
   post,
@@ -18,29 +16,6 @@ export default function Note({
   post: Post;
 }) {
   const headRef = useRef<HTMLDivElement>(null);
-
-  const [isHeadingVisible, setIsHeadingVisible] = useState(true);
-
-  useEffect(() => {
-    const heading = headRef.current;
-    if(!heading) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeadingVisible(entry.isIntersecting);
-        },
-        {
-          root: null,
-          threshold: 0.1,
-        }
-      );
-
-      observer.observe(heading);
-
-      return () => {
-        observer.disconnect();
-      };
-  }, []);
 
   const RingLink = () => {
     if (post.links && post.links?.length > 0) {   // 부모노트일 경우
@@ -100,9 +75,6 @@ export default function Note({
       }
 
       <Footer post={post} />
-
-      <Toc post={post} />
-      <GoToTop title={post.title} isHeadingVisible={isHeadingVisible} />
     </article>
   )
 }

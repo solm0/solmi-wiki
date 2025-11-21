@@ -72,7 +72,7 @@ export default async function RootLayout({
             </Suspense>
 
             {/* 가운데 */}
-            <main className="flex-1 flex flex-col h-full w-full md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
+            <main className="flex-1 flex flex-col h-[calc(100vh-2.5rem)] w-full mt-2 md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden pb-8">
               {children}
             </main>
 

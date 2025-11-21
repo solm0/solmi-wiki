@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { Post, FormattedText } from "../lib/type"
+import { Post, FormattedText, HeadingNode } from "../lib/type"
 import clsx from "clsx";
 import { pretendard } from "../lib/localfont";
 import { slugify } from "../lib/slugify";
@@ -10,6 +10,7 @@ import { useSearchParams, usePathname, useRouter } from "next/navigation";
 type Heading = {
   slug: string;
   text: string;
+  level: number;
 };
 
 export function useIntersectionObserver(
@@ -63,7 +64,8 @@ export default function Toc({
     const text = (doc.children?.[0] as FormattedText).text || 'undefined-heading';
     return {
       slug: slugify(text),
-      text: text
+      text: text,
+      level: (doc as HeadingNode).level,
     };
   });
 
@@ -77,15 +79,18 @@ export default function Toc({
     <nav
       className={clsx(
         `${pretendard.className} text-xs`,
-        "w-20 overflow-visible flex flex-col h-auto fixed top-[calc(50vh+3rem)] right-3 z-90 text-text-90",
+        "w-full flex flex-col h-auto text-text-900",
       )}
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
     >
-      {headings && headings.map(({ slug, text }, idx) => (
+      {headings && headings.map(({ slug, text, level }, idx) => (
         <div
           key={idx}
-          className="absolute right-0 w-auto flex items-center gap-4 justify-end cursor-pointer"
+          className={`
+            w-auto flex items-center gap-2 cursor-pointer
+            ${level === 3 ? 'ml-7' : 'ml-0'}
+          `}
           style={{ top: `calc(2rem * ${idx})` }}
           onMouseEnter={() => setHoverHeading(slug)}
           onMouseLeave={() => setHoverHeading(null)}
@@ -98,6 +103,13 @@ export default function Toc({
               const containerTop = page.getBoundingClientRect().top;
               const elementTop = el.getBoundingClientRect().top;
 
+              el.style.color = "var(--green-600)";
+              el.style.transform = 'scale(1.2)';
+              setTimeout(() => {
+                el.style.color = "var(--text-950)";
+                el.style.transform = 'scale(1)';
+              }, 800);
+
               const offset = elementTop - containerTop + page.scrollTop - 80;
 
               page.scrollTo({
@@ -109,24 +121,23 @@ export default function Toc({
             }
           }}
         >
-          <p
-            className={clsx(
-              "leading-8 truncate bg-background rounded-sm px-2 transition-all duration-300",
-              !isVisible ? 'opacity-0 hidden md:block' : 
-              slug === hoverHeading ? 'opacity-100': 'text-text-700'
-            )}
-          >
-            {text}
-          </p>
           <div className="flex items-center justify-center w-3 h-3">
             <div
               className={clsx(
                 "rounded-full transition-all duration-300 shrink-0",
                 slug === hoverHeading ? 'bg-green-500' : 'bg-button-200',
-                slug === activeHeading ? 'w-[12px] h-[12px]': 'w-[5px] h-[5px]'
+                slug === activeHeading ? 'w-3 h-3': 'w-[5px] h-[5px]'
               )}
             ></div>
           </div>
+          <p
+            className={clsx(
+              "leading-8 truncate bg-background rounded-sm px-2 transition-all duration-300",
+              !isVisible ? 'hidden md:block' : 'text-text-700'
+            )}
+          >
+            {text}
+          </p>
         </div>
       ))}
     </nav>

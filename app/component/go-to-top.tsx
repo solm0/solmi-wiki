@@ -1,12 +1,9 @@
-import clsx from "clsx";
 import { ArrowUpToLine } from "lucide-react";
 
 export default function GoToTop({
   title,
-  isHeadingVisible,
 }: {
   title: string;
-  isHeadingVisible: boolean;
 }) {
   const goToTop = () => {
     const page = document.getElementById('note_wrapper');
@@ -20,17 +17,14 @@ export default function GoToTop({
   }
   
   return (
-    <div className={clsx(
-      "fixed bg-button-100 h-8 w-8 md:w-auto right-5 top-4 md:right-8 md:top-8 flex items-center justify-center gap-4 pointer-events-none transition-opacity rounded-sm px-3 z-80",
-      !isHeadingVisible ? 'opacity-100' : 'opacity-0',
-    )}
-    >
+    <div className="h-8 w-full flex items-center gap-4">
       <div className='text-sm h-8 w-auto rounded-sm items-center pointer-events-auto hidden md:flex'>
         {title}
       </div>
+
       <button
         onClick={goToTop}
-        className="w-auto h-8 rounded-sm flex justify-center items-center hover:text-text-700 transition-all duration-300 pointer-events-auto"
+        className="h-6 w-6 rounded-sm flex justify-center items-center hover:text-text-700 transition-all duration-300 pointer-events-auto"
       >
         <ArrowUpToLine className="w-4 h-4" />
       </button>
