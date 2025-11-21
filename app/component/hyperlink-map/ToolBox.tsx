@@ -75,7 +75,7 @@ export default function ToolBox({
       }
 
       {/* 설정 */}
-      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-6 z-80">
+      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-6 z-70 w-8">
         {isOpen &&
           <ExpandButton name={<SettingsIcon className="w-4 h-4 shrink-0"/>}>
 
@@ -102,7 +102,7 @@ export default function ToolBox({
 
       <aside className={clsx (
         `${pretendard.className}
-        absolute md:relative right-0 md:right-auto z-70 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 w-80 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
+        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 w-80 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-80 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 md:w-20 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
         {/* 작은화면 창닫기 */}

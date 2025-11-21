@@ -3,7 +3,7 @@
 
 @layer base {
   ul, ol {
-    list-style: revert;
+    list-style: rehor;
   }
 }
 
@@ -103,5 +103,22 @@ body {
 
 .custom-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: #D1D1D180;
+  border-radius: 3px;
+}
+
+.custom-hor-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-hor-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-hor-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: #D1D1D1;
   border-radius: 3px;
 }
