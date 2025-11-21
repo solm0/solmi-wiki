@@ -1,11 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import type { Metadata } from "next";
-import GlobalGraphRenderer from "../component/hyperlink-map/graph-global-renderer";
+import GlobalGraphRenderer from "../../component/hyperlink-map/graph-global-renderer";
 import { gql, GraphQLClient } from "graphql-request";
 import { Suspense } from "react";
-import BackButton from "../component/atoms/back-button";
+import BackButton from "../../component/atoms/back-button";
+import { Post } from "@/app/lib/type";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -38,7 +36,7 @@ export const metadata: Metadata = {
 };
 
 export default async function GraphPage() {
-  const data = await client.request(GET_ALL_POSTS_GRAPH);
+  const data: {posts: Post[]} = await client.request(GET_ALL_POSTS_GRAPH);
   const posts = data.posts;
 
   return (

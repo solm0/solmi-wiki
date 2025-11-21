@@ -11,7 +11,7 @@ type State = {
 export const useToggleStore = create<State>((set) => ({
   toggles: {
     noteInspector: false, // fallback defaults
-    hyperlinkMap: true,
+    toolBox: true,
   },
 
   setToggle: (key, value) => {
@@ -31,7 +31,7 @@ export const useToggleStore = create<State>((set) => ({
     set(() => ({
       toggles: {
         noteInspector: JSON.parse(localStorage.getItem('noteInspector') || 'true'),
-        hyperlinkMap: JSON.parse(localStorage.getItem('hyperlinkMap') || 'true'),
+        toolBox: JSON.parse(localStorage.getItem('toolBox') || 'true'),
       },
     }));
   },

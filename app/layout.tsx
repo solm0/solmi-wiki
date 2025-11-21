@@ -75,6 +75,8 @@ export default async function RootLayout({
             <main className="flex-1 flex flex-col h-full w-full md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
               {children}
             </main>
+
+
           </div>
 
           {/* 내부링크 툴팁 */}

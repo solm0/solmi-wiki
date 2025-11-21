@@ -16,7 +16,7 @@ export default function HyperlinkMapInline({
     initializeToggles();
   }, [initializeToggles]);
 
-  const isEnabled = useToggleStore((s) => s.toggles['hyperlinkMap']);
+  const isEnabled = useToggleStore((s) => s.toggles['toolBox']);
 
   return (
     <nav className={clsx (

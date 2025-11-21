@@ -1,15 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { gql, GraphQLClient } from 'graphql-request';
 import Note from '@/app/component/note';
-import HyperlinkMap from '../component/hyperlink-map/hyperlink-map';
-import GraphController from '../component/hyperlink-map/graph-controller';
 import { mergeInlineInternalLinks } from '@/app/lib/merge-inline-internal-link';
 import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
+import { Post } from '@/app/lib/type';
+import ToolBox from '@/app/component/hyperlink-map/ToolBox';
 
-const client = new GraphQLClient(process.env.GRAPHQL_API_URL);
+const client = new GraphQLClient(process.env.GRAPHQL_API_URL ?? '');
 
 const GET_POST_BY_ID = gql`
   query PostById($id: ID!) {
@@ -189,7 +186,7 @@ export async function generateMetadata({
   const { slug } = await params;
   if (!slug) throw new Error("Missing ID param");
 
-  const data = await client.request(GET_POST_BY_ID, { id: slug });
+  const data: {post: Post} = await client.request(GET_POST_BY_ID, { id: slug });
   const post = data.post;
 
   return {
@@ -199,7 +196,7 @@ export async function generateMetadata({
 }
 
 export async function generateStaticParams() {
-  const data = await client.request(gql`
+  const data: {posts: Post[]}= await client.request(gql`
     query {
       posts {
         id
@@ -218,25 +215,32 @@ export default async function Page({
   const { slug } = await params;
   if (!slug) throw new Error("Missing ID param");
 
-  const data = await client.request(GET_POST_BY_ID, { id: slug });
+  const data: {post: Post} = await client.request(GET_POST_BY_ID, { id: slug });
   if (!data.post) {
     console.log('fff')
     return notFound();
   }
   const post = data.post;
 
+  if (!post.content) return;
   post.content.document = mergeInlineInternalLinks(post.content.document)
 
   return (
-    <article id="note_wrapper" className='flex flex-col gap-12 w-full pt-[40vh] text-text-900 leading-8 break-keep overflow-y-scroll focus:outline-hidden'>
-      <Suspense>
-        <Note post={post} />
-      </Suspense>
-      <HyperlinkMap>
+    <div
+      className='flex gap-8 w-full overflow-hidden '
+    >
+      <div
+        id="note_wrapper"
+        className='flex gap-8 w-full pt-[40vh] text-text-900 leading-8 break-keep overflow-y-scroll'
+      >
+        {/* 본문 */}
         <Suspense>
-          <GraphController post={post} />
+          <Note post={post} />
         </Suspense>
-      </HyperlinkMap>
-    </article>
+      </div>
+
+      {/* 오른쪽 사이드바 */}
+      <ToolBox post={post}/>
+    </div>
   )
 }

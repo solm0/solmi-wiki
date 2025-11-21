@@ -1,11 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import type { Metadata } from "next";
 import { gql, GraphQLClient } from "graphql-request";
 import { Suspense } from "react";
-import GenerateChron from "../lib/gererate-chron";
-import BlogLists from "../component/blog-lists";
+import GenerateChron from "../../lib/gererate-chron";
+import BlogLists from "../../component/blog-lists";
+import { Post } from "@/app/lib/type";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default async function BlogPage() {
-  const data = await client.request(GET_ALL_POSTS);
+  const data: {posts: Post[]} = await client.request(GET_ALL_POSTS);
   const posts = data.posts;
   const finalPosts = GenerateChron(posts)
 

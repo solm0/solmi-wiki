@@ -1,9 +1,7 @@
-
-
 import type { Metadata } from "next";
 import { gql, GraphQLClient } from "graphql-request";
-import WorkLists from "../component/work-lists";
-import { Post } from "../lib/type";
+import WorkLists from "@/app/component/work-lists";
+import { Post } from "@/app/lib/type";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 

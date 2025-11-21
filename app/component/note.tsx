@@ -78,7 +78,7 @@ export default function Note({
   const { prev, next, isFirstChild } = generateSequence();
   
   return (
-    <div className={`${post.tags.name === '코딩' ? `${pretendard.className} font-sans` : `${maruburi.className} font-serif`} flex flex-col gap-12 w-full max-w-[47rem]`}>
+    <article className={`${post.tags.name === '코딩' ? `${pretendard.className} font-sans` : `${maruburi.className} font-serif`} flex flex-col gap-12 w-full max-w-[47rem]`}>
       <h1
         ref={headRef}
         className={`leading-[1.5em] text-4xl text-text-950 ${post.tags.name === '코딩' ? `font-medium ${pretendard.className}` : maruburi_bold.className}`}
@@ -103,6 +103,6 @@ export default function Note({
 
       <Toc post={post} />
       <GoToTop title={post.title} isHeadingVisible={isHeadingVisible} />
-    </div>
+    </article>
   )
 }

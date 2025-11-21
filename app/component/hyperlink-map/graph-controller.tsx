@@ -69,7 +69,7 @@ export default function GraphController({
   }
 
   return (
-    <>
+    <div className='flex flex-col gap-1 w-full h-auto'>
       <div className="w-80 h-80 border text-text-800 border-text-600 flex items-center justify-center rounded-sm backdrop-blur-2xl bg-background/70">
         <GraphRenderer data={graph} />
       </div>
@@ -98,6 +98,6 @@ export default function GraphController({
           />
         </div>
       </div>
-    </>
+    </div>
   )
 }

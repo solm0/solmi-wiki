@@ -27,16 +27,20 @@ export default function ExpandButton({
   }, [isOpen])
 
   return (
-    <div>
+    <div className="flex flex-col gap-1 w-auto items-end">
+
+      {/* 버튼 */}
       <button
         onClick={handleClick}
-        className={`${isOpen ? `text-green-500`: `text-text-900`} w-6 h-4 px-3 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:text-text-700`}
+        className={`${isOpen ? `text-green-500`: `text-text-900`} w-8 h-8 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:bg-button-100`}
       >
         {name}
       </button>
+
+      {/* 창 */}
       <div className={clsx(
-        "absolute h-auto w-40 flex flex-col p-3 -translate-x-16 md:-translate-x-2 items-start gap-1 overflow-clip transition-all backdrop-blur-2xl hover:bg-background rounded-sm",
-        isOpen ? "max-h-96 mt-3" : "opacity-0 max-h-0"
+        "bg-button-100 h-auto w-40 flex flex-col p-3 mt-2 items-start gap-1 overflow-clip transition-all rounded-sm text-sm",
+        isOpen ? "max-h-96" : "opacity-0 max-h-0"
       )}>
         {children}
       </div>
