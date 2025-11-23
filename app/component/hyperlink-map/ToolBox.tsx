@@ -45,6 +45,10 @@ export function ToolComponents({
   )
 }
 
+export function NoPost() {
+  return <div className="text-text-700">선택된 글 없음</div>
+}
+
 export const tools = [
   { value: 'graph', name: '로컬 그래프' },
   { value: 'toc', name: '목차' },
@@ -55,7 +59,7 @@ export const tools = [
 export default function ToolBox({
   post
 }: {
-  post: Post;
+  post?: Post;
 }) {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
 
@@ -66,6 +70,7 @@ export default function ToolBox({
   const isOpen = useToggleStore((s) => s.toggles['toolBox']);
   const setIsEnabled = useToggleStore((s) => s.setToggle);
   const isEnabled = useToggleStore((s) => s.toggles);
+  const noOpenTools = Array.from(Object.entries(isEnabled)).filter(tool => Array.from(tools.map(t => t.value)).includes(tool[0])).filter(tool => tool[1] === true).length === 0;
 
   return (
     <>
@@ -88,19 +93,20 @@ export default function ToolBox({
                 <button
                   className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5"
                   onClick={() => setIsEnabled(tool.value, !isEnabled[tool.value])}
+                  id={`${tool.value}-button`}
                 >
                   {isEnabled[tool.value] &&
                     <div className="w-full h-full bg-green-400 rounded-full" />
                   }
                 </button>
-                <span>{tool.name}</span>
+                <label htmlFor={`${tool.value}-button`}>{tool.name}</label>
               </div>
             )}
           </ExpandButton>
         }
       </div>
 
-      <aside className={clsx (
+      <aside className={clsx(
         `${pretendard.className}
         absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-80 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 md:w-20 translate-x-88 opacity-0 pointer-events-none flex'
@@ -115,6 +121,8 @@ export default function ToolBox({
           </button>
         </div>
 
+        {noOpenTools && <div className="text-text-700">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
+
         <div className="w-full h-auto flex flex-col gap-8 pointer-events-auto">
           {/* local graph */}
           <ToolComponents
@@ -123,9 +131,13 @@ export default function ToolBox({
             cmp={tools[0]}
             setIsEnabled={setIsEnabled}
           >
-            <Suspense>
-              <GraphController post={post} />
-            </Suspense>
+            {post ? (
+              <Suspense>
+                <GraphController post={post} />
+              </Suspense>
+            ): (
+              <NoPost />
+            )}
           </ToolComponents>
 
           {/* toc */}
@@ -135,10 +147,16 @@ export default function ToolBox({
             cmp={tools[1]}
             setIsEnabled={setIsEnabled}
           >
-            <GoToTop title={post.title} />
-            <Suspense>
-              <Toc post={post} />
-            </Suspense>
+            {post ? (
+              <>
+                  <GoToTop title={post.title} />
+                  <Suspense>
+                    <Toc post={post} />
+                  </Suspense>
+              </>
+            ): (
+              <NoPost />
+            )}
           </ToolComponents>
 
           {/* music */}
@@ -148,6 +166,7 @@ export default function ToolBox({
             cmp={tools[2]}
             setIsEnabled={setIsEnabled}
           >
+            {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
             <div className="w-full h-auto p-4 bg-button-100 flex flex-col gap-4 rounded-sm">
               <div className="flex flex-col gap-1 items-center">
                 <p className="opacity-60">이전가사</p>
@@ -173,6 +192,7 @@ export default function ToolBox({
             cmp={tools[3]}
             setIsEnabled={setIsEnabled}
           >
+            {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
             <div className="h-50 w-full bg-button-100 rounded-sm flex items-center justify-center">여기에 지도가 표시됩니다..?</div>
           </ToolComponents>
         </div>

@@ -226,9 +226,7 @@ export default async function Page({
   post.content.document = mergeInlineInternalLinks(post.content.document)
 
   return (
-    <div
-      className='flex gap-8 w-full overflow-hidden '
-    >
+    <>
       <div
         id="note_wrapper"
         className='flex gap-8 w-full pt-[40vh] text-text-900 leading-8 break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar'
@@ -241,6 +239,6 @@ export default async function Page({
 
       {/* 오른쪽 사이드바 */}
       <ToolBox post={post}/>
-    </div>
+    </>
   )
 }

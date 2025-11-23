@@ -110,7 +110,7 @@ export function CardXl({posts}: {posts: Post[]}) {
         return (
           <div
             key={post.id}
-            className="flex h-[50vh] md:h-[60vh] w-full overflow-scroll cursor-default overscroll-x-none"
+            className="flex h-[50vh] md:h-[60vh] w-full overflow-x-scroll cursor-default overscroll-x-none custom-hor-scrollbar"
           >
 
             <div className="flex gap-2 ml-72">

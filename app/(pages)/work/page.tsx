@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { gql, GraphQLClient } from "graphql-request";
 import WorkLists from "@/app/component/work-lists";
 import { Post } from "@/app/lib/type";
+import ToolBox from "@/app/component/hyperlink-map/ToolBox";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -36,6 +37,11 @@ export default async function BlogPage() {
     .filter(post => post.tags.name === '작업');
 
   return (
-    <WorkLists posts={finalPosts} />
+    <>
+      <WorkLists posts={finalPosts} />
+
+      {/* 오른쪽 사이드바 */}
+      <ToolBox />
+    </>
   )
 }

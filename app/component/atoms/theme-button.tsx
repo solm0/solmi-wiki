@@ -25,16 +25,19 @@ export default function ThemeButton() {
   }
 
   return (
-    <button
-      onClick={handleTheme}
+    <div
       className='leading-5 w-auto gap-2 text-text-900 flex items-center justify-center rounded-sm pointer-events-auto'
     >
-      <p>테마:</p>
-      <div className='w-auto h-auto hover:text-text-700 transition-colors duration-300 '>
+      <label htmlFor='theme-button'>테마:</label>
+      <button
+        className='w-auto h-auto hover:text-text-700 transition-colors duration-300'
+        onClick={handleTheme}
+        id='theme-button'
+      >
         {theme === 'light' ?
           <Moon className='h-4 w-4' /> : <SunMedium className='h-4 w-4' />
         }
-      </div>
-    </button>
+      </button>
+    </div>
   )
 }

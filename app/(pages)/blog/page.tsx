@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import GenerateChron from "../../lib/gererate-chron";
 import BlogLists from "../../component/blog-lists";
 import { Post } from "@/app/lib/type";
+import ToolBox from "@/app/component/hyperlink-map/ToolBox";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -28,8 +29,13 @@ export default async function BlogPage() {
   const finalPosts = GenerateChron(posts)
 
   return (
-    <Suspense>
-      <BlogLists posts={finalPosts} />
-    </Suspense>
+    <>
+      <Suspense>
+        <BlogLists posts={finalPosts} />
+      </Suspense>
+
+      {/* 오른쪽 사이드바 */}
+      <ToolBox/>
+    </>
   )
 }

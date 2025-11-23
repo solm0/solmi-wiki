@@ -1,10 +1,9 @@
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-nocheck
-
 import { Metadata } from "next";
 import { gql, GraphQLClient } from "graphql-request";
 import Copyright from "../component/copyright";
 import { CardSm, CardMd, CardLg, CardXl } from "../component/cards";
+import ToolBox from "../component/hyperlink-map/ToolBox";
+import { Post } from "../lib/type";
 
 export const metadata: Metadata = {
   title: "solmi.wiki",
@@ -81,8 +80,8 @@ export default async function HomePage() {
     'cmdbi1eah002bmdamokt46avt',
   ]
 
-  const hydratedData = await client.request(GET_HYDRATED_POSTS_BY_ID, { ids: hydratedIds });
-  const minimalData = await client.request(GET_MINIMAL_POSTS_BY_ID, { ids: minimalIds });
+  const hydratedData: {posts: Post[]} = await client.request(GET_HYDRATED_POSTS_BY_ID, { ids: hydratedIds });
+  const minimalData: {posts: Post[]} = await client.request(GET_MINIMAL_POSTS_BY_ID, { ids: minimalIds });
   const exchangeData = await client.request(GET_MINIMAL_POSTS_BY_ID, {ids: ['cmdbmtpt8005omdamericlkia']});
 
   const work = hydratedData.posts;
@@ -94,45 +93,50 @@ export default async function HomePage() {
   const exchange = exchangeData.posts
 
   return (
-    <section className="relative flex flex-col gap-24 text-text-900 w-full pt-[20vh] pb-[20vh] overflow-y-scroll overflow-x-hidden focus:outline-hidden">
-      <h2>반갑습니다.</h2>
+    <>
+      <section className="relative flex flex-col gap-24 text-text-900 w-full pt-[20vh] pb-[20vh] overflow-y-scroll overflow-x-hidden focus:outline-hidden custom-scrollbar">
+        <h2>반갑습니다.</h2>
 
-      <article className="flex flex-col gap-4">
-        <h2><b>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
-        <CardMd posts={meta} />
-      </article>
+        <article className="flex flex-col gap-4">
+          <h2><b>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
+          <CardMd posts={meta} />
+        </article>
 
-      <article className="flex flex-col gap-4">
-        <h2><b>작업</b><span className="text-text-800"> 제가 만드는 것들입니다.</span></h2>
-        <CardXl posts={work} />
-      </article>
+        <article className="flex flex-col gap-4">
+          <h2><b>작업</b><span className="text-text-800"> 제가 만드는 것들입니다.</span></h2>
+          <CardXl posts={work} />
+        </article>
 
-      <article className="flex flex-col gap-4">
-        <h2><b>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
-        <CardSm posts={exchange} />
-        <CardLg posts={travel} />
-      </article>
-      
-      <article className="flex flex-col gap-4">
-        <h2><b>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
-        <CardSm posts={code} />
-      </article>
+        <article className="flex flex-col gap-4">
+          <h2><b>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
+          <CardSm posts={exchange} />
+          <CardLg posts={travel} />
+        </article>
+        
+        <article className="flex flex-col gap-4">
+          <h2><b>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
+          <CardSm posts={code} />
+        </article>
 
-      <h2><b>독서</b><span className="text-text-800"> 추가 예정입니다.</span></h2>
-      <div>
-        {read.map((post) => (
-          <div key={post.id}>
-            <h3>{post.title}</h3>
-            {/* other UI */}
-          </div>
-        ))}
-      </div>
+        <h2><b>독서</b><span className="text-text-800"> 추가 예정입니다.</span></h2>
+        <div>
+          {read.map((post) => (
+            <div key={post.id}>
+              <h3>{post.title}</h3>
+              {/* other UI */}
+            </div>
+          ))}
+        </div>
 
-      <article className="flex flex-col gap-4">
-        <h2><b>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
-        <CardMd posts={unsorted} />
-      </article>
-      <Copyright />
-    </section>
+        <article className="flex flex-col gap-4">
+          <h2><b>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
+          <CardMd posts={unsorted} />
+        </article>
+        <Copyright />
+      </section>
+
+      {/* 오른쪽 사이드바 */}
+      <ToolBox />
+    </>
   )
 }

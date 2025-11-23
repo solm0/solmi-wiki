@@ -12,7 +12,7 @@ export default function WorkLists({
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section className='relative w-full pt-[40vh] pb-8 overflow-scroll focus:outline-hidden flex gap-1 flex-wrap justify-center md:justify-start'>
+    <section className='relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden flex gap-1 flex-wrap justify-center md:justify-start custom-scrollbar'>
       <Suspense>
         {posts && posts.map((note) => (
           <ThumbnailList
