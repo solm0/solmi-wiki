@@ -11,6 +11,7 @@ import Toc from "../toc";
 import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
 import ThemeButton from "../atoms/theme-button";
+import LocalMap from "../map/LocalMap";
 
 export function ToolComponents({
   isEnabled, icon, cmp, children, setIsEnabled,
@@ -45,8 +46,12 @@ export function ToolComponents({
   )
 }
 
-export function NoPost() {
-  return <div className="text-text-700">선택된 글 없음</div>
+export function NoPost({
+  text = '선택된 글'
+}: {
+  text?: string
+}) {
+  return <div className="text-text-700">{text} 없음</div>
 }
 
 export const tools = [
@@ -193,7 +198,9 @@ export default function ToolBox({
             setIsEnabled={setIsEnabled}
           >
             {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
-            <div className="h-50 w-full bg-button-100 rounded-sm flex items-center justify-center">여기에 지도가 표시됩니다..?</div>
+            <div className="w-full h-80 overflow-hidden rounded-sm">
+              <LocalMap post={post ?? null} />
+            </div>
           </ToolComponents>
         </div>
 
