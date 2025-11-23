@@ -3,7 +3,7 @@
 import { InternalLinkComponentNode, InternalLinkNode } from "@/app/lib/type";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { useHoveredLink } from "@/app/lib/use-hovered-link";
+import { useHoveredLink } from "@/app/lib/zustand/useHoveredLink";
 
 export default function InlineInternalLink({
   internalLink,

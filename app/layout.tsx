@@ -62,9 +62,7 @@ export default async function RootLayout({
             <h1 className="hidden">page</h1>
 
             {/* 헤더 */}
-            <Suspense>
-              <Header />
-            </Suspense>
+            <Header />
 
             {/* 왼쪽 사이드 */}
             <Suspense>

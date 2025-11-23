@@ -1,7 +1,7 @@
 'use client'
 
 import { Suspense, useEffect } from "react";
-import { useToggleStore } from "@/app/lib/use-enabled";
+import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
 import { Post } from "@/app/lib/type";
@@ -102,7 +102,7 @@ export default function ToolBox({
 
       <aside className={clsx (
         `${pretendard.className}
-        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 w-80 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
+        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-80 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 md:w-20 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
         {/* 작은화면 창닫기 */}
@@ -115,65 +115,68 @@ export default function ToolBox({
           </button>
         </div>
 
-        {/* local graph */}
-        <ToolComponents
-          isEnabled={isEnabled[tools[0].value]}
-          icon={<Link2 className='w-4 h-4' />}
-          cmp={tools[0]}
-          setIsEnabled={setIsEnabled}
-        >
-          <Suspense>
-            <GraphController post={post} />
-          </Suspense>
-        </ToolComponents>
+        <div className="w-full h-auto flex flex-col gap-8 pointer-events-auto">
+          {/* local graph */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[0].value]}
+            icon={<Link2 className='w-4 h-4' />}
+            cmp={tools[0]}
+            setIsEnabled={setIsEnabled}
+          >
+            <Suspense>
+              <GraphController post={post} />
+            </Suspense>
+          </ToolComponents>
 
-        {/* toc */}
-        <ToolComponents
-          isEnabled={isEnabled[tools[1].value]}
-          icon={<TableOfContents className='w-4 h-4' />}
-          cmp={tools[1]}
-          setIsEnabled={setIsEnabled}
-        >
-          <GoToTop title={post.title} />
-          <Suspense>
-            <Toc post={post} />
-          </Suspense>
-        </ToolComponents>
+          {/* toc */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[1].value]}
+            icon={<TableOfContents className='w-4 h-4' />}
+            cmp={tools[1]}
+            setIsEnabled={setIsEnabled}
+          >
+            <GoToTop title={post.title} />
+            <Suspense>
+              <Toc post={post} />
+            </Suspense>
+          </ToolComponents>
 
-        {/* music */}
-        <ToolComponents
-          isEnabled={isEnabled[tools[2].value]}
-          icon={<Music2 className='w-4 h-4'/>}
-          cmp={tools[2]}
-          setIsEnabled={setIsEnabled}
-        >
-          <div className="w-full h-auto p-4 bg-button-100 flex flex-col gap-4 rounded-sm">
-            <div className="flex flex-col gap-1 items-center">
-              <p className="opacity-60">이전가사</p>
-              <p className="text-lg">현재가사</p>
-              <p className="opacity-60">이후가사</p>
+          {/* music */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[2].value]}
+            icon={<Music2 className='w-4 h-4'/>}
+            cmp={tools[2]}
+            setIsEnabled={setIsEnabled}
+          >
+            <div className="w-full h-auto p-4 bg-button-100 flex flex-col gap-4 rounded-sm">
+              <div className="flex flex-col gap-1 items-center">
+                <p className="opacity-60">이전가사</p>
+                <p className="text-lg">현재가사</p>
+                <p className="opacity-60">이후가사</p>
+              </div>
+              <div className="flex w-full justify-between">
+                <button>이전곡</button>
+                <button>재생,일시정지</button>
+                <button>이후곡</button>
+              </div>
+              <div className="flex w-full justify-between">
+                <p>노래이름</p>
+                <p>가수이름</p>
+              </div>
             </div>
-            <div className="flex w-full justify-between">
-              <button>이전곡</button>
-              <button>재생,일시정지</button>
-              <button>이후곡</button>
-            </div>
-            <div className="flex w-full justify-between">
-              <p>노래이름</p>
-              <p>가수이름</p>
-            </div>
-          </div>
-        </ToolComponents>
+          </ToolComponents>
 
-        {/* map */}
-        <ToolComponents
-          isEnabled={isEnabled[tools[3].value]}
-          icon={<Earth className='w-4 h-4' />}
-          cmp={tools[3]}
-          setIsEnabled={setIsEnabled}
-        >
-          <div className="h-50 w-full bg-button-100 rounded-sm flex items-center justify-center">여기에 지도가 표시됩니다..?</div>
-        </ToolComponents>
+          {/* map */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[3].value]}
+            icon={<Earth className='w-4 h-4' />}
+            cmp={tools[3]}
+            setIsEnabled={setIsEnabled}
+          >
+            <div className="h-50 w-full bg-button-100 rounded-sm flex items-center justify-center">여기에 지도가 표시됩니다..?</div>
+          </ToolComponents>
+        </div>
+
       </aside>
     </>
   )

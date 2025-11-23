@@ -1,6 +1,6 @@
 'use client'
 
-import { useToggleStore } from '@/app/lib/use-enabled';
+import { useToggleStore } from '@/app/lib/zustand/useToggleStore';
 import { useEffect } from 'react';
 
 export default function EnableButton({

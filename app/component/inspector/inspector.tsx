@@ -6,7 +6,7 @@ import InspectSearch from './inspect-search';
 import InspectKeyword from './inspect-keyword';
 import { useEffect } from 'react';
 import clsx from 'clsx';
-import { useToggleStore } from '../../lib/use-enabled';
+import { useToggleStore } from '../../lib/zustand/useToggleStore';
 import { Tag, KeywordsByTag, Post } from '../../lib/type';
 import GenerateChron from "../../lib/gererate-chron";
 import InspectResultList from "./inspect-result-list";

@@ -7,7 +7,7 @@ interface State {
   setValue: (value: string | null, offsetX: number | null, width: number | null) => void;
 }
 
-export const useHoveredLiquidStore = create<State>((set) => ({
+export const useHoveredLiquid = create<State>((set) => ({
   value: null,
   offsetX: null,
   width: null,

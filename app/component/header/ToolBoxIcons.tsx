@@ -3,7 +3,7 @@
 import EnableButton from "../atoms/enable-button";
 import { FlaskConical } from "lucide-react";
 import { useEffect } from "react";
-import { useToggleStore } from "@/app/lib/use-enabled";
+import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 
 export function ToolBoxIcons() {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);

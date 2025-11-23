@@ -2,7 +2,7 @@
 
 import { Post } from "../lib/type";
 import { useSearchParams } from "next/navigation";
-import { useHoveredLink } from "@/app/lib/use-hovered-link";
+import { useHoveredLink } from "@/app/lib/zustand/useHoveredLink";
 import Link from "next/link";
 import clsx from "clsx";
 import { FlagTriangleRight } from "lucide-react";

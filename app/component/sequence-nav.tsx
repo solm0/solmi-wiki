@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Post } from "../lib/type";
 import { useSearchParams } from "next/navigation";
-import { useHoveredLink } from "@/app/lib/use-hovered-link";
+import { useHoveredLink } from "@/app/lib/zustand/useHoveredLink";
 
 export default function SequenceNav({
   isFirstChild,

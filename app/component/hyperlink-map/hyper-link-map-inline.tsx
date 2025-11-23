@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect } from "react";
-import { useToggleStore } from "@/app/lib/use-enabled";
+import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
 

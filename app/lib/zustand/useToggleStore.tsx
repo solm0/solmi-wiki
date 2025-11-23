@@ -11,7 +11,7 @@ type State = {
 export const useToggleStore = create<State>((set) => ({
   toggles: {
     noteInspector: false,
-    toolBox: true,
+    toolBox: false,
     graph: true,
     toc: true,
     music: true,
@@ -35,7 +35,7 @@ export const useToggleStore = create<State>((set) => ({
     set(() => ({
       toggles: {
         noteInspector: JSON.parse(localStorage.getItem('noteInspector') || 'false'),
-        toolBox: JSON.parse(localStorage.getItem('toolBox') || 'true'),
+        toolBox: JSON.parse(localStorage.getItem('toolBox') || 'false'),
         graph: JSON.parse(localStorage.getItem('graph') || 'true'),
         toc: JSON.parse(localStorage.getItem('toc') || 'true'),
         music: JSON.parse(localStorage.getItem('music') || 'true'),

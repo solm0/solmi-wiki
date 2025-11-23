@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
-import { useHoveredLiquidStore } from '@/app/lib/use-hovered-liquid-store';
+import { useHoveredLiquid } from '@/app/lib/zustand/useHoveredLiquid';
 import { useEffect, useState } from 'react';
 import { Tag } from '@/app/lib/type';
 
@@ -15,10 +15,10 @@ export default function InspectTag({
   const searchParams = useSearchParams();
   const router = useRouter();
   
-  const hoveredTag = useHoveredLiquidStore((state) => state.value)
-  const offsetX = useHoveredLiquidStore((state) => state.offsetX)
-  const width = useHoveredLiquidStore((state) => state.width)
-  const setHoveredTag = useHoveredLiquidStore((state) => state.setValue);
+  const hoveredTag = useHoveredLiquid((state) => state.value)
+  const offsetX = useHoveredLiquid((state) => state.offsetX)
+  const width = useHoveredLiquid((state) => state.width)
+  const setHoveredTag = useHoveredLiquid((state) => state.setValue);
 
   const currentTag = searchParams.get("tag");
 

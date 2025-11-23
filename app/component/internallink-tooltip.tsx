@@ -1,7 +1,7 @@
 'use client'
 
-import { useMousePosition } from "@/app/lib/use-mouse-position";
-import { useHoveredLink } from "@/app/lib/use-hovered-link";
+import { useMousePosition } from "@/app/lib/zustand/useMousePosition";
+import { useHoveredLink } from "@/app/lib/zustand/useHoveredLink";
 
 export default function InternalLinkTooltip() {
   const mousePosition = useMousePosition();
