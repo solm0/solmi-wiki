@@ -49,6 +49,7 @@ export default async function GraphPage() {
         </Suspense>
       </div>
 
+      <div className="relative gap-8 w-full"></div>
       {/* 오른쪽 사이드바 */}
       <ToolBox />
     </>

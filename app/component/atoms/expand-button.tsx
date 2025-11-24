@@ -26,8 +26,8 @@ export default function ExpandButton({
       <div
         onMouseLeave={() => setIsOpen(false)}
         className={`
-          bg-button-100 h-auto w-40 flex flex-col p-3 mt-2 items-start gap-1 overflow-clip transition-all rounded-sm text-xs z-70
-          ${isOpen ? "max-h-96" : "opacity-0 max-h-0"}
+          bg-button-100 h-auto w-40 flex flex-col p-3 mt-2 items-start gap-1 overflow-clip rounded-sm text-xs z-70
+          ${isOpen ? "block max-h-96" : "hidden max-h-0"}
         `}
        >
         {children}

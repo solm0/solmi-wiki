@@ -27,6 +27,12 @@ const GET_POST_BY_ID = gql`
         id
         name
       }
+      places {
+        id
+        langtitude
+        latitude
+        name
+      }
       internalLinks {
         id
         title
@@ -217,7 +223,6 @@ export default async function Page({
 
   const data: {post: Post} = await client.request(GET_POST_BY_ID, { id: slug });
   if (!data.post) {
-    console.log('fff')
     return notFound();
   }
   const post = data.post;
@@ -229,7 +234,7 @@ export default async function Page({
     <>
       <div
         id="note_wrapper"
-        className='flex gap-8 w-full pt-[40vh] text-text-900 leading-8 break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar'
+        className='flex gap-8 w-full pt-[40vh] text-text-900 break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar'
       >
         {/* 본문 */}
         <Suspense>

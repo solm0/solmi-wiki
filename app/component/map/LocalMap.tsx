@@ -3,51 +3,48 @@
 import Map, { Layer, Source } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useState } from 'react';
-import { FeatureCollection } from 'geojson';
-import { Post } from '@/app/lib/type';
+import { Place } from '@/app/lib/type';
 import { NoPost } from '../hyperlink-map/ToolBox';
+import type {
+  Feature,
+  FeatureCollection,
+  Geometry,
+  GeoJsonProperties
+} from 'geojson';
 
 export default function LocalMap({
-  post,
+  places,
 }: {
-  post: Post | null
+  places?: Place[];
 }) {
   const [viewState, setViewState] = useState({
-    longitude: 10.313611,
-    latitude: 47.715833,
+    longitude: Number(places?.[0].langtitude) ?? 10.313611,
+    latitude: Number(places?.[0].latitude) ?? 47.715833,
     zoom: 16
   });
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
+  if (!places) return;
+  
+  const placeData = places.map((place, i) => 
+     ({
+      type: 'Feature',
+      geometry: {
+        type: "Point",
+        coordinates: [Number(place.langtitude), Number(place.latitude)]
+      },
+      properties: {
+        i: i+1,
+      }
+    }),
+  )
+  
   const geojson: FeatureCollection = {
     type: 'FeatureCollection',
-    features: [
-      {
-        type: 'Feature',
-        geometry: {
-          type: "Point",
-          coordinates: [10.313611, 47.715833]
-        },
-        properties: {
-          i: 1,
-          title: '라벨'
-        }
-      },
-      {
-        type: 'Feature',
-        geometry: {
-          type: "Point",
-          coordinates: [10.314000, 47.715833]
-        },
-        properties: {
-          i: 2,
-          title: '라벨'
-        }
-      },
-    ]
+    features: placeData as Feature<Geometry, GeoJsonProperties>[]
   }
 
-  if (!post) return <NoPost />
+  if (!places) return <NoPost />
   else if (!geojson) return <NoPost text='해당 글에 장소' />
   else return (
     <Map

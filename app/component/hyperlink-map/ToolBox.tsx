@@ -25,7 +25,7 @@ export function ToolComponents({
   if (!isEnabled) return null;
 
   else return (
-    <div className='flex flex-col gap-1 w-full max-w-80 items-start select-none pointer-events-auto'>
+    <div className='flex flex-col gap-1 w-[320px] h-auto items-start select-none pointer-events-auto'>
       <label
         className='flex items-center gap-2 text-text-800 w-full h-auto'
         htmlFor={`${cmp.value}-input`}
@@ -96,13 +96,11 @@ export default function ToolBox({
             {tools.map((tool, i) => 
               <div key={i} className="flex gap-2 leading-5 text-text-900 items-center">
                 <button
-                  className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5"
+                  className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
                   onClick={() => setIsEnabled(tool.value, !isEnabled[tool.value])}
                   id={`${tool.value}-button`}
                 >
-                  {isEnabled[tool.value] &&
-                    <div className="w-full h-full bg-green-400 rounded-full" />
-                  }
+                  <div className={`w-full h-full rounded-full ${isEnabled[tool.value] ? 'bg-green-400' : 'bg-transparent'} transition-colors duration-300`} />
                 </button>
                 <label htmlFor={`${tool.value}-button`}>{tool.name}</label>
               </div>
@@ -113,22 +111,20 @@ export default function ToolBox({
 
       <aside className={clsx(
         `${pretendard.className}
-        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col pt-0 md:pt-8 items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-y-scroll scrollbar-hide`,
+        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-80 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 md:w-20 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
         {/* 작은화면 창닫기 */}
-        <div
+        <button
           onClick={() => setIsEnabled('toolBox', false)}
-          className='flex md:hidden w-full h-8 shrink-0 mt-4'
+          className='fixed top-4 left-4 md:hidden w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-background hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
         >
-          <button className='mr-auto w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 rounded-sm flex items-center justify-center'>
-            <ChevronRight />
-          </button>
-        </div>
+          <ChevronRight />
+        </button>
 
         {noOpenTools && <div className="text-text-700">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-8 pointer-events-auto">
+        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-0 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar">
           {/* local graph */}
           <ToolComponents
             isEnabled={isEnabled[tools[0].value]}
@@ -197,9 +193,8 @@ export default function ToolBox({
             cmp={tools[3]}
             setIsEnabled={setIsEnabled}
           >
-            {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
             <div className="w-full h-80 overflow-hidden rounded-sm">
-              <LocalMap post={post ?? null} />
+              <LocalMap places={post?.places} />
             </div>
           </ToolComponents>
         </div>

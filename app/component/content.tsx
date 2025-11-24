@@ -1,4 +1,4 @@
-import { RichTextNode } from "../lib/type"
+import { Place, RichTextNode } from "../lib/type"
 import Headings from "./document/heading";
 import Paragraph from "./document/paragraph";
 import Ul from "./document/ul";
@@ -11,13 +11,14 @@ import Quote from "./document/quote";
 import InlineInternalLink from "./document/inline-internallink";
 import Carousel from "./document/carousel";
 import Iframe from "./document/iframe";
+import PlacePlaceholder from "./document/PlacePlaceholder";
 
 export default function Content({
-  post,
-  font
+  post, font, places
 }: {
   post: RichTextNode[];
   font?: string;
+  places?: Place[];
 }) {
   return (
     <div>
@@ -79,6 +80,10 @@ export default function Content({
                 case 'iframe':
                   return (
                     <Iframe key={idx} src={document.children?.[0].children?.[0].text} />
+                  )
+                case 'place':
+                  return (
+                    <PlacePlaceholder key={idx} placeId={document.children?.[0].children?.[0].text} places={places}/>
                   )
               }
           }

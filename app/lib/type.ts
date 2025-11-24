@@ -20,6 +20,7 @@ export type Post = {
   backlinks?: Post[];
   internalLinks?: Post[];
   internalBacklinks?: Post[];
+  places?: Place[];
 };
 
 export type User = {
@@ -121,6 +122,7 @@ export type RichTextNode =
   | InternalLinkComponentNode
   | CarouselNode
   | IframeNode
+  | PlaceNode
 
 export type PostContent = {
   document: RichTextNode[];
@@ -245,4 +247,21 @@ export type IframeNode = {
     type: 'component-inline-prop',
     children: { text: string }[],
   }[],
+}
+
+export type Place = {
+  id: string;
+  langtitude: string;
+  latitude: string;
+  name: string;
+  posts?: Post[];
+}
+
+export type PlaceNode = {
+  type: 'component-block',
+  children: {
+    type: 'component-inline-prop',
+    children: FormattedText[],
+  }[],
+  component: 'place',
 }

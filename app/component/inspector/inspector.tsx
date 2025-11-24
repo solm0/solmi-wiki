@@ -76,54 +76,54 @@ export default function Inspector({
       )}>
 
         {/* 작은화면 창닫기 */}
-        <div
+        <button
           onClick={() => setIsEnabled('noteInspector', false)}
-          className='flex md:hidden w-full mt-4 h-8 shrink-0 '
+          className='fixed top-4 right-4 md:hidden w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
         >
-          <button className='ml-auto mr-4 w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 rounded-sm flex items-center justify-center'>
-            <ChevronLeft />
-          </button>
-        </div>
+          <ChevronLeft />
+        </button>
 
         {/* 필터링 */}
-        <FilterComponents
-          icon={<TagIcon className='w-3 h-3' />}
-          cmp={{ value: 'tag', name: '태그' }}
-        >
-          <InspectTag tags={tags} />
-        </FilterComponents>
-
-        <FilterComponents
-          icon={<Search className='w-3 h-3' />}
-          cmp={{ value: 'search', name: '문자열' }}
-        >
-          <InspectSearch />
-        </FilterComponents>
-
-        <FilterComponents
-          icon={<Key className='w-3 h-3' />}
-          cmp={{ value: 'keyword', name: '키워드' }}
-        >
-          <InspectKeyword kwByTag={kwByTag} />
-        </FilterComponents>
-
-        {/* 결과 */}
-        <div className='flex flex-col gap-1 w-full overflow-hidden items-start select-none'>
-          <label
-            className='flex items-center gap-2 text-text-700'
+        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-0 pointer-events-auto overflow-y-scroll custom-scrollbar">
+          <FilterComponents
+            icon={<TagIcon className='w-3 h-3' />}
+            cmp={{ value: 'tag', name: '태그' }}
           >
-            결과: {finalPosts.length}건
-          </label>
-            <div
-              className="flex w-full flex-col gap-2 overflow-hidden"
-              onClick={() => {
-                if (window.innerWidth < 768) {
-                  setIsEnabled('noteInspector', false)
-                }
-              }}
+            <InspectTag tags={tags} />
+          </FilterComponents>
+
+          <FilterComponents
+            icon={<Search className='w-3 h-3' />}
+            cmp={{ value: 'search', name: '문자열' }}
+          >
+            <InspectSearch />
+          </FilterComponents>
+
+          <FilterComponents
+            icon={<Key className='w-3 h-3' />}
+            cmp={{ value: 'keyword', name: '키워드' }}
+          >
+            <InspectKeyword kwByTag={kwByTag} />
+          </FilterComponents>
+
+          {/* 결과 */}
+          <div className='flex flex-col gap-1 w-full overflow-hidden items-start select-none pb-8'>
+            <label
+              className='flex items-center gap-2 text-text-700'
             >
-              <InspectResultList posts={finalPosts} />
-            </div>
+              결과: {finalPosts.length}건
+            </label>
+              <div
+                className="flex w-full flex-col gap-2 overflow-hidden"
+                onClick={() => {
+                  if (window.innerWidth < 768) {
+                    setIsEnabled('noteInspector', false)
+                  }
+                }}
+              >
+                <InspectResultList posts={finalPosts} />
+              </div>
+          </div>
         </div>
       </section>
     </>
