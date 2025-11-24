@@ -29,8 +29,8 @@ const GET_POST_BY_ID = gql`
       }
       places {
         id
-        langtitude
-        latitude
+        lat
+        lng
         name
       }
       internalLinks {

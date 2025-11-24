@@ -26,7 +26,7 @@ export default function RingLinks({
   return (
     <section className={`text-sm relative flex flex-col gap-3 w-full h-auto items-start text-text-900`}>
       <div className="flex gap-4 items-center">
-        <FlagTriangleRight className="w-4 h-4" />
+        <FlagTriangleRight className="w-4 h-4 shrink-0" />
         <Link
           href={`${backlink.id}/?${newParams}`}
           target="_self"

@@ -251,8 +251,8 @@ export type IframeNode = {
 
 export type Place = {
   id: string;
-  langtitude: string;
-  latitude: string;
+  lat: string;
+  lng: string;
   name: string;
   posts?: Post[];
 }
