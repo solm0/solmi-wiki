@@ -9,7 +9,7 @@ export function PlaceIndexIcon({idx}:{idx:number}){
 }
 
 export default function PlacePlaceholder({
-  placeId, places
+  placeId, places,
 }: {
   placeId: string
   places?: Place[];

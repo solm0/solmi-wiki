@@ -170,9 +170,15 @@ export default function ToolBox({
                 />
               </div>
               :
-              <div className="relative w-full aspect-square overflow-hidden rounded-sm">
-                <LocalMap places={post?.places} />
-              </div>
+              <>
+                {(!post?.places || post.places.length === 0)
+                  ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
+                  :
+                    <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+                      <LocalMap places={post?.places} />
+                    </div>
+                }
+              </>
             }
           </ToolComponents>
 

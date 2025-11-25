@@ -4,19 +4,20 @@ import Map, { Layer, Popup, Source, MapRef } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Place } from '@/app/lib/type';
-import { NoPost } from '../hyperlink-map/ToolBox';
 import type {
   Feature,
   FeatureCollection,
   Geometry,
-  GeoJsonProperties
+  GeoJsonProperties,
+  LineString
 } from 'geojson';
 import { useClickedPlace } from '@/app/lib/zustand/useClickedPlace';
+import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
 
 export default function LocalMap({
   places,
 }: {
-  places?: Place[];
+  places: Place[];
 }) {
   // 디폴트 위치
   const hochschuleKempten = {
@@ -48,8 +49,6 @@ export default function LocalMap({
   }, [clickedId]);
 
   // 마커 데이터 만들기
-  
-  
   const placeData = useMemo(() => {
     if (!places) return [];
     return places.map((place, i) => 
@@ -74,9 +73,62 @@ export default function LocalMap({
   }), [placeData]);
 
   // 동선 데이터 만들기
-  const [route, setRoute] = useState<Feature<Geometry, GeoJsonProperties> | null>(null);
+  const [routeData, setRouteData] = useState<Feature<LineString, GeoJsonProperties>[]>([]);
+  
+  function getDistanceInKm([lng1, lat1]: [number, number], [lng2, lat2]: [number, number]) {
+    const R = 6371; 
+    const dLat = ((lat2 - lat1) * Math.PI) / 180;
+    const dLng = ((lng2 - lng1) * Math.PI) / 180;
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) *
+        Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
 
-  async function fetchRoute(start: [number, number], end: [number, number]) {
+    return 2 * R * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  }
+  
+  function drawCurvedLine(
+    start: [number, number],
+    end: [number, number]
+  ): Feature<LineString, GeoJsonProperties> {
+    const [x1, y1] = start;
+    const [x2, y2] = end;
+
+    // 가운데에서 살짝 위로 올린 control point
+    const cx = (x1 + x2) / 2;
+    const cy = (y1 + y2) / 2 + 5; // 값 크면 더 휘어짐
+
+    // 베지어 곡선 샘플링
+    const curve: [number, number][] = [];
+    const steps = 30;
+
+    for (let t = 0; t <= 1; t += 1 / steps) {
+      const x =
+        (1 - t) * (1 - t) * x1 +
+        2 * (1 - t) * t * cx +
+        t * t * x2;
+
+      const y =
+        (1 - t) * (1 - t) * y1 +
+        2 * (1 - t) * t * cy +
+        t * t * y2;
+
+      curve.push([x, y]);
+    }
+
+    return {
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: curve
+      },
+      properties: {}
+    };
+  }
+
+  async function fetchRoute(start: [number, number], end: [number, number]):Promise<Feature<LineString, GeoJsonProperties>> {
     const res = await fetch(
       `https://router.project-osrm.org/route/v1/driving/${start[0]},${start[1]};${end[0]},${end[1]}?overview=full&geometries=geojson`
     );
@@ -84,26 +136,79 @@ export default function LocalMap({
 
     const line = data.routes[0].geometry; // LineString
 
-    setRoute({
+    return {
       type: "Feature",
       geometry: line,
       properties: {}
-    });
+    }
   }
 
   useEffect(() => {
-    if (!placeData[0] || !placeData[1]) return;
+    if (!places || placeData.length < 2) return;
+    let isMounted = true;
 
-    fetchRoute(
-      placeData[0].geometry.coordinates as [number, number],
-      placeData[1].geometry.coordinates as [number, number]
-    );
-  }, [placeData]);
+    async function loadRoutes() {
+      const result: Feature<LineString, GeoJsonProperties>[] = [];
 
-  
+      for (let i = 0; i < placeData.length - 1; i++) {
+        const start = placeData[i].geometry.coordinates as [number, number];
+        const end = placeData[i + 1].geometry.coordinates as [number, number];
 
-  if (!places || places.length === 0) return <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
-  else return (
+        const dist = getDistanceInKm(start, end);
+
+        if (dist > 200) {
+          result.push(drawCurvedLine(start, end));
+        } else {
+          const route = await fetchRoute(start, end);
+          result.push(route);
+        }
+      }
+      if (isMounted) setRouteData(result);
+    }
+
+    loadRoutes();
+    return () => { isMounted = false; };
+  }, [places]);
+
+  const routeGeojson = useMemo<FeatureCollection>(() => ({
+    type: 'FeatureCollection',
+    features: routeData,
+  }), [routeData]);
+
+  // 진행도
+  const placeIds = useMemo(() => places?.map(p => p.id) ?? [], [places]);
+  const stablePlaceIds = useMemo(() => placeIds ?? [''], [placeIds]);
+  const stableRouteData = useMemo(() => routeData, [routeData]);
+  const { progressPoint, progressLine } = useRouteProgress(stablePlaceIds, stableRouteData);
+
+  useEffect(() => {
+    if (!progressPoint || !mapRef.current) return;
+
+    const map = mapRef.current;
+    const currentCenter = map.getCenter();
+
+    const lat1 = currentCenter.lat;
+    const lng1 = currentCenter.lng;
+    const [lng2, lat2] = progressPoint;
+
+    // 대략적인 거리 계산 (유클리드)
+    const distance = Math.sqrt((lng2 - lng1) ** 2 + (lat2 - lat1) ** 2);
+
+    // 거리 기준 zoom 설정
+    // distance가 크면 zoom 낮게, 작으면 zoom 높게
+    const minZoom = 8;
+    const maxZoom = 14;
+    const maxDistance = 0.1; // 적절히 조정 필요 (deg 단위)
+    const zoom = Math.max(minZoom, Math.min(maxZoom, maxZoom - (distance / maxDistance) * (maxZoom - minZoom)));
+
+    map.easeTo({
+      center: progressPoint,
+      duration: 300,
+      zoom,
+    });
+  }, [progressPoint]);
+
+  return (
     <Map
       ref={mapRef}
       {...viewState}
@@ -157,22 +262,33 @@ export default function LocalMap({
           }}
         />
       </Source>
-      {route &&
-        <Source id='route' type='geojson' data={route}>
+      {routeGeojson.features.length !== 0 &&
+        <Source id='route' type='geojson' data={routeGeojson}>
           {/* 동선 레이어 */}
           <Layer
             id='route-line'
             type='line'
             source='route'
             paint={{
-              "line-width": 4,
-              "line-color": "#ff0000"
+              "line-width": 5,
+              "line-color": "#B5B5B5"
             }}
           />
-
-          {/* 동선 위 진행도 레이어 */}
         </Source>
       }
+
+      {progressLine && (
+        <Source id="progress" type="geojson" data={progressLine}>
+          <Layer
+            id="progress-line"
+            type="line"
+            paint={{
+              "line-width": 5,
+              "line-color": "#00C37A"
+            }}
+          />
+        </Source>
+      )}
 
       {hoveredId && (
         <Popup
