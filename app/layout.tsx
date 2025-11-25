@@ -8,6 +8,7 @@ import path from 'path';
 import Header from "./component/header/header";
 import { Suspense } from "react";
 import Inspector from "./component/inspector/inspector";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -30,6 +31,11 @@ export default async function RootLayout({
       <body
         className={`${pretendard.className} antialiased font-normal md:overflow-hidden overflow-x-hidden`}
       >
+        <Script
+          src="//gc.zgo.at/count.js"
+          data-goatcounter="https://solmiwiki.goatcounter.com/count"
+          strategy="afterInteractive"
+        />
         <ThemeProvider disableTransitionOnChange>
           <div className="flex h-screen w-full px-5 md:p-8 gap-0 md:gap-8">
 
