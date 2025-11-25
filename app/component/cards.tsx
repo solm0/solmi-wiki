@@ -80,6 +80,7 @@ export function CardLg({posts}: {posts: Post[]}) {
               height={800}
               className="h-32 w-32 md:h-full md:w-full object-cover rounded-sm cursor-pointer"
               alt={post.id}
+              unoptimized
             />
             :
             <Image
@@ -88,6 +89,7 @@ export function CardLg({posts}: {posts: Post[]}) {
               height={800}
               className="h-32 w-32 md:h-full md:w-full bg-button-50"
               alt={post.id}
+              unoptimized
             />
           }
           <div className="absolute bottom-0 left-32 md:left-0 w-[calc(100%-8rem)] md:w-full h-32 md:h-auto flex gap-4 bg-button-100 hover:bg-button-200 transition-colors duration-300 justify-between p-4 text-sm">
@@ -132,6 +134,7 @@ export function CardXl({posts}: {posts: Post[]}) {
                             height={800}
                             className="h-full w-auto object-contain rounded-sm"
                             alt={item.alt}
+                            unoptimized
                           />
                         </div>
                       )

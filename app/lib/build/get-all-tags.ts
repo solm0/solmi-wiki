@@ -21,9 +21,7 @@ const GET_ALL_TAGS = gql`
       id
       name
       posts {
-        keywords {
-          name
-        }
+        keywords { name }
       }
     }
   }

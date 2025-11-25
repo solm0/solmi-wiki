@@ -41,7 +41,7 @@ export default function Carousel({
               alt={item.alt}
               id={`img-${carIdx}-${idx}`}
               onClick={() => setIdx(idx)}
-              unoptimized={true}
+              unoptimized
             />
             {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
           </div>

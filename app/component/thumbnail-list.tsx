@@ -63,6 +63,7 @@ export default function ThumbnailList({
             className={clsx("saturate-140 object-cover object-center w-full h-full transition-[filter] duration-300",
               hovered && hovered === note.id ? "grayscale-0" : 'grayscale-100'
             )}
+            unoptimized
           />
       )}
     </div>

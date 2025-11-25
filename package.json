@@ -5,6 +5,7 @@
   "scripts": {
     "get-all-tags": "tsx app/lib/build/get-all-tags.ts",
     "dev": "next dev",
+    "prebuild": "tsx app/lib/build/getAllPosts.ts",
     "build": "npm run get-all-tags && next build",
     "start": "next start",
     "lint": "next lint"
