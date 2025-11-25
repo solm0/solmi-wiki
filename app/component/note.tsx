@@ -9,6 +9,7 @@ import { pretendard } from "@/app/lib/localfont";
 import { useRef } from "react";
 import RingLinks from "./ring-links";
 import SequenceNav from "./sequence-nav";
+import { useClickedPlace } from "../lib/zustand/useClickedPlace";
 
 export default function Note({
   post,
@@ -51,6 +52,21 @@ export default function Note({
   };
 
   const { prev, next, isFirstChild } = generateSequence();
+
+  const fromMapPage = useClickedPlace(s => s.fromMapPage);
+  const setFromMapPage = useClickedPlace(s => s.setFromMapPage);
+
+  if (fromMapPage) {
+    const placePlaceholder = document.getElementById(`placeholder-${fromMapPage}`);
+    if (!placePlaceholder) return;
+
+    placePlaceholder.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+    })
+
+    setFromMapPage(null);
+  }
   
   return (
     <article className={`${post.tags.name === '코딩' ? `${pretendard.className} font-sans leading-7` : `${maruburi.className} font-serif`} flex flex-col gap-12 w-full max-w-[47rem] leading-8`}>

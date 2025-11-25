@@ -89,7 +89,7 @@ export default function Toc({
             ${level === 3 ? 'ml-7' : 'ml-0'}
           `}
           style={{ top: `calc(2rem * ${idx})` }}
-          onMouseEnter={() => { console.log('enter', hoverHeading); setHoverHeading(slug)}}
+          onMouseEnter={() => setHoverHeading(slug)}
           onMouseLeave={() => setHoverHeading(null)}
           onClick={(e) => {
             e.preventDefault();

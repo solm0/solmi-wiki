@@ -4,19 +4,19 @@ import Map, { Layer, Popup, Source, MapRef } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useRef, useState } from 'react';
 import { Place } from '@/app/lib/type';
-import { NoPost } from '../hyperlink-map/ToolBox';
 import type {
   Feature,
   FeatureCollection,
   Geometry,
   GeoJsonProperties
 } from 'geojson';
-import { useClickedPlace } from '@/app/lib/zustand/useClickedPlace';
 
-export default function LocalMap({
-  places,
+export default function GlobalMap({
+  places, clickedId, setClickedId
 }: {
-  places?: Place[];
+  places: Place[];
+  clickedId: string | null;
+  setClickedId: (clickedId: string | null) => void;
 }) {
   const hochschuleKempten = {
     longitude: Number(places?.[0]?.lng) ?? 10.313611,
@@ -27,8 +27,6 @@ export default function LocalMap({
   const [viewState, setViewState] = useState(hochschuleKempten);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
-  const clickedId = useClickedPlace(state => state.id);
-  const setClickedId = useClickedPlace(state => state.setId);
   const mapRef = useRef<MapRef>(null);
 
   useEffect(() => {
@@ -44,8 +42,6 @@ export default function LocalMap({
       essential: true
     });
   }, [clickedId]);
-
-  if (!places || places.length === 0) return <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
   
   const placeData = places.map((place, i) => 
     ({
@@ -67,7 +63,7 @@ export default function LocalMap({
     features: placeData as Feature<Geometry, GeoJsonProperties>[]
   }
 
-  if (places) return (
+  return (
     <Map
       ref={mapRef}
       {...viewState}
@@ -128,7 +124,7 @@ export default function LocalMap({
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 이 글에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 위치로 이동</div>
+          <div>클릭하여 우측 사이드바의 &apos;지도&apos;에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 글 목록 보기</div>
         </Popup>
       )}
     </Map>

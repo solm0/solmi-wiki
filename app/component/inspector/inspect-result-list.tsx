@@ -35,14 +35,6 @@ export default function InspectResultList({
 }) {
   const [hovered, setHovered] = useState<string | null>(null);
 
-  const onMouseEnter = (id: string) => {
-    setHovered(id);
-  }
-
-  const onMouseLeave = () => {
-    setHovered(null);
-  }
-
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
@@ -68,8 +60,8 @@ export default function InspectResultList({
             "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2",
             hovered && hovered !== note.id && "opacity-40!"
           )}
-          onMouseEnter={() => onMouseEnter(note.id)}
-          onMouseLeave={onMouseLeave}
+          onMouseEnter={() => setHovered(note.id)}
+          onMouseLeave={() => setHovered(null)}
           onClick={() => handleClick(note.id)}
         >
           {rootPath === note.id &&

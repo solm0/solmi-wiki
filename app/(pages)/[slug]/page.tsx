@@ -234,7 +234,7 @@ export default async function Page({
     <>
       <div
         id="note_wrapper"
-        className='flex gap-8 w-full pt-[40vh] text-text-900 break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar'
+        className='flex gap-8 w-full pt-[40vh] text-text-900 break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar focus:outline-0'
       >
         {/* 본문 */}
         <Suspense>

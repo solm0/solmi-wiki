@@ -4,7 +4,7 @@ import { Suspense, useEffect } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
-import { Post } from "@/app/lib/type";
+import { Place, Post } from "@/app/lib/type";
 import GraphController from "./graph-controller";
 import { Link2, X, TableOfContents, ChevronRight, Music2, SettingsIcon, Earth } from "lucide-react";
 import Toc from "../toc";
@@ -12,6 +12,8 @@ import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
 import ThemeButton from "../atoms/theme-button";
 import LocalMap from "../map/LocalMap";
+import RelatedPostLists from "../map/RelatedPostLists";
+import { PlaceIndexIcon } from "../document/PlacePlaceholder";
 
 export function ToolComponents({
   isEnabled, icon, cmp, children, setIsEnabled,
@@ -25,7 +27,7 @@ export function ToolComponents({
   if (!isEnabled) return null;
 
   else return (
-    <div className='flex flex-col gap-1 w-[320px] h-auto items-start select-none pointer-events-auto'>
+    <div className='flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto'>
       <label
         className='flex items-center gap-2 text-text-800 w-full h-auto'
         htmlFor={`${cmp.value}-input`}
@@ -62,9 +64,13 @@ export const tools = [
 ]
 
 export default function ToolBox({
-  post
+  post, selectedPlace
 }: {
   post?: Post;
+  selectedPlace?: {
+    idx: number;
+    data?: Place;
+  }; // map 페이지 전용
 }) {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
 
@@ -124,22 +130,7 @@ export default function ToolBox({
 
         {noOpenTools && <div className="text-text-700">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-0 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar">
-          {/* local graph */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[0].value]}
-            icon={<Link2 className='w-4 h-4' />}
-            cmp={tools[0]}
-            setIsEnabled={setIsEnabled}
-          >
-            {post ? (
-              <Suspense>
-                <GraphController post={post} />
-              </Suspense>
-            ): (
-              <NoPost />
-            )}
-          </ToolComponents>
+        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
           <ToolComponents
@@ -155,6 +146,47 @@ export default function ToolBox({
                     <Toc post={post} />
                   </Suspense>
               </>
+            ): (
+              <NoPost />
+            )}
+          </ToolComponents>
+
+          {/* map */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[3].value]}
+            icon={<Earth className='w-4 h-4' />}
+            cmp={tools[3]}
+            setIsEnabled={setIsEnabled}
+          >
+            {selectedPlace && selectedPlace.data ?
+              <div className="w-full h-auto flex flex-col gap-1">
+                <div className="flex gap-1 items-center">
+                  <PlaceIndexIcon idx={selectedPlace.idx} />
+                  {selectedPlace.data.name}: 언급된 글들
+                </div>
+                <RelatedPostLists
+                  posts={selectedPlace.data.posts}
+                  placeId={selectedPlace.data.id}
+                />
+              </div>
+              :
+              <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+                <LocalMap places={post?.places} />
+              </div>
+            }
+          </ToolComponents>
+
+          {/* local graph */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[0].value]}
+            icon={<Link2 className='w-4 h-4' />}
+            cmp={tools[0]}
+            setIsEnabled={setIsEnabled}
+          >
+            {post ? (
+              <Suspense>
+                <GraphController post={post} />
+              </Suspense>
             ): (
               <NoPost />
             )}
@@ -183,18 +215,6 @@ export default function ToolBox({
                 <p>노래이름</p>
                 <p>가수이름</p>
               </div>
-            </div>
-          </ToolComponents>
-
-          {/* map */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[3].value]}
-            icon={<Earth className='w-4 h-4' />}
-            cmp={tools[3]}
-            setIsEnabled={setIsEnabled}
-          >
-            <div className="w-full h-80 overflow-hidden rounded-sm">
-              <LocalMap places={post?.places} />
             </div>
           </ToolComponents>
         </div>

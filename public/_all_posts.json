@@ -576,20 +576,20 @@
                   "title": "Agate: Obsidian 테마 만들기",
                   "links": [
                     {
-                      "id": "cmdd4o52d00axmdamilu6tcsd",
-                      "title": "Obsidian 테마 마이크로 타이포그래피"
-                    },
-                    {
-                      "id": "cmdd4pgo600b2mdam59py9501",
-                      "title": "Obsidian 테마 매크로 타이포그래피"
+                      "id": "cmdd5pjsi00blmdam18mp77rq",
+                      "title": "Obsidian 테마 CSS로 만들기"
                     },
                     {
                       "id": "cmdcyqb0e008wmdamspf46n22",
                       "title": "커뮤니티에 테마 제출하기"
                     },
                     {
-                      "id": "cmdd5pjsi00blmdam18mp77rq",
-                      "title": "Obsidian 테마 CSS로 만들기"
+                      "id": "cmdd4o52d00axmdamilu6tcsd",
+                      "title": "Obsidian 테마 마이크로 타이포그래피"
+                    },
+                    {
+                      "id": "cmdd4pgo600b2mdam59py9501",
+                      "title": "Obsidian 테마 매크로 타이포그래피"
                     }
                   ],
                   "backlinks": []
@@ -1012,12 +1012,12 @@
                   "title": "일기 어플 유목민의 결심",
                   "links": [
                     {
-                      "id": "cmdd5124v00bcmdam9whgmah2",
-                      "title": "Journal Shrine: HTML과 Markdown으로 일기 뷰어 만들기"
-                    },
-                    {
                       "id": "cmdbh1znz0018mdam9bp6amgl",
                       "title": "Journal Shrine"
+                    },
+                    {
+                      "id": "cmdd5124v00bcmdam9whgmah2",
+                      "title": "Journal Shrine: HTML과 Markdown으로 일기 뷰어 만들기"
                     }
                   ],
                   "backlinks": []
@@ -9894,6 +9894,26 @@
                 "text": "비행기를 기다리며"
               }
             ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "placeId": null
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": "cmie4qeys0000kcwprpt8235o"
+                  }
+                ],
+                "propPath": [
+                  "placeId"
+                ]
+              }
+            ],
+            "component": "place"
           },
           {
             "type": "component-block",
@@ -29651,48 +29671,48 @@
                   "title": "0820-0828 불가리아-세르비아-크로아티아-슬로베니아 여행 (발칸 2부)",
                   "links": [
                     {
-                      "id": "cmexabj9s004ytf6molmwj0d6",
-                      "title": "0820 불가리아 도착"
-                    },
-                    {
-                      "id": "cmeybnk940058tf6ms93yr3uc",
-                      "title": "0823上 노비 베오그라드와 미리예보의 브루탈리즘"
+                      "id": "cmeybpzev0059tf6m0eohrgcd",
+                      "title": "0824 이보 안드리치와 니콜라 테슬라, 역사박물관, 체바피"
                     },
                     {
                       "id": "cmeybk58v0056tf6miunawat1",
                       "title": "0821上 간판 구경, 세르디카 유적지, 성 네델랴 성당, 경찰 박물관"
                     },
                     {
+                      "id": "cmeybveov005dtf6mt54acvov",
+                      "title": "0828-0901 마지막 나날들"
+                    },
+                    {
+                      "id": "cmf0y9qqt0060tf6mh5d1giqe",
+                      "title": "0823下 유고슬라비아 박물관, 에스노그래피 박물관, 칼레메그단"
+                    },
+                    {
                       "id": "cmeybm8xr0057tf6m650g2ula",
                       "title": "0822 베오그라드 도착과 성당 구경"
-                    },
-                    {
-                      "id": "cmeybpzev0059tf6m0eohrgcd",
-                      "title": "0824 이보 안드리치와 니콜라 테슬라, 역사박물관, 체바피"
-                    },
-                    {
-                      "id": "cmeybqu8v005atf6mejzflpl7",
-                      "title": "0825 베오그라드와의 이별"
                     },
                     {
                       "id": "cmeybtbfb005ctf6mviem4of3",
                       "title": "0827 류블랴나에서 여행 마무리"
                     },
                     {
-                      "id": "cmeybveov005dtf6mt54acvov",
-                      "title": "0828-0901 마지막 나날들"
-                    },
-                    {
-                      "id": "cmeybsivg005btf6m6naxp24a",
-                      "title": "0826 자그레브에서 한 것 책읽고 멍때리기"
+                      "id": "cmeybnk940058tf6ms93yr3uc",
+                      "title": "0823上 노비 베오그라드와 미리예보의 브루탈리즘"
                     },
                     {
                       "id": "cmeyou6gp005ltf6m834hxyca",
                       "title": "0821下 역사박물관, 불가리아인민공화국 체험, 성 소피아 성당"
                     },
                     {
-                      "id": "cmf0y9qqt0060tf6mh5d1giqe",
-                      "title": "0823下 유고슬라비아 박물관, 에스노그래피 박물관, 칼레메그단"
+                      "id": "cmeybqu8v005atf6mejzflpl7",
+                      "title": "0825 베오그라드와의 이별"
+                    },
+                    {
+                      "id": "cmeybsivg005btf6m6naxp24a",
+                      "title": "0826 자그레브에서 한 것 책읽고 멍때리기"
+                    },
+                    {
+                      "id": "cmexabj9s004ytf6molmwj0d6",
+                      "title": "0820 불가리아 도착"
                     }
                   ],
                   "backlinks": []
