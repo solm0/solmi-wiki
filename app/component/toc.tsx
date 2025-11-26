@@ -105,7 +105,7 @@ export default function Toc({
               setTimeout(() => {
                 el.style.color = "var(--text-950)";
                 el.style.transform = 'scale(1)';
-              }, 800);
+              }, 1500);
 
               const offset = elementTop - containerTop + page.scrollTop - 80;
 

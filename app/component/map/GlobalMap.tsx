@@ -10,6 +10,7 @@ import type {
   Geometry,
   GeoJsonProperties
 } from 'geojson';
+import { useToggleStore } from '@/app/lib/zustand/useToggleStore';
 
 export default function GlobalMap({
   places, clickedId, setClickedId
@@ -26,6 +27,9 @@ export default function GlobalMap({
 
   const [viewState, setViewState] = useState(hochschuleKempten);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+
+  const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
+  const setIsToolBoxOpen = useToggleStore(s => s.setToggle);
 
   const mapRef = useRef<MapRef>(null);
 
@@ -75,7 +79,8 @@ export default function GlobalMap({
       }}
       onClick={(e) => {
         const feature = e.features?.[0];
-        if (feature) setClickedId(feature.properties.id)
+        if (feature) setClickedId(feature.properties.id);
+        if (!isToolBoxOpen) setIsToolBoxOpen('toolBox', true);
       }}
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}

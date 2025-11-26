@@ -18,13 +18,13 @@ export default function Headings({
         switch(heading.level) {
           case 2:
             return (
-              <h2 key={id} id={id} className={`text-2xl py-4 pt-16 text-text-950 transition-all duration-300 rounded-sm origin-bottom-left ${font === 'serif' ? maruburi_bold.className : 'font-medium'}`}>
+              <h2 key={id} id={id} className={`text-2xl py-4 pt-16 text-text-950 transition-all duration-1000 rounded-sm origin-bottom-left ${font === 'serif' ? maruburi_bold.className : 'font-medium'}`}>
                 {text}
               </h2>
             )
           case 3: 
             return (
-              <h3 key={id} id={id} className={`text-xl py-4 pt-16 text-text-950 transition-all duration-300 rounded-sm origin-left ${font === 'serif' ? maruburi_bold.className : 'font-medium'}`}>
+              <h3 key={id} id={id} className={`text-xl py-4 pt-16 text-text-950 transition-all duration-1000 rounded-sm origin-left ${font === 'serif' ? maruburi_bold.className : 'font-medium'}`}>
                 {text}
               </h3>
             )

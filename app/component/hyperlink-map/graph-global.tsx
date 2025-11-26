@@ -92,10 +92,11 @@ export default function GlobalGraph({
       graphData={graphData as GraphData<NodeObject<Node>, LinkObject<Node>>}
       width={1600}
       height={1000}
+      
       onNodeHover={handleNodeHover}
       onNodeClick={handleNodeClick}
-      minZoom={2}
-      maxZoom={6}
+      minZoom={0.5}
+      maxZoom={7}
       nodeRelSize={4}
       // nodeVal={(node) => node.depth === 0 ? 3 : 1}
       // nodeColor={() => colors.nodeGreen}
@@ -127,7 +128,7 @@ export default function GlobalGraph({
               ctx.fillStyle = colors.text600;
             }
           } else {
-            ctx.fillStyle = colors.nodeGreen;
+            ctx.fillStyle = globalScale > 2 ? colors.nodeGreen : colors.text950;
           }
         } else {
           ctx.fillStyle = colors.text600;
@@ -174,7 +175,8 @@ export default function GlobalGraph({
           ctx.fillStyle = colors.text600;
         }
 
-        const fontSize = 14 / globalScale;
+
+        const fontSize = globalScale > 2 ? 14 / globalScale : 0;
         ctx.font = `${fontSize}px Pretendard, sans-serif`
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
@@ -197,7 +199,7 @@ export default function GlobalGraph({
               ctx.strokeStyle = colors.text600;
             }
           } else {
-            ctx.strokeStyle = colors.text800;
+            ctx.strokeStyle = globalScale > 2 ? colors.text800 : colors.nodeGreen;
           }
         } else {
           ctx.strokeStyle = colors.text600;

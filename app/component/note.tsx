@@ -69,7 +69,12 @@ export default function Note({
   }
   
   return (
-    <article className={`${post.tags.name === '코딩' ? `${pretendard.className} font-sans leading-7` : `${maruburi.className} font-serif`} flex flex-col gap-12 w-full max-w-[47rem] leading-8`}>
+    <article
+      className={`
+         flex flex-col gap-12 w-full leading-[2em]
+        ${post.tags.name === '코딩' ? `${pretendard.className} font-sans max-w-[43em]` : `${maruburi.className} font-serif max-w-[47em]`}
+      `}
+    >
       <h1
         ref={headRef}
         className={`leading-[1.5em] text-4xl text-text-950 ${post.tags.name === '코딩' ? `font-medium ${pretendard.className}` : maruburi_bold.className}`}

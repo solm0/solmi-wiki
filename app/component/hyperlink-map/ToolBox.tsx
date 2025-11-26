@@ -1,12 +1,12 @@
 'use client'
 
-import { Suspense, useEffect } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
 import { Place, Post } from "@/app/lib/type";
 import GraphController from "./graph-controller";
-import { Link2, X, TableOfContents, ChevronRight, Music2, SettingsIcon, Earth } from "lucide-react";
+import { ChevronRight, SettingsIcon } from "lucide-react";
 import Toc from "../toc";
 import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
@@ -16,33 +16,22 @@ import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
 
 export function ToolComponents({
-  isEnabled, icon, cmp, children, setIsEnabled,
+  isEnabled, cmp, children, hovered
 }: {
   isEnabled: boolean,
-  icon?: React.ReactNode,
   cmp: {value: string, name: string},
   children: React.ReactNode;
-  setIsEnabled: (tool: string, isEnabled: boolean) => void;
+  hovered: string | null;
 }) {
   if (!isEnabled) return null;
 
   else return (
-    <div className='flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto'>
-      <label
-        className='flex items-center gap-2 text-text-800 w-full h-auto'
-        htmlFor={`${cmp.value}-input`}
-      >
-        {icon}
-        {cmp.name}
-
-        {/* 닫기버튼 */}
-        <button
-          className="ml-auto h-6 w-6 rounded-sm hover:bg-button-100 flex items-center justify-center transition-colors duration-300"
-          onClick={() => setIsEnabled(cmp.value, false)}
-        >
-          <X className='w-4 h-4'/>
-        </button>
-      </label>
+    <div
+      className={`
+        bg-background p-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
+        ${hovered === cmp.value ? 'brightness-95' : 'brightness-100'}
+      `}
+    >
       {children}
     </div>
   )
@@ -59,8 +48,8 @@ export function NoPost({
 export const tools = [
   { value: 'graph', name: '로컬 그래프' },
   { value: 'toc', name: '목차' },
-  { value: 'music', name: '음악'},
   { value: 'map', name: '지도'},
+  { value: 'music', name: '음악'},
 ]
 
 export default function ToolBox({
@@ -83,6 +72,8 @@ export default function ToolBox({
   const isEnabled = useToggleStore((s) => s.toggles);
   const noOpenTools = Array.from(Object.entries(isEnabled)).filter(tool => Array.from(tools.map(t => t.value)).includes(tool[0])).filter(tool => tool[1] === true).length === 0;
 
+  const [hovered, setHovered] = useState<string | null>(null); // 호버된 도구
+
   return (
     <>
       {/* 배경 */}
@@ -100,7 +91,12 @@ export default function ToolBox({
 
             {/* tools */}
             {tools.map((tool, i) => 
-              <div key={i} className="flex gap-2 leading-5 text-text-900 items-center">
+              <div
+                key={i}
+                className="flex gap-2 leading-5 text-text-900 items-center"
+                onMouseEnter={() => setHovered(tool.value)}
+                onMouseLeave={() => setHovered(null)}
+              >
                 <button
                   className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
                   onClick={() => setIsEnabled(tool.value, !isEnabled[tool.value])}
@@ -128,82 +124,74 @@ export default function ToolBox({
           <ChevronRight />
         </button>
 
-        {noOpenTools && <div className="text-text-700">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
+        {noOpenTools && <div className="text-text-700 pt-4">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
 
         <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
-          {/* toc */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[1].value]}
-            icon={<TableOfContents className='w-4 h-4' />}
-            cmp={tools[1]}
-            setIsEnabled={setIsEnabled}
-          >
-            {post ? (
-              <>
-                  <GoToTop title={post.title} />
-                  <Suspense>
-                    <Toc post={post} />
-                  </Suspense>
-              </>
-            ): (
-              <NoPost />
-            )}
-          </ToolComponents>
-
-          {/* map */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[3].value]}
-            icon={<Earth className='w-4 h-4' />}
-            cmp={tools[3]}
-            setIsEnabled={setIsEnabled}
-          >
-            {selectedPlace && selectedPlace.data ?
-              <div className="w-full h-auto flex flex-col gap-1">
-                <div className="flex gap-1 items-center">
-                  <PlaceIndexIcon idx={selectedPlace.idx} />
-                  {selectedPlace.data.name}: 언급된 글들
-                </div>
-                <RelatedPostLists
-                  posts={selectedPlace.data.posts}
-                  placeId={selectedPlace.data.id}
-                />
-              </div>
-              :
-              <>
-                {(!post?.places || post.places.length === 0)
-                  ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
-                  :
-                    <div className="relative w-full aspect-square overflow-hidden rounded-sm">
-                      <LocalMap places={post?.places} />
-                    </div>
-                }
-              </>
-            }
-          </ToolComponents>
-
           {/* local graph */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[0].value]}
-            icon={<Link2 className='w-4 h-4' />}
-            cmp={tools[0]}
-            setIsEnabled={setIsEnabled}
-          >
-            {post ? (
+          {post &&
+            <ToolComponents
+              isEnabled={isEnabled[tools[0].value]}
+              cmp={tools[0]}
+              hovered={hovered}
+            >
               <Suspense>
                 <GraphController post={post} />
               </Suspense>
-            ): (
-              <NoPost />
-            )}
-          </ToolComponents>
+            </ToolComponents>
+          }
+
+          {/* toc */}
+          {post &&
+            <ToolComponents
+              isEnabled={isEnabled[tools[1].value]}
+              cmp={tools[1]}
+              hovered={hovered}
+            >
+              <GoToTop title={post.title} />
+              <Suspense>
+                <Toc post={post} />
+              </Suspense>
+            </ToolComponents>
+          }
+
+          {/* map */}
+          {((post?.places && post.places.length !== 0) || (selectedPlace && selectedPlace.data)) &&
+            <ToolComponents
+              isEnabled={isEnabled[tools[2].value]}
+              cmp={tools[2]}
+              hovered={hovered}
+            >
+              {selectedPlace && selectedPlace.data ?
+                <div className="w-full h-auto flex flex-col gap-1">
+                  <div className="flex gap-1 items-center">
+                    <PlaceIndexIcon idx={selectedPlace.idx} />
+                    {selectedPlace.data.name}: 언급된 글들
+                  </div>
+                  <RelatedPostLists
+                    posts={selectedPlace.data.posts}
+                    placeId={selectedPlace.data.id}
+                  />
+                </div>
+                :
+                <>
+                  {(!post?.places || post.places.length === 0)
+                    ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
+                    :
+                      <div className="relative w-full aspect-square overflow-hidden rounded-sm">
+                        <LocalMap places={post?.places} />
+                      </div>
+                  }
+                </>
+              }
+            </ToolComponents>
+          }
 
           {/* music */}
           <ToolComponents
-            isEnabled={isEnabled[tools[2].value]}
-            icon={<Music2 className='w-4 h-4'/>}
-            cmp={tools[2]}
-            setIsEnabled={setIsEnabled}
+            isEnabled={isEnabled[tools[3].value]}
+            cmp={tools[3]}
+            hovered={hovered}
           >
             {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
             <div className="w-full h-auto p-4 bg-button-100 flex flex-col gap-4 rounded-sm">

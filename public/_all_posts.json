@@ -576,20 +576,20 @@
                   "title": "Agate: Obsidian 테마 만들기",
                   "links": [
                     {
-                      "id": "cmdd5pjsi00blmdam18mp77rq",
-                      "title": "Obsidian 테마 CSS로 만들기"
-                    },
-                    {
-                      "id": "cmdcyqb0e008wmdamspf46n22",
-                      "title": "커뮤니티에 테마 제출하기"
-                    },
-                    {
                       "id": "cmdd4o52d00axmdamilu6tcsd",
                       "title": "Obsidian 테마 마이크로 타이포그래피"
                     },
                     {
                       "id": "cmdd4pgo600b2mdam59py9501",
                       "title": "Obsidian 테마 매크로 타이포그래피"
+                    },
+                    {
+                      "id": "cmdcyqb0e008wmdamspf46n22",
+                      "title": "커뮤니티에 테마 제출하기"
+                    },
+                    {
+                      "id": "cmdd5pjsi00blmdam18mp77rq",
+                      "title": "Obsidian 테마 CSS로 만들기"
                     }
                   ],
                   "backlinks": []
@@ -10078,6 +10078,125 @@
       }
     },
     {
+      "id": "cmdbhe1x6001mmdamgup3mg5c",
+      "title": "외국인으로서 다시 사회화를 배우다",
+      "excerpt": "내가 교환학생을 선택하게 된 이유 중 하나는 소심하고 의존적인 성격을 바꾸고 싶어서였다. 새로운 환경에 놓이면 새로운 행동을 하게 되고, 행동이 바뀌는 것은 곧 성격이 바뀌는...",
+      "publishedAt": "2025-03-20T23:00:00.000Z",
+      "tags": {
+        "name": "미분류"
+      },
+      "keywords": [
+        {
+          "name": "성격"
+        },
+        {
+          "name": "새로운"
+        },
+        {
+          "name": "행동"
+        },
+        {
+          "name": "사람들"
+        },
+        {
+          "name": "언어"
+        },
+        {
+          "name": "어떻"
+        }
+      ],
+      "content": {
+        "document": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "내가 교환학생을 선택하게 된 이유 중 하나는 소심하고 의존적인 성격을 바꾸고 싶어서였다. 새로운 환경에 놓이면 새로운 행동을 하게 되고, 행동이 바뀌는 것은 곧 성격이 바뀌는 것과 같은 말이다. 원하는 결과가 정확히 어떤 것인지 모른다 해도 일단 새로운 환경에 던져질 필요가 있다고 생각했다. 그 선택은 나를 실망시키지 않았다. 외국에 온 지 하루만에 내 행동이 바뀌었음을, 즉 성격이 바뀌었음을 깨달았다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "사람들이 하루종일 내뱉는 언어들 중에 정보를 전달하는 것보다 인간관계 유지 목적의 언어(phatic language)가 더 많다는데, 나는 그런 걸 어색해하고 어려워했다. 정보를 전달하는 언어는 대학에 와서 발표연습을 많이 하고, 발표하는 방법에 대한 이론수업도 들으면서 어찌저찌 길렀지만 인간관계 유지 목적의 언어는 누가 가르쳐주지도 않고 어떻게 배워야 하는지 몰랐다. 그런 걸 자연스럽게 하는 사람은 타고난 것이라고 믿었다. 하지만 그 생각은 틀렸다. 언제든지 후천적으로 습득할 수 있는 것이었다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "습득하는 방법은 관찰과 모방이다. 나는 스스로를 외국인, 또는 사회화 이전 아기의 위치에 놓음으로써 관찰과 모방을 다시 배운 기분이다. 낯선 땅에 발을 들인 외국인으로서 빵가게에서 옆사람이 입으로 어떤 소리를 내고 어디를 쳐다보며 어떻게 주문하는지, 마트 계산대에서 내 앞 차례 손님이 직원과 어떻게 상호작용하는지 필사적으로 관찰해야 했다. 관찰한 것을 내 차례가 왔을 때 즉각 모방했고, 원하던 결과(제품을 구매함)를 얻었다. 이 경험으로 얻은 자신감은 꽤 신선했다. 첫 심부름으로 혼자 물건을 구매한 꼬맹이가 느낄 만한 감각. 오랫동안 잊고 있었던 감각이었다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "내 나라에서도 계산대 직원은 말을 했을텐데, 내가 그걸 이렇게 주의깊게 들어본 적이 있었나? 그 말을 제대로 받은 적이 있었나? 말 없이도 물건은 살 수 있는데 왜 사람들은 안녕하세요, 감사합니다, 안녕히 가세요 같은 말을 하는지, 왜 대답을 기대하지도 않으면서 how are you, good morning 같은 인사치레를 하는지 과거의 나는 알려고 하지도 않았다. 이제는 사람들이 왜 그러는지 조금은 알 것 같다. 계산대 직원과의 짧은 상호작용이 더 이상 스트레스가 아닌 익숙함으로 다가옴을 자각할 때, 외국인이 되어보기로 한 선택에 만족했다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "링크"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "post": {
+                "id": "cmdbibkcv002imdamrm38zeqq",
+                "label": "인생의 목적은 개인의 지난 삶의 연장선이다.",
+                "data": {
+                  "id": "cmdbibkcv002imdamrm38zeqq",
+                  "title": "인생의 목적은 개인의 지난 삶의 연장선이다.",
+                  "links": [],
+                  "backlinks": []
+                }
+              }
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": ""
+                  }
+                ],
+                "propPath": [
+                  "alias"
+                ]
+              }
+            ],
+            "component": "internalLink"
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "cmexabj9s004ytf6molmwj0d6",
       "title": "0820 불가리아 도착",
       "excerpt": " 쾰른 여행 에서 돌아오자마자 더 창대한 여행이 시작될 참이었다. 계획대로 착착 될 줄 알았다, 웬만해선 됐었으니까… 세탁기 소동 cmid6i2wc00002bisv49rpa8...",
@@ -10627,6 +10746,26 @@
           {
             "type": "component-block",
             "props": {
+              "placeId": null
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": "cmiemy2m00002kcwps58fwhrf"
+                  }
+                ],
+                "propPath": [
+                  "placeId"
+                ]
+              }
+            ],
+            "component": "place"
+          },
+          {
+            "type": "component-block",
+            "props": {
               "items": [
                 {
                   "alt": "",
@@ -10765,9 +10904,29 @@
             "level": 2,
             "children": [
               {
-                "text": "Mall of Sofia"
+                "text": "The Mall"
               }
             ]
+          },
+          {
+            "type": "component-block",
+            "props": {
+              "placeId": null
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": "cmien76p70003kcwpoolkaz6u"
+                  }
+                ],
+                "propPath": [
+                  "placeId"
+                ]
+              }
+            ],
+            "component": "place"
           },
           {
             "type": "component-block",
@@ -11059,7 +11218,7 @@
             "type": "paragraph",
             "children": [
               {
-                "text": "나그네에게 오아시스가 되어 준 Mall of Sofia 안녕...!"
+                "text": "나그네에게 오아시스가 되어 준 The Mall 안녕...!"
               }
             ]
           },
@@ -11111,7 +11270,7 @@
             "type": "paragraph",
             "children": [
               {
-                "text": "여기는 버스 번호나 방향이 잘 나와 있어서 안심 된다."
+                "text": "여기는 버스 번호나 방향이 잘 나와 있어서 정말 좋았다."
               }
             ]
           },
@@ -11215,6 +11374,26 @@
             ]
           },
           {
+            "type": "component-block",
+            "props": {
+              "placeId": null
+            },
+            "children": [
+              {
+                "type": "component-inline-prop",
+                "children": [
+                  {
+                    "text": "cmienbgh00004kcwpnr16trfa"
+                  }
+                ],
+                "propPath": [
+                  "placeId"
+                ]
+              }
+            ],
+            "component": "place"
+          },
+          {
             "type": "paragraph",
             "children": [
               {
@@ -11273,125 +11452,6 @@
             "children": [
               {
                 "text": "바깥은 시원한테 실내는 여름인데 난방을 킨 건지 후끈하다. 불가리아 사람들은 따뜻한 걸 좋아하나? 11시쯤 리셉션과 공용 공간이 문을 닫는다고 해서 방으로 들어가 환복하고 이닦고 세수하고 충전기 꽂고 잤다."
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "cmdbhe1x6001mmdamgup3mg5c",
-      "title": "외국인으로서 다시 사회화를 배우다",
-      "excerpt": "내가 교환학생을 선택하게 된 이유 중 하나는 소심하고 의존적인 성격을 바꾸고 싶어서였다. 새로운 환경에 놓이면 새로운 행동을 하게 되고, 행동이 바뀌는 것은 곧 성격이 바뀌는...",
-      "publishedAt": "2025-03-20T23:00:00.000Z",
-      "tags": {
-        "name": "미분류"
-      },
-      "keywords": [
-        {
-          "name": "성격"
-        },
-        {
-          "name": "새로운"
-        },
-        {
-          "name": "행동"
-        },
-        {
-          "name": "사람들"
-        },
-        {
-          "name": "언어"
-        },
-        {
-          "name": "어떻"
-        }
-      ],
-      "content": {
-        "document": [
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "내가 교환학생을 선택하게 된 이유 중 하나는 소심하고 의존적인 성격을 바꾸고 싶어서였다. 새로운 환경에 놓이면 새로운 행동을 하게 되고, 행동이 바뀌는 것은 곧 성격이 바뀌는 것과 같은 말이다. 원하는 결과가 정확히 어떤 것인지 모른다 해도 일단 새로운 환경에 던져질 필요가 있다고 생각했다. 그 선택은 나를 실망시키지 않았다. 외국에 온 지 하루만에 내 행동이 바뀌었음을, 즉 성격이 바뀌었음을 깨달았다."
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "사람들이 하루종일 내뱉는 언어들 중에 정보를 전달하는 것보다 인간관계 유지 목적의 언어(phatic language)가 더 많다는데, 나는 그런 걸 어색해하고 어려워했다. 정보를 전달하는 언어는 대학에 와서 발표연습을 많이 하고, 발표하는 방법에 대한 이론수업도 들으면서 어찌저찌 길렀지만 인간관계 유지 목적의 언어는 누가 가르쳐주지도 않고 어떻게 배워야 하는지 몰랐다. 그런 걸 자연스럽게 하는 사람은 타고난 것이라고 믿었다. 하지만 그 생각은 틀렸다. 언제든지 후천적으로 습득할 수 있는 것이었다."
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "습득하는 방법은 관찰과 모방이다. 나는 스스로를 외국인, 또는 사회화 이전 아기의 위치에 놓음으로써 관찰과 모방을 다시 배운 기분이다. 낯선 땅에 발을 들인 외국인으로서 빵가게에서 옆사람이 입으로 어떤 소리를 내고 어디를 쳐다보며 어떻게 주문하는지, 마트 계산대에서 내 앞 차례 손님이 직원과 어떻게 상호작용하는지 필사적으로 관찰해야 했다. 관찰한 것을 내 차례가 왔을 때 즉각 모방했고, 원하던 결과(제품을 구매함)를 얻었다. 이 경험으로 얻은 자신감은 꽤 신선했다. 첫 심부름으로 혼자 물건을 구매한 꼬맹이가 느낄 만한 감각. 오랫동안 잊고 있었던 감각이었다."
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": "내 나라에서도 계산대 직원은 말을 했을텐데, 내가 그걸 이렇게 주의깊게 들어본 적이 있었나? 그 말을 제대로 받은 적이 있었나? 말 없이도 물건은 살 수 있는데 왜 사람들은 안녕하세요, 감사합니다, 안녕히 가세요 같은 말을 하는지, 왜 대답을 기대하지도 않으면서 how are you, good morning 같은 인사치레를 하는지 과거의 나는 알려고 하지도 않았다. 이제는 사람들이 왜 그러는지 조금은 알 것 같다. 계산대 직원과의 짧은 상호작용이 더 이상 스트레스가 아닌 익숙함으로 다가옴을 자각할 때, 외국인이 되어보기로 한 선택에 만족했다."
-              }
-            ]
-          },
-          {
-            "type": "heading",
-            "level": 2,
-            "children": [
-              {
-                "text": "링크"
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": ""
-              }
-            ]
-          },
-          {
-            "type": "component-block",
-            "props": {
-              "post": {
-                "id": "cmdbibkcv002imdamrm38zeqq",
-                "label": "인생의 목적은 개인의 지난 삶의 연장선이다.",
-                "data": {
-                  "id": "cmdbibkcv002imdamrm38zeqq",
-                  "title": "인생의 목적은 개인의 지난 삶의 연장선이다.",
-                  "links": [],
-                  "backlinks": []
-                }
-              }
-            },
-            "children": [
-              {
-                "type": "component-inline-prop",
-                "children": [
-                  {
-                    "text": ""
-                  }
-                ],
-                "propPath": [
-                  "alias"
-                ]
-              }
-            ],
-            "component": "internalLink"
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": ""
               }
             ]
           }
@@ -29691,48 +29751,48 @@
                   "title": "0820-0828 불가리아-세르비아-크로아티아-슬로베니아 여행 (발칸 2부)",
                   "links": [
                     {
-                      "id": "cmeybpzev0059tf6m0eohrgcd",
-                      "title": "0824 이보 안드리치와 니콜라 테슬라, 역사박물관, 체바피"
-                    },
-                    {
-                      "id": "cmeybk58v0056tf6miunawat1",
-                      "title": "0821上 간판 구경, 세르디카 유적지, 성 네델랴 성당, 경찰 박물관"
-                    },
-                    {
-                      "id": "cmeybveov005dtf6mt54acvov",
-                      "title": "0828-0901 마지막 나날들"
-                    },
-                    {
-                      "id": "cmf0y9qqt0060tf6mh5d1giqe",
-                      "title": "0823下 유고슬라비아 박물관, 에스노그래피 박물관, 칼레메그단"
-                    },
-                    {
-                      "id": "cmeybm8xr0057tf6m650g2ula",
-                      "title": "0822 베오그라드 도착과 성당 구경"
-                    },
-                    {
-                      "id": "cmeybtbfb005ctf6mviem4of3",
-                      "title": "0827 류블랴나에서 여행 마무리"
+                      "id": "cmexabj9s004ytf6molmwj0d6",
+                      "title": "0820 불가리아 도착"
                     },
                     {
                       "id": "cmeybnk940058tf6ms93yr3uc",
                       "title": "0823上 노비 베오그라드와 미리예보의 브루탈리즘"
                     },
                     {
-                      "id": "cmeyou6gp005ltf6m834hxyca",
-                      "title": "0821下 역사박물관, 불가리아인민공화국 체험, 성 소피아 성당"
+                      "id": "cmeybk58v0056tf6miunawat1",
+                      "title": "0821上 간판 구경, 세르디카 유적지, 성 네델랴 성당, 경찰 박물관"
+                    },
+                    {
+                      "id": "cmeybm8xr0057tf6m650g2ula",
+                      "title": "0822 베오그라드 도착과 성당 구경"
+                    },
+                    {
+                      "id": "cmeybpzev0059tf6m0eohrgcd",
+                      "title": "0824 이보 안드리치와 니콜라 테슬라, 역사박물관, 체바피"
                     },
                     {
                       "id": "cmeybqu8v005atf6mejzflpl7",
                       "title": "0825 베오그라드와의 이별"
                     },
                     {
+                      "id": "cmeybtbfb005ctf6mviem4of3",
+                      "title": "0827 류블랴나에서 여행 마무리"
+                    },
+                    {
+                      "id": "cmeybveov005dtf6mt54acvov",
+                      "title": "0828-0901 마지막 나날들"
+                    },
+                    {
                       "id": "cmeybsivg005btf6m6naxp24a",
                       "title": "0826 자그레브에서 한 것 책읽고 멍때리기"
                     },
                     {
-                      "id": "cmexabj9s004ytf6molmwj0d6",
-                      "title": "0820 불가리아 도착"
+                      "id": "cmeyou6gp005ltf6m834hxyca",
+                      "title": "0821下 역사박물관, 불가리아인민공화국 체험, 성 소피아 성당"
+                    },
+                    {
+                      "id": "cmf0y9qqt0060tf6mh5d1giqe",
+                      "title": "0823下 유고슬라비아 박물관, 에스노그래피 박물관, 칼레메그단"
                     }
                   ],
                   "backlinks": []
@@ -42252,6 +42312,551 @@
             "children": [
               {
                 "text": "인터넷 제공업체랑 핫스팟 정책에서 보안상의 이유로 포트 22를 막을 수 있다고 한다."
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "cmiet1w8n0005kcwpbwuo3i75",
+      "title": "기행문과 연동되는 지도 컴포넌트 만들기",
+      "excerpt": "내 웹사이트는 볼 때마다 뜯어고칠 생각만 든다. 9월에 한국 오자마자 2달동안 조형전 프로젝트하면서 벼르고 벼르다가 드디어 한가해져서 며칠간 웹사이트를 애착 개껌처럼 씹고 뜯...",
+      "publishedAt": "2025-11-24T15:00:00.000Z",
+      "tags": {
+        "name": "코딩"
+      },
+      "keywords": [
+        {
+          "name": "했다"
+        },
+        {
+          "name": "장소"
+        },
+        {
+          "name": "field"
+        },
+        {
+          "name": "지도"
+        },
+        {
+          "name": "id"
+        },
+        {
+          "name": "마커"
+        }
+      ],
+      "content": {
+        "document": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "내 웹사이트는 볼 때마다 뜯어고칠 생각만 든다. 9월에 한국 오자마자 2달동안 조형전 프로젝트하면서 벼르고 벼르다가 드디어 한가해져서 며칠간 웹사이트를 애착 개껌처럼 씹고 뜯었다. 헤더와 사이드바를 갈아엎고 스마트폰 UI를 개선했다. 특히 오른쪽 귀퉁이에 흩어져 있던 로컬그래프와 글 내부 목차, 그리고 나중에 만들 새로운 기능들을 그러모아 왼쪽 사이드바와 대칭을 이루는 오른쪽 사이드바로 만든 것이 큰 변화였다. 이 프로젝트는 얼마 없는 나만의 장난감이니까, 글로벌 그래프와 같이 그렇게 많이 찾을 것 같은 기능이 아니라도 일단 만들고 싶다면 만들고 보자고 생각했다. 그래서 쓸모 있을지 없을지 모르는 기능들은 일단 오른쪽에 때려박기로 했다. 그리고 어도비 일러스트레이터의 오른쪽 창들처럼 기호에 따라 'x'를 눌러 숨기고, 다시 꺼낼 수 있게 했다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그 중 하나가 인터랙티브 지도였다. 어쩌다 보니 글 쓰려고 교환학생 간 사람처럼 기행문이 70편이나 나왔는데 두루마리처럼 글과 사진의 연속이고 나의 여정이 한눈에 보이지 않는 것이 못마땅했다. 여행을 하면서 가장 짜릿했던 때는 물리적 이동이 체감되는 순간들이었다. 순간이동이나 VR로는 경험할 수 없을 시간이 주는 물성 말이다. 링크를 건너다니는 것만으로는 여정을 재현하기에는 심하게 부족했다. 물론 지도로도 시간의 물성을 표현하기에는 턱없이 부족하지만 작게나마 공간 이동을 시각화한 것만으로도 지금은 만족한다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "원하는 기능"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "unordered-list",
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "글에 있는 장소들을 기존에는 구글맵에 연결해 놓았었다. 이것들을 버튼 따위로 바꾼다. 그리고 이걸 누르면 사이드바의 지도에서 그 위치가 표시되게 한다."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "사이드바의 지도에는 글에 있는 모든 장소들이 마커로 표시된다. 마커를 클릭하면 글에서 해당 장소를 언급한 곳으로 글이 스크롤된다."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "사이드바의 지도의 마커들에는 여정에 따라 순번이 매겨져 있고 모두 동선으로 연결되어 있다."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "글을 스크롤하면 그 동선이 진행된다."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "'지도' 페이지에서는 내 블로그 전체의 모든 글들의 모든 장소들이 지도 하나에 마커로 표시된다. 마커를 클릭하면 그 장소를 언급한 글들이 뜬다. 그 클릭하면 그 페이지로 가고 그 장소가 언급된 곳으로 스크롤된다."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "구현 방법"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "우선 라이브러리를 정해야 했다. 이전에도 "
+              },
+              {
+                "href": "https://www.emgoto.com/react-map-component/",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "Emma Goto의 블로그에서 Mapbox를 이용해 자신이 등산한 산들을 표시한 것"
+                  }
+                ]
+              },
+              {
+                "text": "에 관심을 갖고 있었다. 그래서 Mapbox를 사용할까나… 정도로 생각하고 있다가 11월 20일쯤 본격적으로 구글링을 해봤다. 구글맵 API나 네이버지도 API같은 건 기능 많고 빠르고 좋겠지만 당연히 비용이 있고 내가 우버 앱 같은 거 만드는게 아니기 때문에 쓸 이유가 없었다. leaflet이라는 것도 있었는데 리액트랑 쓰기는 뭔가 불편해 보였다. 비교글 같은 걸 읽어봤을때 mapbox가 좋을 것 같았고 mapbox가 좀더 상업적인 용도라면 maplibre가 그것의 오픈소스 버전인 것 같았다. 그리고 또 예전에 눈여겨봤던 "
+              },
+              {
+                "href": "https://mappingthearchive.de/",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "Mapping the Archive"
+                  }
+                ]
+              },
+              {
+                "text": "라는 웹사이트에 문화공간들을 표시하기 위한 인터랙티브 지도가 있었는데 그걸 "
+              },
+              {
+                "href": "https://builtwith.com/",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "builtwith.com"
+                  }
+                ]
+              },
+              {
+                "text": "에 넣어 보니 MapLibre gl js가 나왔다. 내가 만들고 싶었던 게 딱 저런 단순하면서 스타일 수정 가능한 지도를 만들고 싶었기 때문에 바로 maplibre를 쓰기로 했다. 여기를 보면 "
+              },
+              {
+                "href": "https://visgl.github.io/react-map-gl/",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "React-map-gl"
+                  }
+                ]
+              },
+              {
+                "text": "이 mapbox와 maplibre를 리액트에서 쓸 수 있게 해놓은 라이브러리인 것 같았다. 해당 사이트의 Developer Guide를 보고 하면서 안되는 건 chatGPT한테 물어보면서 했다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "아니, 그러기 전에, 그 maplibre의 <Map>컴포넌트를 쓰기 전에 거기에 먹일 데이터를 만들어줘야 했다. 내 cms가 돌아가고 있는 vps에 오랜만에 가물가물한 기억을 되짚으며 찾아가서 keystone 스키마를 추가했다. 대충 위도와 경도, 장소의 이름 정도의 데이터를 넣어주면 되는 것이었다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "처음의 계획은 이랬다. '장소' list를 만든다. Document field(글의 본문)에 들어갈 커스텀 컴포넌트를 relationship 타입으로 만들어서 글을 쓸때 장소를 생성/편집한다. 그러면 글로벌 지도에서는 '장소'를 쿼리해오면 되겠지?"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "는 무슨.. list field가 아닌 list 안의 Document field에 들어가는, 그러니까 메타데이터가 아니라 본문 안에 섞여 들어가는 커스텀 컴포넌트는 진짜 relationship 타입이 아니었다. 양방향에서 접근가능한 relation이 아니라 그 list의 id만 저장하는 거였다. "
+              },
+              {
+                "href": "https://keystonejs.com/docs/guides/document-fields#relationship-fields",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "여기"
+                  }
+                ]
+              },
+              {
+                "text": "에 설명이 나와 있다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "이것 때문에 내가 여름에 내부링크 만들 때 골치를 앓았었지… 완전히 잊고 있었다. 그때는 afterOperation hook으로 Document 안의 internallink 컴포넌트를 다 뽑아서 따로 만들어 놓은 list field에 넣어줬었다. 장소도 내부링크 때처럼 할 수 있었지만 다르게 하기로 했다. 왜냐면 장소 데이터는 꼭 inline에서 create, edit를 해야 하고 document field의 컴포넌트에서는 그럴 수 없기 때문이다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그래서 장소 list 만들고 글에는 장소 relation field를(Place.posts), 장소에는 글 relation field를(Post.places) 만들어서 서로 연결했다. 그리고 어쨌든 본문의 사이사이에 그 장소 버튼이 들어가야 하니까, 연결된 places의 id만 저장하는 document field를 글 list에 만들어줬다. 실질적인 연결은 document 밖의 relationship field가 하고, document 안에는 프론트엔드에 버튼을 렌더하기 위한 플레이스홀더만 끼워 둔 셈이다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "두 번 작업하는 거 아니냐고? 이게 최선이었다. cms가 본문에 relationship 넣는걸 허락을 안해주는데 어떡할 것인가. 어떤 불편함은 받아들여야만 한다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "사실 이딴 식으로 설명해 봤자 keystone cms 써본 사람 아니면 아무도 이해 못할 것 같은데… 어쨌든 완성된 '글에 장소를 넣는 절차'는 이렇다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "절차"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "ordered-list",
+            "children": [
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "구글맵에서 장소를 찾는다"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "아이콘을 우클릭해서 위도와 경도를 복사한다"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "cms 글 편집 화면의 places field에서 새로운 'place'를 생성하고, 위도와 경도 그리고 장소의 이름을 기입한 뒤 저장한다."
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "저장하면 나오는 해당 place의 id를 복사한다"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "list-item",
+                "children": [
+                  {
+                    "type": "list-item-content",
+                    "children": [
+                      {
+                        "text": "같은 글의 본문 중 장소가 들어가야 하는 부분에 place 컴포넌트를 삽입하고, 복사해둔 id를 붙여넣는다."
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "이게 편집자로서 할 일이다. '불가리아 도착'이라는 글 한 개에 들어가는 장소들만 작업을 해 두었다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "프론트엔드"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그럼 데이터 구조가 완성이 되었고, 테스트를 위한 최소한의 데이터도 완성이 되었으니 어떻게 보여질지를 만들면 된다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "children": [
+              {
+                "text": "클릭하면 서로 영향"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "위에 썼듯이 글에 있는 장소버튼과 지도는 연결되어 있어야 한다. 더 구체적으로 말하자면 글에 있는 버튼을 클릭하면 지도가 반응하고, 지도에 있는 마커를 클릭하면 글에 있는 버튼이 반응해야 한다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "더 구체적으로 말하자면 글에 있는 버튼을 클릭했을 때 지도가 그 버튼과 일치하는 장소를 나타내는 마커가 있는 곳으로 flyto()를 한 번 해야 하고, 지도에 있는 마커를 클릭했을 때 그 마커가 나타내는 장소와 일치하는 버튼이 있는 위치로 글이 scrollIntoView()를 한 번 하고 + 그 버튼이 잠깐 초록색이 되었다가 원상태로 돌아와야 한다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "장소가 일치하는지 어떻게 알까? 장소의 id를 가지고 알 수 있다. 글의 버튼 즉 PlacePlaceholder(이름이 기괴해 보이지만 '장소'의 본문 내 플레이스홀더 라는 뜻이다)는 id를 가지고 있다. 그리고 글은 자기가 연결된 '장소'들을 가지고 있다(post.places). PlacePlaceholder는 post.places에서 id를 이용해 장소의 인덱스와 이름을 갖고 와서 보여준다. 예: '불가리아 도착' 글의 첫 번째 PlacePlaceholder 컴포넌트는 '1', 'Zugi'라는 텍스트를 보여주고 있으며, 그걸 클릭할 때 id로 뭔가를 할 수 있다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "지도의 마커는 위도, 경도, 장소 이름, id, 연결된 글들을 가지고 있다. 마커는 인덱스를 보여준다. 마커 역시 그걸 클릭할 때 id로 뭔가를 할 수 있다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "PlacePlaceholder와 지도의 마커가 클릭될 때, 그 id를 zustand 상태 'clicked'에 넣어준다. 난 상태관리에 보통 useState, useRef, localstorage+zustand, zustand 얘네들을 돌려 쓰는데, props로 넘겨줄 수 없을 경우 zustand를, 새로고침해도 남아있어야하는경우 localstorage+zustand를, 나머지의 경우 useState를, 재렌더되면 안될 경우 useRef를 쓰고 있다. 맞게 하고 있는 건지는 잘 모르겠다. 이번에 id를 zustand에 넣는 이유도 지도랑 글의 컴포넌트가 서로 접점이 아예 없기 때문이다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "clicked에 넣어진 id는 계속 거기에 있을 필요가 없다. 어차피 한 번만 scrollIntoView+색변화 하면 되고 한 번만 flyto 하면 된다. 그래서 useEffect써서 clicked가 바뀌었고 null이 아닐경우 그것들을 한 번씩 실행하게 했고, clicked는 800ms 이후에 저절로 null로 돌아가게 했다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그리고 PlacePlaceholder와 지도의 마커 모두에 hover했을 시 툴팁(예: 클릭하여 지도의 해당 위치로 이동)이 뜨게 했다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "children": [
+              {
+                "text": "글 스크롤하면 지도 동선 이동"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "동선은 maplibre로 안되는 것 같아서 찾아보다가 "
+              },
+              {
+                "href": "https://project-osrm.org/",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "OSRM"
+                  }
+                ]
+              },
+              {
+                "text": "이라는 걸 알게 되었다. 두 장소 사이의 동선을 계산하고 line으로 내보내 주는 오픈소스인데, 서버기반 서비스라서 osrm 서버를 만들어 줘야 했다. 난 그런건 못한다. 그래서 chatGPT한테 꼭 서버를 만들어야 하냐, 서버 안만들면서 그냥 더도 덜도 말고 두 위치 사이의 동선 딱 하나만 얻을 수 없냐, 많이 요청하지도 않을거고 많아 봐야 하루에 1000회 이하(개발시)일 거다 하면서 싹싹 빌었더니 그런 사람들을 위해서 미리 만들어놓은 무료 서버가 있다고 알려줬다. 뭘 설치할 필요도 없고 그냥 "
+              },
+              {
+                "href": "https://project-osrm.org/docs/v5.5.1/api/#general-options",
+                "type": "link",
+                "children": [
+                  {
+                    "text": "url 만들어서 fetch"
+                  }
+                ]
+              },
+              {
+                "text": "하기만 하면 되는 고마운 서비스였다.."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "중간에 실수로 fetch를 연속으로 여러번 했더니 refused 뜨길래 차단된건가 했는데 자비롭게도 몇 분 후 풀렸다. 그거 사용해서 places들을 서로서로 연결하는 동선 geojson을 가져와서 maplibre의 layer로 렌더했다."
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그리고 글을 스크롤하면 지도동선이 이동하게 한다는 멋진? 기능을 실현하기 위해 PlacePlaceholder들의 위치를 배열로 가져와서 현재 스크롤위치와 비교해 현재 어느 장소a와 장소b의 사이에 있는지 그리고 퍼센트가 얼마나 되는지를 구해야겠다~ 그리고 새로운 maplibre layer를 만들어서 그 진행도에 따라 일부가 그려진 선을 렌더해야겠다~ 하는 계획을 chatGPT와 함께 세우고 있었는데 갑자기 얘가 불쑥 '그걸 다 합친 hook를 만들어줄게, 어때?' 이러길래 얼떨결에 한번 해보라고 했더니 그게 되는거다;; 물론 장소 인덱싱 등 오류가 많아서 천천히 고쳤지만."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 3,
+            "children": [
+              {
+                "text": "글로벌 지도"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "/map 페이지에서는 그냥 place list들을 쿼리해서 가져와서 이전에 한것처럼 지도 만들고 마커 만들면 된다. 동선은 필요 없다. 마커를 클릭했을때 바로 글 페이지로 가게 하려고 했었는데 생각해 보니 장소 하나에 여러 글이 달려있을 수 있을 것 같아서 마커를 클릭했을 때 Place.posts들이 사이드바의 지도가 있던 곳에 뜨고, 거기서 글을 클릭하면 해당 장소의 PlacePlaceholder가 있는 곳으로 scrollIntoView()되게 했다. 이때도 지도 페이지와 글 페이지의 접점이 없기 때문에 zustand써서 글 클릭했을때 장소 id를 저장하고, 그 글의 페이지에서 scrollIntoView()를 한 다음에 null로 set해 줬다."
+              }
+            ]
+          },
+          {
+            "type": "heading",
+            "level": 2,
+            "children": [
+              {
+                "text": "마무리"
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": "그렇다. 완벽하진 않은 지도지만 오늘은 여기까지 완성했다. 기억이 날아가기 전에 엉성하게나마 기록해 둔다. 앞으로는 지금 테스트 글 1개에서 한 것과 같이 70개의 글들에 장소데이터들을 넣어주는… 간단...한..? 노가다만 하면 된다."
               }
             ]
           }
@@ -73598,6 +74203,244 @@
       }
     },
     {
+      "id": "cmdc93ok7008imdam853f86o2",
+      "title": "Changelog",
+      "excerpt": "버전 날짜 링크 1.0.0 2024.12.16  solmee-xyz.vercel.app  (전: solmee.xyz) 2.0.0 2025.7.22 solmi.wiki 2.0....",
+      "publishedAt": "2025-06-29T22:00:00.000Z",
+      "tags": {
+        "name": "미분류"
+      },
+      "keywords": [],
+      "content": {
+        "document": [
+          {
+            "type": "layout",
+            "layout": [
+              1,
+              1,
+              1
+            ],
+            "children": [
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "버전"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "날짜"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "링크"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "layout",
+            "layout": [
+              1,
+              1,
+              1
+            ],
+            "children": [
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "1.0.0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "2024.12.16"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": ""
+                      },
+                      {
+                        "href": "https://solmee-xyz.vercel.app/",
+                        "type": "link",
+                        "children": [
+                          {
+                            "text": "solmee-xyz.vercel.app"
+                          }
+                        ]
+                      },
+                      {
+                        "text": ""
+                      }
+                    ]
+                  },
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "(전: solmee.xyz)"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "layout",
+            "layout": [
+              1,
+              1,
+              1
+            ],
+            "children": [
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "2.0.0"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "2025.7.22"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "solmi.wiki"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "layout",
+            "layout": [
+              1,
+              1,
+              1
+            ],
+            "children": [
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "2.0.1"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "2025.11.26"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "layout-area",
+                "children": [
+                  {
+                    "type": "paragraph",
+                    "children": [
+                      {
+                        "text": "디자인 수정, 지도, 컴포넌트 라이브러리, 각주 등 추가"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "text": ""
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "cmdc92ytj008gmdamgb3x47wl",
       "title": "웹사이트 뒤 사람에 대해서",
       "excerpt": "정솔미 유년기에는  파워포인트  슬라이드 꾸미기로 타이포그래피를 연마하고, 청소년기에는  나무위키 를 탐독하며  하이퍼링크의 문법 을 체득했다. 시각디자인학과 저학년 전공수업...",
@@ -73756,195 +74599,6 @@
             "children": [
               {
                 "text": "작성 예정입니다."
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "cmdc93ok7008imdam853f86o2",
-      "title": "Changelog",
-      "excerpt": "버전 날짜 링크 1.0.0 2024.12.16  solmee-xyz.vercel.app  (전: solmee.xyz) 2.0.0(현재) 2025.7.22 solmi.wiki  ",
-      "publishedAt": "2025-06-29T22:00:00.000Z",
-      "tags": {
-        "name": "미분류"
-      },
-      "keywords": [],
-      "content": {
-        "document": [
-          {
-            "type": "layout",
-            "layout": [
-              1,
-              1,
-              1
-            ],
-            "children": [
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "버전"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "날짜"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "링크"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "layout",
-            "layout": [
-              1,
-              1,
-              1
-            ],
-            "children": [
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "1.0.0"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "2024.12.16"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": ""
-                      },
-                      {
-                        "href": "https://solmee-xyz.vercel.app/",
-                        "type": "link",
-                        "children": [
-                          {
-                            "text": "solmee-xyz.vercel.app"
-                          }
-                        ]
-                      },
-                      {
-                        "text": ""
-                      }
-                    ]
-                  },
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "(전: solmee.xyz)"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "layout",
-            "layout": [
-              1,
-              1,
-              1
-            ],
-            "children": [
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "2.0.0(현재)"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "2025.7.22"
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "layout-area",
-                "children": [
-                  {
-                    "type": "paragraph",
-                    "children": [
-                      {
-                        "text": "solmi.wiki"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "type": "paragraph",
-            "children": [
-              {
-                "text": ""
               }
             ]
           }

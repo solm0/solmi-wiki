@@ -1,5 +1,3 @@
-import { ArrowUpToLine } from "lucide-react";
-
 export default function GoToTop({
   title,
 }: {
@@ -17,16 +15,12 @@ export default function GoToTop({
   }
   
   return (
-    <div className="h-auto w-full flex items-start gap-4">
-      <div className='text-sm h-auto w-auto rounded-sm items-center pointer-events-auto break-keep'>
-        {title}
-      </div>
-
+    <div className="h-auto w-full flex items-center gap-4 mb-1">
       <button
         onClick={goToTop}
-        className="h-6 w-6 rounded-sm flex justify-center items-center hover:text-text-700 transition-all duration-300 pointer-events-auto"
+        className='text-xs h-auto w-auto rounded-sm items-center pointer-events-auto break-keep hover:text-text-700 transition-all duration-300'
       >
-        <ArrowUpToLine className="w-4 h-4" />
+        {title}
       </button>
     </div>
   )
