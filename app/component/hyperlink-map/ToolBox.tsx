@@ -126,7 +126,7 @@ export default function ToolBox({
 
         {noOpenTools && <div className="text-text-700 pt-4">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+        <div className="w-full h-auto flex flex-col gap-4 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* local graph */}
           {post &&

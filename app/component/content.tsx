@@ -14,6 +14,83 @@ import Iframe from "./document/iframe";
 import PlacePlaceholder from "./document/PlacePlaceholder";
 import FootNote from "./document/Footnote";
 
+function ContentItem({
+  document, idx, font, places
+}:{
+  document: RichTextNode;
+  idx: number;
+  font?: string;
+  places?: Place[];
+}) {
+  switch (document.type) {
+    case 'heading':
+      return (
+        <Headings heading={document} font={font ?? 'serif'} />
+      )
+    case 'paragraph':
+      return (
+        <div className="py-4">
+          <Paragraph p={document} />
+        </div>
+      );
+    case 'unordered-list':
+      return (
+        <Ul ul={document} />
+      )
+    case 'ordered-list':
+      return (
+        <Ol ol={document} />
+      )
+    case 'divider':
+      return (
+        <hr className="border-t text-text-600" />
+      )
+    case 'blockquote':
+      return (
+        <Blockquote quote={document} />
+      )
+    case 'layout':
+      return (
+        <LayoutBlock layout={document} />
+      )
+    case 'component-block':
+      switch (document.component) {
+        case 'internalLink': 
+          return (
+            <InlineInternalLink internalLinkComponent={document} />
+          )
+        case 'codeBlock':
+          return (
+            <CodeBlock codeblock={document} />
+          )
+        case 'notice':
+          return (
+            <Notice notice={document} />
+          )
+        case 'quote':
+          return (
+            <Quote quote={document} />
+          )
+        case 'carousel':
+          return (
+            <Carousel carIdx={idx} carousel={document} />
+          )
+        case 'iframe':
+          return (
+            <Iframe src={document.children?.[0].children?.[0].text} />
+          )
+        case 'place':
+          return (
+            <PlacePlaceholder placeId={document.children?.[0].children?.[0].text} places={places}/>
+          )
+        case 'footnote':
+          return (
+            <FootNote text={document.children?.[0].children?.[0].text} link={document.children?.[1].children?.[0].text} />
+          )
+      }
+  }
+}
+
 export default function Content({
   post, font, places
 }: {
@@ -22,78 +99,26 @@ export default function Content({
   places?: Place[];
 }) {
   return (
-    <div>
-      {
-        post?.map((document, idx) => {
-          switch (document.type) {
-            case 'heading':
-              return (
-                <Headings key={idx} heading={document} font={font ?? 'serif'} />
-              )
-            case 'paragraph':
-              return (
-                <div key={idx} className="py-4">
-                  <Paragraph p={document} />
-                </div>
-              );
-            case 'unordered-list':
-              return (
-                <Ul key={idx} ul={document} />
-              )
-            case 'ordered-list':
-              return (
-                <Ol key={idx} ol={document} />
-              )
-            case 'divider':
-              return (
-                <hr key={idx} className="border-t text-text-600" />
-              )
-            case 'blockquote':
-              return (
-                <Blockquote key={idx} quote={document} />
-              )
-            case 'layout':
-              return (
-                <LayoutBlock key={idx} layout={document} />
-              )
-            case 'component-block':
-              switch (document.component) {
-                case 'internalLink': 
-                  return (
-                    <InlineInternalLink key={idx} internalLinkComponent={document} />
-                  )
-                case 'codeBlock':
-                  return (
-                    <CodeBlock key={idx} codeblock={document} />
-                  )
-                case 'notice':
-                  return (
-                    <Notice key={idx} notice={document} />
-                  )
-                case 'quote':
-                  return (
-                    <Quote key={idx} quote={document} />
-                  )
-                case 'carousel':
-                  return (
-                    <Carousel key={idx} carIdx={idx} carousel={document} />
-                  )
-                case 'iframe':
-                  return (
-                    <Iframe key={idx} src={document.children?.[0].children?.[0].text} />
-                  )
-                case 'place':
-                  return (
-                    <PlacePlaceholder key={idx} placeId={document.children?.[0].children?.[0].text} places={places}/>
-                  )
-                case 'footnote':
-                  return (
-                    <FootNote key={idx} text={document.children?.[0].children?.[0].text} link={document.children?.[1].children?.[0].text} />
-                  )
-              }
+    <>
+      {post?.map((document, idx) => 
+        <div
+          key={idx}
+          className={
+            document.type === 'component-block' && document.component === 'carousel'
+              ? 'w-full'
+              : font === 'sans'
+                ? 'max-w-[43em]'
+                : 'max-w-[47em]'
           }
-        })
-      }
-    </div>
+        >
+          <ContentItem
+            document={document}
+            idx={idx}
+            font={font}
+            places={places}
+          />
+        </div>
+      )}
+    </>
   )
 }

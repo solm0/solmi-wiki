@@ -1,3 +1,5 @@
+import { ArrowUpToLine } from "lucide-react";
+
 export default function GoToTop({
   title,
 }: {
@@ -19,6 +21,7 @@ export default function GoToTop({
       onClick={goToTop}
       className='text-left leading-[1.5em] mb-1 text-xs h-auto w-full pointer-events-auto break-keep hover:text-text-700 transition-all duration-300'
     >
+      <ArrowUpToLine className="w-3 h-3 inline mr-1" />
       {title}
     </button>
   )

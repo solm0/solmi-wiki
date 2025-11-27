@@ -17,19 +17,19 @@ export default function Carousel({
 
   return (
     <div
-      className="w-full md:max-w-[47rem] overflow-y-hidden overflow-x-scroll flex gap-4 snap-x h-auto overscroll-auto custom-hor-scrollbar my-4"
+      className="w-full overflow-y-hidden overflow-x-scroll flex gap-1 snap-x h-auto overscroll-auto custom-hor-scrollbar my-4"
     >
       {carousel.props.items.map((item, idx) => {
         const cloudName = "dpqjfptr6";
 
         const type = item.type === 'audio'
           ? 'video'
-          : item.type;
+          : item.type ?? 'image';
         let ext;
         switch (item.type){
-          case 'image': ext = 'jpg'; break;
           case 'audio': ext = 'mp3'; break;
           case 'video': ext = 'mp4'; break;
+          default: ext = 'jpg';
         }
 
         const publicId = item.imageSrc;
@@ -40,26 +40,7 @@ export default function Carousel({
         
         const url = `https://res.cloudinary.com/${cloudName}/${type}/upload/${transformations}/${publicId}.${ext}`;
 
-        if (item.type === 'image') {
-          return (
-            <div
-              key={idx}
-              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
-            >
-              <Image
-                src={url}
-                width={800}
-                height={800}
-                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
-                alt={item.alt}
-                id={`img-${carIdx}-${idx}`}
-                onClick={() => setIdx(idx)}
-                unoptimized
-              />
-              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
-            </div>
-          )
-        } else if (item.type === 'video') {
+        if (item.type === 'video') {
           return (
             <div
               key={idx}
@@ -87,6 +68,25 @@ export default function Carousel({
                   Your browser does not support the audio tag.
                 </audio>
               </div>
+              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+            </div>
+          )
+        } else {
+          return (
+            <div
+              key={idx}
+              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+            >
+              <Image
+                src={url}
+                width={800}
+                height={800}
+                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
+                alt={item.alt}
+                id={`img-${carIdx}-${idx}`}
+                onClick={() => setIdx(idx)}
+                unoptimized
+              />
               {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
             </div>
           )

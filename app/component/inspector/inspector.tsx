@@ -78,7 +78,7 @@ export default function Inspector({
         {/* 작은화면 창닫기 */}
         <button
           onClick={() => setIsEnabled('noteInspector', false)}
-          className='fixed top-4 right-4 md:hidden w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
+          className='fixed top-4 right-4 md:hidden w-8 h-8 text-text-900 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
         >
           <ChevronLeft />
         </button>

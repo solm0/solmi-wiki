@@ -71,31 +71,43 @@ export default function Note({
   return (
     <article
       className={`
-         flex flex-col gap-12 w-full leading-[2em]
-        ${post.tags.name === '코딩' ? `${pretendard.className} font-sans max-w-[43em]` : `${maruburi.className} font-serif max-w-[47em]`}
+        flex flex-col gap-12 w-full leading-[2em]
+        ${post.tags.name === '코딩' ? `${pretendard.className} font-sans` : `${maruburi.className} font-serif`}
       `}
     >
       <h1
         ref={headRef}
-        className={`leading-[1.5em] text-4xl text-text-950 ${post.tags.name === '코딩' ? `font-medium ${pretendard.className}` : maruburi_bold.className}`}
+        className={`
+          leading-[1.5em] text-4xl text-text-950
+          ${post.tags.name === '코딩' ? `font-medium max-w-[43em]` : `${maruburi_bold.className} max-w-[47em]`}
+        `}
       >
         {post?.title}
       </h1>
 
-      <div className="flex flex-col gap-2">
+      <div
+        className={`
+          flex flex-col gap-2
+          ${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}
+        `}
+      >
         <RingLink />
         <Metadata post={post} />
       </div>
       
-      <div className="flex flex-col">
+      <div className="flex flex-col w-full">
         {post.content && <Content post={post.content.document} font={`${post.tags.name === '코딩' ? 'sans' : 'serif'}`} places={post.places} />}
       </div>
 
       {(post.backlinks?.length || (post.links?.length ?? 0) > 0) &&
-        <SequenceNav isFirstChild={isFirstChild} prev={prev} next={next} />
+        <div className={`${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}`}>
+          <SequenceNav isFirstChild={isFirstChild} prev={prev} next={next} />
+        </div>
       }
 
-      <Footer />
+      <div className={`${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}`}>
+        <Footer />
+      </div>
     </article>
   )
 }

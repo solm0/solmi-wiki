@@ -68,6 +68,7 @@ export default function Toc({
       level: (doc as HeadingNode).level,
     };
   });
+  const isThereHeading2 = headings?.find(h => h.level === 2);
 
   const [hoverHeading, setHoverHeading] = useState<string | null>();
   const [activeHeading, setActiveHeading] = useState<string | null>();
@@ -86,7 +87,7 @@ export default function Toc({
           key={idx}
           className={`
             w-auto flex items-center gap-2 cursor-pointer
-            ${level === 3 ? 'ml-7' : 'ml-0'}
+            ${isThereHeading2 && level === 3 ? 'ml-7' : 'ml-0'}
           `}
           style={{ top: `calc(2rem * ${idx})` }}
           onMouseEnter={() => setHoverHeading(slug)}
