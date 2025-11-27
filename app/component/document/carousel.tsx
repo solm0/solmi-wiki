@@ -21,31 +21,76 @@ export default function Carousel({
     >
       {carousel.props.items.map((item, idx) => {
         const cloudName = "dpqjfptr6";
+
+        const type = item.type === 'audio'
+          ? 'video'
+          : item.type;
+        let ext;
+        switch (item.type){
+          case 'image': ext = 'jpg'; break;
+          case 'audio': ext = 'mp3'; break;
+          case 'video': ext = 'mp4'; break;
+        }
+
         const publicId = item.imageSrc;
         const isGif = publicId.toLowerCase().startsWith('gif');
         const transformations = isGif
           ? "f_auto,q_auto"
           : "f_auto,q_auto,c_fill";
-        const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}.jpg`;
+        
+        const url = `https://res.cloudinary.com/${cloudName}/${type}/upload/${transformations}/${publicId}.${ext}`;
 
-        return (
-          <div
-            key={idx}
-            className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
-          >
-            <Image
-              src={imageUrl}
-              width={800}
-              height={800}
-              className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
-              alt={item.alt}
-              id={`img-${carIdx}-${idx}`}
-              onClick={() => setIdx(idx)}
-              unoptimized
-            />
-            {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
-          </div>
-        )
+        if (item.type === 'image') {
+          return (
+            <div
+              key={idx}
+              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+            >
+              <Image
+                src={url}
+                width={800}
+                height={800}
+                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
+                alt={item.alt}
+                id={`img-${carIdx}-${idx}`}
+                onClick={() => setIdx(idx)}
+                unoptimized
+              />
+              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+            </div>
+          )
+        } else if (item.type === 'video') {
+          return (
+            <div
+              key={idx}
+              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+            >
+              <video
+                src={url}
+                width={800}
+                height={800}
+                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
+                controls
+              />
+              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+            </div>
+          )
+        } else if (item.type === 'audio') {
+          return (
+            <div
+              key={idx}
+              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+            >
+              <div className="py-4 w-auto h-auto flex items-center justify-center">
+                <audio controls className="w-80">
+                  <source src={url} type={`audio/mp3`} />
+                  Your browser does not support the audio tag.
+                </audio>
+              </div>
+              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+            </div>
+          )
+        }
       })}
 
       <ImageModal

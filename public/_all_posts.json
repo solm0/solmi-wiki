@@ -3333,10 +3333,10 @@
     },
     "keywords": [
       {
-        "name": "한국"
+        "name": "영수증"
       },
       {
-        "name": "영수증"
+        "name": "한국"
       }
     ],
     "content": {
@@ -7382,29 +7382,6 @@
     }
   },
   {
-    "id": "cmdbgzsfq0017mdam3gh53yiw",
-    "title": "분류: 코로로",
-    "status": "published",
-    "excerpt": "국민대학교 시각디자인학과 코딩 소모임 '코로로'에서의 개인 프로젝트 결과물입니다. ",
-    "publishedAt": "2025-07-19T22:00:00.000Z",
-    "tags": {
-      "name": "미분류"
-    },
-    "keywords": [],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "국민대학교 시각디자인학과 코딩 소모임 '코로로'에서의 개인 프로젝트 결과물입니다."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
     "id": "cmdc5v7370078mdam860kiy5v",
     "title": "0603. Day 5. 라이프치히. 바흐 박물관 갔다가 여행에 질려 스타벅스에 처박히다.",
     "status": "published",
@@ -7444,12 +7421,27 @@
           ]
         },
         {
-          "type": "paragraph",
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0603_13_bcttf0",
+                "type": "video"
+              }
+            ]
+          },
           "children": [
             {
-              "text": "<video src=\"/0603_13.mp4\" width=\"630\" height=\"630\" controls></video>"
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
             }
-          ]
+          ],
+          "component": "carousel"
         },
         {
           "type": "paragraph",
@@ -7494,7 +7486,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_12_txlfbf"
+                "imageSrc": "0603_12_txlfbf",
+                "type": "image"
               }
             ]
           },
@@ -7532,7 +7525,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_11_v4tpfo"
+                "imageSrc": "0603_11_v4tpfo",
+                "type": "image"
               }
             ]
           },
@@ -7562,7 +7556,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_10_aigadu"
+                "imageSrc": "0603_10_aigadu",
+                "type": "image"
               }
             ]
           },
@@ -7600,7 +7595,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_9_fer85p"
+                "imageSrc": "0603_9_fer85p",
+                "type": "image"
               }
             ]
           },
@@ -7647,7 +7643,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_8_jtryma"
+                "imageSrc": "0603_8_jtryma",
+                "type": "image"
               }
             ]
           },
@@ -7689,7 +7686,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_7_kyvbpy"
+                "imageSrc": "0603_7_kyvbpy",
+                "type": "image"
               }
             ]
           },
@@ -7774,7 +7772,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_6_yxhjgg"
+                "imageSrc": "0603_6_yxhjgg",
+                "type": "image"
               }
             ]
           },
@@ -7804,7 +7803,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_5_erkwln"
+                "imageSrc": "0603_5_erkwln",
+                "type": "image"
               }
             ]
           },
@@ -7834,7 +7834,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_4_vy3n3n"
+                "imageSrc": "0603_4_vy3n3n",
+                "type": "image"
               }
             ]
           },
@@ -7856,7 +7857,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "dessau_18_ldduko"
+                "imageSrc": "dessau_18_ldduko",
+                "type": "image"
               }
             ]
           },
@@ -7886,7 +7888,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_3_psu93m"
+                "imageSrc": "0603_3_psu93m",
+                "type": "image"
               }
             ]
           },
@@ -7917,7 +7920,8 @@
             "items": [
               {
                 "alt": "",
-                "imageSrc": "0603_2_ferybx"
+                "imageSrc": "0603_2_ferybx",
+                "type": "image"
               }
             ]
           },
@@ -7959,7 +7963,8 @@
             "items": [
               {
                 "alt": "호스텔 창밖 풍경.",
-                "imageSrc": "0603_1_eoefwi"
+                "imageSrc": "0603_1_eoefwi",
+                "type": "image"
               }
             ]
           },
@@ -7980,6 +7985,29 @@
           "children": [
             {
               "text": "걸어서 5분 거리에 고맙게도 밤 10시까지 여는 큰 마트가 있어서 다녀왔다."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cmdbgzsfq0017mdam3gh53yiw",
+    "title": "분류: 코로로",
+    "status": "published",
+    "excerpt": "국민대학교 시각디자인학과 코딩 소모임 '코로로'에서의 개인 프로젝트 결과물입니다. ",
+    "publishedAt": "2025-07-19T22:00:00.000Z",
+    "tags": {
+      "name": "미분류"
+    },
+    "keywords": [],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "국민대학교 시각디자인학과 코딩 소모임 '코로로'에서의 개인 프로젝트 결과물입니다."
             }
           ]
         }
@@ -9702,6 +9730,708 @@
           "children": [
             {
               "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cmdbmmhdl0056mdamzuugzdgh",
+    "title": "혼자 Immenstadt에서 빗속의 하이킹, 커리부어스트와 아이스크림",
+    "status": "published",
+    "excerpt": "갑자기 혼자 등산을 가게 된 경위 5월 27일 화요일, 아침 7시 반에 일어났다. 공강이고 과제와 발표도 다 끝나서 집에서 혼자 할 일이 없다. 8시에 무작정 집을 나서서 언...",
+    "publishedAt": "2025-05-26T22:00:00.000Z",
+    "tags": {
+      "name": "방랑"
+    },
+    "keywords": [
+      {
+        "name": "기차"
+      },
+      {
+        "name": "했다"
+      },
+      {
+        "name": "버스"
+      },
+      {
+        "name": "30"
+      },
+      {
+        "name": "아이스크림"
+      },
+      {
+        "name": "온다"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "갑자기 혼자 등산을 가게 된 경위"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "5월 27일 화요일, 아침 7시 반에 일어났다. 공강이고 과제와 발표도 다 끝나서 집에서 혼자 할 일이 없다. 8시에 무작정 집을 나서서 언젠가 한 번 더 가보기로 했던 Immenstadt의 산길을 향해 출발한다. 오리엔테이션 때 학교에서 다 같이 첫 하이킹을 갔던 곳이었다. 포장도로고 짧아서 하이킹보다는 산책?에 가깝지만. 경치는 이후에 간 오스트리아나 스위스의 산들에 비해 특별하진 않았지만, 하산 후 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/RWZE6izghdxo5KY36",
+              "type": "link",
+              "children": [
+                {
+                  "text": "산 아래 아이스크림 집"
+                }
+              ]
+            },
+            {
+              "text": "에서 맛보았던 Waldmeister맛 아이스크림이 기억에 남았기도 하고 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/GGQSr3P9chgpgoFV9",
+              "type": "link",
+              "children": [
+                {
+                  "text": "꼭대기에 있는 오두막집 음식점"
+                }
+              ]
+            },
+            {
+              "text": "에서 사과주스밖에 안 먹어본게 미련이 남아서 가기로 했다. 목표는 뚜렷하게 산 아래의 아이스크림 가게와 산 위의 오두막 음식점을 가리켰다. 등산은 그저 커리부어스트와 아이스크림 중간에 낀 깍두기였다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_1_jpig0z",
+                "type": "video"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "항상 어떤 핵심적인 욕구 한 가지에 의해 일상이 돌아간다면, 요즘 나에게 가장 큰 욕구는 식욕이다. 그렇다고 먹는 양이 이전보다 더 많아진 건 아니다. 처음으로 자취를 하게 되며 무엇을 언제 먹을지 전적으로 내가 관리하다 보니까 '식욕을 조절'한다는 개념을 의식하기 시작해서 '식욕이라는 것의 존재'도 의식하기 시작한 것 같다. 뭔가를 먹겠다는 의지가 나를 움직인다. 예를 들어 방 밖에 나갈 일이 없는 하루, 불닭볶음면을 사겠다는 명분으로 걸어서 30분 거리의 마트까지 산책을 다녀오고, 오늘도 아이스크림 먹겠다고 등산을 다녀오게 된 것처럼. 점점 아무렇지 않게 돌아다니는 범위가 넓어진다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "원래 어제 가려고 했는데 비 와서 못갔다. 그리고 사실 오늘도 날씨앱에 오전에 몇 시간 비 온다고 적혀 있었는데 그냥 갔다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "이동"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "켐튼에서 이 등산로까지의 이동 방법은 "
+            },
+            {
+              "code": true,
+              "text": "기차 -> 버스"
+            },
+            {
+              "text": "와 "
+            },
+            {
+              "code": true,
+              "text": "버스 -> 버스"
+            },
+            {
+              "text": " 두 가지가 있는데 저번에는 버스로만 갔지만 아침에는 그 버스가 안 다닌다. 기차를 타기 위해 켐튼역에 갔다. 항상 기차 시간보다 30분정도 일찍 가는데 기차 연착으로 기다리는 시간이 더 추가돼서 켐튼역에서 많은 시간을 보내게 된다. RE를 타고 켐튼에서 15분 정도 가서 Immenstadt 역에서 내린다. 버스정류장에서 버스가 어느 승강장에 오나, 무슨 버스가 언제 오나 계속 기웃거려야 한다. 버스는 구글 맵과 DB 앱에 적힌 시간이 지나도 안 온다. 막 출발하려는 봉고차 마을버스에 가서 Ratholz 가는지 물어봤더니 이 버스가 아니라 "
+            },
+            {
+              "code": true,
+              "text": "Zwei"
+            },
+            {
+              "text": "(2번 승강장)에 "
+            },
+            {
+              "code": true,
+              "text": "Neun Uhr dreizig"
+            },
+            {
+              "text": "? "
+            },
+            {
+              "code": true,
+              "text": "dreizehn"
+            },
+            {
+              "text": "? (9시 30분? 13분?)에 버스가 올 거라고 알려주셨다. 이렇게 숫자만이라도 알아들으니 좋다. 버스는 30분도 13분도 아닌 더 이른 시간에 도착한다. 승객은 나 혼자다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_21_wlprjg",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 시골의 배차간격이라면 버스를 한 번 놓치면 한 시간은 기본으로 추가된다. 티라나 버스에 대해 불평할 게 아니다. 여기도 정류장 표시가 제대로 안 되어 있을 때가 많고  버스가 언제 오는지 보장 따위 없다. 원래 이게 기본인데 내가 서울 도심의 전광판 달린 버스정류장에 너무 익숙해져 있었던 것이다. 구글 맵과 DB 앱은 항상 다른 시간을 가리킨다. 보통 둘 다 틀린다. 더 빨리 올때가 많다(혹은 이전 버스가 늦은 거거나). 마치 수강신청 때 네이비즘과 네이버시계가 서로 다른 시간을 가리켜도 일단 켜놓는 것과 같이 일단 두 앱 모두 켜 놓고 기다린다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_20_juvcgb",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/KAU1B7XgSFHDoa7HA",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Ratholz, Alpsee Bergwelt 정류장"
+                }
+              ]
+            },
+            {
+              "text": "에 내린다. 비가 온다. 등산로를 오르기 시작한다. 9시 30분이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_2_juzqkr",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "길은 좀 경사진 포장도로 또는 자잘한 자갈길이다. 지그재그로 난 산길을 50-60분 걷다 보면 리프트 도착/출발 지점, Alpsee 코스터 출발지점, 놀이터, 호텔, 음식점, 카페, 알파카 목장, 클라이밍 장소 등이 있는 목적지에 이른다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_19_klbl10",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "학교에서 다같이 갔을 때는 날씨가 너무 좋아서 탈이었다. 너무 해가 나고 더웠다. 몇 분 걷자 얼굴이 시뻘개졌고 정상에 올라갔을 때 세수한 것처럼 얼굴이 땀범벅이 되어 있었다. 근데 오늘은 비가 와서 오히려 좋았다. 저번보다 훨씬 가뿐하게 올라갔다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_18_gj1fsz",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_17_ejayei",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "비가 오고 이른 시간이라 등산객이 별로 없었다. 올라갈 때 사람을 두 번 보고, 내려갈 땐 좀 더 봤다. 가끔 Hallo 하고 인사했다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_16_x8txt0",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_15_xilz27",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_14_ib0upo",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "등산로에서 소를 발견했을 때 대처 가이드. 이걸 볼 때만 해도 정말 등산로에서 소를 마주치게 될 줄 몰랐다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_13_haxxoy",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_12_gwnmsy",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "10시 반쯤 꼭대기에 도착해서 20분 걸린다는 Rundwanderweg 둘레길을 걸어본다. 저번에는 여기 도착한 것만으로도 충분히 쪄 죽을 것 같아서 못 갔었다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_11_wgmplc",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_9_coj5gw",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "저번에 사과주스를 마셨던 오두막 식당이 보였다. 식당 화장실을 이용한 후 식당에 들어가려 하니 내부 공사 중이었다. 근데 직원들은 분주히 돌아다니고 있었다. "
+            },
+            {
+              "code": true,
+              "text": "Ist es offen?"
+            },
+            {
+              "text": " 열었냐고 물어보니까 "
+            },
+            {
+              "code": true,
+              "text": "geschlossen"
+            },
+            {
+              "text": " 저긴 닫았는데 여기서 (손으로 포장마차 같은걸 가리키며) 시키면 된다고 함."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "메뉴는 자릿값 때문인지 다 비쌌다. 커리부어스트를 한 번도 안 먹어봐서 시켰는데, 12.9유로인가 했다. 같이 나오는 거 감튀와 샐러드 중 고르라길래 감튀 했다. 맥주를 먹으려 했는데 4.5유로로 너무 비싸서 spirits라는 게 3.5유로길래 2cl짜리(스몰) haselnuss를 시켰다. 단위가 ml, l가 아닌 cl인걸 봤지만 호기심에 시켜버렸다. 점원이 독일어로 '이거 알코올인데 이거 시키려는 거 맞냐'고 한 번 더 물어봤는데 그냥 "
+            },
+            {
+              "code": true,
+              "text": "Ja"
+            },
+            {
+              "text": " 했다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_8_e2h15z",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "역시 spirits는 내가 생각한 것과 달랐다. 쬐끄만 유리병에 투명한 알코올램프 농축액 같은 게 담겨서 나왔다. 페트병에 담아온 물이 있어서 점원분한테 "
+            },
+            {
+              "code": true,
+              "text": "Kann ich das mit Wasser trinken?"
+            },
+            {
+              "text": " 이거 물 섞어먹어도 되는거예요? 여쭤봤더니 물 타서 먹어도 되고, 어떤 사람은 그냥 마신다고 (원샷하는 흉내 내며) 하셨다. "
+            },
+            {
+              "code": true,
+              "text": "schnapp"
+            },
+            {
+              "text": "이란 단어가 두 번 들렸는데 나중에 검색하니 샷이라는 뜻이었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "물을 타기 전에 마셔 봤는데, 맛은 술이고 향기는 초콜릿이었다. 대충 컵 크기에 맞추면 되겠지? 하고 컵 입구까지 꽉 채워서 물을 부어 버렸더니 완전 밍밍해졌다. 그래도 다 마셨다. 점원분이 커리부어스트를 가져오시고 소스 케찹, 마요네즈 중에 뭐할거냐 해서 케찹 했더니 작은 병에 케찹을 받아오셨다. 감튀에 찍어 싹싹 긁어 먹은 후 다른 소스도 종류별로 담아서 찍어먹었다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_7_c1cns9",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "음식값이 비싸니 경치와 공기라도 즐기며 오래 앉아있기로 했다. 부어스트가 다 식어 딱딱해지고 감자튀김이 퍽퍽해지도록 가져온 책을 읽으면서 최대한 천천히 음식을 깨작거렸다. 손님은 두 그룹밖에 더 오지 않았다. 코스터도 전에 왔을 때는 줄이 있었는데(우리 학교에서 단체로 온 사람들 제외해도) 줄이 없었다. 그래도 타고 내려가는 사람은 좀 있었다. 어느새 비가 그쳐서 리프트를 타고 올라오는 사람이 조금씩 보였다. 12시에 그릇을 치우고 자리에서 일어나 하산을 시작했다. 올라온 것과 똑같은 길이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_6_vguqxd",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_6_vguqxd",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_4_sn9qlh",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "올라갈 때 울타리 너머에 있었던 소들을 등산로 한복판에서 마주쳤다. 반대편에서 올라가던 등산객들이 웅성웅성 조심조심 옆으로 지나가는 것을 보고 나도 소들의 눈치를 살피면서 조용히 지나갔다. 소들이 나를 크고 검은 눈으로 빠안...히... 쳐다봤다. 내가 지나가고 나자, 내가 가는 방향이 원래 소들이 가던 방향이었는지 내 쪽으로 천천히 걸어오기 시작했다. 빠른 걸음으로 산을 내려왔다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "immenstadt_3_rzql08",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "내려와서 진 목표였던 아이스크림을 사 먹었다. 뭔가 그때 맛이 안 났다. 그리고 1유로였던 걸로 기억하고 있었는데 2유로였다. 그렇게 모든 미련이 깔끔하게 해소되었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "버스정류장에 앉아서 허공을 응시하며 또 기약없이 버스를 기다리고 있는데 등산복을 입은 노부부가 왔다. 할머니가 나한테 "
+            },
+            {
+              "code": true,
+              "text": "Sie warten auch der Bus?"
+            },
+            {
+              "text": " (당신도 버스 기다리고 있어요?) 물어보셔서 "
+            },
+            {
+              "code": true,
+              "text": "Ja"
+            },
+            {
+              "text": " 하니까 곧 올거라고 말하셨다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "여기서 돌아다니면 모두가 내가 독일어를 알아들을 거라고 생각하고 독일어로 말을 걸어 온다. 근데 외국인처럼 생겼다고 외국인 취급하면 그거대로 인종차별 논란의 여지가 있으니까(더군다나 이 글로벌한 독일에서) 이게 그들의 배려라고 생각하려 한다."
             }
           ]
         }
@@ -14693,674 +15423,6 @@
           "children": [
             {
               "text": "면 삶은 물을 면수라고 부르며 요리에 넣기도 한다는 것을 알게 되어서 실천해 보았다. 그런데 보통 면을 삶을 때 소금을 넣는 것 같은데 난 맹물에다 삶아서 그 면수가 그 면수인지 잘 모르겠다. 아무튼 된장 한 숟갈, 면수, 우유가 들어갔다."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmdbmmhdl0056mdamzuugzdgh",
-    "title": "혼자 Immenstadt에서 빗속의 하이킹, 커리부어스트와 아이스크림",
-    "status": "published",
-    "excerpt": "갑자기 혼자 등산을 가게 된 경위 5월 27일 화요일, 아침 7시 반에 일어났다. 공강이고 과제와 발표도 다 끝나서 집에서 혼자 할 일이 없다. 8시에 무작정 집을 나서서 언...",
-    "publishedAt": "2025-05-26T22:00:00.000Z",
-    "tags": {
-      "name": "방랑"
-    },
-    "keywords": [
-      {
-        "name": "기차"
-      },
-      {
-        "name": "했다"
-      },
-      {
-        "name": "버스"
-      },
-      {
-        "name": "30"
-      },
-      {
-        "name": "아이스크림"
-      },
-      {
-        "name": "온다"
-      }
-    ],
-    "content": {
-      "document": [
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "갑자기 혼자 등산을 가게 된 경위"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "5월 27일 화요일, 아침 7시 반에 일어났다. 공강이고 과제와 발표도 다 끝나서 집에서 혼자 할 일이 없다. 8시에 무작정 집을 나서서 언젠가 한 번 더 가보기로 했던 Immenstadt의 산길을 향해 출발한다. 오리엔테이션 때 학교에서 다 같이 첫 하이킹을 갔던 곳이었다. 포장도로고 짧아서 하이킹보다는 산책?에 가깝지만. 경치는 이후에 간 오스트리아나 스위스의 산들에 비해 특별하진 않았지만, 하산 후 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/RWZE6izghdxo5KY36",
-              "type": "link",
-              "children": [
-                {
-                  "text": "산 아래 아이스크림 집"
-                }
-              ]
-            },
-            {
-              "text": "에서 맛보았던 Waldmeister맛 아이스크림이 기억에 남았기도 하고 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/GGQSr3P9chgpgoFV9",
-              "type": "link",
-              "children": [
-                {
-                  "text": "꼭대기에 있는 오두막집 음식점"
-                }
-              ]
-            },
-            {
-              "text": "에서 사과주스밖에 안 먹어본게 미련이 남아서 가기로 했다. 목표는 뚜렷하게 산 아래의 아이스크림 가게와 산 위의 오두막 음식점을 가리켰다. 등산은 그저 커리부어스트와 아이스크림 중간에 낀 깍두기였다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "<video src=\"/immenstadt_1.mp4\" width=\"630\" height=\"630\" controls></video>"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "항상 어떤 핵심적인 욕구 한 가지에 의해 일상이 돌아간다면, 요즘 나에게 가장 큰 욕구는 식욕이다. 그렇다고 먹는 양이 이전보다 더 많아진 건 아니다. 처음으로 자취를 하게 되며 무엇을 언제 먹을지 전적으로 내가 관리하다 보니까 '식욕을 조절'한다는 개념을 의식하기 시작해서 '식욕이라는 것의 존재'도 의식하기 시작한 것 같다. 뭔가를 먹겠다는 의지가 나를 움직인다. 예를 들어 방 밖에 나갈 일이 없는 하루, 불닭볶음면을 사겠다는 명분으로 걸어서 30분 거리의 마트까지 산책을 다녀오고, 오늘도 아이스크림 먹겠다고 등산을 다녀오게 된 것처럼. 점점 아무렇지 않게 돌아다니는 범위가 넓어진다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "원래 어제 가려고 했는데 비 와서 못갔다. 그리고 사실 오늘도 날씨앱에 오전에 몇 시간 비 온다고 적혀 있었는데 그냥 갔다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "이동"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "켐튼에서 이 등산로까지의 이동 방법은 "
-            },
-            {
-              "code": true,
-              "text": "기차 -> 버스"
-            },
-            {
-              "text": "와 "
-            },
-            {
-              "code": true,
-              "text": "버스 -> 버스"
-            },
-            {
-              "text": " 두 가지가 있는데 저번에는 버스로만 갔지만 아침에는 그 버스가 안 다닌다. 기차를 타기 위해 켐튼역에 갔다. 항상 기차 시간보다 30분정도 일찍 가는데 기차 연착으로 기다리는 시간이 더 추가돼서 켐튼역에서 많은 시간을 보내게 된다. RE를 타고 켐튼에서 15분 정도 가서 Immenstadt 역에서 내린다. 버스정류장에서 버스가 어느 승강장에 오나, 무슨 버스가 언제 오나 계속 기웃거려야 한다. 버스는 구글 맵과 DB 앱에 적힌 시간이 지나도 안 온다. 막 출발하려는 봉고차 마을버스에 가서 Ratholz 가는지 물어봤더니 이 버스가 아니라 "
-            },
-            {
-              "code": true,
-              "text": "Zwei"
-            },
-            {
-              "text": "(2번 승강장)에 "
-            },
-            {
-              "code": true,
-              "text": "Neun Uhr dreizig"
-            },
-            {
-              "text": "? "
-            },
-            {
-              "code": true,
-              "text": "dreizehn"
-            },
-            {
-              "text": "? (9시 30분? 13분?)에 버스가 올 거라고 알려주셨다. 이렇게 숫자만이라도 알아들으니 좋다. 버스는 30분도 13분도 아닌 더 이른 시간에 도착한다. 승객은 나 혼자다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_21_wlprjg"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이 시골의 배차간격이라면 버스를 한 번 놓치면 한 시간은 기본으로 추가된다. 티라나 버스에 대해 불평할 게 아니다. 여기도 정류장 표시가 제대로 안 되어 있을 때가 많고  버스가 언제 오는지 보장 따위 없다. 원래 이게 기본인데 내가 서울 도심의 전광판 달린 버스정류장에 너무 익숙해져 있었던 것이다. 구글 맵과 DB 앱은 항상 다른 시간을 가리킨다. 보통 둘 다 틀린다. 더 빨리 올때가 많다(혹은 이전 버스가 늦은 거거나). 마치 수강신청 때 네이비즘과 네이버시계가 서로 다른 시간을 가리켜도 일단 켜놓는 것과 같이 일단 두 앱 모두 켜 놓고 기다린다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_20_juvcgb"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/KAU1B7XgSFHDoa7HA",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Ratholz, Alpsee Bergwelt 정류장"
-                }
-              ]
-            },
-            {
-              "text": "에 내린다. 비가 온다. 등산로를 오르기 시작한다. 9시 30분이다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_2_juzqkr"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "길은 좀 경사진 포장도로 또는 자잘한 자갈길이다. 지그재그로 난 산길을 50-60분 걷다 보면 리프트 도착/출발 지점, Alpsee 코스터 출발지점, 놀이터, 호텔, 음식점, 카페, 알파카 목장, 클라이밍 장소 등이 있는 목적지에 이른다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_19_klbl10"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "학교에서 다같이 갔을 때는 날씨가 너무 좋아서 탈이었다. 너무 해가 나고 더웠다. 몇 분 걷자 얼굴이 시뻘개졌고 정상에 올라갔을 때 세수한 것처럼 얼굴이 땀범벅이 되어 있었다. 근데 오늘은 비가 와서 오히려 좋았다. 저번보다 훨씬 가뿐하게 올라갔다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_18_gj1fsz"
-              },
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_17_ejayei"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "비가 오고 이른 시간이라 등산객이 별로 없었다. 올라갈 때 사람을 두 번 보고, 내려갈 땐 좀 더 봤다. 가끔 Hallo 하고 인사했다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_16_x8txt0"
-              },
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_15_xilz27"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_14_ib0upo"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "등산로에서 소를 발견했을 때 대처 가이드. 이걸 볼 때만 해도 정말 등산로에서 소를 마주치게 될 줄 몰랐다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_13_haxxoy"
-              },
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_12_gwnmsy"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "10시 반쯤 꼭대기에 도착해서 20분 걸린다는 Rundwanderweg 둘레길을 걸어본다. 저번에는 여기 도착한 것만으로도 충분히 쪄 죽을 것 같아서 못 갔었다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_11_wgmplc"
-              },
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_9_coj5gw"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "저번에 사과주스를 마셨던 오두막 식당이 보였다. 식당 화장실을 이용한 후 식당에 들어가려 하니 내부 공사 중이었다. 근데 직원들은 분주히 돌아다니고 있었다. "
-            },
-            {
-              "code": true,
-              "text": "Ist es offen?"
-            },
-            {
-              "text": " 열었냐고 물어보니까 "
-            },
-            {
-              "code": true,
-              "text": "geschlossen"
-            },
-            {
-              "text": " 저긴 닫았는데 여기서 (손으로 포장마차 같은걸 가리키며) 시키면 된다고 함."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "메뉴는 자릿값 때문인지 다 비쌌다. 커리부어스트를 한 번도 안 먹어봐서 시켰는데, 12.9유로인가 했다. 같이 나오는 거 감튀와 샐러드 중 고르라길래 감튀 했다. 맥주를 먹으려 했는데 4.5유로로 너무 비싸서 spirits라는 게 3.5유로길래 2cl짜리(스몰) haselnuss를 시켰다. 단위가 ml, l가 아닌 cl인걸 봤지만 호기심에 시켜버렸다. 점원이 독일어로 '이거 알코올인데 이거 시키려는 거 맞냐'고 한 번 더 물어봤는데 그냥 "
-            },
-            {
-              "code": true,
-              "text": "Ja"
-            },
-            {
-              "text": " 했다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_8_e2h15z"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "역시 spirits는 내가 생각한 것과 달랐다. 쬐끄만 유리병에 투명한 알코올램프 농축액 같은 게 담겨서 나왔다. 페트병에 담아온 물이 있어서 점원분한테 "
-            },
-            {
-              "code": true,
-              "text": "Kann ich das mit Wasser trinken?"
-            },
-            {
-              "text": " 이거 물 섞어먹어도 되는거예요? 여쭤봤더니 물 타서 먹어도 되고, 어떤 사람은 그냥 마신다고 (원샷하는 흉내 내며) 하셨다. "
-            },
-            {
-              "code": true,
-              "text": "schnapp"
-            },
-            {
-              "text": "이란 단어가 두 번 들렸는데 나중에 검색하니 샷이라는 뜻이었다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "물을 타기 전에 마셔 봤는데, 맛은 술이고 향기는 초콜릿이었다. 대충 컵 크기에 맞추면 되겠지? 하고 컵 입구까지 꽉 채워서 물을 부어 버렸더니 완전 밍밍해졌다. 그래도 다 마셨다. 점원분이 커리부어스트를 가져오시고 소스 케찹, 마요네즈 중에 뭐할거냐 해서 케찹 했더니 작은 병에 케찹을 받아오셨다. 감튀에 찍어 싹싹 긁어 먹은 후 다른 소스도 종류별로 담아서 찍어먹었다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_7_c1cns9"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "음식값이 비싸니 경치와 공기라도 즐기며 오래 앉아있기로 했다. 부어스트가 다 식어 딱딱해지고 감자튀김이 퍽퍽해지도록 가져온 책을 읽으면서 최대한 천천히 음식을 깨작거렸다. 손님은 두 그룹밖에 더 오지 않았다. 코스터도 전에 왔을 때는 줄이 있었는데(우리 학교에서 단체로 온 사람들 제외해도) 줄이 없었다. 그래도 타고 내려가는 사람은 좀 있었다. 어느새 비가 그쳐서 리프트를 타고 올라오는 사람이 조금씩 보였다. 12시에 그릇을 치우고 자리에서 일어나 하산을 시작했다. 올라온 것과 똑같은 길이다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_6_vguqxd"
-              },
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_6_vguqxd"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_4_sn9qlh"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "올라갈 때 울타리 너머에 있었던 소들을 등산로 한복판에서 마주쳤다. 반대편에서 올라가던 등산객들이 웅성웅성 조심조심 옆으로 지나가는 것을 보고 나도 소들의 눈치를 살피면서 조용히 지나갔다. 소들이 나를 크고 검은 눈으로 빠안...히... 쳐다봤다. 내가 지나가고 나자, 내가 가는 방향이 원래 소들이 가던 방향이었는지 내 쪽으로 천천히 걸어오기 시작했다. 빠른 걸음으로 산을 내려왔다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "immenstadt_3_rzql08"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "내려와서 진 목표였던 아이스크림을 사 먹었다. 뭔가 그때 맛이 안 났다. 그리고 1유로였던 걸로 기억하고 있었는데 2유로였다. 그렇게 모든 미련이 깔끔하게 해소되었다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "버스정류장에 앉아서 허공을 응시하며 또 기약없이 버스를 기다리고 있는데 등산복을 입은 노부부가 왔다. 할머니가 나한테 "
-            },
-            {
-              "code": true,
-              "text": "Sie warten auch der Bus?"
-            },
-            {
-              "text": " (당신도 버스 기다리고 있어요?) 물어보셔서 "
-            },
-            {
-              "code": true,
-              "text": "Ja"
-            },
-            {
-              "text": " 하니까 곧 올거라고 말하셨다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "여기서 돌아다니면 모두가 내가 독일어를 알아들을 거라고 생각하고 독일어로 말을 걸어 온다. 근데 외국인처럼 생겼다고 외국인 취급하면 그거대로 인종차별 논란의 여지가 있으니까(더군다나 이 글로벌한 독일에서) 이게 그들의 배려라고 생각하려 한다."
             }
           ]
         }
@@ -51953,6 +52015,1662 @@
     }
   },
   {
+    "id": "cmdc6ckxo007pmdamk7f7xq5a",
+    "title": "Day 2. 0425. 티라나와 두러스",
+    "status": "published",
+    "excerpt": "아침에 일어나서 여유롭게 씻고 나갈 준비를 마친다. 호스텔 테라스의 흔들의자에 앉아도 보고, 창밖의 빨래 널린 골목 뷰를 감상한다. 여행 떠나기 전만 해도 일기예보에 비가 온...",
+    "publishedAt": "2025-05-01T22:00:00.000Z",
+    "tags": {
+      "name": "방랑"
+    },
+    "keywords": [
+      {
+        "name": "독일"
+      },
+      {
+        "name": "버스"
+      },
+      {
+        "name": "알바니아"
+      },
+      {
+        "name": "티라나"
+      },
+      {
+        "name": "이탈리아"
+      },
+      {
+        "name": "도시"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "아침에 일어나서 여유롭게 씻고 나갈 준비를 마친다. 호스텔 테라스의 흔들의자에 앉아도 보고, 창밖의 빨래 널린 골목 뷰를 감상한다. 여행 떠나기 전만 해도 일기예보에 비가 온다고 쓰여 있었는데 어째선지 비는 오지 않는다. 오늘은 티라나에서 버스로 1시간 정도 거리에 있는 해변가 도시 두러스 Durrës에 가는 날이다. 가기 전에 티라나 유명지들을 몇 곳 둘러보기로 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_1_ub8dcg",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_2_kvcduf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "보다폰 거리를 지난다. ‘Together We Can.’ 독일에 오고부터 시작된 스포티파이 광고가 머릿속에서 자동재생된다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Pyramid of Tirana"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_3_xgmlvf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/Urhimgd8GzNTAxYM6",
+              "type": "link",
+              "children": [
+                {
+                  "text": "피라미드 오브 티라나"
+                }
+              ]
+            },
+            {
+              "text": ". 원래 1988년 알바니아 공산주의 독재자 "
+            },
+            {
+              "href": "https://en.wikipedia.org/wiki/Enver_Hoxha",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Enver Hoxha"
+                }
+              ]
+            },
+            {
+              "text": " 기념 박물관으로 지어졌다고 한다. 그러나 1991년 공산주의 붕괴 이후 박물관으로서의 기능을 중단했고, 철거 제안이 승인되었으나 2013년 티라나 시민 대다수가 철거에 반대했다. 그래서 원래 "
+            },
+            {
+              "href": "https://en.wikipedia.org/wiki/Pyramid_of_Tirana#/media/File:Deti_se_klouzaji_po_stenach_Hodzova_mauzolea_v_Tirane.jpg",
+              "type": "link",
+              "children": [
+                {
+                  "text": "애들이 미끄럼틀 탈 정도로 매끈했던"
+                }
+              ]
+            },
+            {
+              "text": " 벽을 계단으로 바꾸어 개조했다고 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_4_jtf9iv",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "근데 왜 이런 재밌는 얘기를 눈에 띄게 써놓지 않았을까? 베를린이었다면 옆에다가 벽 세워놓고 연도별 사진과 설명글을 도배해놓고 ‘읽어!!!’ 했을텐데 말이다. 올라오니 티라나 경치가 한눈에 보인다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_5_x8fkcj",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_6_dthxg9",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_8_uvginh",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_7_ocfvaz",
+                "type": "video"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Tirana Castle"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_9_mp4ht0",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_10_scirja",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/5FzHZZFvyNT8xtDh8",
+              "type": "link",
+              "children": [
+                {
+                  "text": "티라나 캐슬"
+                }
+              ]
+            },
+            {
+              "text": ". 비잔틴 시대의 유적으로, 옛 요새 터 안에 관광객들을 위해 지어진 카페나 기념품가게들이 있다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_16_cljrlg",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "둘 다 어제 두 차례의 저녁식사가 얹혀서 아침을 먹을 수 없다. "
+            },
+            {
+              "href": "https://maps.app.goo.gl/XANkEgcfRvYDMKvC9",
+              "type": "link",
+              "children": [
+                {
+                  "text": "근처 카페"
+                }
+              ]
+            },
+            {
+              "text": "에 들어가서 쬐끄만 커피와 쬐끄만 하트 모양의 달달한 케이크를 먹는다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_13_z2zwqh",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_15_nqc80j",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_20_zsjt55",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_25_sdgiyi",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "티라나에는 재미있고 추상적인 조형물, 의자들, 벽화들이 많다. 횡단보도도 특이하다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "티라나는 한때 공산주의 때문에 프로파간다를 제외한 모든 예술이 금지되었었다. 2000년대 초반 공산주의의 과거를 떨쳐 내려는 움직임과 함께 거리 예술가들이 등장하며 티라나 거리예술의 역사가 시작된다. 이 예술가들은 잿빛 공산주의 건축물로 가득했던 티라나를 세상에서 가장 알록달록한 도시로 만드는 것을 목표로 시민들을 참여시키는 등 다양한 프로젝트를 진행했다. 티라나의 거리 예술은 정치적 표현의 수단이기도 하다. 정치 인사, 시위, 상징적 이미지들을 도시 전체에서 발견할 수 있다.*"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "Xu, J. (2024, January 29). Tirana’s vibrant street art and murals. Artefact"
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://www.artefactmagazine.com/2024/01/29/tiranas-vibrant-street-art-and-murals/"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_17_jukwcp",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_18_encntf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "다음 행선지로 가는 중 길거리 작은 편의점에서 먹을 것을 사다가 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/ajd5y2Wm5J7LPuiWA",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Friendship Monument"
+                }
+              ]
+            },
+            {
+              "text": "를 발견한다. 쿠웨이트와의 Everlasting 한 우정을 저도 기원합니다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Bunk'Art 2"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_14_kiecfr",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_21_c7qrji",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/BgH12CUQepEZsZVV7",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Bunk’Art 2"
+                }
+              ]
+            },
+            {
+              "text": ". 학생 할인은 로컬 학생들만 된다고 해서 성인 요금 900레크(약 9유로)씩을 내고 티켓을 받아 들어간다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_22_w6jwis",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "베를린 스토리 벙커처럼 옛 벙커를 박물관으로 조성해 놓았다. 알바니아의 근현대 역사 전반에 대해 다루고 있는 전시다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_23_z9hfwz",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_24_ak8sv9",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "공산주의 때의 프로파간다, 심문 중 행해졌던 고문 등에 대해 알 수 있다. 우리나라의 독재정권이나 동독 공산주의 정권이 자행했던 탄압이 평행선처럼 그려지면서 새삼 독재의 역사가 없는 나라도 드물다는 생각을 했다. 조금씩 다르지만 비슷비슷한 사건이 동시다발적으로 일어나곤 하는 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_26_h0d9hx",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그리고 그 옆에는 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/NykAj6T77eBAW8mP7",
+              "type": "link",
+              "children": [
+                {
+                  "text": "clock tower of tirana"
+                }
+              ]
+            },
+            {
+              "text": "가 있다. 200년 전 오스만 때 지어졌고 터키 기관에 의해 복원되었는데 몸통은 오스만 스타일이고 꼭대기는 베네치아 스타일을 하고 있다.*"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "Tirana’s Ottoman-era clock tower remains city landmark | Daily Sabah. (n.d.). Retrieved May 5, 2025, from"
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://www.dailysabah.com/arts/tiranas-ottoman-era-clock-tower-remains-city-landmark/news"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_27_zyjt9n",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/RsXwqUP2AATSFbAF6",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Book building"
+                }
+              ]
+            },
+            {
+              "text": "이다. 책갈피가 가득 끼워진 책의 옆면 같다고 이름이 book building이라는 사실이 귀엽다. 티라나 현대화 프로젝트의 일부분이었다고."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "티라나는 'No Time to Rest'라는 슬로건 아래 도시 경관을 대대적으로 뜯어고쳤다. 티라나에는 1938년에 지어진 'National Theater'가 있었다. 알바니아 작가, 예술가 연합이 창립된 곳이자 Enver Hoxha의 전체주의에 반대한 인물들에게 사형선고가 내려졌던 그 건물은 공산주의 체제의 몰락 이후 시민들의 극장이 되었다. "
+            },
+            {
+              "href": "https://en.wikipedia.org/wiki/National_Theatre_of_Albania_protests",
+              "type": "link",
+              "children": [
+                {
+                  "text": "격렬한 시위"
+                }
+              ]
+            },
+            {
+              "text": "에도 불구하고, 이 극장은 2020년 5월 17일 새벽의 마지막 공연 후 같은 날 철거되었다. 대신 광장에는 새로운 극장과 마천루의 공사가 시작되었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "공산주의의 몰락으로 인한 급격한 정치적 변화는 인프라가 부족한 도시에 시민들이 직접 공공 장소들을 만드는 문화로 이어졌지만 그것은 계획된 수도를 만들고자 하는 관료들과 끊임없는 충돌을 일으켰다. "
+            },
+            {
+              "href": "https://en.wikipedia.org/wiki/Edi_Rama",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Edi Rama"
+                }
+              ]
+            },
+            {
+              "text": " 시장은 강가의 키오스크들을 걷어내고 건물 외벽에 알록달록한 패턴을 페인트칠했다. 도시 계획가 Sotir Dhamo는 이런 개입을 Urbicide, 즉 도시에 대한 폭력이라고 묘사했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://www.stefanoboeriarchitetti.net/en/project/tirana-030-2/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "티라나 2030"
+                }
+              ]
+            },
+            {
+              "text": " 계획을 위한 회의는 원래 공개회의로 진행될 예정이었지만 공개토론은 이루어지지 않았고 공동주택의 철거는 계속되고 있다고 한다. 재건축 지역에서는 주민들의 생활비가 증가하고 젠트리피케이션이 일어난다.* 내가 티라나에서 느낀, 물에 유화 물감을 풀어 놓은 듯 다채롭게 잘 꾸며졌지만 어딘가 붕 떠 있는 듯한 기분의 책임이 여기에도 있지 않을까?"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "Is Tirana’s rapid transformation progress or erasure? - Dorina Pllumbi. (2022, July 14). Kosovo 2.0."
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://kosovotwopointzero.com/en/is-tiranas-rapid-transformation-progress-or-erasure/"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_28_svjhob",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "내가 최근에 갔던 나라인 독일과 홍콩의 신호등을 자주 비교하게 된다. 독일은 아무 소리소문없이 신호가 휙휙 바뀌며, 이제 건너기 시작하지 마세요(하지만 건너던 사람은 마저 건너세요) 라는 것을 깜박거림도, 노란불도 아닌 갑자기 빨간불로 바꿔버리는 것으로 표현한다. 반면 홍콩 신호등은 시도때도없이 땡땡땡땡 소리를 질러대며, 건널 시간이 얼마나 남았는지를 땡땡땡 소리의 간격으로 표현한다. 시간이 다 되어 갈수록 빨리 건너라고 호들갑스럽게 독촉하는 듯하다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "알바니아의 신호등이 우리나라와 가장 유사했다. 초록불/빨간불 각각 몇 초 남았는지 보여주는게 말이다. 여유로워 보이는 티라나 사람들도 빨간불이 10초 남았을 때부터 건너기 시작한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_29_isd25n",
+                "type": "image"
+              },
+              {
+                "alt": "",
+                "imageSrc": "0425_47_zb6w5d",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "티라나와 스코페의 버스는 다 독일제인 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "두러스에 가는 버스는 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/iXCFGngfkceQsvLE8",
+              "type": "link",
+              "children": [
+                {
+                  "text": "East Bus Terminal"
+                }
+              ]
+            },
+            {
+              "text": "에서 출발한다. 터미널에 가기 위해 또 버스를 탄다. 버스는 구글맵으로 검색할 수 있으나, 거기 찍히는 시간은 믿으면 안 된다. 전혀 상관이 없다. 그리고 대부분의 버스에 행선지와 버스 번호가 안 적혀 있으니 눈치껏 타야 한다. 우리는 정신이 하나도 없는데 주민들은 아무런 문제 없다는 듯이 잘 타고 다닌다. 우리는 모르는 버스 시스템이 내부자들끼리는 이미 공유되어 있는 건가?"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "할머니 할아버지와 나의 길 찾는 방법이 완전히 달랐던 것이 생각난다. 할머니 할아버지는 explicit하고 구체적인 정보를 어딘가에서 읽을 수 있기를 기대하지 않으신다. 대신 동네의 노선도와 길을 이미 꿰뚫고 계시거나, 모르면 행인에게 물어 물어 길을 찾고, 처음보는 택시기사와 친구처럼 말을 섞으며 정보를 나눈다. 읽기보다 말하기 위주의 사회였던 것이다. 대신 노선도를 내재하고 계신 자신의 동네를 벗어나는 것을 스트레스로 여기신다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "세대가 겨우 두 번 바뀌었을 뿐인데 이렇게 다를 수가. 학교에서 듣는 수업에 부모님이 코소보 사람인 학생 두 명이 있다. 부모님께서 독일로 이주하셔서 독일에서 태어났다고 하고, 스스로를 독일인으로 정의한다. 같은 나라 안에서의 세대 차이도 이렇게나 큰데, 아예 대표적인 저맥락 사회인 독일로 이주한 그들이 느끼는 세대 차이는 더 크지 않을까?"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_30_iputt0",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "타서 앉아 있으면 검표원이 돌아다니면서 현금을 받고, 몸에 차고 있는 돈가방에서 돈을 거슬러주고, 티켓을 하나 뜯어서 준다. 그리고 좀 있다가 다시 돌아다니시면서 승객들이 들고 있는 티켓을 가져가서 사용된 티켓이라는 표시로 조금 찢어서 다시 돌려준다. 늘 '없어진 직업'의 예시로 배우던 검표원을 직접 보게 될 줄은 몰랐다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그리고 이 날의 하이라이트는 누가 뭐래도 이 부분이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "East Bus Terminal of Tirane"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_31_us2e9w",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "East Bus Terminal에 버스 시간보다 30분쯤 일찍 도착해서 구글맵이 가리키는 터미널을 향해 걷는다. 웬걸, 버스는 코빼기도 보이지 않고 웬 콘크리트 기둥과 철근들이 서 있는 공사판이 나오는 것이다. 마주치는 사람들에게 말을 건다. 터미널의 순찰복 같은 걸 입으신 할아버지는 저 쪽으로 가라고 한다. 그래서 저 쪽으로 갔더니 웬 호텔 주차장이 나오는데, 그곳의 사람 좋게 웃는 경비원 아저씨는 갑자기 우리에게 바디랭귀지로 소통을 시도하지만 전혀 알아들을 수 없다. 우리와 반대쪽으로 걸어가는 한 키 큰 사람에게서는 뜻밖에도 Nein 이라는 답이 되돌아온다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_32_d6azin",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "일말의 희망을 품고 울타리를 따라 걸으니 이런 처참한 폐허가 나온다. 없는 길을 개척하며 고난의 행군을 하던 도중, 붉은 울타리 너머로 버스들이 보인다. 그 울타리를 넘는 사람도 보인다. 하지만 우리는 불가능이라고 판단하고 가던 대로 계속 걷는다. 그리고 정말 다행히도 버스 터미널에 들어온다... 버스비는 200레크(2유로)이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Durrës"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_33_mqqw2k",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/ptBAmC2PNR81pZBJ6",
+              "type": "link",
+              "children": [
+                {
+                  "text": "두러스"
+                }
+              ]
+            },
+            {
+              "text": "에 도착한다. 독일어를 한다는 택시를 보고 반가워서 찍어본다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_35_umpdvs",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "한 과일가게에 들어간다. 용과, 복숭아 등을 하나씩 집어서 가져가니 가격을 매겨주는데, 생각보다 비싸서 당황한다. 카운터에 수상하게 생긴 작고 무르고 부숭부숭한 납작복숭아 바구니가 놓여 있다. 납작복숭아가 그렇게 달다길래 하나씩 사서 씻지도 않고 한입 베어문다. 음… 그냥 복숭안데?"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_36_c0di8c",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://maps.app.goo.gl/AXoYe6r8RMNy95js8",
+              "type": "link",
+              "children": [
+                {
+                  "text": "베네치아 타워"
+                }
+              ]
+            },
+            {
+              "text": ". 들어가려면 돈을 내야 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_37_htzrs5",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "1939년 침략한 이탈리아와 싸웠던 Mujo Ulqinaku라는 자의 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/KDqL9bxvZKM8WAj98",
+              "type": "link",
+              "children": [
+                {
+                  "text": "동상"
+                }
+              ]
+            },
+            {
+              "text": ". 두러스가 이탈리아랑 지리적으로 엄청 가깝긴 하다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_38_ifksyn",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "해변가에는 휴가 나온 비둘기들이 여유롭게 노닐고 있다. 땅에 있는 저 키위 뭉치들은 정체가 무엇일까. "
+            },
+            {
+              "href": "https://www.alaturka.info/en/austria/salzburg/90-general-content/5167-swarm-fliers-with-permanent-sleeping-places-the-starlings/en/albania/tirana/3829-sea-balls-on-the-beach-of-durres-in-large-quantities/amp",
+              "type": "link",
+              "children": [
+                {
+                  "text": "답을 발견했다."
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_39_b80lab",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "버스 터미널에서 한바탕 한 바람에 약간 영혼이 털린 상태로 하얗게 내리쬐는 햇빛과 열대 나무들을 감상한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_40_snditf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그래피티로 뒤덮이고 창문이 깨져서 내부가 드러난 상태로 방치된 이상한 건물들과 지중해의 바다와 열대 나무... 90년대의 "
+            },
+            {
+              "href": "https://www.reddit.com/r/AskBalkans/comments/1i0ie5s/durr%C3%ABs_in_the_90s_vs_today/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "상업화와 개발 전 경관"
+                }
+              ]
+            },
+            {
+              "text": "이 더 인간적으로 보이기도 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_41_emkm9s",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "독일에서는 보기 힘든 해산물을 먹는 것이 목적이다. 택시를 타야 하는 거리에 있는 맛집에 가려 했지만, 택시가 바가지라서 타지 못하고 횡단보도 언저리에서 근처 식당을 검색한다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Pastarella"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_42_buiynh",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "2층 식당 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/kMYFcC8i1dqAdkmL7",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Pastarella"
+                }
+              ]
+            },
+            {
+              "text": "에 들어온다. 식당 한가운데 수족관이 있고 천장에 거울이 달려 있는 등 인테리어가 독특한 곳이다. 휘발유 냄새가 나는 초록색 기름과 후추와 분홍 소금이 배치되어 있다. 내가 저 후추 병에서 어떻게 후추를 나오게 하는 건지 알아내려 노력하는 것을 보고 직원이 내 접시에다가 후추를 친히 뿌려 주며 알려준다. 후추가 뿌려진 접시에 손가락을 찍어 맛보려는데 접시를 바꿔 주려고 해서 괜찮다고 했다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "Monument of Unknown Soldier"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_43_snndon",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이탈리아 식당의 창밖으로 "
+            },
+            {
+              "href": "https://maps.app.goo.gl/RGZ4MZhyGVnc8Sp78",
+              "type": "link",
+              "children": [
+                {
+                  "text": "이탈리아와 맞서 싸우는 동상"
+                }
+              ]
+            },
+            {
+              "text": "이 보인다. 파시스트 이탈리아는 지중해를 이탈리아 해로 만들고 싶어했고 나치 독일이 오스트리아와 체코슬로바키아를 점령한 것에 대한 경쟁의식으로 지중해 식민지를 갖고 싶어했다. 그래서 알바니아 국왕에 항복 협정을 제시했지만 국왕은 서명을 미뤘다. 그래서 1939년 이탈리아군은 두러스를 포함한 네 개의 알바니아 해안에 상륙한다. 두러스의 저항이 가장 거셌다고 한다.*"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "Italy Invades and Annexes Albania | EBSCO Research Starters. (n.d.). Retrieved May 5, 2025, from"
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://www.ebsco.com/research-starters/history/italy-invades-and-annexes-albania"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그렇다고 현재 두러스가 이탈리아에 적대적인 것으로 보이지는 않는다는 점이 궁금증을 자아낸다. 오히려 이탈리아 색이 도시 전반에 매우 진하다. 아까 베네치아 타워도 있고. 이탈리아 음식점도 엄청 많다. 역사적으로 이탈리아에 '아르버레셔'라고 불리는 큰 규모의 알바니아인 공동체가 있기 때문에 알바니아와 이탈리아의 관계는 대체적으로 우호적이었다고 한다.* 그것이 이탈리아가 알바니아 해안에 상륙했을때 큰 저항이 없었던 이유일까? 그리고 물론 관광지화, 상업화의 영향도 이탈리아 음식점이 우후죽순 생겨나는 데 기여를 했을 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "The Arbëreshë: Italy’s Albanian Diaspora. (n.d.). The Cambridge Language Collective. Retrieved May 5, 2025, from"
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://www.thecambridgelanguagecollective.com/europe/the-arbereshe-italys-albanian-diaspora"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_44_kayyrn",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "애피타이저로 식전빵과 올리브가 나온다. 맛있다. 아직도 위장에 얹혀 있는 어제의 저녁식사를 잠재우기 위해 쌀 종류를 주문한다. 새우 리조또이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_45_hjphp6",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Monument of Unknown Soldier의 흰색 계단 같은 조형물에 기대어 일광욕을 하다가 어린아이가 와서 언니에게서 과일을 구걸해 간다. 알고 보니 부모가 근처에 있는데 말리지 않는다는 게 충격적이다. 해변에는 가지 않고 티라나에 돌아가기로 한다. 다시 돌아간 버스 정류장 근처 작은 편의점에서 음료를 산다. 둘 다 70레크다. 앞에 가는 아줌마가 사길래 나도 따라서 미스테리한 흰 병을 구매한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 때 맛본 Dhallë의 시큼 짭짤 텁텁한 맛을 잊지 못해서 이번 여행 중 2번이나 더 사먹었다. 원래 3번이 될 뻔했는데 그때 현금이 없고 폰도 꺼져서 못 사먹었다. Dhallë의 다른 이름은 아이란인데, 중앙아시아, 발칸반도, 터키, 이란에서 마시는 음료수로 주 재료는 요거트, 물, 소금이다. 알바니아에서 아이란을 부르는 이름인 Dhallë는 '섞다', '흔들다' 라는 뜻에서 유래했다고 한다.*"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "text": null,
+            "link": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "Ayran. (2025). In Wikipedia."
+                }
+              ],
+              "propPath": [
+                "text"
+              ]
+            },
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://en.wikipedia.org/w/index.php?title=Ayran&oldid=1288655867"
+                }
+              ],
+              "propPath": [
+                "link"
+              ]
+            }
+          ],
+          "component": "footnote"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0425_46_ewbmi6",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "지친 몸을 다시 200레크짜리 버스에 싣고 티라나로 향한다."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmdc6htis007ymdamgzb6s1m3",
     "title": "베를린 Day 6. 0409",
     "status": "published",
@@ -60040,10 +61758,10 @@
     },
     "keywords": [
       {
-        "name": "상태"
+        "name": "날짜"
       },
       {
-        "name": "날짜"
+        "name": "상태"
       }
     ],
     "content": {
@@ -64084,1605 +65802,6 @@
           "children": [
             {
               "text": "이런 노트북충전할 수 있는 조용한 공간도 있다. 오다가 닫기 직전의 레베 들러서 바닐라맛 두유 요거트(?)같은 것을 사와서 먹으면서 블로그를 조금 썼다. 그리고 11시에 방에 들어갔다. 8인 도미토리였는데 엄청 넓고, 침대 전혀 안 삐걱거리고 쾌적했다."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmdc6ckxo007pmdamk7f7xq5a",
-    "title": "Day 2. 0425. 티라나와 두러스",
-    "status": "published",
-    "excerpt": "아침에 일어나서 여유롭게 씻고 나갈 준비를 마친다. 호스텔 테라스의 흔들의자에 앉아도 보고, 창밖의 빨래 널린 골목 뷰를 감상한다. 여행 떠나기 전만 해도 일기예보에 비가 온...",
-    "publishedAt": "2025-05-01T22:00:00.000Z",
-    "tags": {
-      "name": "방랑"
-    },
-    "keywords": [
-      {
-        "name": "독일"
-      },
-      {
-        "name": "버스"
-      },
-      {
-        "name": "알바니아"
-      },
-      {
-        "name": "티라나"
-      },
-      {
-        "name": "이탈리아"
-      },
-      {
-        "name": "도시"
-      }
-    ],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "아침에 일어나서 여유롭게 씻고 나갈 준비를 마친다. 호스텔 테라스의 흔들의자에 앉아도 보고, 창밖의 빨래 널린 골목 뷰를 감상한다. 여행 떠나기 전만 해도 일기예보에 비가 온다고 쓰여 있었는데 어째선지 비는 오지 않는다. 오늘은 티라나에서 버스로 1시간 정도 거리에 있는 해변가 도시 두러스 Durrës에 가는 날이다. 가기 전에 티라나 유명지들을 몇 곳 둘러보기로 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_1_ub8dcg"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_2_kvcduf"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "보다폰 거리를 지난다. ‘Together We Can.’ 독일에 오고부터 시작된 스포티파이 광고가 머릿속에서 자동재생된다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Pyramid of Tirana"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_3_xgmlvf"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/Urhimgd8GzNTAxYM6",
-              "type": "link",
-              "children": [
-                {
-                  "text": "피라미드 오브 티라나"
-                }
-              ]
-            },
-            {
-              "text": ". 원래 1988년 알바니아 공산주의 독재자 "
-            },
-            {
-              "href": "https://en.wikipedia.org/wiki/Enver_Hoxha",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Enver Hoxha"
-                }
-              ]
-            },
-            {
-              "text": " 기념 박물관으로 지어졌다고 한다. 그러나 1991년 공산주의 붕괴 이후 박물관으로서의 기능을 중단했고, 철거 제안이 승인되었으나 2013년 티라나 시민 대다수가 철거에 반대했다. 그래서 원래 "
-            },
-            {
-              "href": "https://en.wikipedia.org/wiki/Pyramid_of_Tirana#/media/File:Deti_se_klouzaji_po_stenach_Hodzova_mauzolea_v_Tirane.jpg",
-              "type": "link",
-              "children": [
-                {
-                  "text": "애들이 미끄럼틀 탈 정도로 매끈했던"
-                }
-              ]
-            },
-            {
-              "text": " 벽을 계단으로 바꾸어 개조했다고 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_4_jtf9iv"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "근데 왜 이런 재밌는 얘기를 눈에 띄게 써놓지 않았을까? 베를린이었다면 옆에다가 벽 세워놓고 연도별 사진과 설명글을 도배해놓고 ‘읽어!!!’ 했을텐데 말이다. 올라오니 티라나 경치가 한눈에 보인다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_5_x8fkcj"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_6_dthxg9"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_8_uvginh"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "<video src=\"/0425_7.mp4\" width=\"630\" height=\"630\" controls></video>"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Tirana Castle"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_9_mp4ht0"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_10_scirja"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/5FzHZZFvyNT8xtDh8",
-              "type": "link",
-              "children": [
-                {
-                  "text": "티라나 캐슬"
-                }
-              ]
-            },
-            {
-              "text": ". 비잔틴 시대의 유적으로, 옛 요새 터 안에 관광객들을 위해 지어진 카페나 기념품가게들이 있다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_16_cljrlg"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "둘 다 어제 두 차례의 저녁식사가 얹혀서 아침을 먹을 수 없다. "
-            },
-            {
-              "href": "https://maps.app.goo.gl/XANkEgcfRvYDMKvC9",
-              "type": "link",
-              "children": [
-                {
-                  "text": "근처 카페"
-                }
-              ]
-            },
-            {
-              "text": "에 들어가서 쬐끄만 커피와 쬐끄만 하트 모양의 달달한 케이크를 먹는다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_13_z2zwqh"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_15_nqc80j"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_20_zsjt55"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_25_sdgiyi"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "티라나에는 재미있고 추상적인 조형물, 의자들, 벽화들이 많다. 횡단보도도 특이하다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "티라나는 한때 공산주의 때문에 프로파간다를 제외한 모든 예술이 금지되었었다. 2000년대 초반 공산주의의 과거를 떨쳐 내려는 움직임과 함께 거리 예술가들이 등장하며 티라나 거리예술의 역사가 시작된다. 이 예술가들은 잿빛 공산주의 건축물로 가득했던 티라나를 세상에서 가장 알록달록한 도시로 만드는 것을 목표로 시민들을 참여시키는 등 다양한 프로젝트를 진행했다. 티라나의 거리 예술은 정치적 표현의 수단이기도 하다. 정치 인사, 시위, 상징적 이미지들을 도시 전체에서 발견할 수 있다.*"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "Xu, J. (2024, January 29). Tirana’s vibrant street art and murals. Artefact"
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://www.artefactmagazine.com/2024/01/29/tiranas-vibrant-street-art-and-murals/"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_17_jukwcp"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_18_encntf"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "다음 행선지로 가는 중 길거리 작은 편의점에서 먹을 것을 사다가 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/ajd5y2Wm5J7LPuiWA",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Friendship Monument"
-                }
-              ]
-            },
-            {
-              "text": "를 발견한다. 쿠웨이트와의 Everlasting 한 우정을 저도 기원합니다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Bunk'Art 2"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_14_kiecfr"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_21_c7qrji"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/BgH12CUQepEZsZVV7",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Bunk’Art 2"
-                }
-              ]
-            },
-            {
-              "text": ". 학생 할인은 로컬 학생들만 된다고 해서 성인 요금 900레크(약 9유로)씩을 내고 티켓을 받아 들어간다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_22_w6jwis"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "베를린 스토리 벙커처럼 옛 벙커를 박물관으로 조성해 놓았다. 알바니아의 근현대 역사 전반에 대해 다루고 있는 전시다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_23_z9hfwz"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_24_ak8sv9"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "공산주의 때의 프로파간다, 심문 중 행해졌던 고문 등에 대해 알 수 있다. 우리나라의 독재정권이나 동독 공산주의 정권이 자행했던 탄압이 평행선처럼 그려지면서 새삼 독재의 역사가 없는 나라도 드물다는 생각을 했다. 조금씩 다르지만 비슷비슷한 사건이 동시다발적으로 일어나곤 하는 것 같다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_26_h0d9hx"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그리고 그 옆에는 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/NykAj6T77eBAW8mP7",
-              "type": "link",
-              "children": [
-                {
-                  "text": "clock tower of tirana"
-                }
-              ]
-            },
-            {
-              "text": "가 있다. 200년 전 오스만 때 지어졌고 터키 기관에 의해 복원되었는데 몸통은 오스만 스타일이고 꼭대기는 베네치아 스타일을 하고 있다.*"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "Tirana’s Ottoman-era clock tower remains city landmark | Daily Sabah. (n.d.). Retrieved May 5, 2025, from"
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://www.dailysabah.com/arts/tiranas-ottoman-era-clock-tower-remains-city-landmark/news"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_27_zyjt9n"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/RsXwqUP2AATSFbAF6",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Book building"
-                }
-              ]
-            },
-            {
-              "text": "이다. 책갈피가 가득 끼워진 책의 옆면 같다고 이름이 book building이라는 사실이 귀엽다. 티라나 현대화 프로젝트의 일부분이었다고."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "티라나는 'No Time to Rest'라는 슬로건 아래 도시 경관을 대대적으로 뜯어고쳤다. 티라나에는 1938년에 지어진 'National Theater'가 있었다. 알바니아 작가, 예술가 연합이 창립된 곳이자 Enver Hoxha의 전체주의에 반대한 인물들에게 사형선고가 내려졌던 그 건물은 공산주의 체제의 몰락 이후 시민들의 극장이 되었다. "
-            },
-            {
-              "href": "https://en.wikipedia.org/wiki/National_Theatre_of_Albania_protests",
-              "type": "link",
-              "children": [
-                {
-                  "text": "격렬한 시위"
-                }
-              ]
-            },
-            {
-              "text": "에도 불구하고, 이 극장은 2020년 5월 17일 새벽의 마지막 공연 후 같은 날 철거되었다. 대신 광장에는 새로운 극장과 마천루의 공사가 시작되었다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "공산주의의 몰락으로 인한 급격한 정치적 변화는 인프라가 부족한 도시에 시민들이 직접 공공 장소들을 만드는 문화로 이어졌지만 그것은 계획된 수도를 만들고자 하는 관료들과 끊임없는 충돌을 일으켰다. "
-            },
-            {
-              "href": "https://en.wikipedia.org/wiki/Edi_Rama",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Edi Rama"
-                }
-              ]
-            },
-            {
-              "text": " 시장은 강가의 키오스크들을 걷어내고 건물 외벽에 알록달록한 패턴을 페인트칠했다. 도시 계획가 Sotir Dhamo는 이런 개입을 Urbicide, 즉 도시에 대한 폭력이라고 묘사했다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://www.stefanoboeriarchitetti.net/en/project/tirana-030-2/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "티라나 2030"
-                }
-              ]
-            },
-            {
-              "text": " 계획을 위한 회의는 원래 공개회의로 진행될 예정이었지만 공개토론은 이루어지지 않았고 공동주택의 철거는 계속되고 있다고 한다. 재건축 지역에서는 주민들의 생활비가 증가하고 젠트리피케이션이 일어난다.* 내가 티라나에서 느낀, 물에 유화 물감을 풀어 놓은 듯 다채롭게 잘 꾸며졌지만 어딘가 붕 떠 있는 듯한 기분의 책임이 여기에도 있지 않을까?"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "Is Tirana’s rapid transformation progress or erasure? - Dorina Pllumbi. (2022, July 14). Kosovo 2.0."
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://kosovotwopointzero.com/en/is-tiranas-rapid-transformation-progress-or-erasure/"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_28_svjhob"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "내가 최근에 갔던 나라인 독일과 홍콩의 신호등을 자주 비교하게 된다. 독일은 아무 소리소문없이 신호가 휙휙 바뀌며, 이제 건너기 시작하지 마세요(하지만 건너던 사람은 마저 건너세요) 라는 것을 깜박거림도, 노란불도 아닌 갑자기 빨간불로 바꿔버리는 것으로 표현한다. 반면 홍콩 신호등은 시도때도없이 땡땡땡땡 소리를 질러대며, 건널 시간이 얼마나 남았는지를 땡땡땡 소리의 간격으로 표현한다. 시간이 다 되어 갈수록 빨리 건너라고 호들갑스럽게 독촉하는 듯하다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "알바니아의 신호등이 우리나라와 가장 유사했다. 초록불/빨간불 각각 몇 초 남았는지 보여주는게 말이다. 여유로워 보이는 티라나 사람들도 빨간불이 10초 남았을 때부터 건너기 시작한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_29_isd25n"
-              },
-              {
-                "alt": "",
-                "imageSrc": "0425_47_zb6w5d"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "티라나와 스코페의 버스는 다 독일제인 것 같다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "두러스에 가는 버스는 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/iXCFGngfkceQsvLE8",
-              "type": "link",
-              "children": [
-                {
-                  "text": "East Bus Terminal"
-                }
-              ]
-            },
-            {
-              "text": "에서 출발한다. 터미널에 가기 위해 또 버스를 탄다. 버스는 구글맵으로 검색할 수 있으나, 거기 찍히는 시간은 믿으면 안 된다. 전혀 상관이 없다. 그리고 대부분의 버스에 행선지와 버스 번호가 안 적혀 있으니 눈치껏 타야 한다. 우리는 정신이 하나도 없는데 주민들은 아무런 문제 없다는 듯이 잘 타고 다닌다. 우리는 모르는 버스 시스템이 내부자들끼리는 이미 공유되어 있는 건가?"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "할머니 할아버지와 나의 길 찾는 방법이 완전히 달랐던 것이 생각난다. 할머니 할아버지는 explicit하고 구체적인 정보를 어딘가에서 읽을 수 있기를 기대하지 않으신다. 대신 동네의 노선도와 길을 이미 꿰뚫고 계시거나, 모르면 행인에게 물어 물어 길을 찾고, 처음보는 택시기사와 친구처럼 말을 섞으며 정보를 나눈다. 읽기보다 말하기 위주의 사회였던 것이다. 대신 노선도를 내재하고 계신 자신의 동네를 벗어나는 것을 스트레스로 여기신다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "세대가 겨우 두 번 바뀌었을 뿐인데 이렇게 다를 수가. 학교에서 듣는 수업에 부모님이 코소보 사람인 학생 두 명이 있다. 부모님께서 독일로 이주하셔서 독일에서 태어났다고 하고, 스스로를 독일인으로 정의한다. 같은 나라 안에서의 세대 차이도 이렇게나 큰데, 아예 대표적인 저맥락 사회인 독일로 이주한 그들이 느끼는 세대 차이는 더 크지 않을까?"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_30_iputt0"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "타서 앉아 있으면 검표원이 돌아다니면서 현금을 받고, 몸에 차고 있는 돈가방에서 돈을 거슬러주고, 티켓을 하나 뜯어서 준다. 그리고 좀 있다가 다시 돌아다니시면서 승객들이 들고 있는 티켓을 가져가서 사용된 티켓이라는 표시로 조금 찢어서 다시 돌려준다. 늘 '없어진 직업'의 예시로 배우던 검표원을 직접 보게 될 줄은 몰랐다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그리고 이 날의 하이라이트는 누가 뭐래도 이 부분이다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "East Bus Terminal of Tirane"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_31_us2e9w"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "East Bus Terminal에 버스 시간보다 30분쯤 일찍 도착해서 구글맵이 가리키는 터미널을 향해 걷는다. 웬걸, 버스는 코빼기도 보이지 않고 웬 콘크리트 기둥과 철근들이 서 있는 공사판이 나오는 것이다. 마주치는 사람들에게 말을 건다. 터미널의 순찰복 같은 걸 입으신 할아버지는 저 쪽으로 가라고 한다. 그래서 저 쪽으로 갔더니 웬 호텔 주차장이 나오는데, 그곳의 사람 좋게 웃는 경비원 아저씨는 갑자기 우리에게 바디랭귀지로 소통을 시도하지만 전혀 알아들을 수 없다. 우리와 반대쪽으로 걸어가는 한 키 큰 사람에게서는 뜻밖에도 Nein 이라는 답이 되돌아온다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_32_d6azin"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "일말의 희망을 품고 울타리를 따라 걸으니 이런 처참한 폐허가 나온다. 없는 길을 개척하며 고난의 행군을 하던 도중, 붉은 울타리 너머로 버스들이 보인다. 그 울타리를 넘는 사람도 보인다. 하지만 우리는 불가능이라고 판단하고 가던 대로 계속 걷는다. 그리고 정말 다행히도 버스 터미널에 들어온다... 버스비는 200레크(2유로)이다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Durrës"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_33_mqqw2k"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/ptBAmC2PNR81pZBJ6",
-              "type": "link",
-              "children": [
-                {
-                  "text": "두러스"
-                }
-              ]
-            },
-            {
-              "text": "에 도착한다. 독일어를 한다는 택시를 보고 반가워서 찍어본다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_35_umpdvs"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "한 과일가게에 들어간다. 용과, 복숭아 등을 하나씩 집어서 가져가니 가격을 매겨주는데, 생각보다 비싸서 당황한다. 카운터에 수상하게 생긴 작고 무르고 부숭부숭한 납작복숭아 바구니가 놓여 있다. 납작복숭아가 그렇게 달다길래 하나씩 사서 씻지도 않고 한입 베어문다. 음… 그냥 복숭안데?"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_36_c0di8c"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            },
-            {
-              "href": "https://maps.app.goo.gl/AXoYe6r8RMNy95js8",
-              "type": "link",
-              "children": [
-                {
-                  "text": "베네치아 타워"
-                }
-              ]
-            },
-            {
-              "text": ". 들어가려면 돈을 내야 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_37_htzrs5"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "1939년 침략한 이탈리아와 싸웠던 Mujo Ulqinaku라는 자의 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/KDqL9bxvZKM8WAj98",
-              "type": "link",
-              "children": [
-                {
-                  "text": "동상"
-                }
-              ]
-            },
-            {
-              "text": ". 두러스가 이탈리아랑 지리적으로 엄청 가깝긴 하다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_38_ifksyn"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "해변가에는 휴가 나온 비둘기들이 여유롭게 노닐고 있다. 땅에 있는 저 키위 뭉치들은 정체가 무엇일까. "
-            },
-            {
-              "href": "https://www.alaturka.info/en/austria/salzburg/90-general-content/5167-swarm-fliers-with-permanent-sleeping-places-the-starlings/en/albania/tirana/3829-sea-balls-on-the-beach-of-durres-in-large-quantities/amp",
-              "type": "link",
-              "children": [
-                {
-                  "text": "답을 발견했다."
-                }
-              ]
-            },
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_39_b80lab"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "버스 터미널에서 한바탕 한 바람에 약간 영혼이 털린 상태로 하얗게 내리쬐는 햇빛과 열대 나무들을 감상한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_40_snditf"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그래피티로 뒤덮이고 창문이 깨져서 내부가 드러난 상태로 방치된 이상한 건물들과 지중해의 바다와 열대 나무... 90년대의 "
-            },
-            {
-              "href": "https://www.reddit.com/r/AskBalkans/comments/1i0ie5s/durr%C3%ABs_in_the_90s_vs_today/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "상업화와 개발 전 경관"
-                }
-              ]
-            },
-            {
-              "text": "이 더 인간적으로 보이기도 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_41_emkm9s"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "독일에서는 보기 힘든 해산물을 먹는 것이 목적이다. 택시를 타야 하는 거리에 있는 맛집에 가려 했지만, 택시가 바가지라서 타지 못하고 횡단보도 언저리에서 근처 식당을 검색한다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Pastarella"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_42_buiynh"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "2층 식당 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/kMYFcC8i1dqAdkmL7",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Pastarella"
-                }
-              ]
-            },
-            {
-              "text": "에 들어온다. 식당 한가운데 수족관이 있고 천장에 거울이 달려 있는 등 인테리어가 독특한 곳이다. 휘발유 냄새가 나는 초록색 기름과 후추와 분홍 소금이 배치되어 있다. 내가 저 후추 병에서 어떻게 후추를 나오게 하는 건지 알아내려 노력하는 것을 보고 직원이 내 접시에다가 후추를 친히 뿌려 주며 알려준다. 후추가 뿌려진 접시에 손가락을 찍어 맛보려는데 접시를 바꿔 주려고 해서 괜찮다고 했다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 3,
-          "children": [
-            {
-              "text": "Monument of Unknown Soldier"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_43_snndon"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이탈리아 식당의 창밖으로 "
-            },
-            {
-              "href": "https://maps.app.goo.gl/RGZ4MZhyGVnc8Sp78",
-              "type": "link",
-              "children": [
-                {
-                  "text": "이탈리아와 맞서 싸우는 동상"
-                }
-              ]
-            },
-            {
-              "text": "이 보인다. 파시스트 이탈리아는 지중해를 이탈리아 해로 만들고 싶어했고 나치 독일이 오스트리아와 체코슬로바키아를 점령한 것에 대한 경쟁의식으로 지중해 식민지를 갖고 싶어했다. 그래서 알바니아 국왕에 항복 협정을 제시했지만 국왕은 서명을 미뤘다. 그래서 1939년 이탈리아군은 두러스를 포함한 네 개의 알바니아 해안에 상륙한다. 두러스의 저항이 가장 거셌다고 한다.*"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "Italy Invades and Annexes Albania | EBSCO Research Starters. (n.d.). Retrieved May 5, 2025, from"
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://www.ebsco.com/research-starters/history/italy-invades-and-annexes-albania"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그렇다고 현재 두러스가 이탈리아에 적대적인 것으로 보이지는 않는다는 점이 궁금증을 자아낸다. 오히려 이탈리아 색이 도시 전반에 매우 진하다. 아까 베네치아 타워도 있고. 이탈리아 음식점도 엄청 많다. 역사적으로 이탈리아에 '아르버레셔'라고 불리는 큰 규모의 알바니아인 공동체가 있기 때문에 알바니아와 이탈리아의 관계는 대체적으로 우호적이었다고 한다.* 그것이 이탈리아가 알바니아 해안에 상륙했을때 큰 저항이 없었던 이유일까? 그리고 물론 관광지화, 상업화의 영향도 이탈리아 음식점이 우후죽순 생겨나는 데 기여를 했을 것 같다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "The Arbëreshë: Italy’s Albanian Diaspora. (n.d.). The Cambridge Language Collective. Retrieved May 5, 2025, from"
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://www.thecambridgelanguagecollective.com/europe/the-arbereshe-italys-albanian-diaspora"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_44_kayyrn"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "애피타이저로 식전빵과 올리브가 나온다. 맛있다. 아직도 위장에 얹혀 있는 어제의 저녁식사를 잠재우기 위해 쌀 종류를 주문한다. 새우 리조또이다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_45_hjphp6"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "Monument of Unknown Soldier의 흰색 계단 같은 조형물에 기대어 일광욕을 하다가 어린아이가 와서 언니에게서 과일을 구걸해 간다. 알고 보니 부모가 근처에 있는데 말리지 않는다는 게 충격적이다. 해변에는 가지 않고 티라나에 돌아가기로 한다. 다시 돌아간 버스 정류장 근처 작은 편의점에서 음료를 산다. 둘 다 70레크다. 앞에 가는 아줌마가 사길래 나도 따라서 미스테리한 흰 병을 구매한다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이 때 맛본 Dhallë의 시큼 짭짤 텁텁한 맛을 잊지 못해서 이번 여행 중 2번이나 더 사먹었다. 원래 3번이 될 뻔했는데 그때 현금이 없고 폰도 꺼져서 못 사먹었다. Dhallë의 다른 이름은 아이란인데, 중앙아시아, 발칸반도, 터키, 이란에서 마시는 음료수로 주 재료는 요거트, 물, 소금이다. 알바니아에서 아이란을 부르는 이름인 Dhallë는 '섞다', '흔들다' 라는 뜻에서 유래했다고 한다.*"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "text": null,
-            "link": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "Ayran. (2025). In Wikipedia."
-                }
-              ],
-              "propPath": [
-                "text"
-              ]
-            },
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://en.wikipedia.org/w/index.php?title=Ayran&oldid=1288655867"
-                }
-              ],
-              "propPath": [
-                "link"
-              ]
-            }
-          ],
-          "component": "footnote"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0425_46_ewbmi6"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "지친 몸을 다시 200레크짜리 버스에 싣고 티라나로 향한다."
             }
           ]
         }
@@ -83782,10 +83901,10 @@
     },
     "keywords": [
       {
-        "name": "dns"
+        "name": "cloudflare"
       },
       {
-        "name": "cloudflare"
+        "name": "dns"
       }
     ],
     "content": {
@@ -85829,13 +85948,13 @@
     },
     "keywords": [
       {
-        "name": "단축키"
-      },
-      {
         "name": "html"
       },
       {
         "name": "태그"
+      },
+      {
+        "name": "단축키"
       }
     ],
     "content": {
@@ -88237,16 +88356,16 @@
     },
     "keywords": [
       {
-        "name": "html"
+        "name": "obsidian"
       },
       {
         "name": "markdown"
       },
       {
-        "name": "obsidian"
+        "name": "css"
       },
       {
-        "name": "css"
+        "name": "html"
       }
     ],
     "content": {
@@ -88607,13 +88726,13 @@
     },
     "keywords": [
       {
-        "name": "화면"
+        "name": "시간이라"
       },
       {
         "name": "밀려난"
       },
       {
-        "name": "시간이라"
+        "name": "화면"
       }
     ],
     "content": {
@@ -88664,10 +88783,10 @@
     },
     "keywords": [
       {
-        "name": "좋다"
+        "name": "문제"
       },
       {
-        "name": "문제"
+        "name": "좋다"
       },
       {
         "name": "별로"
@@ -89158,10 +89277,10 @@
     },
     "keywords": [
       {
-        "name": "과정"
+        "name": "선택"
       },
       {
-        "name": "선택"
+        "name": "과정"
       },
       {
         "name": "모든"
@@ -89926,10 +90045,10 @@
     },
     "keywords": [
       {
-        "name": "제작했습니"
+        "name": "서체"
       },
       {
-        "name": "서체"
+        "name": "제작했습니"
       },
       {
         "name": "포스터"
@@ -90982,10 +91101,10 @@
     },
     "keywords": [
       {
-        "name": "space"
+        "name": "positive"
       },
       {
-        "name": "positive"
+        "name": "space"
       },
       {
         "name": "negative"
