@@ -12,6 +12,7 @@ import InlineInternalLink from "./document/inline-internallink";
 import Carousel from "./document/carousel";
 import Iframe from "./document/iframe";
 import PlacePlaceholder from "./document/PlacePlaceholder";
+import FootNote from "./document/Footnote";
 
 export default function Content({
   post, font, places
@@ -84,6 +85,10 @@ export default function Content({
                 case 'place':
                   return (
                     <PlacePlaceholder key={idx} placeId={document.children?.[0].children?.[0].text} places={places}/>
+                  )
+                case 'footnote':
+                  return (
+                    <FootNote key={idx} text={document.children?.[0].children?.[0].text} link={document.children?.[1].children?.[0].text} />
                   )
               }
           }

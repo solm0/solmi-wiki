@@ -123,6 +123,7 @@ export type RichTextNode =
   | CarouselNode
   | IframeNode
   | PlaceNode
+  | FootnoteNode
 
 export type PostContent = {
   document: RichTextNode[];
@@ -264,4 +265,14 @@ export type PlaceNode = {
     children: FormattedText[],
   }[],
   component: 'place',
+}
+
+export type FootnoteNode = {
+  type: 'component-block',
+  children: {
+    type: 'component-inline-prop',
+    children: FormattedText[],
+    propPath: string;
+  }[],
+  component: 'footnote',
 }

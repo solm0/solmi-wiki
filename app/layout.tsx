@@ -21,7 +21,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const postsPath = path.join(process.cwd(), "public/_all_posts.json");
-  const { posts } = JSON.parse(fs.readFileSync(postsPath, "utf8"));
+  const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
 
   const tags = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/all-tags.json'), 'utf8'));
   const keywordsTag = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/top-keywords-tag.json'), 'utf8'));

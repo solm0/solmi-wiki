@@ -12,6 +12,7 @@ const GET_ALL_POSTS = gql`
     posts {
       id
       title
+      status
       excerpt
       publishedAt
       tags { name }
@@ -27,9 +28,10 @@ async function main() {
   try {
     console.log("Fetching posts...");
     const data:{posts: Post[]} = await client.request(GET_ALL_POSTS);
+    const posts = data.posts.filter(post => post.status === 'published');
 
     const outputPath = path.join(process.cwd(), "public/_all_posts.json");
-    fs.writeFileSync(outputPath, JSON.stringify(data, null, 2));
+    fs.writeFileSync(outputPath, JSON.stringify(posts, null, 2));
 
     console.log("Saved to public/_all_posts.json");
   } catch (e) {

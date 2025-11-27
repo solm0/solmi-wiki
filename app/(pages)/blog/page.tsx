@@ -13,6 +13,7 @@ const GET_ALL_POSTS = gql`
     posts {
       id
       title
+      status
       publishedAt
     }
   }
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
 
 export default async function BlogPage() {
   const data: {posts: Post[]} = await client.request(GET_ALL_POSTS);
-  const posts = data.posts;
+  const posts = data.posts.filter(post => post.status === 'published');
   const finalPosts = GenerateChron(posts)
 
   return (
