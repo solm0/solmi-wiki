@@ -34,8 +34,8 @@ export default function ThemeButton() {
         onClick={handleTheme}
         id='theme-button'
       >
-        {theme === 'light' ?
-          <Moon className='h-4 w-4' /> : <SunMedium className='h-4 w-4' />
+        {theme === 'dark' ?
+          <Moon className='h-3 w-3' /> : <SunMedium className='h-3 w-3' />
         }
       </button>
     </div>

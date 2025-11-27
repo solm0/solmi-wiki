@@ -66,7 +66,7 @@ export default function ImageModal({
           width={800}
           height={800}
           src={generateUrl(idx)}
-          className="w-auto h-[30rem] object-left-top rounded-sm cursor-pointer"
+          className="w-auto h-auto object-left-top rounded-sm cursor-pointer"
           alt={carousel.props.items[idx]?.alt}
           unoptimized
         />

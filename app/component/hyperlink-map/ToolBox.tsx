@@ -14,6 +14,7 @@ import ThemeButton from "../atoms/theme-button";
 import LocalMap from "../map/LocalMap";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
+import MusicCmp from "../music/MusicCmp";
 
 export function ToolComponents({
   isEnabled, cmp, children, hovered
@@ -193,23 +194,7 @@ export default function ToolBox({
             cmp={tools[3]}
             hovered={hovered}
           >
-            {/* post 또는 null를 prop으로 받아 그안에서 해결 */}
-            <div className="w-full h-auto p-4 bg-button-100 flex flex-col gap-4 rounded-sm">
-              <div className="flex flex-col gap-1 items-center">
-                <p className="opacity-60">이전가사</p>
-                <p className="text-lg">현재가사</p>
-                <p className="opacity-60">이후가사</p>
-              </div>
-              <div className="flex w-full justify-between">
-                <button>이전곡</button>
-                <button>재생,일시정지</button>
-                <button>이후곡</button>
-              </div>
-              <div className="flex w-full justify-between">
-                <p>노래이름</p>
-                <p>가수이름</p>
-              </div>
-            </div>
+            <MusicCmp />
           </ToolComponents>
         </div>
 

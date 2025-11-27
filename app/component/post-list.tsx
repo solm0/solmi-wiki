@@ -1,24 +1,7 @@
 'use client'
 
-import clsx from "clsx";
 import { usePathname, useSearchParams, useRouter} from "next/navigation";
-import { ChevronRight } from "lucide-react";
 import { Post } from "../lib/type";
-
-export function ChronItem({
-  note,
-}: {
-  note: Post,
-}) {
-  return (
-    <>
-      <div className="w-16 shrink-0 text-text-800">{note.chron.year && `${note.chron.year}년`}</div>
-      <div className="w-16 shrink-0 text-text-800">{note.chron.month && `${note.chron.month}월`}</div>
-      <div className="w-16 shrink-0 text-text-800">{note.chron.day && `${note.chron.day}일`}</div>
-      <p className="col-span-11 w-full text-text-900 truncate">{note.title}</p>
-    </>
-  )
-}
 
 export default function PostList({ 
   note,
@@ -55,21 +38,20 @@ export default function PostList({
   return (
     <div
       key={note.id}
-      className={clsx (
-        "text-nowrap h-12 w-full transition-colors duration-300 hover:cursor-pointer flex items-center font-normal rounded-sm",
-        hovered === note.id && "bg-button-100"
-      )}
+      className={`
+        text-nowrap h-12 w-full transition-colors duration-300 hover:cursor-pointer flex items-center gap-6 font-normal rounded-sm pl-2
+        ${hovered === note.id && "bg-button-100"}
+      `}
       onMouseEnter={() => onMouseEnter(note.id)}
       onMouseLeave={onMouseLeave}
       onClick={() => handleClick(note.id)}
     >
-      {rootPath === note.id &&
-        <ChevronRight className={clsx(
-          "absolute left-0 text-text-900 w-4 h-4",
-          hovered === note.id && "text-text-600",
-        )} />
-      }
-      <ChronItem note={note} />
+      <div className="flex gap-6 text-xs font-bold items-center text-text-700 font-mono">
+        <div className="w-8 shrink-0">{note.chron.year && `${note.chron.year}`}</div>
+        <div className="w-4 shrink-0">{note.chron.month && `${note.chron.month}`}</div>
+        <div className="w-4 shrink-0">{note.chron.day && `${note.chron.day}`}</div>
+      </div>
+      <p className="col-span-11 w-full text-text-900 truncate">{note.title}</p>
     </div>
   )
 }
