@@ -15,13 +15,11 @@ export default function GoToTop({
   }
   
   return (
-    <div className="h-auto w-full flex items-center gap-4 mb-1">
-      <button
-        onClick={goToTop}
-        className='text-xs h-auto w-auto rounded-sm items-center pointer-events-auto break-keep hover:text-text-700 transition-all duration-300'
-      >
-        {title}
-      </button>
-    </div>
+    <button
+      onClick={goToTop}
+      className='text-left leading-[1.5em] mb-1 text-xs h-auto w-full pointer-events-auto break-keep hover:text-text-700 transition-all duration-300'
+    >
+      {title}
+    </button>
   )
 }

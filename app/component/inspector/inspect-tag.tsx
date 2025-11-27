@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useHoveredLiquid } from '@/app/lib/zustand/useHoveredLiquid';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Tag } from '@/app/lib/type';
 
 export default function InspectTag({
@@ -14,10 +14,12 @@ export default function InspectTag({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+
+  const tagContainerRef = useRef<HTMLDivElement | null>(null);
   
-  const hoveredTag = useHoveredLiquid((state) => state.value)
-  const offsetX = useHoveredLiquid((state) => state.offsetX)
-  const width = useHoveredLiquid((state) => state.width)
+  const hoveredTag = useHoveredLiquid((state) => state.value);
+  const offsetX = useHoveredLiquid((state) => state.offsetX);
+  const width = useHoveredLiquid((state) => state.width);
   const setHoveredTag = useHoveredLiquid((state) => state.setValue);
 
   const currentTag = searchParams.get("tag");
@@ -44,10 +46,14 @@ export default function InspectTag({
     e: React.MouseEvent<HTMLDivElement, MouseEvent>,
     value: string
   ) => {
+    if (!tagContainerRef.current) return;
+    const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
+
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    const offsetX = Math.floor(rect.left);
+    const left = Math.floor(rect.left);
     const width = rect.width;
-    setHoveredTag(value, offsetX, width)
+
+    setHoveredTag(value, left-containerLeft, width)
   };
 
   // 현재 호버중인 태그 없으면 직전에 클릭했던 태그
@@ -56,8 +62,13 @@ export default function InspectTag({
       const el = document.getElementById(tag);
       if (!el) return;
 
+      if (!tagContainerRef.current) return;
+      const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
+      
       const rect = el.getBoundingClientRect();
-      setHoveredTag(tag, Math.floor(rect.left), rect.width);
+      const left = Math.floor(rect.left);
+      const width = rect.width;
+      setHoveredTag(tag, left-containerLeft, width);
     } else return;
   }, [hoveredTag]);
 
@@ -72,15 +83,20 @@ export default function InspectTag({
         const el = document.getElementById(currentTag);
         if (!el) return;
   
+        if (!tagContainerRef.current) return;
+        const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
+        
         const rect = el.getBoundingClientRect();
-        setHoveredTag(currentTag, Math.floor(rect.left), rect.width);
+        const left = Math.floor(rect.left);
+        const width = rect.width;
+        setHoveredTag(currentTag, left-containerLeft, width);
       }, 30);
     }
   }, [hoveredTag, setHoveredTag]);
 
   return (
     <div
-      id='tag-input'
+      ref={tagContainerRef}
       className='h-auto w-auto px-1 py-1 border border-text-600 rounded-sm flex gap-1 backdrop-blur-md pointer-events-auto'
       onMouseLeave={() => setHoveredTag(null, null, null)}
     >
@@ -103,11 +119,11 @@ export default function InspectTag({
       ))}
       <span
         className={clsx(
-          'absolute h-8 rounded-sm -z-10 pl-1 transition-all duration-300 ease-in-out bg-green-500',
+          'absolute h-8 rounded-sm -z-10 transition-all duration-300 ease-in-out bg-green-500',
           hoveredTag ? 'opacity-100' : 'opacity-0',
         )}
         style={{
-          left: `${offsetX!-32}px`,
+          left: `${offsetX}px`,
           width: `${width}px`,
         }}
       >
