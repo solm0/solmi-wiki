@@ -6,7 +6,7 @@ export default function FootNote({text, link}: {text:string; link: string}) {
       <a
         href={link}
         target="_blank"
-        className="text-xs pl-1 underline underline-offset-[0.4em] decoration-text-800 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
+        className="text-xs pl-1 underline underline-offset-[0.3em] decoration-text-800 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
       >
         {link}
       </a>

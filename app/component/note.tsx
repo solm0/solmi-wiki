@@ -4,8 +4,7 @@ import { Post } from "../lib/type";
 import Content from '@/app/component/content';
 import Footer from '@/app/component/footer';
 import Metadata from '@/app/component/metadata';
-import { maruburi, maruburi_bold } from '@/app/lib/localfont';
-import { pretendard } from "@/app/lib/localfont";
+import { maruburi_bold } from '@/app/lib/localfont';
 import { useRef } from "react";
 import RingLinks from "./ring-links";
 import SequenceNav from "./sequence-nav";
@@ -71,24 +70,19 @@ export default function Note({
   return (
     <article
       className={`
-        flex flex-col gap-12 w-full leading-[2em]
-        ${post.tags.name === '코딩' ? `${pretendard.className} font-sans` : `${maruburi.className} font-serif`}
-      `}
+        flex flex-col gap-12 w-full leading-[2em] font-serif`}
     >
       <h1
         ref={headRef}
         className={`
-          leading-[1.5em] text-4xl text-text-950
-          ${post.tags.name === '코딩' ? `font-medium max-w-[43em]` : `${maruburi_bold.className} max-w-[47em]`}
-        `}
+          leading-[1.5em] text-4xl text-text-950 ${maruburi_bold.className} max-w-[47em]`}
       >
         {post?.title}
       </h1>
 
       <div
         className={`
-          flex flex-col gap-2
-          ${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}
+          flex flex-col gap-2 max-w-[47em]
         `}
       >
         <RingLink />
@@ -96,16 +90,16 @@ export default function Note({
       </div>
       
       <div className="flex flex-col w-full">
-        {post.content && <Content post={post.content.document} font={`${post.tags.name === '코딩' ? 'sans' : 'serif'}`} places={post.places} />}
+        {post.content && <Content post={post.content.document} places={post.places} />}
       </div>
 
       {(post.backlinks?.length || (post.links?.length ?? 0) > 0) &&
-        <div className={`${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}`}>
+        <div className={`max-w-[47em]`}>
           <SequenceNav isFirstChild={isFirstChild} prev={prev} next={next} />
         </div>
       }
 
-      <div className={`${post.tags.name === '코딩' ? `max-w-[43em]` : `max-w-[47em]`}`}>
+      <div className={`max-w-[47em]`}>
         <Footer />
       </div>
     </article>

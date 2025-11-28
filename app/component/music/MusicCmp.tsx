@@ -1,4 +1,4 @@
-import { maruburi, maruburi_bold, pretendard } from "@/app/lib/localfont";
+import { maruburi_bold, pretendard } from "@/app/lib/localfont";
 import { ChevronLeft, Info, ListMusic, Maximize2, Minimize2, Pause, Play } from "lucide-react";
 import { useState } from "react";
 
@@ -66,7 +66,7 @@ export default function MusicCmp() {
       </div>
 
       {/* 음악정보 & 컨트롤러 */}
-      <div className={`flex flex-col gap-2 ${maruburi.className} bg-button-100 rounded-sm p-2`}>
+      <div className={`flex flex-col gap-2 font-serif bg-button-100 rounded-sm p-2`}>
         <div className="w-full h-auto flex flex-col gap-2">
           {/* 개요 */}
           <div className="relative flex gap-2 h-10 items-center">

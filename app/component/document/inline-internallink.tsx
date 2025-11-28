@@ -39,7 +39,7 @@ export default function InlineInternalLink({
         <Link
           href={`${internalLinkComponent.props.post.id}/?${newParams}`}
           target="_self"
-          className="inline underline underline-offset-6 decoration-text-900 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
+          className="inline underline underline-offset-[0.4em] decoration-text-900 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
           onMouseEnter={() => setHoveredId(internalLinkComponent.props.post.label || null, internalLinkComponent.props.post.id || null, true)}
           onMouseLeave={() => setHoveredId(null, null)}
           onClick={() => setHoveredId(null, null)}

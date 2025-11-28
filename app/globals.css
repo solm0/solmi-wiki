@@ -60,6 +60,12 @@
   --color-text-600: var(--text-600);
 }
 
+@theme {
+  --font-sans: var(--font-pretendard), sans-serif;
+  --font-serif: var(--font-maruburi), sans-serif;
+  --font-serif-bold: var(--font-maruburi-bold), sans-serif;
+}
+
 body {
   transition: background-color 0.3s ease, color 0.3s ease;
   background: var(--background);

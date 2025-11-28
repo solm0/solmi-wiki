@@ -10,7 +10,7 @@ export default function InlineText ({
 
   if (text.bold) styles.push(`${maruburi_bold.className} font-bold`);
   if (text.italic) styles.push('italic');
-  if (text.underline) styles.push('underline underline-offset-6 decoration-text-900 decoration-[1px]');
+  if (text.underline) styles.push('underline underline-offset-[0.4em] decoration-text-900 decoration-[1px]');
   if (text.strikethrough) styles.push('line-through decoration-text-900 decoration-[1px]');
   if (text.code) styles.push('text-sm font-mono bg-button-100 rounded-sm px-[5px] py-[2px] border border-text-600 mx-1');
   if (text.keyboard) styles.push('text-sm font-mono px-2 py-1');

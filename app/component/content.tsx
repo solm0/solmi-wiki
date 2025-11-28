@@ -15,17 +15,16 @@ import PlacePlaceholder from "./document/PlacePlaceholder";
 import FootNote from "./document/Footnote";
 
 function ContentItem({
-  document, idx, font, places
+  document, idx, places
 }:{
   document: RichTextNode;
   idx: number;
-  font?: string;
   places?: Place[];
 }) {
   switch (document.type) {
     case 'heading':
       return (
-        <Headings heading={document} font={font ?? 'serif'} />
+        <Headings heading={document} />
       )
     case 'paragraph':
       return (
@@ -92,10 +91,9 @@ function ContentItem({
 }
 
 export default function Content({
-  post, font, places
+  post, places
 }: {
   post: RichTextNode[];
-  font?: string;
   places?: Place[];
 }) {
   return (
@@ -106,15 +104,12 @@ export default function Content({
           className={
             document.type === 'component-block' && document.component === 'carousel'
               ? 'w-full'
-              : font === 'sans'
-                ? 'max-w-[43em]'
-                : 'max-w-[47em]'
+              : 'max-w-[47em]'
           }
         >
           <ContentItem
             document={document}
             idx={idx}
-            font={font}
             places={places}
           />
         </div>

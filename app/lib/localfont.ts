@@ -13,6 +13,7 @@ export const pretendard = localFont({
       style: 'medium',
     }
   ],
+  variable: '--font-pretendard',
 })
 
 export const maruburi = localFont({
@@ -21,7 +22,8 @@ export const maruburi = localFont({
       path: '../fonts/maruburi-semibold.otf',
       style: 'semibold',
     },
-  ]
+  ],
+  variable: '--font-maruburi',
 })
 
 export const maruburi_bold = localFont({
@@ -30,5 +32,6 @@ export const maruburi_bold = localFont({
       path: '../fonts/maruburi-bold.otf',
       style: 'bold',
     },
-  ]
+  ],
+  variable: '--font-maruburi-bold'
 })
