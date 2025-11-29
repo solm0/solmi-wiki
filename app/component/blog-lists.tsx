@@ -3,6 +3,7 @@
 import { useState } from "react"
 import PostList from "./post-list";
 import { Post } from "../lib/type";
+import { maruburi } from "../lib/localfont";
 
 export default function BlogLists({
   posts,
@@ -12,7 +13,7 @@ export default function BlogLists({
   const [hovered, setHovered] = useState<string | null>(null);
 
   return (
-    <section className={`font-serif font-semibold relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar`}>
+    <section className={`${maruburi.className} font-semibold relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar`}>
       {posts && posts.map((note) => (
         <PostList
           key={note.id}

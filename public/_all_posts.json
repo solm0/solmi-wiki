@@ -10792,6 +10792,1292 @@
     }
   },
   {
+    "id": "cmexabj9s004ytf6molmwj0d6",
+    "title": "0820 불가리아 도착",
+    "status": "published",
+    "excerpt": " 쾰른 여행 에서 돌아오자마자 더 창대한 여행이 시작될 참이었다. 계획대로 착착 될 줄 알았다, 웬만해선 됐었으니까… 세탁기 소동 cmid6i2wc00002bisv49rpa8...",
+    "publishedAt": "2025-08-28T22:00:00.000Z",
+    "tags": {
+      "name": "방랑"
+    },
+    "keywords": [
+      {
+        "name": "공항"
+      },
+      {
+        "name": "버스"
+      },
+      {
+        "name": "호스텔"
+      },
+      {
+        "name": "충전기"
+      },
+      {
+        "name": "소피아"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmera1z1w004ktf6moamgro7r",
+              "label": "0818-0819 P와의 쾰른 여행",
+              "data": {
+                "id": "cmera1z1w004ktf6moamgro7r",
+                "title": "0818-0819 P와의 쾰른 여행",
+                "links": [],
+                "backlinks": []
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "쾰른 여행"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "에서 돌아오자마자 더 창대한 여행이 시작될 참이었다. 계획대로 착착 될 줄 알았다, 웬만해선 됐었으니까…"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "세탁기 소동"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmid6i2wc00002bisv49rpa89"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "켐튼 도착하고 집 가서 초고속으로 빨래를 세탁기에 돌리고 샤워하고 짐을 쌌다. 세탁이 끝날 때가 됐는데 안 끝나서 내려와 보니까 세탁기가 맛이 가 있었다. 기숙사 세탁기가 세탁 후 잠기는 일은 매우매우 흔했다. 그럴 때는 다시 앱으로 같은 세탁기를 재예약해서 문을 열면 되었다. 그런데 내 빨래를 집어삼킨 세탁기의 전원이 아예 나가 버려서 재예약이 안 되는 것이 아닌가? 겪어보지 않은 상황이 하필이면 기숙사를 떠나기 며칠 남지도 않았고 비행을 앞두고 있는 지금 일어난 것이 어처구니가 없었다. 켐튼에 처음 온 날에도 "
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmdbkgho80044mdamqs4r36j0",
+              "label": "켐튼대 기숙사 생활",
+              "data": {
+                "id": "cmdbkgho80044mdamqs4r36j0",
+                "title": "켐튼대 기숙사 생활",
+                "links": [],
+                "backlinks": []
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "세탁기 문제 겪었는데"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": " 갈 때도 이러는구나, 이딴 거지 같은 수미상관 원한 적 없습니다... 라는 생각을 했다. 하지만 아직 이때까지는 시간이 충분했다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_1_hlm8e0",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "WeWash 앱의 웹사이트에서 FAQ를 찾아보았다. 하라는 대로 물구멍을 열어서 물과 이물질을 제거하고 다시 닫아 보았다. 그리고 Emergency Release 라는 게 있었는데 어떤 구멍을 어떤 도구로 쑤시라는데 그게 어떤 도구인지도 안 알려줬다. 그래서 올라가서 카드와 가위 따위를 가져와서 쑤셔 봤는데 뭔가 걸리거나 눌리는 것 같지도 않았다. WhatsApp 기숙사 단톡방에도 물어봤는데 사람들은 도와주려 했지만 해답은 찾을 수 없었다. 점점 시간이 지나고 불안해졌다. 해결될 거란 기대는 품지 않은 채로 우리 플랫 주방에 있던 요르단 친구한테 도움을 요청했다. 그도 재예약을 해보라는 조언밖에는 해줄 수 없었다. 그런데 그 때 기적이 일어났다. 안 되던 재예약이 갑자기 된 것이다. 땡큐베리머치를 외치며 세탁기로 달려가서 세탁물을 뺐다. 그리고 보통 내 방에서 말리지만 지금은 건조할 시간이 없었기 때문에 빨래들을 건조기로 옮기고 돌렸다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "근데 이 미친 건조기가 건조는커녕 빨래에 물을 두 배로 먹여 버렸다. 세탁기랑 아주 쌍으로 나한테 물을 먹이는구나? 무거워진 빨래 중 절반은 옆에 있는 공용 건조대에 널어 놓고 절반은 방으로 들고 왔다. 여행 중에 물이 바닥으로 흘러서 바닥 썩으면 기숙사 보증금 못 받으니까 바닥에다가 비닐을 깔아 놓았다. 물 먹은 옷들을 가지고 비행기에 탈 수 없으니 속옷 몇 개만 물을 짜서 비닐에 넣고 안 마른 빨래의 냄새가 새어나오지 않도록 온 힘을 다해 밀봉했다. 덜어내는 것이 내가 할 수 있는 최선의 선택이었다. 원래 여유롭게 레베 가서 환전할 현금 뽑고 포럼 가서 이어폰 사고 옷도 1세트쯤 여분으로 가져가려고 했었는데, 이런 소동을 겪고 나니 어디에 들를 시간 따위는 더 이상 남아있지 않았다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "결국 쾰른 여행에서부터 입고 있던 Molchat Doma 티셔츠와 중학교 체육복 반바지를 입고 상당히 조촐한 짐가방을 가지고 공항으로 가는 기차에 탑승했다. 아, 돈도 못 뽑고 옷도 못 가져가고 음악도 못 듣고 여행 전 이런 상황에 놓인 적 있었던가? 하지만 괜찮다. 나그네에게 필요한 건 다 있다. 여권, 몸에 걸친 한 벌의 옷, 스마트폰 그리고 종이와 펜. 오히려 좋아, 그 충전기 충전 속도 느린데 공항에서 초고속 충전기 사면 오히려 좋고, 음악은 없어도 바깥 소리를 들을 수 있으니 오히려 좋고, 돈은 Memmingen 역 도보 6분거리 레베가 있으니 거기서 뽑아오면 되고, 물에 젖은 것들은 도착해서 호스텔에서 건조하면 되고, 새 옷 안 산지도 오래 됐겠다 물가 싼 소피아에서 한 세트 사면 되지."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 정도 시련이 시련이냐... 굴라그에 끌려간 것도 아니잖아. 나에게는 생활하는 데 지장 없는 양의 물질과 신체적 정신적 자유가 있잖아. 없는 건 현금과 음악…과 충전기? 아니 가방에 넣은 줄 알았는데 어디 갔지? 기차에 타고 나서 알았다. 다시 돌아갈 수 없다. 2시간 전에는 무조건 공항에 도착해야 한다. 그게 내 긍정회로의 마지노선이라고 생각했다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "비행기를 기다리며"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmie4qeys0000kcwprpt8235o"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "Memmingen 버스 정류장",
+                "imageSrc": "0820_2_vchwt2",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "계획대로 Memmingen에 2시간 전 도착, 근처 레베에 가서 현금을 인출했다. 충전기는 레베에 마땅한 게 없어 안 샀다. 공항에서 충전스테이션이 있으면 충전하고,"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "없으면 충전기 파는데 있는지 찾아봐서 있으면 사고,"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "없으면 소피아 공항에 가서 충전스테이션이 있으면 충전하고,"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "없으면 충전기 파는데 있는지 찾아봐서 있으면 사고,"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "없으면 호스텔 가서 충전하든지, "
+            },
+            {
+              "bold": true,
+              "text": "쇼핑몰이라도 가서 충전기를 사면 되겠지"
+            },
+            {
+              "text": ". (결국 이 모든 경우가 다 안 돼서 마지막이 현실이 되었다 ㅋㅋㅋㅋㅋ 하루종일 배터리를 사막의 물 한방울 같이 아껴야 했다. 그것이 이 날짜 포스트에 사진이 별로 없는 이유이다.)"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Memmingen 공항은 쪼끄매서 충전기 따위는 없었다. 담배와 화장품, 술로만 가득 채워진 작은 면세점을 두세번 돌고도 혹시 몰라 직원에게 Wo kann ich Ladegeräte kaufen? 충전 도구(?) 어디서 사나요? 하고 여쭤봤지만 친절하게 충전 아웃렛이 있는 곳을 알려주실 뿐이었다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_3_ismqhu",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "결국 있는 배터리로 소피아에 도착할 때까지 버티는 수밖에 없었다. 소피아 공항에서 충전기를 팔기를 간절히 빌면서. 수속은 너무 금방 끝나 버려서 2시간 일찍 공항에 올 필요가 없었다. 그래도 뭐 한 시간 더 켐튼에 있다 왔어도 딱히 지금 상황과 달라지는 건 없었을 거라고 계산을 해 본다. 충전기는 여전히 두고 왔을 확률이 크고, 돈은 거기서 뽑나 여기서 뽑나 마찬가지고, 옷을 30분 정도 더 드라이기로 말릴 수 있었겠지만 크게 소용은 없었을 것이다. 탑승 게이트 앞 대기실에서 멍 때리며 한 시간 기다렸을 때 배터리는 2X퍼센트였고 한 시간을 더 기다려야 했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "기다리는 동안은 폰을 하지 않고 멍 때려야 한다는 점을 빼면 매우 평범하게 지나갔다. 한 사람이 자기 화장실 다녀올 동안 짐을 좀 봐달라고 부탁하기도 했고, 엄마에게 아이스크림 자판기에서 아이스크림을 사달라며 응석 부리는 아이도 보고 하면서 말이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "탑승, 이륙, 의식의 흐름 기법"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "승무원이 '도브리 단'이라고 말했다. 폰 배터리는 아직 20퍼센트이다 가방에서 노트북 빼기도 귀찮고, 봐 봤자 멀미나 날 테니까 그냥 노트와 펜을 꺼냈다. 하지만 딱히 쓸 것도 없다. 3시간 동안 무엇을 해야 할까? 의식의 흐름대로 아무거나 써 보기로 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "비행기 좌석 잡지에서 어제 갔다 온 쾰른을 목격. 모든 사건이 서로 복잡하게 얽혀 있는 것만 같다.",
+                "imageSrc": "0820_4_rdxkjg",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "위즈에어 두 번째 타 본다. 저번과 다른 탑승구로 비행기에 탔다. 난 이제 사람을 좀 관찰하려 한다. 아까 개찰구에서 비행기로 이동하는 버스가 만차였다. 내가 배낭을 어깨에서 내려서 손에 드니까 옆 사람도 따라했다. 지금 내 옆자리에는 아기가 타고 있다. 아까 공항에서는 두 시간동안 대기했는데 자판기가 있었지만 참았다. 소피아 공항에서 처음 보는 음료수를 마시기 위해서다. 배고프다. 공항 자판기 몬스터는 3유로였는데 소피아는 얼마려나? 좌석 번호는 23C. 옆에는 독일 사람이 앉아 있고 이따금씩 앞 좌석 사람이랑 독일어로 대화한다. 나는 복도 쪽 좌석이다. 나올 때 처음으로 파리나 박물관에서 받은 작은 향수 샘플을 손목에 쥐똥만하게 발라 봤다. 그럼 뭐해, 또 땀 흘렸고 가방 속에는 안 마른 빨래가 들어 있는데. 일단 충전을 해야... 소피아 공항에 도착하면 빨리 충전기를 사자. 군것질도 하고, 저녁을 7시쯤에... 저번 알바니아 갈 때처럼 승무원들이 돌아다니면서 과자, 음료, 라면 등 팔고있어서 기내가 맛있는냄새로 차 있다. 안내방송에서 самолет이라는 말이 들린다. 아까 버스에서 애가 그 단어를 말하는 것도 들었다. 승무원이 벨트 메는 법, 구명조끼 입는 법 시연할 때 웃음 어떻게 참는지 항상 궁금하다. 보는 내가 못 참겠는 건 내가 이상한 건가? 방금 이륙했다. 이 비행기는 오스트리아, 세르비아를 거쳐 불가리아로 가겠지? 내 여정의 반대 순서다. 아 졸리다. 눈 감자마자 몇 분 동안 졸았다. 근데 지금 자면 밤에 못 자잖아. 참아야 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "흠… 이번 여행의 목적은 무엇일까? 나는 무엇을 보기를 원하지? 한국에 돌아가면 개발이든 뭐든 다시 한 가지 스킬을 키우는 데에, 또는 한 가지 프로젝트를 만드는 데 집중해야 할 것이다. 물론 전과는 다르게 새로운 루틴이 추가되고 새로운 친구가 추가되어 있겠지만. 어찌됐건 그렇게 됐을 때 가장 가치있게 남을 유산을 쌓을 수 있는 기회가 바로 지금 이 여행이라면, 그유산은 무엇일까? 취미. 삶의 낙. 쉼터. 를 만들어 가야겠다. 취미 즉 삶의 낙이자 쉼터로써 글쓰기와 책읽기는 투자하기 좋아 보인다. 그런 취미를 갖게 되면 새로운 것을 만들고 싶어지겠고, 만들고 싶은게 있으면 공부도 하게 되겠지."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "공부는 목적이 아니다. 공부는 내가 원하는 것을 위한 수단일 때 재밌어지는 것이다. 그럼 결론적으로 나는 이 여행을 통해, 발칸의 작가들의 글을 읽을 안목, 배경지식, 관점, 열정을 가져가자. 현실로 돌아가도 계속 뭔가에 열정을 불태우고 눈앞에 있지 않은 것을 그리며 살도록 말이다. 그래, 가까이 있는 것만 보면 안 된다. 그러면 장기적으로는 에너지가 부족해진다. 지금(14:50)도 비행기 안이라는 한정된 공간이고 내 눈 앞에 있는 것은 별 거 없지만 내 생각은 보이지 않는 곳을 떠돌아 다니며 노트 한 페이지를 꽉 채워서 쓰고 있잖아. 미미하지만 폰을 들여다 보며 딴짓하는 것보다 의미있는 시간을 보냈다고 생각한다. 이걸 디지털로 옮기는게 문제겠지만 (베오그라드 호스텔의 침대에서 밤에 옮겼다)."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이제 15시고 16:55에 내리니까 두 시간 남았다. 1/3 지났다. 또 뭐 쓰지? 이제 쓸 것도 없는데. 이번 여행 갔다 돌아오면 한국으로 가는 비행기 타기까지 3일 정도 남는데 그 동안 뭐하지? 글 쓰지 뭐. 쓸 거는 밀려 있잖아. 사진 보면서 리마인드 하면서 글이나 쓰지. 또 책도 읽어야지. 잔뜩 사 갈 테니까. 한국 가기 전에 최대한 많이 읽어 치우고 가서 곧 새 책 읽어야지. 그럴 리 없겠지만 더 시간 남으면 감상문도 쓰고. 블로그에 남기게. 아 배고파!! 15:08"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "15:10 아 겁나 심심하다. 궁금한거 공산당과 독재정권 때 어떤 예술가들은 그 권력에 편승해서 그들이 원하는 예술을 타협해서라도 했고, 어떤 예술가들은 공산주의자긴 한데 정권에는 반대했고, 어떤 예술가들은 공산주의자도 아니었다. 공산주의 시대의 예술이 어떤 점에서 재밌어 보이는 걸까? 발칸 레딧 봤던 글이 있다. 알바니아랑 세르비아의 차이와 공통점에 대한 글이었다. 공통점으로 '억압 때문에 비공식적 소통이 발달했다'라는 의견이 있었다. 그런 억압 하에 창의적인, 그리고 각자 욕망을 가진 인간들의 다양한 반응이 재밌는 것 아닐까? 방금 불가리아 억양이 섞인 영어로 안내방송에서 ‘현재 세르비아 상공을 지나고 있고 소피아 날씨는 29도'라고 했다. нужно 라는 단어가 얼핏 들렸다. 오 몰랐는데 내 자리 날개 뷰다. 4시간겁나 안 간다. 15:42 아 이제 한시간정도 남았다 소피아 도착해서 뭐 먹을지 생각하자."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "착륙"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmie8xaaf0001kcwpqfhn0vdl"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_5_acudsm",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "착륙했다. 아아 불가리아 삼색의 비행기가 보인다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_6_h17cln",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "안내 표지판들이 알록달록한 채도 높은 색을 하고 있었고 키릴문자가 많았다. 공항을 슥 둘러보니 아시아인은 나 뿐이었다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_9_geqhej",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "소피아 공항은 작은 편이었고 적어도 내가 내린 터미널 근처에서는 충전기를 파는 곳을 눈 씻고도 찾아볼 수 없었다. 책, 담배, 주전부리를 파는 작은 가게는 있었다. 지금은 서점 투어를 하도 다녀서 좀 익숙해졌지만 이 당시에는 책에 키릴문자가 빼곡히 적혀 있는 것을 처음 보고 눈이 돌아갔다. 배터리 때문에 공항 여기저기 돌아다닐 수가 없어서 일단 생존을 위해 호스텔로 직진하기로 했다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmiemy2m00002kcwps58fwhrf"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_7_ohbumr",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "공항에서 나와 버스 정류장으로 갔다. 햇볕이 온 힘을 다해 내리쬐는데 배터리를 사수하기 위해 휴대폰 밝기를 줄여가며 길을 찾았다. 하지만 버스정류장의 광고는 찍지 않을 수가 없었다. 놀기를 위한 꿈을 꾸지 않는다? (찾아보니 '장난감에 대한 꿈을 꾸지 않는다'였다.)"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_8_tbjxmb",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "저게 뭔지 몰랐는데 찾아 보니 불가리아어에서 погле́дна라는 원형 단어가 look at 이라는 뜻을 갖는다고 한다. 횡단보도를 건너기 전 차가 오는 방향을 한 번 보라는 뜻이었나 보다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_10_tvod3a",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "불가리아 대중교통 이용 방법은 엄청 편했다. 한국이랑 똑같이 버스나 트램에 타면 컨택리스 단말기가 있어서 가지고 있는 아무 카드, 구글페이를 갖다대기만 하면 결제된다. 한국과 달리 내릴 때는 안 찍어도 된다. 폰의 구글맵에는 지명이 라틴어로 표기되는데 정류장의 전광판이나 버스 내 단말기에는 키릴문자만으로 표기된다. 키릴문자를 더듬더듬 읽어서 라틴어 표기와 매치할 때의 짜릿함이란!"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "단말기 사진에 내가 입은 Molchat Doma 셔츠가 비친다. 그렇다, 나는 망할 건조기 때문에 아직도 그 셔츠를 입고 있다. 키릴문자 쓰는 원어민들 사이에서 말도 한 마디 못하는 외국인 주제에 프린팅된 옷을 입고 있으니까 뻘쭘하다. 마치 인터넷에 올라오는 이상한 뜻의 일본어를 모르고 타투로 몸에 새긴 사람들 같다. 하지만 난 적어도 이게 무슨 뜻인진 알고 있잖아. 근데 저게 밴드 이름인지 모르는 사람 눈에는 '집들은 조용하다' 또는 '집에서 조용하게'가 웃기게 읽히긴 마찬가지려나? 뉘른베르크 역에서 ‘나쁜남자'라고 궁서체로 적힌 모자를 쓰고 있던 길거리 음악가가 생각난다. 그 사람도 어쩌면 무슨 뜻인지 알면서 쓰고 있었던 걸지도 모른다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_11_hyegno",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "공항에서 84번 버스를 타고 호스텔을 향해 ul.gen gulko (Ул. Ген Гурко) 방향으로 간다. 버스 안과 밖의 모든 것이 아름답고 또 아름답도다... 서서 가는 한 승객이 들고 있는 책에는 세리프체의 키릴문자가 한가득, 할머니들은 다 다 다다다, 브체라 븰리 어쩌고 저쩌고 하면서 다정하게 대화한다… 근데 웃고 있을 때가 아니다 배터리가 10퍼센트대기 때문이다. 호스텔에 도착하기 전에 꺼질 것 같다. 그런 약간 엿된 상황인데도 행복해서 죽어버릴 것 같은 표정을 숨기기가 너무 어렵다. 현지인처럼 시크한 표정 짓자 해도 입꼬리가 자꾸만 올라간다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그때 갑자기 창밖에 웬 거대한 쇼핑센터 건물이 보였다. 저기라면 분명 충전기가 있다. 저곳은 전기가 무한히 솟아오르는 샘이 있는 낙원이다! 바로 버스에서 훌쩍 내려서 쇼핑몰로 들어갔다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "The Mall"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmien76p70003kcwpoolkaz6u"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_17_vrtsdt",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "들어가자마자 또 행복해서 죽어버릴 것 같다. 여기서 살고 싶다. 마구 사진 찍고 싶은데 폰이 이제는 진짜로 죽어 간다. 하지만 유로 현금도 있어서 이제 몰 안에서는 안전하다. 티라나, 스코페보다 독일에서 본 익숙한 브랜드들이 많다. 삼성 매장도 많다. 지하 2층인가에서 tedl에 갔는데 이어폰, 케이블, 충전기가 엄청 싸다. 싼게 비지떡이니 이어폰은 참는다. 난 마침 c to c 케이블이 필요했는데 c 꼽는 충전기가 있어서 산다. 직원이 도브리 단 했는데 입에 안붙어있어서 헬로로 답해버렸다. 나도 도브리단 해야하는데."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "오스트리아에서 본 브랜드인 billa 마트에도 들어간다. 여러 나라를 다니니 각 나라의 브랜드들이 보이면 그들이 간만에 만난 친구처럼 따뜻하게 인사해주는 것 같다. 마트에 들어가니 또 키릴문자의 향연에 정신을 놓아버릴 것 같다. 독일 마트처럼 뭐 안사면 못 나가기 때문에 요거트 하나를 산다. 락티마 발칸이라고 쓰여있다. 불가리아는 완전 초면인데 알파벳 읽을 줄 알고 러시아어 단어 고작 몇 개 알고 영어를 안다는 이유만으로 외래어와 약간의 러시아어 단어가 읽히니까 생각보다 많은 걸 읽을 수 있다. 과거에 아무 목적 없이 정말 순수한 사랑만으로 러시아어를 공부해뒀던 나 자신에게 고마워하게 됐다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그리고 좀더 누비다가 폰 가게에 들어갔다. 폰 가게는 삼성 제품과 광고가 많아서 우리나라 같다. 내가 케이블 비교하고 있으니까 외국인이라 뭐 살지 모르는 줄 알았는지 직원 두 명이 한번씩 도와줄까? 물어보셨다. 그리고 케이블을 켐튼 미디어마트보다 싼 가격인 12유로에 구매했는데, 불가리아에 살아? 물어보셔서 아니라고 하니까 영수증 찍어두면 1년 보험된다고 말해주셨다. 충전할 곳을 찾아 꼭대기 층에 올라왔는데 음식 안 사도 충전 아웃렛이 있는 좌석이 꽤 많다. 정말 전기가 무한정 솟아나는 샘이었던 것이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_13_ihdajl",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_12_mt2bsg",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "케이블이 usb가 아니라서 버스에서 충전을 못하기 때문에 앉은 자리에서 밥 먹으면서 20퍼센트까지만 충전하고 책방 구경하고 환전도 하고(아까 둘러볼 때 평점 좋은 환전소까지 있는 걸 확인했다) 체크인하러 가련다. 아 진짜 진짜 너무 천국이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "사람들이 나한테 러시아어로 말하게 하는 법: 러시아어 프린팅 셔츠를 입는다"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_14_noewlc",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "꼭대기 층에는 음식점이 많다. 그 중 그리스 스트릿 푸드라는 가게에서 greek pita를 주문하려는데… 아 어떡해… 셔츠 때문에 러시아어 할 줄 아는 걸로 오해받는다. 빠 루스끼? 하신다... 옷가게에서 얼른 딴거 사서 입어야겠다. 슬프네. 옷에는 러시아어가, 가방에는 독일어가(켐튼에서 받은 가방이라서) 쓰여 있지만 실상은 1.511개 국어인 내가 슬퍼진다. 0.5=영어, 0.01=독일어, 0.001=러시아어."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_15_smqoa7",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "오해를 피하기 위해서, 그리고 진짜 입을 옷이 없어서 H&M에 가서 옷을 샀다. 원래 새 옷에 낯을 가려서(...) 새 옷을 입어보고 어떤 옷과 평생 함께할지 고르는 것 자체가 스트레스라 잘 안 샀었는데 신기하게 여기서는 딱 마음에 드는 상의 하나 반바지 하나 잘 샀다. 도저히 더 이상 그 셔츠를 입고 돌아다닐 수 없었기 때문에, 즉 새 옷이 간절했기 때문에 더 잘 찾은 것 같다. 피팅룸에서 벗어 놓은 셔츠를 보며 "
+            },
+            {
+              "bold": true,
+              "text": "언젠가는 꼭 이 왕관의 무게를 견딜 수 있는 자가 되리라"
+            },
+            {
+              "text": " 다짐했다. 그 옷을 살 때도 직원분이 가방 필요한지 불가리아어 또는 러시아어로 물어보셨는데 못 알아들어서 영어로 다시 묻게 해 버렸다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_16_k3mcff",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "모든 것을 이 쇼핑몰 안에서 끝내버리자. 지하2층 환전소에 갔다. 환전소에서 나이가 얼마냐고 물었다. 나이제한이 있나보지? 할 일을 다 끝내고 나니 8시가 돼서 슬슬 호스텔로 돌아갈 시간이 되고 있었다. 가보고 싶었던 책방 중 하나에 들어갔더니 도브리 베첼 하셔서 이번에는 나도 따라하기 성공했다. 책방을 보고 나니 배터리가 또 10이라 꼭대기 층에 또 올라가서 20까지 채우고 호스텔 가는 버스를 타려 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_18_re2eaz",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "아. 쇼핑몰밖에 안 다녔지만 보람차고 즐거운 하루였다. 아. 나도 이 사회의 일부이고 싶다. 또는 일부인 흉내라도 낼 수 있었으면 좋겠다. 그 열쇠는 언어겠지... Неделя라는 카페 옆에 앉아있다. 휴일 카페? 일 안 하는(Не/деля)카페? 앞에는 키즈카페. 오 뒤에 영화관도 있군… 진짜 없는게 없잖아..? 9시가 되어 가는데 사람 꽤 돌아다니고 활기차다. 이런 분위기 너무 좋다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_19_yhzgfx",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이제 슬슬 나가야겠다. 가게들이 하나둘씩 셔터를 내린다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_20_udox7e",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "나그네에게 오아시스가 되어 준 The Mall 안녕...!"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_21_l8ppb1",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_22_tpo2lf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "여기는 버스 번호나 방향이 잘 나와 있어서 정말 좋았다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_23_v9jmgo",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "정류장에도 전광판이 잘 되어 있다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_24_citzij",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "정류장을 지나가는 번호가 없는 버스의 전광판에 무언가 쓰여 있다. 무심코 모르는 단어라고 넘기려다가 한 번 읽어 보니 operativen reserv? 아 operation reserve? 예약해야만 탈 수 있는 버스라는 건가?"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_25_fhfiix",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트램 아니 트람바이 трамвай 에 탔다. 엄청 오래되어 보인다. 하지만 컨택리스 단말기가 다 붙어있지. 앞문과 뒷문이 있는데 사람이 뒤로 타면 감지해서 벨을 울린다. 벨은 결제하면 끝나는듯? 그렇게 무임승차 방지하는듯? 아님 말고."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "Hostel Mostel Sofia"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "placeId": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "cmienbgh00004kcwpnr16trfa"
+                }
+              ],
+              "propPath": [
+                "placeId"
+              ]
+            }
+          ],
+          "component": "place"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "호스텔에 들어왔다. 여기도 열쇠 없이 비밀번호로 모든 걸 해결해서 좋다. 체크인을 할 때 건물 비밀번호, 공용 공간 비밀번호, 개인 방 비밀번호, 개인 사물함 비밀번호를 알려주고 방에 같이 들어가서 안내해 준다. 호스텔에서 직접 만든 소피아 지도도 줬다. 방에는 다른 투숙객들이 있다. 독일인들이 많이 여행 오는지 가끔 독일어가 들린다. 투숙객들이 직원에게 문이 고장났다 얘기하는데 직원이 kaputt 이라고 말했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "소피아 호스텔은 혼성 도미토리로 했다. 방에 사람들이 있어서 리셉션이 있던 공용 공간으로 나왔다. 불가리아 전통 패턴으로 짜여 있는 러그와 담요와 쿠션이 깔려 있다. 공용 공간이 넓고 충전할 수 있고 탁자에서 노트북하는 사람들과 당구대에서 당구 치는 사람들이 한 공간에 있다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "0820_26_emfykv",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "호스텔 공용 공간을 나가니 바로 작은 편의점?tabac이 있었다. 여행지에 가면 꼭 그 지역 캔맥주를 먹어야 하는 규칙에 따라 Bulgasco 맥주를 샀다. 그 가게 주인도 젊은 사람이었는데 또 내가 음료 고르고 있자 도움 필요하냐고 물어보는 등 꽤 친절했다. 들어오자마자 미리 '현금만 된다' 알려주기도 하고. 맥주는 쌌다. 다시 공용공간에 들어와서 러그 위에 앉아 노트북으로 구글맵을 찾아보며 다음날 갈 곳을 계획했다. 불가리아에서는 이틀 정도밖에 시간이 없어서 플로브디브는 아쉽지만 못 보겠다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "호스텔 근처 거리 이름이 불레바드 마케도니아다. 발칸 지역을 여행하다 보면 서로의 국가나 지명 이름을 딴 거리 이름을 가끔 볼 수 있다. 그리고 여행 전 독서 갤러리에서 불가리아 작가 추천해달라고 하니 흐리스토 보테프 Христо Ботев를 추천해 줬는데 아까 딱 내리는 정류장 이름이 흐리스토 보테프 거리였다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "바깥은 시원한테 실내는 여름인데 난방을 킨 건지 후끈하다. 불가리아 사람들은 따뜻한 걸 좋아하나? 11시쯤 리셉션과 공용 공간이 문을 닫는다고 해서 방으로 들어가 환복하고 이닦고 세수하고 충전기 꽂고 잤다."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmdbhe1x6001mmdamgup3mg5c",
     "title": "외국인으로서 다시 사회화를 배우다",
     "status": "published",
@@ -12832,1266 +14118,6 @@
           "children": [
             {
               "text": "문제가 생겼다, 이 글에 사진이 너무 많이 들어가서 그런지 vercel이 배포를 못한다... 빌드는 되는데..."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmexabj9s004ytf6molmwj0d6",
-    "title": "0820 불가리아 도착",
-    "status": "published",
-    "excerpt": " 쾰른 여행 에서 돌아오자마자 더 창대한 여행이 시작될 참이었다. 계획대로 착착 될 줄 알았다, 웬만해선 됐었으니까… 세탁기 소동 cmid6i2wc00002bisv49rpa8...",
-    "publishedAt": "2025-08-28T22:00:00.000Z",
-    "tags": {
-      "name": "방랑"
-    },
-    "keywords": [
-      {
-        "name": "공항"
-      },
-      {
-        "name": "버스"
-      },
-      {
-        "name": "호스텔"
-      },
-      {
-        "name": "충전기"
-      },
-      {
-        "name": "소피아"
-      }
-    ],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null,
-            "post": {
-              "id": "cmera1z1w004ktf6moamgro7r",
-              "label": "0818-0819 P와의 쾰른 여행",
-              "data": {
-                "id": "cmera1z1w004ktf6moamgro7r",
-                "title": "0818-0819 P와의 쾰른 여행",
-                "links": [],
-                "backlinks": []
-              }
-            }
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "쾰른 여행"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "internalLink"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "에서 돌아오자마자 더 창대한 여행이 시작될 참이었다. 계획대로 착착 될 줄 알았다, 웬만해선 됐었으니까…"
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "세탁기 소동"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmid6i2wc00002bisv49rpa89"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "켐튼 도착하고 집 가서 초고속으로 빨래를 세탁기에 돌리고 샤워하고 짐을 쌌다. 세탁이 끝날 때가 됐는데 안 끝나서 내려와 보니까 세탁기가 맛이 가 있었다. 기숙사 세탁기가 세탁 후 잠기는 일은 매우매우 흔했다. 그럴 때는 다시 앱으로 같은 세탁기를 재예약해서 문을 열면 되었다. 그런데 내 빨래를 집어삼킨 세탁기의 전원이 아예 나가 버려서 재예약이 안 되는 것이 아닌가? 겪어보지 않은 상황이 하필이면 기숙사를 떠나기 며칠 남지도 않았고 비행을 앞두고 있는 지금 일어난 것이 어처구니가 없었다. 켐튼에 처음 온 날에도 "
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null,
-            "post": {
-              "id": "cmdbkgho80044mdamqs4r36j0",
-              "label": "켐튼대 기숙사 생활",
-              "data": {
-                "id": "cmdbkgho80044mdamqs4r36j0",
-                "title": "켐튼대 기숙사 생활",
-                "links": [],
-                "backlinks": []
-              }
-            }
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "세탁기 문제 겪었는데"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "internalLink"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": " 갈 때도 이러는구나, 이딴 거지 같은 수미상관 원한 적 없습니다... 라는 생각을 했다. 하지만 아직 이때까지는 시간이 충분했다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_1_hlm8e0"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "WeWash 앱의 웹사이트에서 FAQ를 찾아보았다. 하라는 대로 물구멍을 열어서 물과 이물질을 제거하고 다시 닫아 보았다. 그리고 Emergency Release 라는 게 있었는데 어떤 구멍을 어떤 도구로 쑤시라는데 그게 어떤 도구인지도 안 알려줬다. 그래서 올라가서 카드와 가위 따위를 가져와서 쑤셔 봤는데 뭔가 걸리거나 눌리는 것 같지도 않았다. WhatsApp 기숙사 단톡방에도 물어봤는데 사람들은 도와주려 했지만 해답은 찾을 수 없었다. 점점 시간이 지나고 불안해졌다. 해결될 거란 기대는 품지 않은 채로 우리 플랫 주방에 있던 요르단 친구한테 도움을 요청했다. 그도 재예약을 해보라는 조언밖에는 해줄 수 없었다. 그런데 그 때 기적이 일어났다. 안 되던 재예약이 갑자기 된 것이다. 땡큐베리머치를 외치며 세탁기로 달려가서 세탁물을 뺐다. 그리고 보통 내 방에서 말리지만 지금은 건조할 시간이 없었기 때문에 빨래들을 건조기로 옮기고 돌렸다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "근데 이 미친 건조기가 건조는커녕 빨래에 물을 두 배로 먹여 버렸다. 세탁기랑 아주 쌍으로 나한테 물을 먹이는구나? 무거워진 빨래 중 절반은 옆에 있는 공용 건조대에 널어 놓고 절반은 방으로 들고 왔다. 여행 중에 물이 바닥으로 흘러서 바닥 썩으면 기숙사 보증금 못 받으니까 바닥에다가 비닐을 깔아 놓았다. 물 먹은 옷들을 가지고 비행기에 탈 수 없으니 속옷 몇 개만 물을 짜서 비닐에 넣고 안 마른 빨래의 냄새가 새어나오지 않도록 온 힘을 다해 밀봉했다. 덜어내는 것이 내가 할 수 있는 최선의 선택이었다. 원래 여유롭게 레베 가서 환전할 현금 뽑고 포럼 가서 이어폰 사고 옷도 1세트쯤 여분으로 가져가려고 했었는데, 이런 소동을 겪고 나니 어디에 들를 시간 따위는 더 이상 남아있지 않았다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "결국 쾰른 여행에서부터 입고 있던 Molchat Doma 티셔츠와 중학교 체육복 반바지를 입고 상당히 조촐한 짐가방을 가지고 공항으로 가는 기차에 탑승했다. 아, 돈도 못 뽑고 옷도 못 가져가고 음악도 못 듣고 여행 전 이런 상황에 놓인 적 있었던가? 하지만 괜찮다. 나그네에게 필요한 건 다 있다. 여권, 몸에 걸친 한 벌의 옷, 스마트폰 그리고 종이와 펜. 오히려 좋아, 그 충전기 충전 속도 느린데 공항에서 초고속 충전기 사면 오히려 좋고, 음악은 없어도 바깥 소리를 들을 수 있으니 오히려 좋고, 돈은 Memmingen 역 도보 6분거리 레베가 있으니 거기서 뽑아오면 되고, 물에 젖은 것들은 도착해서 호스텔에서 건조하면 되고, 새 옷 안 산지도 오래 됐겠다 물가 싼 소피아에서 한 세트 사면 되지."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이 정도 시련이 시련이냐... 굴라그에 끌려간 것도 아니잖아. 나에게는 생활하는 데 지장 없는 양의 물질과 신체적 정신적 자유가 있잖아. 없는 건 현금과 음악…과 충전기? 아니 가방에 넣은 줄 알았는데 어디 갔지? 기차에 타고 나서 알았다. 다시 돌아갈 수 없다. 2시간 전에는 무조건 공항에 도착해야 한다. 그게 내 긍정회로의 마지노선이라고 생각했다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "비행기를 기다리며"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmie4qeys0000kcwprpt8235o"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "Memmingen 버스 정류장",
-                "imageSrc": "0820_2_vchwt2"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "계획대로 Memmingen에 2시간 전 도착, 근처 레베에 가서 현금을 인출했다. 충전기는 레베에 마땅한 게 없어 안 샀다. 공항에서 충전스테이션이 있으면 충전하고,"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "없으면 충전기 파는데 있는지 찾아봐서 있으면 사고,"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "없으면 소피아 공항에 가서 충전스테이션이 있으면 충전하고,"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "없으면 충전기 파는데 있는지 찾아봐서 있으면 사고,"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "없으면 호스텔 가서 충전하든지, "
-            },
-            {
-              "bold": true,
-              "text": "쇼핑몰이라도 가서 충전기를 사면 되겠지"
-            },
-            {
-              "text": ". (결국 이 모든 경우가 다 안 돼서 마지막이 현실이 되었다 ㅋㅋㅋㅋㅋ 하루종일 배터리를 사막의 물 한방울 같이 아껴야 했다. 그것이 이 날짜 포스트에 사진이 별로 없는 이유이다.)"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "Memmingen 공항은 쪼끄매서 충전기 따위는 없었다. 담배와 화장품, 술로만 가득 채워진 작은 면세점을 두세번 돌고도 혹시 몰라 직원에게 Wo kann ich Ladegeräte kaufen? 충전 도구(?) 어디서 사나요? 하고 여쭤봤지만 친절하게 충전 아웃렛이 있는 곳을 알려주실 뿐이었다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_3_ismqhu"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "결국 있는 배터리로 소피아에 도착할 때까지 버티는 수밖에 없었다. 소피아 공항에서 충전기를 팔기를 간절히 빌면서. 수속은 너무 금방 끝나 버려서 2시간 일찍 공항에 올 필요가 없었다. 그래도 뭐 한 시간 더 켐튼에 있다 왔어도 딱히 지금 상황과 달라지는 건 없었을 거라고 계산을 해 본다. 충전기는 여전히 두고 왔을 확률이 크고, 돈은 거기서 뽑나 여기서 뽑나 마찬가지고, 옷을 30분 정도 더 드라이기로 말릴 수 있었겠지만 크게 소용은 없었을 것이다. 탑승 게이트 앞 대기실에서 멍 때리며 한 시간 기다렸을 때 배터리는 2X퍼센트였고 한 시간을 더 기다려야 했다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "기다리는 동안은 폰을 하지 않고 멍 때려야 한다는 점을 빼면 매우 평범하게 지나갔다. 한 사람이 자기 화장실 다녀올 동안 짐을 좀 봐달라고 부탁하기도 했고, 엄마에게 아이스크림 자판기에서 아이스크림을 사달라며 응석 부리는 아이도 보고 하면서 말이다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "탑승, 이륙, 의식의 흐름 기법"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "승무원이 '도브리 단'이라고 말했다. 폰 배터리는 아직 20퍼센트이다 가방에서 노트북 빼기도 귀찮고, 봐 봤자 멀미나 날 테니까 그냥 노트와 펜을 꺼냈다. 하지만 딱히 쓸 것도 없다. 3시간 동안 무엇을 해야 할까? 의식의 흐름대로 아무거나 써 보기로 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "비행기 좌석 잡지에서 어제 갔다 온 쾰른을 목격. 모든 사건이 서로 복잡하게 얽혀 있는 것만 같다.",
-                "imageSrc": "0820_4_rdxkjg"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "위즈에어 두 번째 타 본다. 저번과 다른 탑승구로 비행기에 탔다. 난 이제 사람을 좀 관찰하려 한다. 아까 개찰구에서 비행기로 이동하는 버스가 만차였다. 내가 배낭을 어깨에서 내려서 손에 드니까 옆 사람도 따라했다. 지금 내 옆자리에는 아기가 타고 있다. 아까 공항에서는 두 시간동안 대기했는데 자판기가 있었지만 참았다. 소피아 공항에서 처음 보는 음료수를 마시기 위해서다. 배고프다. 공항 자판기 몬스터는 3유로였는데 소피아는 얼마려나? 좌석 번호는 23C. 옆에는 독일 사람이 앉아 있고 이따금씩 앞 좌석 사람이랑 독일어로 대화한다. 나는 복도 쪽 좌석이다. 나올 때 처음으로 파리나 박물관에서 받은 작은 향수 샘플을 손목에 쥐똥만하게 발라 봤다. 그럼 뭐해, 또 땀 흘렸고 가방 속에는 안 마른 빨래가 들어 있는데. 일단 충전을 해야... 소피아 공항에 도착하면 빨리 충전기를 사자. 군것질도 하고, 저녁을 7시쯤에... 저번 알바니아 갈 때처럼 승무원들이 돌아다니면서 과자, 음료, 라면 등 팔고있어서 기내가 맛있는냄새로 차 있다. 안내방송에서 самолет이라는 말이 들린다. 아까 버스에서 애가 그 단어를 말하는 것도 들었다. 승무원이 벨트 메는 법, 구명조끼 입는 법 시연할 때 웃음 어떻게 참는지 항상 궁금하다. 보는 내가 못 참겠는 건 내가 이상한 건가? 방금 이륙했다. 이 비행기는 오스트리아, 세르비아를 거쳐 불가리아로 가겠지? 내 여정의 반대 순서다. 아 졸리다. 눈 감자마자 몇 분 동안 졸았다. 근데 지금 자면 밤에 못 자잖아. 참아야 한다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "흠… 이번 여행의 목적은 무엇일까? 나는 무엇을 보기를 원하지? 한국에 돌아가면 개발이든 뭐든 다시 한 가지 스킬을 키우는 데에, 또는 한 가지 프로젝트를 만드는 데 집중해야 할 것이다. 물론 전과는 다르게 새로운 루틴이 추가되고 새로운 친구가 추가되어 있겠지만. 어찌됐건 그렇게 됐을 때 가장 가치있게 남을 유산을 쌓을 수 있는 기회가 바로 지금 이 여행이라면, 그유산은 무엇일까? 취미. 삶의 낙. 쉼터. 를 만들어 가야겠다. 취미 즉 삶의 낙이자 쉼터로써 글쓰기와 책읽기는 투자하기 좋아 보인다. 그런 취미를 갖게 되면 새로운 것을 만들고 싶어지겠고, 만들고 싶은게 있으면 공부도 하게 되겠지."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "공부는 목적이 아니다. 공부는 내가 원하는 것을 위한 수단일 때 재밌어지는 것이다. 그럼 결론적으로 나는 이 여행을 통해, 발칸의 작가들의 글을 읽을 안목, 배경지식, 관점, 열정을 가져가자. 현실로 돌아가도 계속 뭔가에 열정을 불태우고 눈앞에 있지 않은 것을 그리며 살도록 말이다. 그래, 가까이 있는 것만 보면 안 된다. 그러면 장기적으로는 에너지가 부족해진다. 지금(14:50)도 비행기 안이라는 한정된 공간이고 내 눈 앞에 있는 것은 별 거 없지만 내 생각은 보이지 않는 곳을 떠돌아 다니며 노트 한 페이지를 꽉 채워서 쓰고 있잖아. 미미하지만 폰을 들여다 보며 딴짓하는 것보다 의미있는 시간을 보냈다고 생각한다. 이걸 디지털로 옮기는게 문제겠지만 (베오그라드 호스텔의 침대에서 밤에 옮겼다)."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이제 15시고 16:55에 내리니까 두 시간 남았다. 1/3 지났다. 또 뭐 쓰지? 이제 쓸 것도 없는데. 이번 여행 갔다 돌아오면 한국으로 가는 비행기 타기까지 3일 정도 남는데 그 동안 뭐하지? 글 쓰지 뭐. 쓸 거는 밀려 있잖아. 사진 보면서 리마인드 하면서 글이나 쓰지. 또 책도 읽어야지. 잔뜩 사 갈 테니까. 한국 가기 전에 최대한 많이 읽어 치우고 가서 곧 새 책 읽어야지. 그럴 리 없겠지만 더 시간 남으면 감상문도 쓰고. 블로그에 남기게. 아 배고파!! 15:08"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "15:10 아 겁나 심심하다. 궁금한거 공산당과 독재정권 때 어떤 예술가들은 그 권력에 편승해서 그들이 원하는 예술을 타협해서라도 했고, 어떤 예술가들은 공산주의자긴 한데 정권에는 반대했고, 어떤 예술가들은 공산주의자도 아니었다. 공산주의 시대의 예술이 어떤 점에서 재밌어 보이는 걸까? 발칸 레딧 봤던 글이 있다. 알바니아랑 세르비아의 차이와 공통점에 대한 글이었다. 공통점으로 '억압 때문에 비공식적 소통이 발달했다'라는 의견이 있었다. 그런 억압 하에 창의적인, 그리고 각자 욕망을 가진 인간들의 다양한 반응이 재밌는 것 아닐까? 방금 불가리아 억양이 섞인 영어로 안내방송에서 ‘현재 세르비아 상공을 지나고 있고 소피아 날씨는 29도'라고 했다. нужно 라는 단어가 얼핏 들렸다. 오 몰랐는데 내 자리 날개 뷰다. 4시간겁나 안 간다. 15:42 아 이제 한시간정도 남았다 소피아 도착해서 뭐 먹을지 생각하자."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "착륙"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmie8xaaf0001kcwpqfhn0vdl"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_5_acudsm"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "착륙했다. 아아 불가리아 삼색의 비행기가 보인다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_6_h17cln"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "안내 표지판들이 알록달록한 채도 높은 색을 하고 있었고 키릴문자가 많았다. 공항을 슥 둘러보니 아시아인은 나 뿐이었다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_9_geqhej"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "소피아 공항은 작은 편이었고 적어도 내가 내린 터미널 근처에서는 충전기를 파는 곳을 눈 씻고도 찾아볼 수 없었다. 책, 담배, 주전부리를 파는 작은 가게는 있었다. 지금은 서점 투어를 하도 다녀서 좀 익숙해졌지만 이 당시에는 책에 키릴문자가 빼곡히 적혀 있는 것을 처음 보고 눈이 돌아갔다. 배터리 때문에 공항 여기저기 돌아다닐 수가 없어서 일단 생존을 위해 호스텔로 직진하기로 했다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmiemy2m00002kcwps58fwhrf"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_7_ohbumr"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "공항에서 나와 버스 정류장으로 갔다. 햇볕이 온 힘을 다해 내리쬐는데 배터리를 사수하기 위해 휴대폰 밝기를 줄여가며 길을 찾았다. 하지만 버스정류장의 광고는 찍지 않을 수가 없었다. 놀기를 위한 꿈을 꾸지 않는다? (찾아보니 '장난감에 대한 꿈을 꾸지 않는다'였다.)"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_8_tbjxmb"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "저게 뭔지 몰랐는데 찾아 보니 불가리아어에서 погле́дна라는 원형 단어가 look at 이라는 뜻을 갖는다고 한다. 횡단보도를 건너기 전 차가 오는 방향을 한 번 보라는 뜻이었나 보다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_10_tvod3a"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "불가리아 대중교통 이용 방법은 엄청 편했다. 한국이랑 똑같이 버스나 트램에 타면 컨택리스 단말기가 있어서 가지고 있는 아무 카드, 구글페이를 갖다대기만 하면 결제된다. 한국과 달리 내릴 때는 안 찍어도 된다. 폰의 구글맵에는 지명이 라틴어로 표기되는데 정류장의 전광판이나 버스 내 단말기에는 키릴문자만으로 표기된다. 키릴문자를 더듬더듬 읽어서 라틴어 표기와 매치할 때의 짜릿함이란!"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "단말기 사진에 내가 입은 Molchat Doma 셔츠가 비친다. 그렇다, 나는 망할 건조기 때문에 아직도 그 셔츠를 입고 있다. 키릴문자 쓰는 원어민들 사이에서 말도 한 마디 못하는 외국인 주제에 프린팅된 옷을 입고 있으니까 뻘쭘하다. 마치 인터넷에 올라오는 이상한 뜻의 일본어를 모르고 타투로 몸에 새긴 사람들 같다. 하지만 난 적어도 이게 무슨 뜻인진 알고 있잖아. 근데 저게 밴드 이름인지 모르는 사람 눈에는 '집들은 조용하다' 또는 '집에서 조용하게'가 웃기게 읽히긴 마찬가지려나? 뉘른베르크 역에서 ‘나쁜남자'라고 궁서체로 적힌 모자를 쓰고 있던 길거리 음악가가 생각난다. 그 사람도 어쩌면 무슨 뜻인지 알면서 쓰고 있었던 걸지도 모른다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_11_hyegno"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "공항에서 84번 버스를 타고 호스텔을 향해 ul.gen gulko (Ул. Ген Гурко) 방향으로 간다. 버스 안과 밖의 모든 것이 아름답고 또 아름답도다... 서서 가는 한 승객이 들고 있는 책에는 세리프체의 키릴문자가 한가득, 할머니들은 다 다 다다다, 브체라 븰리 어쩌고 저쩌고 하면서 다정하게 대화한다… 근데 웃고 있을 때가 아니다 배터리가 10퍼센트대기 때문이다. 호스텔에 도착하기 전에 꺼질 것 같다. 그런 약간 엿된 상황인데도 행복해서 죽어버릴 것 같은 표정을 숨기기가 너무 어렵다. 현지인처럼 시크한 표정 짓자 해도 입꼬리가 자꾸만 올라간다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그때 갑자기 창밖에 웬 거대한 쇼핑센터 건물이 보였다. 저기라면 분명 충전기가 있다. 저곳은 전기가 무한히 솟아오르는 샘이 있는 낙원이다! 바로 버스에서 훌쩍 내려서 쇼핑몰로 들어갔다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "The Mall"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmien76p70003kcwpoolkaz6u"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_17_vrtsdt"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "들어가자마자 또 행복해서 죽어버릴 것 같다. 여기서 살고 싶다. 마구 사진 찍고 싶은데 폰이 이제는 진짜로 죽어 간다. 하지만 유로 현금도 있어서 이제 몰 안에서는 안전하다. 티라나, 스코페보다 독일에서 본 익숙한 브랜드들이 많다. 삼성 매장도 많다. 지하 2층인가에서 tedl에 갔는데 이어폰, 케이블, 충전기가 엄청 싸다. 싼게 비지떡이니 이어폰은 참는다. 난 마침 c to c 케이블이 필요했는데 c 꼽는 충전기가 있어서 산다. 직원이 도브리 단 했는데 입에 안붙어있어서 헬로로 답해버렸다. 나도 도브리단 해야하는데."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "오스트리아에서 본 브랜드인 billa 마트에도 들어간다. 여러 나라를 다니니 각 나라의 브랜드들이 보이면 그들이 간만에 만난 친구처럼 따뜻하게 인사해주는 것 같다. 마트에 들어가니 또 키릴문자의 향연에 정신을 놓아버릴 것 같다. 독일 마트처럼 뭐 안사면 못 나가기 때문에 요거트 하나를 산다. 락티마 발칸이라고 쓰여있다. 불가리아는 완전 초면인데 알파벳 읽을 줄 알고 러시아어 단어 고작 몇 개 알고 영어를 안다는 이유만으로 외래어와 약간의 러시아어 단어가 읽히니까 생각보다 많은 걸 읽을 수 있다. 과거에 아무 목적 없이 정말 순수한 사랑만으로 러시아어를 공부해뒀던 나 자신에게 고마워하게 됐다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그리고 좀더 누비다가 폰 가게에 들어갔다. 폰 가게는 삼성 제품과 광고가 많아서 우리나라 같다. 내가 케이블 비교하고 있으니까 외국인이라 뭐 살지 모르는 줄 알았는지 직원 두 명이 한번씩 도와줄까? 물어보셨다. 그리고 케이블을 켐튼 미디어마트보다 싼 가격인 12유로에 구매했는데, 불가리아에 살아? 물어보셔서 아니라고 하니까 영수증 찍어두면 1년 보험된다고 말해주셨다. 충전할 곳을 찾아 꼭대기 층에 올라왔는데 음식 안 사도 충전 아웃렛이 있는 좌석이 꽤 많다. 정말 전기가 무한정 솟아나는 샘이었던 것이다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_13_ihdajl"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_12_mt2bsg"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "케이블이 usb가 아니라서 버스에서 충전을 못하기 때문에 앉은 자리에서 밥 먹으면서 20퍼센트까지만 충전하고 책방 구경하고 환전도 하고(아까 둘러볼 때 평점 좋은 환전소까지 있는 걸 확인했다) 체크인하러 가련다. 아 진짜 진짜 너무 천국이다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "사람들이 나한테 러시아어로 말하게 하는 법: 러시아어 프린팅 셔츠를 입는다"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_14_noewlc"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "꼭대기 층에는 음식점이 많다. 그 중 그리스 스트릿 푸드라는 가게에서 greek pita를 주문하려는데… 아 어떡해… 셔츠 때문에 러시아어 할 줄 아는 걸로 오해받는다. 빠 루스끼? 하신다... 옷가게에서 얼른 딴거 사서 입어야겠다. 슬프네. 옷에는 러시아어가, 가방에는 독일어가(켐튼에서 받은 가방이라서) 쓰여 있지만 실상은 1.511개 국어인 내가 슬퍼진다. 0.5=영어, 0.01=독일어, 0.001=러시아어."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_15_smqoa7"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "오해를 피하기 위해서, 그리고 진짜 입을 옷이 없어서 H&M에 가서 옷을 샀다. 원래 새 옷에 낯을 가려서(...) 새 옷을 입어보고 어떤 옷과 평생 함께할지 고르는 것 자체가 스트레스라 잘 안 샀었는데 신기하게 여기서는 딱 마음에 드는 상의 하나 반바지 하나 잘 샀다. 도저히 더 이상 그 셔츠를 입고 돌아다닐 수 없었기 때문에, 즉 새 옷이 간절했기 때문에 더 잘 찾은 것 같다. 피팅룸에서 벗어 놓은 셔츠를 보며 "
-            },
-            {
-              "bold": true,
-              "text": "언젠가는 꼭 이 왕관의 무게를 견딜 수 있는 자가 되리라"
-            },
-            {
-              "text": " 다짐했다. 그 옷을 살 때도 직원분이 가방 필요한지 불가리아어 또는 러시아어로 물어보셨는데 못 알아들어서 영어로 다시 묻게 해 버렸다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_16_k3mcff"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "모든 것을 이 쇼핑몰 안에서 끝내버리자. 지하2층 환전소에 갔다. 환전소에서 나이가 얼마냐고 물었다. 나이제한이 있나보지? 할 일을 다 끝내고 나니 8시가 돼서 슬슬 호스텔로 돌아갈 시간이 되고 있었다. 가보고 싶었던 책방 중 하나에 들어갔더니 도브리 베첼 하셔서 이번에는 나도 따라하기 성공했다. 책방을 보고 나니 배터리가 또 10이라 꼭대기 층에 또 올라가서 20까지 채우고 호스텔 가는 버스를 타려 한다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_18_re2eaz"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "아. 쇼핑몰밖에 안 다녔지만 보람차고 즐거운 하루였다. 아. 나도 이 사회의 일부이고 싶다. 또는 일부인 흉내라도 낼 수 있었으면 좋겠다. 그 열쇠는 언어겠지... Неделя라는 카페 옆에 앉아있다. 휴일 카페? 일 안 하는(Не/деля)카페? 앞에는 키즈카페. 오 뒤에 영화관도 있군… 진짜 없는게 없잖아..? 9시가 되어 가는데 사람 꽤 돌아다니고 활기차다. 이런 분위기 너무 좋다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_19_yhzgfx"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이제 슬슬 나가야겠다. 가게들이 하나둘씩 셔터를 내린다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_20_udox7e"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "나그네에게 오아시스가 되어 준 The Mall 안녕...!"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_21_l8ppb1"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_22_tpo2lf"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "여기는 버스 번호나 방향이 잘 나와 있어서 정말 좋았다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_23_v9jmgo"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "정류장에도 전광판이 잘 되어 있다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_24_citzij"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "정류장을 지나가는 번호가 없는 버스의 전광판에 무언가 쓰여 있다. 무심코 모르는 단어라고 넘기려다가 한 번 읽어 보니 operativen reserv? 아 operation reserve? 예약해야만 탈 수 있는 버스라는 건가?"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_25_fhfiix"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "트램 아니 트람바이 трамвай 에 탔다. 엄청 오래되어 보인다. 하지만 컨택리스 단말기가 다 붙어있지. 앞문과 뒷문이 있는데 사람이 뒤로 타면 감지해서 벨을 울린다. 벨은 결제하면 끝나는듯? 그렇게 무임승차 방지하는듯? 아님 말고."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "Hostel Mostel Sofia"
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "placeId": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "cmienbgh00004kcwpnr16trfa"
-                }
-              ],
-              "propPath": [
-                "placeId"
-              ]
-            }
-          ],
-          "component": "place"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "호스텔에 들어왔다. 여기도 열쇠 없이 비밀번호로 모든 걸 해결해서 좋다. 체크인을 할 때 건물 비밀번호, 공용 공간 비밀번호, 개인 방 비밀번호, 개인 사물함 비밀번호를 알려주고 방에 같이 들어가서 안내해 준다. 호스텔에서 직접 만든 소피아 지도도 줬다. 방에는 다른 투숙객들이 있다. 독일인들이 많이 여행 오는지 가끔 독일어가 들린다. 투숙객들이 직원에게 문이 고장났다 얘기하는데 직원이 kaputt 이라고 말했다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "소피아 호스텔은 혼성 도미토리로 했다. 방에 남자들만 있으면 날 불편해하는 것 같아서 얼른 리셉션이 있던 공용 공간으로 나왔다. 불가리아 전통 패턴으로 짜여 있는 러그와 담요와 쿠션이 깔려 있다. 공용 공간이 넓고 충전할 수 있고 탁자에서 노트북하는 사람들과 당구대에서 당구 치는 사람들이 한 공간에 있다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "",
-                "imageSrc": "0820_26_emfykv"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "호스텔 공용 공간을 나가니 바로 작은 편의점?tabac이 있었다. 여행지에 가면 꼭 그 지역 캔맥주를 먹어야 하는 규칙에 따라 Bulgasco 맥주를 샀다. 그 가게 주인도 젊은 사람이었는데 또 내가 음료 고르고 있자 도움 필요하냐고 물어보는 등 꽤 친절했다. 들어오자마자 미리 '현금만 된다' 알려주기도 하고. 맥주는 쌌다. 다시 공용공간에 들어와서 러그 위에 앉아 노트북으로 구글맵을 찾아보며 다음날 갈 곳을 계획했다. 불가리아에서는 이틀 정도밖에 시간이 없어서 플로브디브는 아쉽지만 못 보겠다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "호스텔 근처 거리 이름이 불레바드 마케도니아다. 발칸 지역을 여행하다 보면 서로의 국가나 지명 이름을 딴 거리 이름을 가끔 볼 수 있다. 그리고 여행 전 독서 갤러리에서 불가리아 작가 추천해달라고 하니 흐리스토 보테프 Христо Ботев를 추천해 줬는데 아까 딱 내리는 정류장 이름이 흐리스토 보테프 거리였다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "바깥은 시원한테 실내는 여름인데 난방을 킨 건지 후끈하다. 불가리아 사람들은 따뜻한 걸 좋아하나? 11시쯤 리셉션과 공용 공간이 문을 닫는다고 해서 방으로 들어가 환복하고 이닦고 세수하고 충전기 꽂고 잤다."
             }
           ]
         }

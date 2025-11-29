@@ -46,11 +46,11 @@ export default function PostList({
       onMouseLeave={onMouseLeave}
       onClick={() => handleClick(note.id)}
     >
-      <div className="flex gap-6 text-xs font-bold items-center text-text-700 font-mono">
+      <div className="flex gap-6 text-sm font-bold items-center text-text-700">
         <div className="w-8 shrink-0">{note.chron.year && `${note.chron.year}`}</div>
         <div className="w-4 shrink-0">{note.chron.month && `${note.chron.month}`}</div>
         <div className="w-4 shrink-0">{note.chron.day && `${note.chron.day}`}</div>
-      </div>
+      </div>.
       <p className="col-span-11 w-full text-text-900 truncate">{note.title}</p>
     </div>
   )
