@@ -188,14 +188,13 @@ export default function ToolBox({
           }
 
           {/* music */}
-          <ToolComponents
+          {/* <ToolComponents
             isEnabled={isEnabled[tools[3].value]}
             cmp={tools[3]}
             hovered={hovered}
           >
-            {/* <MusicCmp /> */}
-            <p>Coming Soon</p>
-          </ToolComponents>
+            <MusicCmp />
+          </ToolComponents> */}
         </div>
 
       </aside>

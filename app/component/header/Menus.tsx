@@ -11,7 +11,7 @@ const menus = [
   { href: 'work', name: '작업' },
   { href: 'graph', name: '하이퍼링크 맵' },
   { href: 'map', name: '지도' },
-  { href: 'music', name: '음악' },
+  // { href: 'music', name: '음악' },
 ]
 
 export default function Menus() {
