@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { maruburi, pretendard } from "./lib/localfont";
+import { pretendard } from "./lib/localfont";
 import { ThemeProvider } from "next-themes";
 import InternalLinkTooltip from "./component/internallink-tooltip";
 import fs from 'fs';
@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${pretendard.variable} ${maruburi.className} antialiased font-normal md:overflow-hidden overflow-x-hidden`}
+        className={`${pretendard.variable} antialiased font-normal md:overflow-hidden overflow-x-hidden`}
       >
         <Script
           src="//gc.zgo.at/count.js"

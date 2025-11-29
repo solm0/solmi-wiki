@@ -40953,6 +40953,29 @@
     }
   },
   {
+    "id": "cmeybqu8v005atf6mejzflpl7",
+    "title": "0825 베오그라드와의 이별",
+    "status": "published",
+    "excerpt": " ",
+    "publishedAt": "2025-09-06T22:00:00.000Z",
+    "tags": {
+      "name": "방랑"
+    },
+    "keywords": [],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmi6wanvb0000ioyadkjup4z5",
     "title": "solmi.wiki 어드민패널 서브도메인 다시 연결하기",
     "status": "published",
@@ -41750,29 +41773,6 @@
     }
   },
   {
-    "id": "cmeybqu8v005atf6mejzflpl7",
-    "title": "0825 베오그라드와의 이별",
-    "status": "published",
-    "excerpt": " ",
-    "publishedAt": "2025-09-06T22:00:00.000Z",
-    "tags": {
-      "name": "방랑"
-    },
-    "keywords": [],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
     "id": "cmdc5o8ct0071mdam9reqpy6o",
     "title": "0701 Day 5. 집으로",
     "status": "published",
@@ -41947,345 +41947,6 @@
           "children": [
             {
               "text": "비둘기 엉덩이로 마무리한다."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmiboo720000014e4t3oa0daj",
-    "title": "포트 22 때문에 2시간 날린 건에 대하여",
-    "status": "published",
-    "excerpt": "문제 본가에 와서 ssh을 열려고 했다. 왜냐면 내 웹사이트에 지도를 만들려고하고 그럴려면 cms 데이터구조를 바꿔야 하고 그 코드가 vps에 있기 때문에 ssh로 열어야 했...",
-    "publishedAt": "2025-11-22T15:00:00.000Z",
-    "tags": {
-      "name": "코딩"
-    },
-    "keywords": [
-      {
-        "name": "vps"
-      },
-      {
-        "name": "ssh"
-      },
-      {
-        "name": "포트"
-      }
-    ],
-    "content": {
-      "document": [
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "문제"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "본가에 와서 ssh을 열려고 했다. 왜냐면 내 웹사이트에 지도를 만들려고하고 그럴려면 cms 데이터구조를 바꿔야 하고 그 코드가 vps에 있기 때문에 ssh로 열어야 했다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "근데 집 wifi로 해도 안되고 내 모바일 핫스팟으로 해도 안됐다."
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "bold": true,
-                  "text": "Could not establish connection to \"(내 vps id)\": The operation timed out."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "blockquote",
-          "children": [
-            {
-              "type": "paragraph",
-              "children": [
-                {
-                  "text": "OfflineError │ Error: OfflineError (The operation timed out)"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "시도해 본 것"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "unordered-list",
-          "children": [
-            {
-              "type": "list-item",
-              "children": [
-                {
-                  "type": "list-item-content",
-                  "children": [
-                    {
-                      "text": "vscode Remote-SSH Settings > connection timeout 15에서 60으로 늘리기"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "list-item",
-              "children": [
-                {
-                  "type": "list-item-content",
-                  "children": [
-                    {
-                      "text": "vscode에서 remote ssh 데이터 삭제 "
-                    },
-                    {
-                      "code": true,
-                      "text": "rm -rf ~/Library/Application\\ Support/Code/User/globalStorage/ms-vscode-remote.remote-ssh/vscode-ssh-host-*"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "list-item",
-              "children": [
-                {
-                  "type": "list-item-content",
-                  "children": [
-                    {
-                      "text": "vps에서 .vscode-server 폴더 초기화 "
-                    },
-                    {
-                      "code": true,
-                      "text": "rm -rf ~/.vscode-server"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "type": "list-item",
-              "children": [
-                {
-                  "type": "list-item-content",
-                  "children": [
-                    {
-                      "code": true,
-                      "text": "\betc/ssh/sshd_config"
-                    },
-                    {
-                      "text": ", "
-                    },
-                    {
-                      "code": true,
-                      "text": "~/.ssh/config"
-                    },
-                    {
-                      "text": "에서 port 443추가하기"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "포트 443 추가했을때 "
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null,
-            "post": {
-              "id": "cmi6wanvb0000ioyadkjup4z5",
-              "label": "solmi.wiki 어드민패널 서브도메인 다시 연결하기",
-              "data": {
-                "id": "cmi6wanvb0000ioyadkjup4z5",
-                "title": "solmi.wiki 어드민패널 서브도메인 다시 연결하기",
-                "links": [],
-                "backlinks": [
-                  {
-                    "id": "cmdc93fii008hmdam1nvhb1c2",
-                    "title": "웹사이트에 대해서"
-                  }
-                ]
-              }
-            }
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "nginx랑 이미 bind돼있다나 뭐라나"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "internalLink"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": " 하면서 막히길래 다시 22로 바꿨다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "증상"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "code": true,
-              "text": "ssh root@(내vps ip)"
-            },
-            {
-              "text": " → ssh: connect to host 158.247.200.157 port 22: Operation timed out"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "code": true,
-              "text": "nc -vz 158.247.200.157 22"
-            },
-            {
-              "text": " → nc: connectx to 158.247.200.157 port 22 (tcp) failed: Operation timed out"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "code": true,
-              "text": "sudo ufw status"
-            },
-            {
-              "text": " → vps 방화벽 허용 문제 없음"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "code": true,
-              "text": "sudo ss -tulnp | grep 22"
-            },
-            {
-              "text": " → 22에 바인딩되어 있는 다른 거 없음"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "code": true,
-              "text": "sudo systemctl status sshd"
-            },
-            {
-              "text": " → active(running) 나옴"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "그냥 뭐 chatGPT가 해보라는 거 다 해봤는데 vps도 돌아가고 있고 포트도 잘 붙어있고 방화벽도 없고 다 문제없다고 떴다. 결국 chatGPT가 '문제는 너네 와이파이다' 선언을 하고 나서야 vpn을 키고 ssh연결을 다시 해봤더니 됐다. 그냥 2시간동안 삽질한 거다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "원인"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "집 와이파이랑 모바일 핫스팟이 포트 22를 막아서였을 거라고 일단 결론을 내렸다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "refused나 closed(nginx가 막고있는 443은 closed가 떴음)가 아닌 timeout이 떴다는 것은 서버에 요청 자체가 안 갔다는 뜻이라고 한다. 그리고 vpn 켜자마자 됐으니까..."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "인터넷 제공업체랑 핫스팟 정책에서 보안상의 이유로 포트 22를 막을 수 있다고 한다."
             }
           ]
         }
@@ -42906,9 +42567,9 @@
   },
   {
     "id": "cmiiafnl00000is47svf5r5v7",
-    "title": "새로운 블로그는 KeystoneJS, GraphQL, Docker와 함께",
+    "title": "Docker로 감싼 KeystoneJS로 틀을 짜고 GraphQL로 쿼리하고",
     "status": "published",
-    "excerpt": "이 문서는 2025년 6월 말쯤 해 놓은 기록을 복습하면서 다시 쓴 것이다. 갈아타기 작년 겨울에 만들었던 웹사이트 첫 번째 버전은 모든 글들이 마크다운으로 쓰이고, 모든 마...",
+    "excerpt": "2025년 6월 말쯤 해 놓은 기록을 복습하면서 다시 썼다 갈아타기 작년 겨울에 만들었던 웹사이트 첫 번째 버전은 모든 글들이 마크다운으로 쓰이고, 모든 마크다운과 이미지들을...",
     "publishedAt": "2025-11-27T15:00:00.000Z",
     "tags": {
       "name": "코딩"
@@ -42936,7 +42597,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "이 문서는 2025년 6월 말쯤 해 놓은 기록을 복습하면서 다시 쓴 것이다."
+              "text": "2025년 6월 말쯤 해 놓은 기록을 복습하면서 다시 썼다"
             }
           ]
         },
@@ -43066,7 +42727,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "내 웹사이트는 글들이랑 태그들 등 서로서로 깊고 좁게 연결된 게 많은데, rest api에서는 그 연결된 데이터를 가져오려면 url이 되게 길어지고 역시나 필요한 데이터뿐만 아니라 전부 가져와야 해서 속도가 느려졌다. (사실 그게 rest 탓인지 내가 못해서였는지 모르겠다) 그래서 graphql을 써보기로 했다."
+              "text": "내 웹사이트는 글들이랑 태그들 등 서로서로 깊고 좁게 연결된 게 많은데, rest api에서는 그 연결된 데이터를 가져오려면 url이 되게 길어졌다. 그래서 graphql을 써보기로 했다."
             }
           ]
         },
@@ -43133,7 +42794,7 @@
               ]
             },
             {
-              "text": "는 Headless CMS이다. 보통의 블로그 어플리케이션의 구조가 프론트(인풋) → 데이터베이스 → 프론트(아웃풋) 이라면, 워드프레스 같은 어떤 CMS들은 그게 한 묶음으로 묶여 있다. 하지만 Headless CMS는 세 부분이 따로따로 분리가 되어 있기 때문에 프론트(인풋)과 프론트(아웃풋)은 직접 만들 수 있다. 내가 이해한 것에 따르면."
+              "text": "는 Headless CMS이다. 보통의 블로그 어플리케이션의 구조가 프론트(인풋) → 데이터베이스 → 프론트(아웃풋) 이라면, 어떤 CMS들은 그게 통채로 묶여 있다. 하지만 Headless CMS는 세 부분이 따로따로 분리가 되어 있기 때문에 프론트(인풋)과 프론트(아웃풋)은 직접 만들 수 있다."
             }
           ]
         },
@@ -43355,7 +43016,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "근데 타입 정의하는 거는 어차피 CMS가 해줄 테니까 여기까지만 알아보자."
+              "text": "근데 타입 정의하는 거는 어차피 CMS가 해줄 테니까 여기까지만 알아보자..."
             }
           ]
         },
@@ -43498,7 +43159,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "그런데 웬만하면 내 컴퓨터에서 테스트는 건너뛰고 vps에서 수정해보고 괜찮으면 run build한다. 왜냐면 깃으로 버전관리를 하니까, 뭔가 데이터베이스 수정을 잘못했을때는 그냥 코드를 이전으로 되돌려서 다시 run dev하면 원상복구할 수 있기 때문이다. 아마도. 물론 가끔 기존 데이터베이스 구조와 불일치하면 run dev에서 drop table(데이터 삭제하기)을 할 수도 있을텐데 그럴 때는 소리없이 하지 않고 한 번은 물어볼 거기 때문에… 그리고 vps에서 데이터베이스 백업도 정기적으로 해줘서 여차하면 되돌리면 된다."
+              "text": "그런데 웬만하면 내 컴퓨터에서 테스트는 건너뛰고 vps에서 수정해보고 괜찮으면 run build한다. 왜냐면 깃으로 버전관리를 하니까, 뭔가 데이터베이스 수정을 잘못했을때는 그냥 코드를 이전으로 되돌려서 다시 run dev하면 원상복구할 수 있기 때문이다. 아마도. 물론 가끔 기존 데이터베이스 구조와 불일치하면 run dev에서 drop table(데이터 삭제하기)을 할 수도 있을텐데 그럴 때는 소리없이 하지 않고 한 번은 물어볼 거기 때문에 괜찮을 거다. 그리고 vps에서 데이터베이스 백업도 정기적으로 해줘서 여차하면 되돌리면 되겠지?"
             }
           ]
         },
@@ -43515,7 +43176,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "6월 23일쯤에는 하나의 도커에 데이터베이스, keystone, 그리고 프론트엔드 페이지(solmi.wiki) 세 개가 사이좋게 있었다. 프론트엔드 페이지는 keystone의 graphql 엔드포인트에서 데이터를 가져온다. keystone은 데이터베이스에서 데이터를 가져온다."
+              "text": "6월 23일쯤에는 하나의 도커에 데이터베이스, keystone, 그리고 프론트엔드 페이지(solmi.wiki) 세 개가 있었다. 프론트엔드 페이지는 keystone의 graphql 엔드포인트에서 데이터를 가져온다. keystone은 데이터베이스에서 데이터를 가져온다."
             }
           ]
         },
@@ -43712,6 +43373,345 @@
           "children": [
             {
               "text": "\r"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cmiboo720000014e4t3oa0daj",
+    "title": "포트 22 때문에 2시간 날린 건에 대하여",
+    "status": "published",
+    "excerpt": "문제 본가에 와서 ssh을 열려고 했다. 왜냐면 내 웹사이트에 지도를 만들려고하고 그럴려면 cms 데이터구조를 바꿔야 하고 그 코드가 vps에 있기 때문에 ssh로 열어야 했...",
+    "publishedAt": "2025-11-22T15:00:00.000Z",
+    "tags": {
+      "name": "코딩"
+    },
+    "keywords": [
+      {
+        "name": "vps"
+      },
+      {
+        "name": "ssh"
+      },
+      {
+        "name": "포트"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "문제"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "본가에 와서 ssh을 열려고 했다. 왜냐면 내 웹사이트에 지도를 만들려고하고 그럴려면 cms 데이터구조를 바꿔야 하고 그 코드가 vps에 있기 때문에 ssh로 열어야 했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "근데 집 wifi로 해도 안되고 내 모바일 핫스팟으로 해도 안됐다."
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "bold": true,
+                  "text": "Could not establish connection to \"(내 vps id)\": The operation timed out."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "blockquote",
+          "children": [
+            {
+              "type": "paragraph",
+              "children": [
+                {
+                  "text": "OfflineError │ Error: OfflineError (The operation timed out)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "시도해 본 것"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "vscode Remote-SSH Settings > connection timeout 15에서 60으로 늘리기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "vscode에서 remote ssh 데이터 삭제 "
+                    },
+                    {
+                      "code": true,
+                      "text": "rm -rf ~/Library/Application\\ Support/Code/User/globalStorage/ms-vscode-remote.remote-ssh/vscode-ssh-host-*"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "vps에서 .vscode-server 폴더 초기화 "
+                    },
+                    {
+                      "code": true,
+                      "text": "rm -rf ~/.vscode-server"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "code": true,
+                      "text": "\betc/ssh/sshd_config"
+                    },
+                    {
+                      "text": ", "
+                    },
+                    {
+                      "code": true,
+                      "text": "~/.ssh/config"
+                    },
+                    {
+                      "text": "에서 port 443추가하기"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "포트 443 추가했을때 "
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmi6wanvb0000ioyadkjup4z5",
+              "label": "solmi.wiki 어드민패널 서브도메인 다시 연결하기",
+              "data": {
+                "id": "cmi6wanvb0000ioyadkjup4z5",
+                "title": "solmi.wiki 어드민패널 서브도메인 다시 연결하기",
+                "links": [],
+                "backlinks": [
+                  {
+                    "id": "cmdc93fii008hmdam1nvhb1c2",
+                    "title": "웹사이트에 대해서"
+                  }
+                ]
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "nginx랑 이미 bind돼있다나 뭐라나"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": " 하면서 막히길래 다시 22로 바꿨다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "증상"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "ssh root@(내vps ip)"
+            },
+            {
+              "text": " → ssh: connect to host 158.247.200.157 port 22: Operation timed out"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "nc -vz 158.247.200.157 22"
+            },
+            {
+              "text": " → nc: connectx to 158.247.200.157 port 22 (tcp) failed: Operation timed out"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "sudo ufw status"
+            },
+            {
+              "text": " → vps 방화벽 허용 문제 없음"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "sudo ss -tulnp | grep 22"
+            },
+            {
+              "text": " → 22에 바인딩되어 있는 다른 거 없음"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "sudo systemctl status sshd"
+            },
+            {
+              "text": " → active(running) 나옴"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그냥 뭐 chatGPT가 해보라는 거 다 해봤는데 vps도 돌아가고 있고 포트도 잘 붙어있고 방화벽도 없고 다 문제없다고 떴다. 결국 chatGPT가 '문제는 너네 와이파이다' 선언을 하고 나서야 vpn을 키고 ssh연결을 다시 해봤더니 됐다. 그냥 2시간동안 삽질한 거다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "원인"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "집 와이파이랑 모바일 핫스팟이 포트 22를 막아서였을 거라고 일단 결론을 내렸다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "refused나 closed(nginx가 막고있는 443은 closed가 떴음)가 아닌 timeout이 떴다는 것은 서버에 요청 자체가 안 갔다는 뜻이라고 한다. 그리고 vpn 켜자마자 됐으니까..."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "인터넷 제공업체랑 핫스팟 정책에서 보안상의 이유로 포트 22를 막을 수 있다고 한다."
             }
           ]
         }
@@ -78033,175 +78033,6 @@
           "children": [
             {
               "text": "이제 12시가 다 되어 가서 자려고 씻고 침대로 갔더니 A가 또 와서 플러그 꽂는 거 도와주려고 하고 다리에 상처난 거 안 아프냐고 물어보고 오늘 또 나갈 건지, 뭐 하는거 좋아하는지, 몇 살인지, 남자친구 있는지 등등 계속 물어봤다. 그래서 또 '응 이제 불 꺼도 될까? 굿나잇' 해서 겨우 말 자르고 잠에 들었다."
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmdc93fii008hmdam1nvhb1c2",
-    "title": "웹사이트에 대해서",
-    "status": "published",
-    "excerpt": "solmi.wiki는 저의 개인 블로그 & 포트폴리오 웹사이트 두 번째 버전입니다. 동기 이 프로젝트가 지향하는 것은 ‘내가 생산하는 데이터를 편집하고 접근하는 지속가능한 시...",
-    "publishedAt": "2025-06-29T22:00:00.000Z",
-    "tags": {
-      "name": "미분류"
-    },
-    "keywords": [
-      {
-        "name": "저장하"
-      },
-      {
-        "name": "번째"
-      },
-      {
-        "name": "메타데이터"
-      },
-      {
-        "name": "찾기"
-      },
-      {
-        "name": "값을"
-      }
-    ],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "solmi.wiki는 저의 개인 블로그 & 포트폴리오 웹사이트 두 번째 버전입니다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "동기"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "이 프로젝트가 지향하는 것은 ‘내가 생산하는 데이터를 편집하고 접근하는 지속가능한 시스템’입니다. 이 웹사이트는 영원히 사용되고, 영원히 진화할 예정입니다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "2024년 12월 완성된 "
-            },
-            {
-              "href": "https://solmee-xyz.vercel.app/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "첫 번째 버전"
-                }
-              ]
-            },
-            {
-              "text": "은 2025년 6월 15일까지 사용되었습니다. 첫 번째 버전의 디자인 과정은 "
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null,
-            "post": {
-              "id": "cmdbi75gu002cmdamt98ose74",
-              "label": "solmee.xyz 1.0.0: 기획과 디자인",
-              "data": {
-                "id": "cmdbi75gu002cmdamt98ose74",
-                "title": "solmee.xyz 1.0.0: 기획과 디자인",
-                "links": [],
-                "backlinks": [
-                  {
-                    "id": "cmdbh3etx0019mdamahvx21fq",
-                    "title": "solmee.xyz 1.0.0"
-                  }
-                ]
-              }
-            }
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "여기"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "internalLink"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "에서 확인할 수 있습니다. 2025년 전반부 독일 교환학생 기간 동안 그 시스템을 사용하여 기행문을 70여 편 쓰다 보니 불편한 점이 쌓이고 쌓여 구조와 디자인을 개선한 두 번째 버전을 만들기 시작했습니다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "저장이란"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "저장하는 것은 찾기 위해서입니다. 찾지 않는다면 저장하는 행위에는 의미가 없습니다. 저장한 값을 찾기 위해서는 키(Key)가 필요합니다. 좋은 키는 따로 기억을 요구하지 않으면서도 찾는 값을 잘 가리켜야 합니다. 예를 들어, 어떤 값과 그것을 저장한 파일 경로를 함께 외우고 있어야 한다면 비효율적인 시스템이고 머릿속에 방금 떠오른 단어 하나만으로 원하던 값을 찾을 수 있다면 효율적인 시스템입니다. 저는 값을 더 잘 찾기 위해 키를 바꾸고, 더 다양한 키를 마련해 놓기로 했습니다."
-            }
-          ]
-        },
-        {
-          "type": "heading",
-          "level": 2,
-          "children": [
-            {
-              "text": "메타데이터"
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "블로그에 들어가는 노트 하나 하나를 값이라고 한다면 키는 노트의 메타데이터에 해당합니다. 메타데이터는 저장하는 행위를 방해하지 않아야 합니다. 메타데이터를 모듈화하여 필요로 하는 노트에서 자유롭게 가져다 쓸 수 있게 했습니다. 그리고 일일이 적어넣을 필요 없도록 자동화할 수 있는 메타데이터는 자동 생성되도록 했습니다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "현재 solmi.wiki에 올라가는 노트들은 다음과 같은 메타데이터를 가지고 있습니다."
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "(작성 예정)"
             }
           ]
         }

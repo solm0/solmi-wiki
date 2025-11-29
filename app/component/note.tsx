@@ -4,7 +4,7 @@ import { Post } from "../lib/type";
 import Content from '@/app/component/content';
 import Footer from '@/app/component/footer';
 import Metadata from '@/app/component/metadata';
-import { maruburi_bold } from '@/app/lib/localfont';
+import { maruburi, maruburi_bold } from '@/app/lib/localfont';
 import { useRef } from "react";
 import RingLinks from "./ring-links";
 import SequenceNav from "./sequence-nav";
@@ -70,6 +70,7 @@ export default function Note({
   return (
     <article
       className={`
+        ${maruburi.className}
         flex flex-col gap-12 w-full leading-[2em] font-serif`}
     >
       <h1
@@ -90,7 +91,10 @@ export default function Note({
       </div>
       
       <div className="flex flex-col w-full">
-        {post.content && <Content post={post.content.document} places={post.places} />}
+        {post.status === 'draft'
+          ? <p>아직 공개되지 않은 글입니다.</p>
+          : post.content && <Content post={post.content.document} places={post.places} />
+        }
       </div>
 
       {(post.backlinks?.length || (post.links?.length ?? 0) > 0) &&

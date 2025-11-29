@@ -14,7 +14,6 @@ import ThemeButton from "../atoms/theme-button";
 import LocalMap from "../map/LocalMap";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
-import MusicCmp from "../music/MusicCmp";
 
 export function ToolComponents({
   isEnabled, cmp, children, hovered
@@ -194,7 +193,8 @@ export default function ToolBox({
             cmp={tools[3]}
             hovered={hovered}
           >
-            <MusicCmp />
+            {/* <MusicCmp /> */}
+            <p>Coming Soon</p>
           </ToolComponents>
         </div>
 

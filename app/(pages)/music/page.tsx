@@ -10,7 +10,7 @@ export default function MapPage() {
   return (
     <>
       <section className="relative flex flex-col items-start gap-8 w-full text-text-800 pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden">
-        <p className="font-bold text-4xl">Comming Soon</p>
+        <p className="font-bold text-4xl">Coming Soon</p>
         <p>음악</p>
       </section>
 

@@ -16,6 +16,7 @@ const GET_POST_BY_ID = gql`
       publishedAt
       meta
       order
+      status
       content {
         document(hydrateRelationships: true)
       }
