@@ -25,7 +25,7 @@ function sliceLine(coords: [number, number][], t: number) {
 
 export function useRouteProgress(
   placeIds: string[],
-  routeData: GeoJSON.Feature<GeoJSON.LineString>[] // 각 장소 사이의 segment
+  routeData: GeoJSON.Feature<GeoJSON.LineString>[], // 각 장소 사이의 segment
 ) {
   const routeDataRef = useRef(routeData);
   routeDataRef.current = routeData; // 항상 최신 데이터 유지
@@ -49,16 +49,6 @@ export function useRouteProgress(
       if (tops.length < 2 || !page) return;
       
       const scrollY = page.scrollTop + page.clientHeight * 0.3; // 읽기 위치 조금 아래로
-      console.log({
-        scrollY,
-        tops,
-        conditions: tops.map((t, i) => ({
-          i,
-          start: t,
-          end: tops[i + 1],
-          cond: scrollY >= t && scrollY < tops[i + 1]
-        }))
-      });
 
       // 2) 현재 구간 찾기
       let idx = 0;
@@ -86,12 +76,17 @@ export function useRouteProgress(
       setProgressPoint(point);
 
       // 5) 진행 라인 잘라서 만들기
-      const sliced = sliceLine(coords, p);
+      const previousSegments = routeDataRef.current
+        .slice(0, idx - 1)                               // 이전 segment들만
+        .flatMap(seg => seg.geometry.coordinates);
+      const slicedCurrent = sliceLine(coords, p);
+      const fullRoute = [...previousSegments, ...slicedCurrent];
+
       setProgressLine({
         type: "Feature",
         geometry: {
           type: "LineString",
-          coordinates: sliced,
+          coordinates: fullRoute,
         },
         properties: {},
       });

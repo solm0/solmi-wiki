@@ -11,9 +11,9 @@ import Toc from "../toc";
 import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
 import ThemeButton from "../atoms/theme-button";
-import LocalMap from "../map/LocalMap";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
+import LocalMapWController from "../map/LocalMapWController";
 
 export function ToolComponents({
   isEnabled, cmp, children, hovered
@@ -177,10 +177,7 @@ export default function ToolBox({
                 <>
                   {(!post?.places || post.places.length === 0)
                     ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
-                    :
-                      <div className="relative w-full aspect-square overflow-hidden rounded-sm">
-                        <LocalMap places={post?.places} />
-                      </div>
+                    : <LocalMapWController places={post.places} />
                   }
                 </>
               }

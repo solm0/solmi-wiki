@@ -33,6 +33,8 @@ export default function LocalMap({
   const clickedId = useClickedPlace(state => state.id);
   const setClickedId = useClickedPlace(state => state.setId);
   const mapRef = useRef<MapRef>(null);
+  const [zoomLevel, setZoomLevel] = useState<number>();
+  console.log(clickedId);
 
   useEffect(() => {
     if (!clickedId || !mapRef.current) return;
@@ -179,33 +181,48 @@ export default function LocalMap({
   const placeIds = useMemo(() => places?.map(p => p.id) ?? [], [places]);
   const stablePlaceIds = useMemo(() => placeIds ?? [''], [placeIds]);
   const stableRouteData = useMemo(() => routeData, [routeData]);
-  const { progressPoint, progressLine } = useRouteProgress(stablePlaceIds, stableRouteData);
+  const { currentIndex, progressPoint, progressLine } = useRouteProgress(stablePlaceIds, stableRouteData);
 
   useEffect(() => {
+    const start = places[currentIndex-1];
+    const end = places[currentIndex];
+
+    const [lat1, lng1] = start ? [Number(start.lat), Number(start.lng)] : [null, null];
+    const [lat2, lng2] = end ? [Number(end.lat), Number(end.lng)] : [null, null];
+    
+    if (!lat1 || !lng1 || !lat2 || !lng2) {
+      setZoomLevel(14);
+    } else {
+      // 대략적인 거리 계산 (유클리드)
+      const distance = Math.sqrt((lng2 - lng1) ** 2 + (lat2 - lat1) ** 2);
+      // console.log(
+      //   '현재위치', places[currentIndex-1]?.name, lat1, lng1,
+      //   '다음위치', places[currentIndex]?.name, lat2, lng2,
+      //   distance
+      // )
+  
+      // 거리 기준 zoom 설정
+      const minZoom = 6; // 작을수록 멀리서 봄
+      const maxZoom = 13; // 클수록 가까이서 봄
+      const maxDistance = 10; // 적절히 조정 필요 (deg 단위)
+      const zoom = Math.max(minZoom, Math.min(maxZoom, maxZoom - (distance / maxDistance) * (maxZoom - minZoom)));
+      setZoomLevel(zoom);
+    }
+  }, [currentIndex]);
+
+  useEffect(() => {
+    // console.log(zoomLevel)
     if (!progressPoint || !mapRef.current) return;
 
     const map = mapRef.current;
-    const currentCenter = map.getCenter();
 
-    const lat1 = currentCenter.lat;
-    const lng1 = currentCenter.lng;
-    const [lng2, lat2] = progressPoint;
-
-    // 대략적인 거리 계산 (유클리드)
-    const distance = Math.sqrt((lng2 - lng1) ** 2 + (lat2 - lat1) ** 2);
-
-    // 거리 기준 zoom 설정
-    // distance가 크면 zoom 낮게, 작으면 zoom 높게
-    const minZoom = 8;
-    const maxZoom = 14;
-    const maxDistance = 0.1; // 적절히 조정 필요 (deg 단위)
-    const zoom = Math.max(minZoom, Math.min(maxZoom, maxZoom - (distance / maxDistance) * (maxZoom - minZoom)));
-
-    map.easeTo({
-      center: progressPoint,
-      duration: 300,
-      zoom,
-    });
+    if (!clickedId) {
+      map.easeTo({
+        center: progressPoint,
+        duration: 0,
+        zoom: zoomLevel,
+      });
+    }
   }, [progressPoint]);
 
   return (
