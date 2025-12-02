@@ -114,7 +114,7 @@ export default function Content({
           const placeId = document.children?.[0]?.children?.[0]?.text;
           const placeObj = places?.find((p) => p.id === placeId);
 
-          if (placeObj && !accumulated.includes(placeObj)) {
+          if (placeObj) {
             accumulated = [...accumulated, placeObj];
             placesDataForThisNode = accumulated; // 자기 자신까지 포함
             setGlobalPlaces(accumulated);

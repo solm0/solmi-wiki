@@ -14,7 +14,11 @@ import { useClickedPlace } from '@/app/lib/zustand/useClickedPlace';
 import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
 import { usePlaceList } from '@/app/lib/zustand/usePlaceList';
 
-export default function LocalMap() {
+export default function LocalMap({
+  setLoading
+}: {
+  setLoading: (loading: boolean) => void;
+}) {
   const places = usePlaceList(s => s.places);
   const hasLoadedRoutes = useRef(false);
   // console.log(places)
@@ -104,52 +108,57 @@ export default function LocalMap() {
   }
   
   function drawCurvedLine(
-  start: [number, number],
-  end: [number, number]
-): Feature<LineString, GeoJsonProperties> {
-  const [x1, y1] = start;
-  const [x2, y2] = end;
+    start: [number, number],
+    end: [number, number]
+  ): Feature<LineString, GeoJsonProperties> {
+    const [y1, x1] = start;
+    const [y2, x2] = end;
 
-  // 거리 계산
-  const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
+    // 거리 계산
+    const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-  // 곡률 결정: 거리가 길수록 더 휘게
-  const curvature = Math.min(5, distance * 0.5);
+    // 곡률 결정: 거리가 길수록 더 휘게
+    const curvature = Math.min(5, distance * 0.5);
 
-  // control point (중간 지점 위로 올림)
-  const cx = (x1 + x2) / 2;
-  const cy = (y1 + y2) / 2 + curvature;
+    // control point (중간 지점 위로 올림)
+    const cx = (x1 + x2) / 2;
+    const cy = (y1 + y2) / 2 + curvature;
 
-  const steps = 30;
-  const curve: [number, number][] = [];
+    const steps = 30;
+    const curve: [number, number][] = [];
 
-  for (let t = 0; t <= 1; t += 1 / steps) {
-    const x =
-      (1 - t) * (1 - t) * x1 +
-      2 * (1 - t) * t * cx +
-      t * t * x2;
+    for (let t = 0; t <= 1; t += 1 / steps) {
+      const x =
+        (1 - t) * (1 - t) * x1 +
+        2 * (1 - t) * t * cx +
+        t * t * x2;
 
-    const y =
-      (1 - t) * (1 - t) * y1 +
-      2 * (1 - t) * t * cy +
-      t * t * y2;
+      const y =
+        (1 - t) * (1 - t) * y1 +
+        2 * (1 - t) * t * cy +
+        t * t * y2;
 
-    curve.push([x, y]);
+      curve.push([x, y]);
+    }
+
+    return {
+      type: "Feature",
+      geometry: {
+        type: "LineString",
+        coordinates: curve
+      },
+      properties: {}
+    };
   }
 
-  return {
-    type: "Feature",
-    geometry: {
-      type: "LineString",
-      coordinates: curve
-    },
-    properties: {}
-  };
-}
-
-  async function fetchRoute(start: [number, number], end: [number, number]):Promise<Feature<LineString, GeoJsonProperties>> {
+  async function fetchRoute(
+    start: [number, number],
+    end: [number, number],
+    driving?: boolean
+  ):Promise<Feature<LineString, GeoJsonProperties>> {
+    const profile = driving ? 'driving' : 'foot'
     const res = await fetch(
-      `https://router.project-osrm.org/route/v1/driving/${start[0]},${start[1]};${end[0]},${end[1]}?overview=full&geometries=geojson`
+      `https://router.project-osrm.org/route/v1/${profile}/${start[1]},${start[0]};${end[1]},${end[0]}?overview=full&geometries=geojson`
     );
     const data = await res.json();
     console.log('fetched route', data);
@@ -170,22 +179,39 @@ export default function LocalMap() {
     let isMounted = true;
 
     async function loadRoutes() {
+      setLoading(true);
       const result: Feature<LineString, GeoJsonProperties>[] = [];
 
       for (let i = 0; i < placeData.length - 1; i++) {
-        const start = placeData[i].geometry.coordinates as [number, number];
-        const end = placeData[i + 1].geometry.coordinates as [number, number];
+        const [lng1, lat1] = placeData[i].geometry.coordinates;
+        const [lng2, lat2] = placeData[i + 1].geometry.coordinates;
+
+        const start: [number, number] = [lat1, lng1];
+        const end: [number, number] = [lat2, lng2];
 
         const dist = getDistanceInKm(start, end);
+        console.log(
+          "START", start,
+          "END", end,
+          "DIST", dist
+        );
 
         if (dist > 500) {
+          console.log('fly', dist)
           result.push(drawCurvedLine(start, end));
+        } else if (dist < 2) {
+          console.log('foot', dist)
+          const route = await fetchRoute(start, end, false);
+          result.push(route);
         } else {
           const route = await fetchRoute(start, end);
           result.push(route);
         }
       }
-      if (isMounted) setRouteData(result);
+      if (isMounted) {
+        setRouteData(result);
+        setLoading(false);
+      }
     }
 
     loadRoutes();
