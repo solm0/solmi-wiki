@@ -1,17 +1,12 @@
-import { Place } from "@/app/lib/type";
 import LocalMap from "./LocalMap";
 import Link from "next/link";
 import { Expand } from "lucide-react";
 
-export default function LocalMapWController ({
-  places
-}: {
-  places: Place[];
-}) {
+export default function LocalMapWController () {
   return (
     <div className="w-full h-auto flex flex-col gap-1">
       <div className="relative w-full aspect-square overflow-hidden rounded-sm">
-        <LocalMap places={places} />
+        <LocalMap />
       </div>
       <div className="flex w-full h-8 justify-end">
         <Link

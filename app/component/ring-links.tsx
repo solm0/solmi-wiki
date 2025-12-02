@@ -24,7 +24,7 @@ export default function RingLinks({
   const sortedLinks = links?.sort((a, b) => (a.order ?? 0) - (b.order ?? 0))
 
   return (
-    <section className={`text-sm relative flex flex-col gap-3 w-full h-auto items-start text-text-900`}>
+    <section className={`text-sm relative flex flex-col gap-4 w-full h-auto items-start text-text-900`}>
       <div className="flex gap-4 items-center">
         <FlagTriangleRight className="w-4 h-4 shrink-0" />
         <Link
@@ -39,15 +39,15 @@ export default function RingLinks({
           }}
           onMouseLeave={() => setHoveredId(null, null)}
           onClick={() => setHoveredId(null, null)}
-          className={clsx(
-            backlink.id === id ? `text-green-600 pointer-events-none` : 'pointer-events-auto text-text-800 hover:text-text-700 transition-colors duration-300'
-          )}
+          className={`
+            ${backlink.id === id ? `text-green-600 pointer-events-none` : 'pointer-events-auto text-text-800 hover:text-text-700 transition-colors duration-300'}
+          `}
         >
           {backlink.title}
         </Link>
       </div>
 
-      <div className="border-l border-text-600 flex flex-col ml-1 px-7">
+      <div className="border-l border-text-600 flex flex-col ml-1 px-7 gap-[0.6em]">
         {sortedLinks && sortedLinks.map((link) => (
             <Link
               key={link.id}
@@ -63,7 +63,7 @@ export default function RingLinks({
               onMouseLeave={() => setHoveredId(null, null)}
               onClick={() => setHoveredId(null, null)}
               className={clsx(
-                'leading-7 flex items-center',
+                'leading-[1.5em] flex items-center',
                 link.id === id ? `text-green-600 pointer-events-none` : 'pointer-events-auto text-text-800 hover:text-text-700 transition-colors duration-300'
               )}
             >

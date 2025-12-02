@@ -13,13 +13,15 @@ import Carousel from "./document/carousel";
 import Iframe from "./document/iframe";
 import PlacePlaceholder from "./document/PlacePlaceholder";
 import FootNote from "./document/Footnote";
+import { usePlaceList } from "../lib/zustand/usePlaceList";
 
 function ContentItem({
-  document, idx, places
+  document, idx,
+  placesData
 }:{
   document: RichTextNode;
   idx: number;
-  places?: Place[];
+  placesData?: Place[];
 }) {
   switch (document.type) {
     case 'heading':
@@ -79,8 +81,9 @@ function ContentItem({
             <Iframe src={document.children?.[0].children?.[0].text} />
           )
         case 'place':
+          const placeId = document.children?.[0].children?.[0].text;
           return (
-            <PlacePlaceholder placeId={document.children?.[0].children?.[0].text} places={places}/>
+            <PlacePlaceholder placeId={placeId} places={placesData}/>
           )
         case 'footnote':
           return (
@@ -96,24 +99,45 @@ export default function Content({
   post: RichTextNode[];
   places?: Place[];
 }) {
+  const setGlobalPlaces = usePlaceList(s => s.setPlaces);
+  let accumulated: Place[] = [];
+
   return (
     <>
-      {post?.map((document, idx) => 
-        <div
-          key={idx}
-          className={
-            document.type === 'component-block' && document.component === 'carousel'
-              ? 'w-full'
-              : 'max-w-[47em]'
+      {post?.map((document, idx) => {
+        let placesDataForThisNode = accumulated; // 이전까지 누적된 배열
+
+        if (
+          document.type === "component-block" &&
+          document.component === "place"
+        ) {
+          const placeId = document.children?.[0]?.children?.[0]?.text;
+          const placeObj = places?.find((p) => p.id === placeId);
+
+          if (placeObj && !accumulated.includes(placeObj)) {
+            accumulated = [...accumulated, placeObj];
+            placesDataForThisNode = accumulated; // 자기 자신까지 포함
+            setGlobalPlaces(accumulated);
           }
-        >
-          <ContentItem
-            document={document}
-            idx={idx}
-            places={places}
-          />
-        </div>
-      )}
+        }
+
+        return (
+          <div
+            key={idx}
+            className={
+              document.type === 'component-block' && document.component === 'carousel'
+                ? 'w-full'
+                : 'max-w-[47em]'
+            }
+          >
+            <ContentItem
+              document={document}
+              idx={idx}
+              placesData={placesDataForThisNode} // 글 순서대로 된 places
+            />
+          </div>
+        )
+      })}
     </>
   )
 }

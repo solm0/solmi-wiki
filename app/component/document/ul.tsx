@@ -9,16 +9,20 @@ export default function Ul({
   return (
     <ul className="list-none flex flex-col gap-2">
       {ul.children.map((child, idx) => (
-        <li key={idx} className="flex items-start leading-[1.7em]">
-          <div className="shrink-0 w-[4px] h-[4px] mt-[0.7em] mr-[0.7em] bg-text-900 rounded-full inline" />
+        <li key={idx} className="flex flex-col leading-[1.7em]">
           {child.children.map((ch, idx) => {
             if (ch.type === 'list-item-content') {
               return (
-                <Paragraph key={idx} p={ch} />
+                <div key={idx} className="flex items-start">
+                  <div className="shrink-0 w-[4px] h-[4px] mt-[0.7em] mr-[0.7em] bg-text-900 rounded-full inline" />
+                  <Paragraph p={ch} />
+                </div>
               );
             } else {
               return (
-                <Ul key={idx} ul={ch as UnorderedListNode} />
+                <div key={idx} className="pl-7 pt-2">
+                  <Ul ul={ch as UnorderedListNode} />
+                </div>
               )
             }
           })}

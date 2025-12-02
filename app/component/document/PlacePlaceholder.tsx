@@ -5,7 +5,7 @@ import ToolTip from "../atoms/ToolTip";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 
 export function PlaceIndexIcon({idx}:{idx:number}){
-  return <div className="w-6 h-6 bg-green-500 rounded-full border-[0.5px] border-green-900 text-green-900 flex items-center justify-center">{idx}</div>
+  return <div className="w-6 h-6 bg-green-500 rounded-full border-[0.5px] border-green-900 text-green-900 flex items-center justify-center shrink-0">{idx}</div>
 }
 
 export default function PlacePlaceholder({
@@ -55,7 +55,7 @@ export default function PlacePlaceholder({
           setClickedId(placeId);
           if (!isToolBoxOpen) setIsToolBoxOpen('toolBox', true)
         }}
-        className="border border-text-600 bg-button-50 hover:bg-button-100 pl-2 pr-3 py-1 rounded-full transition-colors duration-300 flex items-center gap-2"
+        className="border border-text-600 bg-button-50 hover:bg-button-100 pl-2 pr-3 py-1 rounded-full transition-colors duration-300 flex items-center gap-2 leading-[1.5em] text-left min-h-10"
       >
         <PlaceIndexIcon idx={index+1} />
         {label}

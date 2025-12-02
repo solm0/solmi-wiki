@@ -17,7 +17,9 @@ export default function Ol({
               );
             } else {
               return (
-                <Ol key={idx} ol={ch as OrderedListNode} />
+                <div key={idx} className="pl-7 pt-2">
+                  <Ol ol={ch as OrderedListNode} />
+                </div>
               )
             }
           })}

@@ -3,7 +3,6 @@
 import Map, { Layer, Popup, Source, MapRef } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Place } from '@/app/lib/type';
 import type {
   Feature,
   FeatureCollection,
@@ -13,12 +12,13 @@ import type {
 } from 'geojson';
 import { useClickedPlace } from '@/app/lib/zustand/useClickedPlace';
 import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
+import { usePlaceList } from '@/app/lib/zustand/usePlaceList';
 
-export default function LocalMap({
-  places,
-}: {
-  places: Place[];
-}) {
+export default function LocalMap() {
+  const places = usePlaceList(s => s.places);
+  const hasLoadedRoutes = useRef(false);
+  // console.log(places)
+
   // 디폴트 위치
   const hochschuleKempten = {
     longitude: Number(places?.[0]?.lng) ?? 10.313611,
@@ -30,11 +30,23 @@ export default function LocalMap({
   const [viewState, setViewState] = useState(hochschuleKempten);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
+  // Places가 채워지면 map 이동
+  useEffect(() => {
+    if (places.length > 0) {
+      const first = places[0];
+      setViewState({
+        longitude: Number(first.lng),
+        latitude: Number(first.lat),
+        zoom: 16
+      });
+    }
+  }, [places]);
+
   const clickedId = useClickedPlace(state => state.id);
   const setClickedId = useClickedPlace(state => state.setId);
   const mapRef = useRef<MapRef>(null);
   const [zoomLevel, setZoomLevel] = useState<number>();
-  console.log(clickedId);
+  // console.log(clickedId);
 
   useEffect(() => {
     if (!clickedId || !mapRef.current) return;
@@ -92,49 +104,55 @@ export default function LocalMap({
   }
   
   function drawCurvedLine(
-    start: [number, number],
-    end: [number, number]
-  ): Feature<LineString, GeoJsonProperties> {
-    const [x1, y1] = start;
-    const [x2, y2] = end;
+  start: [number, number],
+  end: [number, number]
+): Feature<LineString, GeoJsonProperties> {
+  const [x1, y1] = start;
+  const [x2, y2] = end;
 
-    // 가운데에서 살짝 위로 올린 control point
-    const cx = (x1 + x2) / 2;
-    const cy = (y1 + y2) / 2 + 5; // 값 크면 더 휘어짐
+  // 거리 계산
+  const distance = Math.sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2);
 
-    // 베지어 곡선 샘플링
-    const curve: [number, number][] = [];
-    const steps = 30;
+  // 곡률 결정: 거리가 길수록 더 휘게
+  const curvature = Math.min(5, distance * 0.5);
 
-    for (let t = 0; t <= 1; t += 1 / steps) {
-      const x =
-        (1 - t) * (1 - t) * x1 +
-        2 * (1 - t) * t * cx +
-        t * t * x2;
+  // control point (중간 지점 위로 올림)
+  const cx = (x1 + x2) / 2;
+  const cy = (y1 + y2) / 2 + curvature;
 
-      const y =
-        (1 - t) * (1 - t) * y1 +
-        2 * (1 - t) * t * cy +
-        t * t * y2;
+  const steps = 30;
+  const curve: [number, number][] = [];
 
-      curve.push([x, y]);
-    }
+  for (let t = 0; t <= 1; t += 1 / steps) {
+    const x =
+      (1 - t) * (1 - t) * x1 +
+      2 * (1 - t) * t * cx +
+      t * t * x2;
 
-    return {
-      type: "Feature",
-      geometry: {
-        type: "LineString",
-        coordinates: curve
-      },
-      properties: {}
-    };
+    const y =
+      (1 - t) * (1 - t) * y1 +
+      2 * (1 - t) * t * cy +
+      t * t * y2;
+
+    curve.push([x, y]);
   }
+
+  return {
+    type: "Feature",
+    geometry: {
+      type: "LineString",
+      coordinates: curve
+    },
+    properties: {}
+  };
+}
 
   async function fetchRoute(start: [number, number], end: [number, number]):Promise<Feature<LineString, GeoJsonProperties>> {
     const res = await fetch(
       `https://router.project-osrm.org/route/v1/driving/${start[0]},${start[1]};${end[0]},${end[1]}?overview=full&geometries=geojson`
     );
     const data = await res.json();
+    console.log('fetched route', data);
 
     const line = data.routes[0].geometry; // LineString
 
@@ -145,8 +163,10 @@ export default function LocalMap({
     }
   }
 
+
   useEffect(() => {
-    if (!places || placeData.length < 2) return;
+    if (hasLoadedRoutes.current || !places || placeData.length < 2) return;
+    hasLoadedRoutes.current = true;
     let isMounted = true;
 
     async function loadRoutes() {
@@ -158,7 +178,7 @@ export default function LocalMap({
 
         const dist = getDistanceInKm(start, end);
 
-        if (dist > 200) {
+        if (dist > 500) {
           result.push(drawCurvedLine(start, end));
         } else {
           const route = await fetchRoute(start, end);
@@ -203,7 +223,7 @@ export default function LocalMap({
   
       // 거리 기준 zoom 설정
       const minZoom = 6; // 작을수록 멀리서 봄
-      const maxZoom = 13; // 클수록 가까이서 봄
+      const maxZoom = 15; // 클수록 가까이서 봄
       const maxDistance = 10; // 적절히 조정 필요 (deg 단위)
       const zoom = Math.max(minZoom, Math.min(maxZoom, maxZoom - (distance / maxDistance) * (maxZoom - minZoom)));
       setZoomLevel(zoom);

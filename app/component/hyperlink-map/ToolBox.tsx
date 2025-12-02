@@ -177,7 +177,7 @@ export default function ToolBox({
                 <>
                   {(!post?.places || post.places.length === 0)
                     ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
-                    : <LocalMapWController places={post.places} />
+                    : <LocalMapWController />
                   }
                 </>
               }
