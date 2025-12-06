@@ -27,7 +27,7 @@ export default async function RootLayout({
   const keywordsTag = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/top-keywords-tag.json'), 'utf8'));
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ko" suppressHydrationWarning>
       <body
         className={`${pretendard.variable} antialiased font-normal md:overflow-hidden overflow-x-hidden`}
       >
