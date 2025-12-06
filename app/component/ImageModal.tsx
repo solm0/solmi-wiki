@@ -29,7 +29,7 @@ export default function ImageModal({
     e.preventDefault();
     setScale((prev) => {
       let next = prev - e.deltaY * 0.001; // scroll up → zoom in
-      if (next < 0.5) next = 0.5; // min zoom
+      if (next < 0.3) next = 0.3; // min zoom
       if (next > 5) next = 5;     // max zoom
       return next;
     });
@@ -44,7 +44,7 @@ export default function ImageModal({
     >
       {/* 배경 */}
       <div
-        className="absolute w-full h-full backdrop-blur-2xl"
+        className="absolute w-full h-full backdrop-blur-2xl bg-background opacity-70"
         onClick={() => setIdx(null)}
       />
 
@@ -72,31 +72,37 @@ export default function ImageModal({
         />
       </div>
 
-      {/* 컨트롤 */}
-      <div className="fixed w-screen mb-8 left-0 text-sm bottom-0 flex justify-center items-center gap-4">
-        <button
-          className={`
-            px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
-            ${idx < 1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
-          `}
-          onClick={() => setIdx(idx-1)}
-          disabled={idx < 1}
-        >
-          <ChevronLeft className="w-4 h-4" />
-        </button>
+      {/* alt, 컨트롤 */}
+      <div className="fixed w-screen mb-8 left-0 bottom-0 text-sm flex flex-col gap-7 items-center">
+        <p className={`${pretendard.className} text-text-800`}>
+          {carousel.props.items[idx]?.alt}
+        </p>
 
-        <span>{`${idx+1}/${carousel.props.items.length}`}</span>
-        
-        <button
-          className={`
-            px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
-            ${idx >= carousel.props.items.length-1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
-          `}
-          onClick={() => setIdx(idx+1)}
-          disabled={idx >= carousel.props.items.length-1}
-        >
-          <ChevronRight className="w-4 h-4" />
-        </button>
+        <div className="flex justify-center items-center gap-4">
+          <button
+            className={`
+              px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
+              ${idx < 1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
+            `}
+            onClick={() => setIdx(idx-1)}
+            disabled={idx < 1}
+          >
+            <ChevronLeft className="w-4 h-4" />
+          </button>
+
+          <span>{`${idx+1}/${carousel.props.items.length}`}</span>
+          
+          <button
+            className={`
+              px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
+              ${idx >= carousel.props.items.length-1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
+            `}
+            onClick={() => setIdx(idx+1)}
+            disabled={idx >= carousel.props.items.length-1}
+          >
+            <ChevronRight className="w-4 h-4" />
+          </button>
+        </div>
       </div>
     </div>
   )

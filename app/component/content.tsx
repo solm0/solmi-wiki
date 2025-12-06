@@ -89,6 +89,10 @@ function ContentItem({
           return (
             <FootNote text={document.children?.[0].children?.[0].text} link={document.children?.[1].children?.[0].text} />
           )
+        case 'componentPreview':
+          return (
+            <iframe src={`https://lib-comp-teal.vercel.app/${document.children?.[0].children?.[0].text}`} className="w-full h-auto aspect-video my-4 rounded-sm overflow-y-auto overflow-x-hidden"/>
+          )
       }
   }
 }
@@ -133,7 +137,7 @@ export default function Content({
             <ContentItem
               document={document}
               idx={idx}
-              placesData={placesDataForThisNode} // 글 순서대로 된 places
+              placesData={placesDataForThisNode} // 순서대로 된 places
             />
           </div>
         )

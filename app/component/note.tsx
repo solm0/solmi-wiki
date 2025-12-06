@@ -31,17 +31,24 @@ export default function Note({
     let isFirstChild = false;
 
     if (post.links && post.links?.length > 0) {
+
+      // 부모 노트일 경우
       const sorted = [...post.links].sort(
         (a, b) => (a.order ?? 0) - (b.order ?? 0)
       );
       next = sorted[0];
+
     } else if (post.backlinks?.[0]) {
-      const currentOrder = post.order ?? 0;
-      const links = post.backlinks[0].links ?? [];
 
-      prev = links.find(link => link.order === currentOrder - 1) ?? null;
-      next = links.find(link => link.order === currentOrder + 1) ?? null;
+      // 부모 노트가 아니며 부모가 있을 경우
+      const links = (post.backlinks[0].links ?? [])
+        .sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+      const currentIndex = links.findIndex(p => p.id === post.id);
 
+      prev = links[currentIndex-1] ?? null;
+      next = links[currentIndex+1] ?? null;
+
+      // 첫 번째 자식 노트일 경우
       if (prev === null) {
         prev = post.backlinks?.[0];
         isFirstChild = true;
@@ -92,7 +99,7 @@ export default function Note({
       
       <div className="flex flex-col w-full">
         {post.status === 'draft'
-          ? <p>아직 공개되지 않은 글입니다.</p>
+          ? <p>아직 공개되지 않은 노트입니다.</p>
           : post.content && <Content post={post.content.document} places={post.places} />
         }
       </div>

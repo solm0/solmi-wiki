@@ -16,9 +16,9 @@ export default function WorkLists({
       <Suspense>
         {posts && posts.map((note) => (
           <ThumbnailList
-          key={note.id}
-          note={note}
-          hovered={hovered} setHovered={setHovered}
+            key={note.id}
+            note={note}
+            hovered={hovered} setHovered={setHovered}
           />
         ))}
       </Suspense>

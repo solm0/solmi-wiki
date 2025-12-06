@@ -12,7 +12,8 @@ export default function Header() {
         <EnableButton
           value={{
             value: 'noteInspector',
-            name: <Funnel className="w-4 h-4" />
+            name: <Funnel className="w-4 h-4" />,
+            title: '노트 탐색기'
           }} 
         />
       </div>

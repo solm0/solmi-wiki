@@ -85,7 +85,7 @@ export default async function HomePage() {
   const exchangeData = await client.request(GET_MINIMAL_POSTS_BY_ID, {ids: ['cmdbmtpt8005omdamericlkia']});
 
   const work = hydratedData.posts;
-  const meta = minimalData.posts.filter(post => post.tags.name === '미분류' && post.meta === true);
+  const meta = minimalData.posts.filter(post => post.meta === true);
   const travel = minimalData.posts.filter(post => post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
   const code = minimalData.posts.filter(post => post.tags.name === '코딩');
   const read = minimalData.posts.filter(post => post.tags.name === '독서');
@@ -99,7 +99,11 @@ export default async function HomePage() {
 
         <article className="flex flex-col gap-4">
           <h2><b>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
-          <CardMd posts={meta} />
+          <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
+            <CardMd post={meta[2]} label="웹사이트에 대해서" />
+            <CardMd post={meta[1]} />
+            <CardMd post={meta[0]} />
+          </div>
         </article>
 
         <article className="flex flex-col gap-4">
@@ -130,7 +134,9 @@ export default async function HomePage() {
 
         <article className="flex flex-col gap-4">
           <h2><b>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
-          <CardMd posts={unsorted} />
+          <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
+            {unsorted.map((post, i) => <CardMd key={i} post={post} />)}
+          </div>
         </article>
         <Copyright />
       </section>

@@ -29,30 +29,17 @@ export function CardSm({posts}: {posts: Post[] | Post}) {
   )
 }
 
-export function CardMd({posts}: {posts: Post[] | Post}) {
+export function CardMd({post, label}: {post: Post, label?: string}) {
   return (
-    <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
-      {Array.isArray(posts) ? posts.map((post) => (
-        <Link
-          key={post.id}
-          href={post.id}
-          className={`shrink-0 w-full md:w-60 h-auto md:h-36 rounded-sm p-4 flex justify-between hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[colors, transform] duration-300
-            ${post.id === 'cmdc93ok7008imdam853f86o2' || post.id ==='cmdc93fii008hmdam1nvhb1c2' ? 'bg-green-500 hover:bg-green-600' : 'bg-button-100 hover:bg-button-200' }`}
-        >
-          <h3 className="self-end break-keep">{post.title}</h3>
-          <ArrowUpRight className="shrink-0 self-start w-5 h-5" />
-        </Link>
-      )) : (
-        <Link
-          key={posts.id}
-          href={posts.id}
-          className={`shrink-0 w-full md:w-60 h-auto md:h-36 rounded-sm p-4 flex justify-between hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[colors, transform] duration-300`}
-        >
-          <h3 className="self-end break-keep">{posts.title}</h3>
-          <ArrowUpRight className="shrink-0 self-start w-5 h-5" />
-        </Link>
-      )}
-    </div>
+    <Link
+      key={post.id}
+      href={post.id}
+      className={`shrink-0 w-full md:w-60 h-auto md:h-36 rounded-sm p-4 flex justify-between hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[colors, transform] duration-300
+        ${post.id === 'cmdc92ytj008gmdamgb3x47wl' || post.id ==='cmdc93fii008hmdam1nvhb1c2' ? 'bg-green-500 hover:bg-green-600' : 'bg-button-100 hover:bg-button-200' }`}
+    >
+      <h3 className="self-end break-keep">{label ? label : post.title}</h3>
+      <ArrowUpRight className="shrink-0 self-start w-5 h-5" />
+    </Link>
   )
 }
 
@@ -106,8 +93,8 @@ export function CardXl({posts}: {posts: Post[]}) {
   return (
     <div className="flex flex-col gap-4 w-full">
       {posts.map((post) => {
-        const images = post.content?.document.filter(cmp => cmp.type === 'component-block' && cmp.component === 'carousel')
-        if (!images) return null;
+        const carousels = post.content?.document.filter(cmp => cmp.type === 'component-block' && cmp.component === 'carousel').slice(0,2);
+        if (!carousels) return null;
 
         return (
           <div
@@ -116,12 +103,13 @@ export function CardXl({posts}: {posts: Post[]}) {
           >
 
             <div className="flex gap-2 ml-72">
-              {images.map((img, idx) => {
+              {carousels.map((img, idx) => {
                 return (
                   <div key={idx} className="flex gap-2 w-auto shrink-0">
-                    {img.props.items.map((item, idx) => {
+                    {img.props.items.slice(0,2).map((item, idx) => {
                       const publicId = item.imageSrc;
-                      const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}.jpg`;
+                      const transformationsXl = "f_auto,q_auto";
+                      const imageUrl = `https://res.cloudinary.com/${cloudName}/image/upload/${transformationsXl}/${publicId}.jpg`;
 
                       return (
                         <div

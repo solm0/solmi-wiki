@@ -35,7 +35,7 @@ export default function ThemeButton() {
         id='theme-button'
       >
         {theme === 'dark' ?
-          <Moon className='h-3 w-3' /> : <SunMedium className='h-3 w-3' />
+          <Moon className='h-3.5 w-3.5' /> : <SunMedium className='h-3.5 w-3.5' />
         }
       </button>
     </div>

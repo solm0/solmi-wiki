@@ -129,7 +129,7 @@ export default function GlobalMap({
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 우측 사이드바의 &apos;지도&apos;에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 글 목록 보기</div>
+          <div>클릭하여 우측 사이드바의 &apos;세계지도&apos;에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 노트 목록 보기</div>
         </Popup>
       )}
     </Map>

@@ -76,6 +76,7 @@ export default function Carousel({
             <div
               key={idx}
               className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+              title="클릭하여 확대"
             >
               <Image
                 src={url}

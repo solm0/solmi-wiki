@@ -10,8 +10,7 @@ const menus = [
   { href: 'blog', name: '블로그' },
   { href: 'work', name: '작업' },
   { href: 'graph', name: '하이퍼링크 맵' },
-  { href: 'map', name: '지도' },
-  // { href: 'music', name: '음악' },
+  { href: 'map', name: '세계지도' },
 ]
 
 export default function Menus() {

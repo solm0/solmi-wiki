@@ -38,7 +38,7 @@ export function ToolComponents({
 }
 
 export function NoPost({
-  text = '선택된 글'
+  text = '선택된 노트'
 }: {
   text?: string
 }) {
@@ -46,10 +46,9 @@ export function NoPost({
 }
 
 export const tools = [
-  { value: 'graph', name: '로컬 그래프' },
+  { value: 'graph', name: '하이퍼링크 맵' },
   { value: 'toc', name: '목차' },
-  { value: 'map', name: '지도'},
-  { value: 'music', name: '음악'},
+  { value: 'map', name: '세계지도'},
 ]
 
 export default function ToolBox({
@@ -124,7 +123,8 @@ export default function ToolBox({
           <ChevronRight />
         </button>
 
-        {noOpenTools && <div className="text-text-700 pt-4">열린 툴이 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 툴을 활성화하세요.</div>}
+        {noOpenTools && <div className="text-text-700 pt-4 break-keep">활성화된 도구가 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 도구를 활성화하세요.</div>}
+        {!post && <div className="text-text-700 pt-4 break-keep">도구를 보려면 노트를 선택하세요.</div>}
 
         <div className="w-full h-auto flex flex-col gap-4 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
@@ -166,7 +166,7 @@ export default function ToolBox({
                 <div className="w-full h-auto flex flex-col gap-1">
                   <div className="flex gap-1 items-center">
                     <PlaceIndexIcon idx={selectedPlace.idx} />
-                    {selectedPlace.data.name}: 언급된 글들
+                    {selectedPlace.data.name}: 언급된 노트들
                   </div>
                   <RelatedPostLists
                     posts={selectedPlace.data.posts}
@@ -174,24 +174,10 @@ export default function ToolBox({
                   />
                 </div>
                 :
-                <>
-                  {(!post?.places || post.places.length === 0)
-                    ? <NoPost text='선택된 글 없음 또는 이 글에 장소'/>
-                    : <LocalMapWController />
-                  }
-                </>
+                <LocalMapWController />
               }
             </ToolComponents>
           }
-
-          {/* music */}
-          {/* <ToolComponents
-            isEnabled={isEnabled[tools[3].value]}
-            cmp={tools[3]}
-            hovered={hovered}
-          >
-            <MusicCmp />
-          </ToolComponents> */}
         </div>
 
       </aside>

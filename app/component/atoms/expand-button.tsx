@@ -12,7 +12,7 @@ export default function ExpandButton({
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex flex-col gap-1 w-auto items-end">
+    <div className="flex flex-col gap-1 w-auto items-end" title="도구 상자 설정">
 
       {/* 버튼 */}
       <button

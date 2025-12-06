@@ -15,13 +15,14 @@ import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
 import { usePlaceList } from '@/app/lib/zustand/usePlaceList';
 
 export default function LocalMap({
-  setLoading
+  setLoading,
+  setPlaceLength
 }: {
-  setLoading: (loading: boolean) => void;
+  setLoading: (loading: number | null) => void;
+  setPlaceLength: (placeLength: number | null) => void;
 }) {
   const places = usePlaceList(s => s.places);
   const hasLoadedRoutes = useRef(false);
-  // console.log(places)
 
   // 디폴트 위치
   const hochschuleKempten = {
@@ -44,6 +45,7 @@ export default function LocalMap({
         zoom: 16
       });
     }
+    setPlaceLength(places.length);
   }, [places]);
 
   const clickedId = useClickedPlace(state => state.id);
@@ -179,7 +181,6 @@ export default function LocalMap({
     let isMounted = true;
 
     async function loadRoutes() {
-      setLoading(true);
       const result: Feature<LineString, GeoJsonProperties>[] = [];
 
       for (let i = 0; i < placeData.length - 1; i++) {
@@ -207,10 +208,11 @@ export default function LocalMap({
           const route = await fetchRoute(start, end);
           result.push(route);
         }
+        setLoading(i);
       }
       if (isMounted) {
         setRouteData(result);
-        setLoading(false);
+        setLoading(null);
       }
     }
 
@@ -362,7 +364,7 @@ export default function LocalMap({
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 이 글에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 위치로 이동</div>
+          <div>클릭하여 이 노트에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 위치로 이동</div>
         </Popup>
       )}
     </Map>

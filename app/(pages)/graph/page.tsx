@@ -32,8 +32,8 @@ const GET_ALL_POSTS_GRAPH = gql`
 `;
 
 export const metadata: Metadata = {
-  title: "그래프",
-  description: "그래프",
+  title: "하이퍼링크 맵",
+  description: "하이퍼링크 맵",
 };
 
 export default async function GraphPage() {

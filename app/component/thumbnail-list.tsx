@@ -50,22 +50,23 @@ export default function ThumbnailList({
       onMouseLeave={onMouseLeave}
       onClick={() => handleClick(note.id)}
     >
-      {rootPath === note.id ? (
-        <div className="absolute text-sm w-44 h-44 md:w-50 md:h-50 flex items-center justify-center">
-          <p className="bg-background text-text-900! max-w-40 text-wrap text-center py-1 px-3 rounded-sm flex items-center">{note.title}</p>
-        </div>
-      ) : (
-        <Image
-            src={imageUrl}
-            alt={note.title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className={clsx("saturate-140 object-cover object-center w-full h-full transition-[filter] duration-300",
-              hovered && hovered === note.id ? "grayscale-0" : 'grayscale-100'
-            )}
-            unoptimized
-          />
-      )}
+      <Image
+        src={imageUrl}
+        alt={note.title}
+        fill
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className={clsx("saturate-140 object-cover object-center w-full h-full transition-[filter] duration-300",
+          hovered === note.id ? "grayscale-0" : 'grayscale-100'
+        )}
+        unoptimized
+      />
+
+      <div
+        className={`
+          absolute w-full h-full bg-button-200 top-0 left-0 pointer-events-none transition-opacity duration-300
+          ${hovered ? hovered === note.id ? 'opacity-0' : 'opacity-60' : 'opacity-0'}
+        `}
+      />
     </div>
   )
 }

@@ -5,8 +5,8 @@ import { Place } from "@/app/lib/type";
 import MapScreen from "@/app/component/map/MapScreen";
 
 export const metadata: Metadata = {
-  title: "지도",
-  description: "지도",
+  title: "세계지도",
+  description: "세계지도",
 };
 
 dotenv.config();

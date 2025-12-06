@@ -24,6 +24,7 @@ export function ToolBoxIcons() {
         value={{
           value: 'toolBox',
           name: <FlaskConical className="w-4 h-4 shrink-0"/>,
+          title: "도구 상자",
         }}
       />
     </div>
