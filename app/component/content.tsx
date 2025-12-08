@@ -14,6 +14,7 @@ import Iframe from "./document/iframe";
 import PlacePlaceholder from "./document/PlacePlaceholder";
 import FootNote from "./document/Footnote";
 import { usePlaceList } from "../lib/zustand/usePlaceList";
+import CmpPreview from "./document/CmpPreview";
 
 function ContentItem({
   document, idx,
@@ -91,7 +92,7 @@ function ContentItem({
           )
         case 'componentPreview':
           return (
-            <iframe src={`https://lib-comp-teal.vercel.app/${document.children?.[0].children?.[0].text}`} className="w-full h-auto aspect-video my-4 rounded-sm overflow-y-auto overflow-x-hidden"/>
+            <CmpPreview cmpName={document.children?.[0].children?.[0].text} />
           )
       }
   }

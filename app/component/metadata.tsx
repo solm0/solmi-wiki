@@ -3,7 +3,6 @@
 import { Post } from "../lib/type";
 import { pretendard } from '@/app/lib/localfont';
 import { Calendar, Tag, Key } from 'lucide-react';
-import clsx from "clsx";
 import ParamKwButton from "./atoms/param-kw-button";
 
 export default function Metadata({
@@ -18,10 +17,7 @@ export default function Metadata({
   const keywords = post.keywords.map(kw => kw.name);
 
   return (
-    <section className={clsx (
-      `relative ${pretendard.className} flex flex-col w-full h-auto items-start text-text-900 text-sm px-4 py-3 rounded-sm -left-4`,
-      post.meta === true ? 'hidden' : 'block',
-    )}>
+    <section className={`relative ${pretendard.className} flex flex-col w-full h-auto items-start text-text-900 text-sm px-4 py-3 rounded-sm -left-4`}>
       <div className="flex gap-3 h-8 items-center">
         <Calendar className='w-3 h-3' />
         <div className="flex gap-1 h-full items-center">

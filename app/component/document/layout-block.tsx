@@ -13,7 +13,7 @@ export default function LayoutBlock({
   }
 
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-2 md:gap-4">
       {layout.layout.map((num, idx) => (
         <div
           key={idx}
