@@ -43,3 +43,6 @@ next-env.d.ts
 Dockerfile
 
 public/_all_posts.json
+
+# devlog
+/devlog

@@ -40,7 +40,7 @@ export default async function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeProvider disableTransitionOnChange>
-          <div className="flex h-screen w-full px-5 md:p-8 gap-0 md:gap-8">
+          <div className="flex h-screen w-full px-5 md:p-8 gap-0 md:gap-3 lg:gap-8 transition-[gap] duration-300">
 
             <h1 className="hidden">page</h1>
 
