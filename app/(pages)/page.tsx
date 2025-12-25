@@ -70,8 +70,6 @@ export default async function HomePage() {
     'cmdd4lavh00asmdam6xyklcah',
     'cmdc874vg0089mdam4fcceslp',
 
-    // 독서
-
     // 미분류
     'cmdbofzbb0063mdamktnoe9t0',
     'cmdbhzcw20029mdamef7fb909',
@@ -88,7 +86,6 @@ export default async function HomePage() {
   const meta = minimalData.posts.filter(post => post.meta === true);
   const travel = minimalData.posts.filter(post => post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
   const code = minimalData.posts.filter(post => post.tags.name === '코딩');
-  const read = minimalData.posts.filter(post => post.tags.name === '독서');
   const unsorted = minimalData.posts.filter(post => (post.tags.name === '미분류' && post.meta === false));
   const exchange = exchangeData.posts
 
@@ -121,16 +118,6 @@ export default async function HomePage() {
           <h2><b>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
           <CardSm posts={code} />
         </article>
-
-        <h2><b>독서</b><span className="text-text-800"> 추가 예정입니다.</span></h2>
-        <div>
-          {read.map((post) => (
-            <div key={post.id}>
-              <h3>{post.title}</h3>
-              {/* other UI */}
-            </div>
-          ))}
-        </div>
 
         <article className="flex flex-col gap-4">
           <h2><b>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>

@@ -62,7 +62,7 @@ export default function Carousel({
               key={idx}
               className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
             >
-              <div className="py-4 w-auto h-auto flex items-center justify-center">
+              <div className="py-3 w-auto h-auto flex items-center justify-center">
                 <audio controls className="w-80">
                   <source src={url} type={`audio/mp3`} />
                   Your browser does not support the audio tag.

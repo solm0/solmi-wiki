@@ -31,7 +31,7 @@ function ContentItem({
       )
     case 'paragraph':
       return (
-        <div className="py-4">
+        <div className="py-3">
           <Paragraph p={document} />
         </div>
       );
