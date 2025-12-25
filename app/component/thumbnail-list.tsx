@@ -8,10 +8,12 @@ import Image from "next/image";
 export default function ThumbnailList({ 
   note,
   hovered, setHovered,
+  noColumn = false
 }: {
   note: Post,
   hovered: string | null;
   setHovered: (id: string | null) => void,
+  noColumn?: boolean;
 }) {
   const onMouseEnter = (id: string) => {
     setHovered(id);
@@ -45,7 +47,10 @@ export default function ThumbnailList({
   return (
     <div
       key={note.id}
-      className="relative bg-backgrouond w-44 h-44 md:w-50 md:h-50 hover:cursor-pointer flex items-center justify-center overflow-hidden rounded-sm"
+      className={`
+        relative bg-background hover:cursor-pointer flex items-center justify-center overflow-hidden
+        ${noColumn ? 'w-1/3 md:w-1/6 lg:w-1/9 h-auto aspect-square' : 'w-full md:w-1/2 lg:w-1/3 h-auto aspect-square'}
+      `}
       onMouseEnter={() => onMouseEnter(note.id)}
       onMouseLeave={onMouseLeave}
       onClick={() => handleClick(note.id)}

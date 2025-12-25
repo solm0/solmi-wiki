@@ -116,5 +116,9 @@ body {
 }
 
 .custom-hor-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
   background-color: #D1D1D1;
 }

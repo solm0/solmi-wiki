@@ -30,7 +30,7 @@ export default function Menus() {
   return (
     <>
       {/* md 이상 */}
-      <div className={`${isEnabled ? 'lg:left-96' : 'lg:left-36'} hidden md:flex absolute left-14 lg:translate-0 h-4 w-auto gap-1 text-sm items-center text-nowrap transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]`}>
+      <div className={`${isEnabled ? 'lg:left-90' : 'lg:left-30'} hidden md:flex absolute left-14 lg:translate-0 h-4 w-auto gap-1 text-sm items-center text-nowrap transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]`}>
         <Suspense>
           {menus.map((menu, i) => 
             <MenuButton key={i} href={menu.href} name={menu.name} rootPath={rootPath} />
@@ -39,7 +39,7 @@ export default function Menus() {
       </div>
 
       {/* sm */}
-      <div className={`${isEnabled ? 'lg:left-96' : 'lg:left-36'} flex md:hidden absolute left-14 lg:translate-0 h-4 w-auto gap-1 text-sm items-center text-nowrap transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]`}>
+      <div className={`flex md:hidden absolute left-14 lg:translate-0 h-4 w-auto gap-1 text-sm items-center text-nowrap transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]`}>
         <Suspense>
           <SmallMenuButton visible={smallScreenVisible} hidden={smallScreenHidden} rootPath={rootPath} />
         </Suspense>

@@ -14,7 +14,7 @@ export default function CodeBlock({
     <figure className="flex flex-col gap-1 py-3">
       {caption && <figcaption className={`${pretendard.className} text-sm text-text-700`}>{caption}</figcaption>}
 
-      <pre className="h-auto bg-button-100 text-sm rounded-sm font-mono p-4 selection:bg-background! overflow-x-auto flex flex-col">
+      <pre className="h-auto bg-button-100 text-sm rounded-sm font-mono p-4 selection:bg-background! overflow-x-auto flex flex-col custom-hor-scrollbar">
         {code.map((child, idx) => (
           <code
             key={idx}
