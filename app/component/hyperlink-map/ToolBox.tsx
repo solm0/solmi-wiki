@@ -81,7 +81,7 @@ export default function ToolBox({
       }
 
       {/* 설정 */}
-      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-6 z-70 w-8">
+      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-4 z-70 w-8">
         {isOpen &&
           <ExpandButton name={<SettingsIcon className="w-4 h-4 shrink-0"/>}>
 
@@ -124,9 +124,9 @@ export default function ToolBox({
         </button>
 
         {noOpenTools && <div className="text-text-700 pt-4 break-keep">활성화된 도구가 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 도구를 활성화하세요.</div>}
-        {!post && <div className="text-text-700 pt-14 md:pt-4 break-keep">도구를 보려면 노트를 선택하세요.</div>}
+        {!post && <div className="text-text-700 pt-14 md:pt-5 break-keep">더 많은 도구를 보려면 노트를 선택하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-4 pt-16 md:pt-4 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+        <div className="w-full h-auto flex flex-col gap-4 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* local graph */}
           {post &&

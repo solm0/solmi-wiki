@@ -22,7 +22,7 @@ export default function GlobalMap({
   const hochschuleKempten = {
     longitude: Number(places?.[0]?.lng) ?? 10.313611,
     latitude: Number(places?.[0]?.lat) ?? 47.715833,
-    zoom: 16
+    zoom: 2
   }
 
   const [viewState, setViewState] = useState(hochschuleKempten);

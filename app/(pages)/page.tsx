@@ -4,6 +4,7 @@ import Copyright from "../component/copyright";
 import { CardSm, CardMd, CardLg, CardXl } from "../component/cards";
 import ToolBox from "../component/hyperlink-map/ToolBox";
 import { Post } from "../lib/type";
+import { maruburi, maruburi_bold } from "../lib/localfont";
 
 export const metadata: Metadata = {
   title: "solmi.wiki",
@@ -66,9 +67,9 @@ export default async function HomePage() {
 
     // 코딩
     'cmder5t660000tf6m7kyppin6',
-    'cmdbjy3bl003pmdamzzp5bd6e',
-    'cmdd4lavh00asmdam6xyklcah',
-    'cmdc874vg0089mdam4fcceslp',
+    'cmjiezvf00000d2plng81x5ea',
+    'cmix14nk2008tis47qdxc60cp',
+    'cmiet1w8n0005kcwpbwuo3i75',
 
     // 미분류
     'cmdbofzbb0063mdamktnoe9t0',
@@ -91,11 +92,11 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="relative flex flex-col gap-24 text-text-900 w-full pt-[20vh] pb-[20vh] overflow-y-scroll overflow-x-hidden focus:outline-hidden custom-scrollbar">
+      <section className={`${maruburi.className} relative flex flex-col gap-24 text-text-900 w-full pt-[20vh] pb-[20vh] overflow-y-scroll overflow-x-hidden focus:outline-hidden custom-scrollbar`}>
         <h2>반갑습니다.</h2>
 
         <article className="flex flex-col gap-4">
-          <h2><b>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             <CardMd post={meta[2]} label="웹사이트에 대해서" />
             <CardMd post={meta[1]} />
@@ -104,23 +105,23 @@ export default async function HomePage() {
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b>작업</b><span className="text-text-800"> 제가 만드는 것들입니다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>작업</b><span className="text-text-800"> 제가 만드는 것들입니다.</span></h2>
           <CardXl posts={work} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
           <CardSm posts={exchange} />
           <CardLg posts={travel} />
         </article>
         
         <article className="flex flex-col gap-4">
-          <h2><b>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
           <CardSm posts={code} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             {unsorted.map((post, i) => <CardMd key={i} post={post} />)}
           </div>

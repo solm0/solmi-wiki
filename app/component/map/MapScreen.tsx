@@ -16,7 +16,7 @@ export default function MapScreen({
 
   return (
     <>
-      <section className="w-full h-[calc(100vh-4rem)] text-text-800 overflow-hidden focus:outline-hidden rounded-sm">
+      <section className="w-full h-[calc(100vh)] text-text-800 overflow-hidden focus:outline-hidden">
         <GlobalMap
           places={allPlaces}
           clickedId={clickedId}

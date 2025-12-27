@@ -1,7 +1,11 @@
+'use client'
+
 import { Post } from "@/app/lib/type"
 import Link from "next/link"
 import { ArrowUpRight } from "lucide-react"
 import Image from "next/image"
+import { maruburi_bold } from "../lib/localfont"
+import { useState } from "react"
 
 export function CardSm({posts}: {posts: Post[] | Post}) {
   return (
@@ -52,6 +56,8 @@ export function CardLg({posts}: {posts: Post[]}) {
     return `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}.jpg`;
   }
 
+  const [hovered, setHovered] = useState<string | null>(null);
+
   return (
     <div className="flex gap-2 w-full flex-wrap">
       {posts.map((post) => (
@@ -59,6 +65,8 @@ export function CardLg({posts}: {posts: Post[]}) {
           key={post.id}
           href={post.id}
           className={`relative shrink-0 w-full h-32 md:w-61 md:h-61 rounded-sm hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[filter, transform] duration-300 overflow-clip`}
+          onMouseEnter={() => setHovered(post.id)}
+          onMouseLeave={() => setHovered(null)}
         >
           {post.thumbnail ?
             <Image
@@ -79,7 +87,7 @@ export function CardLg({posts}: {posts: Post[]}) {
               unoptimized
             />
           }
-          <div className="absolute bottom-0 left-32 md:left-0 w-[calc(100%-8rem)] md:w-full h-32 md:h-auto flex gap-4 bg-button-100 hover:bg-button-200 transition-colors duration-300 justify-between p-4 text-sm">
+          <div className={`absolute bottom-0 left-32 md:left-0 w-[calc(100%-8rem)] md:w-full h-32 md:h-auto flex gap-4 bg-button-100 ${hovered === post.id && 'bg-button-200'} transition-colors duration-300 justify-between p-4 text-sm`}>
             <h3 className="break-keep">{post.title}</h3>
             <ArrowUpRight className="shrink-0 self-start w-5 h-5" />
           </div>
@@ -99,13 +107,12 @@ export function CardXl({posts}: {posts: Post[]}) {
         return (
           <div
             key={post.id}
-            className="flex h-[50vh] md:h-[60vh] w-full overflow-x-scroll cursor-default overscroll-x-none custom-hor-scrollbar"
+            className="flex h-[50vh] md:h-[60vh] w-full overflow-x-scroll cursor-default overscroll-x-none custom-hor-scrollbar rounded-sm"
           >
-
-            <div className="flex gap-2 ml-72">
+            <div className="flex gap-1 ml-72">
               {carousels.map((img, idx) => {
                 return (
-                  <div key={idx} className="flex gap-2 w-auto shrink-0">
+                  <div key={idx} className="flex gap-1 w-auto shrink-0">
                     {img.props.items.slice(0,2).map((item, idx) => {
                       const publicId = item.imageSrc;
                       const transformationsXl = "f_auto,q_auto";
@@ -133,14 +140,14 @@ export function CardXl({posts}: {posts: Post[]}) {
             </div>
 
             <Link
-              className="absolute flex flex-col w-60 md:w-80 pr-8 h-auto bg-button-100 p-4 mt-2 ml-2 rounded-sm gap-[1rem] shrink-0 cursor-pointer hover:bg-button-200 hover:translate-y-1 transition-[colors, transform] duration-300"
+              className="absolute flex flex-col w-60 md:w-80 pr-4 h-auto bg-button-100 p-4 rounded-br-sm rounded-tl-sm gap-[1rem] shrink-0 cursor-pointer hover:bg-button-200 transition-colors duration-300"
               href={post.id}
             >
-              <div className="flex h-auto justify-between ">
-                <h3 className="break-keep">{post.title}</h3>
+              <div className="flex h-auto justify-between">
+                <h3 className={`${maruburi_bold.className} break-keep`}>{post.title}</h3>
                 <ArrowUpRight className="shrink-0 w-5 h-5" />
               </div>
-              <div className="w-full text-sm break-keep">{post.excerpt}</div>
+              <div className="w-full text-sm break-keep leading-[1.7em]">{post.excerpt}</div>
             </Link>
 
           </div>

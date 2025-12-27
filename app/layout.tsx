@@ -40,7 +40,7 @@ export default async function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeProvider disableTransitionOnChange>
-          <div className="flex h-screen w-full px-5 md:p-8 gap-0 md:gap-4">
+          <div className="flex h-screen w-full px-5 md:pt-6 md:px-6 gap-0 md:gap-4">
 
             <h1 className="hidden">page</h1>
 
@@ -53,7 +53,7 @@ export default async function RootLayout({
             </Suspense>
 
             {/* 가운데 */}
-            <main className="flex-1 flex flex-col h-full md:h-[calc(100vh-2rem)] w-full pt-0 md:pt-2 md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden pb-5 md:pb-8">
+            <main className="flex-1 flex flex-col h-full md:h-[calc(100vh-1rem)] w-full pt-0 md:pt-5 md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
               <div
                 className='flex md:gap-4 w-full overflow-hidden focus:outline-hidden'
               >
