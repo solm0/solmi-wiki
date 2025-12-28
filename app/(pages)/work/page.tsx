@@ -36,7 +36,6 @@ export default async function BlogPage() {
   const finalPosts = posts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .filter(post => post.tags.name === '작업')
-    .filter(post => post.status === 'published')
 
   return (
     <>
