@@ -68,7 +68,7 @@ export default function Note({
 
     placePlaceholder.scrollIntoView({
       behavior: 'smooth',
-      block: 'center',
+      block: 'nearest'
     })
 
     setFromMapPage(null);

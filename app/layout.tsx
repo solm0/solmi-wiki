@@ -53,7 +53,7 @@ export default async function RootLayout({
             </Suspense>
 
             {/* 가운데 */}
-            <main className="flex-1 flex flex-col h-full md:h-[calc(100vh-1rem)] w-full pt-0 md:pt-5 md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
+            <main className="flex-1 flex flex-col h-full md:h-[calc(100vh-1rem)] w-full pt-0 md:pt-4 md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
               <div
                 className='flex md:gap-4 w-full overflow-hidden focus:outline-hidden'
               >

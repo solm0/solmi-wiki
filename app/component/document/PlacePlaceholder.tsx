@@ -27,7 +27,7 @@ export default function PlacePlaceholder({
     if (clickedId === placeId && buttonRef.current) {
       buttonRef.current.scrollIntoView({
         behavior: 'smooth',
-        block: 'center',
+        block: 'nearest'
       })
       buttonRef.current.classList.add("bg-green-500");
       buttonRef.current.classList.add("hover:bg-green-500");
