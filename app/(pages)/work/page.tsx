@@ -3,6 +3,7 @@ import { gql, GraphQLClient } from "graphql-request";
 import WorkLists from "@/app/component/work-lists";
 import { Post } from "@/app/lib/type";
 import ToolBox from "@/app/component/hyperlink-map/ToolBox";
+import { Suspense } from "react";
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -39,7 +40,9 @@ export default async function BlogPage() {
 
   return (
     <>
-      <WorkLists posts={finalPosts} />
+      <Suspense>
+        <WorkLists posts={finalPosts} />
+      </Suspense>
 
       {/* 오른쪽 사이드바 */}
       <ToolBox />

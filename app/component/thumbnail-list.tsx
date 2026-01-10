@@ -25,18 +25,10 @@ export default function ThumbnailList({
 
   const searchParams = useSearchParams();
   const router = useRouter();
-  const pathname = usePathname();
-
-  const rootPath = pathname.split('/').slice(1, 2).toString();
 
   const handleClick = (href: string) => {
     const newParams = new URLSearchParams(searchParams.toString())
-
-    if (rootPath === href) {
-      router.push(`/?${newParams.toString()}`);
-    } else {
-      router.push(`/${href}?${newParams.toString()}`);
-    }
+    router.push(`/${href}?${newParams.toString()}`);
   }
 
   const cloudName = "dpqjfptr6";

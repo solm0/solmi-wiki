@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Post } from "../lib/type";
 import WorkGrid from "./WorkGrid";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function WorkLists({
   posts,
@@ -14,6 +15,34 @@ export default function WorkLists({
     'media': false,
   })
 
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    const year = searchParams.get('year');
+    const media = searchParams.get('media');
+
+    setFilters({
+      year: year === 'true',
+      media: media === 'true'
+    })
+  }, []);
+
+  useEffect(() => {
+    const params = new URLSearchParams();
+
+    Object.entries(filters).forEach(([key, value]) => {
+      if (value) {
+        params.set(key, 'true');
+      }
+    });
+
+    const queryString = params.toString();
+    const path = queryString ? `?${queryString}` : '';
+    router.replace(path);
+
+  }, [filters, router]);
+
   return (
     <section className='relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar'>
 
@@ -21,10 +50,13 @@ export default function WorkLists({
         <div className="flex gap-2 leading-5 items-center">
           <button
             className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
-            onClick={() => setFilters(prev => ({
-              ...prev,
-              year: !filters['year']
-            }))}
+            onClick={() => {
+              setFilters(prev => ({
+                ...prev,
+                year: !filters['year']
+              }))
+
+            }}
             id='year-filter'
           >
             <div className={`w-full h-full rounded-full ${filters['year'] ? 'bg-green-400' : 'bg-transparent'} transition-colors duration-300`} />
