@@ -96,7 +96,7 @@ export default async function HomePage() {
         <h2>반갑습니다.</h2>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 나에 대한 정보이다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             <CardMd post={meta[2]} label="웹사이트에 대해서" />
             <CardMd post={meta[1]} />
@@ -105,23 +105,23 @@ export default async function HomePage() {
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>작업</b><span className="text-text-800"> 내가 만드는 것들(주로 시각적인)이다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>작업</b><span className="text-text-800"> 제가 만든 것들입니다.</span></h2>
           <CardXl posts={work} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록이다. 지역에 대한 부정확한 정보와 편견이 포함될 수 있다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
           <CardSm posts={exchange} />
           <CardLg posts={travel} />
         </article>
         
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>코딩</b><span className="text-text-800"> 주로 미래의 나에게 지식을 전수해주기 위한 것으로, 정확한 설명이 아닐지라도 현재 내가 이해한 것을 박제해 두는 것에 의의를 둔다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
           <CardSm posts={code} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모은다.</span></h2>
+          <h2><b className={`${maruburi_bold.className}`}>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             {unsorted.map((post, i) => <CardMd key={i} post={post} />)}
           </div>
