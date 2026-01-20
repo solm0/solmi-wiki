@@ -13,9 +13,13 @@ export default function GenerateChron(notes: Post[]) {
 
   sortedNotes.forEach((note) => {
     const publishedAt = new Date(note.publishedAt);
-    const year = publishedAt.getFullYear().toString();
-    const month = String(publishedAt.getMonth() + 1).padStart(2, '0').toString();
-    const day = String(publishedAt.getDate()).padStart(2, '0').toString();
+    const kst = new Date(
+      publishedAt.toLocaleString("en-US", { timeZone: "Asia/Seoul" })
+    );
+
+    const year = kst.getFullYear().toString();
+    const month = String(kst.getMonth() + 1).padStart(2, '0').toString();
+    const day = String(kst.getDate()).padStart(2, '0').toString();
 
     if (!note.chron) {
       note.chron = {};
