@@ -10,10 +10,10 @@ export default function Metadata({
 }: {
   post: Post;
 }) {
-  const publishedAt = new Date(post.publishedAt).toLocaleDateString('ko-KR');
-  const year = publishedAt.toString().slice(0,4);
-  const month = publishedAt.toString().slice(5,7);
-  const day = publishedAt.toString().slice(9,11);
+  const d = new Date(post.publishedAt);
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
 
   const keywords = post.keywords.map(kw => kw.name);
 

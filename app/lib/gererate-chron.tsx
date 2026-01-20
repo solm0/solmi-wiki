@@ -12,10 +12,10 @@ export default function GenerateChron(notes: Post[]) {
   let d: string | null = null;
 
   sortedNotes.forEach((note) => {
-    const publishedAt = new Date(note.publishedAt).toLocaleDateString('ko-KR');
-    const year = publishedAt.toString().slice(0,4);
-    const month = publishedAt.toString().slice(5,7);
-    const day = publishedAt.toString().slice(9,11);
+    const publishedAt = new Date(note.publishedAt);
+    const year = publishedAt.getFullYear().toString();
+    const month = String(publishedAt.getMonth() + 1).padStart(2, '0').toString();
+    const day = String(publishedAt.getDate()).padStart(2, '0').toString();
 
     if (!note.chron) {
       note.chron = {};
