@@ -22,13 +22,13 @@ export default function Headings({
             )
           case 3: 
             return (
-              <h3 key={id} id={id} className={`text-xl pt-14 pb-3 text-text-950 transition-all duration-1000 rounded-sm origin-left ${maruburi_bold.className}`}>
+              <h3 key={id} id={id} className={`text-2xl pt-14 pb-3 text-text-950 transition-all duration-1000 rounded-sm origin-left ${maruburi_bold.className}`}>
                 {text}
               </h3>
             )
           case 4:
             return (
-              <h4 key={id} id={id} className={`text-base pt-8 pb-3`} >
+              <h4 key={id} id={id} className={`text-xl pt-8 pb-3 ${maruburi_bold.className}`} >
                 {text}
               </h4>
             )
