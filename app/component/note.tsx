@@ -9,6 +9,8 @@ import { useRef } from "react";
 import RingLinks from "./ring-links";
 import SequenceNav from "./sequence-nav";
 import { useClickedPlace } from "../lib/zustand/useClickedPlace";
+import Nudge from "./music/Nudge";
+import { useToggleStore } from "../lib/zustand/useToggleStore";
 
 export default function Note({
   post,
@@ -73,12 +75,15 @@ export default function Note({
 
     setFromMapPage(null);
   }
+
+  const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
   
   return (
     <article
       className={`
         ${maruburi.className}
-        flex flex-col gap-12 w-full leading-[2em] font-serif`}
+        flex flex-col gap-12 w-full leading-[2em] font-serif
+      `}
     >
       <h1
         ref={headRef}
@@ -113,6 +118,9 @@ export default function Note({
       <div className={`max-w-[47em]`}>
         <Footer />
       </div>
+
+      {/* 음악버튼 */}
+      {!isToolBoxOpen && post.playlists.length !== 0 && <Nudge />}
     </article>
   )
 }

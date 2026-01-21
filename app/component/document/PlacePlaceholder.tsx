@@ -21,7 +21,8 @@ export default function PlacePlaceholder({
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
-  const setIsToolBoxOpen = useToggleStore(s => s.setToggle);
+  const isMapEnabled = useToggleStore((s) => s.toggles['map']);
+  const setToggle = useToggleStore(s => s.setToggle);
   
   useEffect(() => {
     if (clickedId === placeId && buttonRef.current) {
@@ -53,7 +54,8 @@ export default function PlacePlaceholder({
         onMouseLeave={() => setHovered(false)}
         onClick={() => {
           setClickedId(placeId);
-          if (!isToolBoxOpen) setIsToolBoxOpen('toolBox', true)
+          if (!isToolBoxOpen) setToggle('toolBox', true);
+          if (!isMapEnabled) setToggle('map', true);
         }}
         className="border border-text-600 bg-button-50 hover:bg-button-100 pl-2 pr-3 py-1 rounded-full transition-colors duration-300 flex items-center gap-2 leading-[1.5em] text-left min-h-10"
       >

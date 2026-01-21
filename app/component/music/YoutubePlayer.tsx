@@ -59,7 +59,7 @@ export default function YoutubePlayer() {
   }, [currentTime, seeking]);
 
   return (
-    <div className="absolute top-0 left-0">
+    <div className="absolute top-0 left-0 hidden">
       {videoId &&
         <YouTube
           videoId={videoId}

@@ -7,6 +7,37 @@ import { RandItem } from "../inspector/inspect-result-list";
 import { useRouter } from "next/navigation";
 import ControllerBar from "./ControllerBar";
 
+const ALERT_KEY = 'music-alert-dismissed';
+
+export function Alert({
+  setAlertOpen, play
+}: {
+  setAlertOpen: (alertOpen: boolean) => void;
+  play: () => void;
+}) {
+  const onAlertConfirm = () => {
+    localStorage.setItem(ALERT_KEY, 'true');
+    setAlertOpen(false);
+    play();
+  }
+  return (
+    <div className="fixed w-64 bg-green-500 px-3 py-2 z-80 h-auto rounded-sm bottom-5 left-5 md:bottom-8 md:left-8 text-sm text-text-900 flex flex-col items-start gap-2">
+      <p className="break-keep">이 음악은 유튜브 영상을 통해 재생되니 데이터를 많이 쓰고 싶지 않다면 와이파이 환경에서 재생하는 것을 권장합니다.</p>
+      <div className="flex gap-2">
+        <button
+          onClick={onAlertConfirm}
+          className="bg-green-500 border-text-900 px-3 py-1 border rounded-sm hover:bg-green-600 transition-colors duration-300"
+        >
+          알겠고, 재생하기
+        </button>
+        <button onClick={() => setAlertOpen(false)}>
+          돌아가기
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function MusicCmp({
   playlistIds, allPlaylists,
 }: {
@@ -65,16 +96,11 @@ export default function MusicCmp({
   const [hovered, setHovered] = useState<string | null>(null);
   const router = useRouter();
   
-  // 컨트롤러로 setplaying, setCurrenttime 컨트롤
-  // play버튼/song 처음 누를 때 안내문(로컬스토리지), 오케이 누를때 playerstate바꾸기.
-    // 유튜브 영상이 재생되니 음악 재생은 와이파이 환경에서 하는것을 권장합니다. 알겠고, 재생하기/취소
+  // 처음 재생할 때 경고창 후
+  const [alertOpen, setAlertOpen] = useState(false);
 
   // 가사 폭포: 가사가 있을경우. 현재 currenttime 받아서 그만큼 가사 state 업데이트하고 렌더
-  // 음악 정보(앨범명,가수명,국가,연도)도 musicbrains에서가져오기
-  // 새로운페이지가 playlist가져도 바로 set하지말고 set하는 버튼을 제공하기
-  
   // 플레이리스트 페이지
-  // 글에 플레이리스트 있으면 넛지 버튼 좀 있다가 사라지기
 
   // current time, duration ui
   const secToMin = (seconds: number) => {
@@ -85,6 +111,14 @@ export default function MusicCmp({
 
   return (
     <div className="w-full h-auto flex flex-col gap-2">
+      {/* 경고창 */}
+      {alertOpen &&
+        <Alert
+          setAlertOpen={setAlertOpen}
+          play={() => setPlaying(true)}
+        />
+      }
+
       {/* 가사 폭포 */}
       <div
         className={`
@@ -190,7 +224,13 @@ export default function MusicCmp({
           <button
             onClick={() => {
               if (!isReady) return;
-              setPlaying(!isPlaying);
+              const dismissed = localStorage.getItem('music-alert-dismissed');
+              console.log(dismissed)
+              if (dismissed === 'true') {
+                setPlaying(!isPlaying);
+              } else {
+                setAlertOpen(true);
+              }
             }}
             className={`
               w-6 h-6 p-1 flex items-center justify-center hover:text-text-700 transition-colors duration-300
