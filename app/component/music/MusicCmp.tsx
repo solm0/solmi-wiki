@@ -13,7 +13,6 @@ export default function MusicCmp({
   playlistIds?: Playlist[];
   allPlaylists: Playlist[];
 }) {
-  const [paused, setPaused] = useState(false);
   const [lyricOpen, setLyricOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [listOpen, setListOpen] = useState(false);
@@ -25,10 +24,12 @@ export default function MusicCmp({
     isReady,
     duration,
     currentTime,
+    isPlaying,
     setPlaylist,
     setSongIdx,
     setPlaying,
     setCurrentTime,
+    setSeeking,
   } = usePlayerStore();
   
   const localPlaylist = useMemo(() => {
@@ -64,21 +65,16 @@ export default function MusicCmp({
   const [hovered, setHovered] = useState<string | null>(null);
   const router = useRouter();
   
-  // youtubeplayer에는 영상 가져오는걸 비동기 함수로해서 playerstate 바뀌었을 때만 호출
   // 컨트롤러로 setplaying, setCurrenttime 컨트롤
-  // duration, ready받기
-  // currenttime받아서 컨트롤러위치렌더
+  // play버튼/song 처음 누를 때 안내문(로컬스토리지), 오케이 누를때 playerstate바꾸기.
+    // 유튜브 영상이 재생되니 음악 재생은 와이파이 환경에서 하는것을 권장합니다. 알겠고, 재생하기/취소
 
   // 가사 폭포: 가사가 있을경우. 현재 currenttime 받아서 그만큼 가사 state 업데이트하고 렌더
   // 음악 정보(앨범명,가수명,국가,연도)도 musicbrains에서가져오기
   // 새로운페이지가 playlist가져도 바로 set하지말고 set하는 버튼을 제공하기
-  // play버튼/song 처음 누를 때 안내문(로컬스토리지), 오케이 누를때 playerstate바꾸기.
-    // 유튜브 영상이 재생되니 음악 재생은 와이파이 환경에서 하는것을 권장합니다. 알겠고, 재생하기/취소
+  
   // 플레이리스트 페이지
   // 글에 플레이리스트 있으면 넛지 버튼 좀 있다가 사라지기
-
-  // ui
-  // isReady면 재생버튼/컨트롤러 활성화
 
   // current time, duration ui
   const secToMin = (seconds: number) => {
@@ -86,10 +82,6 @@ export default function MusicCmp({
     const ss = Math.floor(seconds % 60);
     return `${mm}:${ss.toString().padStart(2, '0')}`;
   }
-
-  // current time / duration * 컨트롤러 width
-
-  
 
   return (
     <div className="w-full h-auto flex flex-col gap-2">
@@ -196,14 +188,17 @@ export default function MusicCmp({
         <div className="w-full flex gap-2 items-start">
           {/* 컨트롤 버튼 */}
           <button
-            onClick={() => isReady ? setPaused(!paused) : null}
+            onClick={() => {
+              if (!isReady) return;
+              setPlaying(!isPlaying);
+            }}
             className={`
               w-6 h-6 p-1 flex items-center justify-center hover:text-text-700 transition-colors duration-300
               ${isReady ? 'text-text-900' : 'text-text-700'}
             `}
             disabled={!isReady}
           >
-            {paused
+            {isPlaying
               ? <Pause />
               : <Play />
             }
@@ -214,6 +209,7 @@ export default function MusicCmp({
               currentTime={currentTime}
               duration={duration}
               setCurrentTime={setCurrentTime}
+              setSeeking={setSeeking}
             />
             <div className="w-full flex justify-between text-xs">
               <span>{secToMin(currentTime)}</span>
@@ -269,7 +265,7 @@ export default function MusicCmp({
                     <img src={song.thumbnailId ? `https://coverartarchive.org/release/${song.thumbnailId}/front` : '/globe.svg'} className="object-cover" />
                   </div>
                   <div className="h-full flex flex-col justify-between">
-                    <p className={`text-base ${maruburi_bold.className} ${i === 1 ? 'text-green-600' : 'text-text-900'}`}>{song.title}</p>
+                    <p className={`text-base ${maruburi_bold.className} ${songIdx === i ? 'text-green-600' : 'text-text-900'}`}>{song.title}</p>
                     <p className="text-xs text-text-700">{song.artist}</p>
                   </div>
                 </div>
