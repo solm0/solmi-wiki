@@ -15,6 +15,7 @@ export const useToggleStore = create<State>((set) => ({
     graph: true,
     toc: true,
     map: true,
+    music: true,
   },
 
   setToggle: (key, value) => {
@@ -38,6 +39,7 @@ export const useToggleStore = create<State>((set) => ({
         graph: JSON.parse(localStorage.getItem('graph') || 'true'),
         toc: JSON.parse(localStorage.getItem('toc') || 'true'),
         map: JSON.parse(localStorage.getItem('map') || 'true'),
+        music: JSON.parse(localStorage.getItem('music') || 'true'),
       },
     }));
   },

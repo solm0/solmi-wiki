@@ -9,6 +9,7 @@ import Header from "./component/header/header";
 import { Suspense } from "react";
 import Inspector from "./component/inspector/inspector";
 import Script from "next/script";
+import YoutubePlayer from "./component/music/YoutubePlayer";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +24,11 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const postsPath = path.join(process.cwd(), "public/_all_posts.json");
+  const postsPath = path.join(process.cwd(), "public/data/all_posts.json");
   const posts = JSON.parse(fs.readFileSync(postsPath, "utf8"));
 
-  const tags = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/all-tags.json'), 'utf8'));
-  const keywordsTag = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/top-keywords-tag.json'), 'utf8'));
+  const tags = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/all_tags.json'), 'utf8'));
+  const keywordsTag = JSON.parse(fs.readFileSync(path.join(process.cwd(), 'public/data/top_keywords_tag.json'), 'utf8'));
 
   return (
     <html lang="ko" suppressHydrationWarning>
@@ -64,6 +65,9 @@ export default async function RootLayout({
 
           {/* 내부링크 툴팁 */}
           <InternalLinkTooltip />
+
+          {/* 음악 */}
+          {/* <YoutubePlayer /> */}
         </ThemeProvider>
       </body>
     </html>

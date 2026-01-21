@@ -27,7 +27,7 @@ const GET_ALL_TAGS = gql`
   }
 `;
 
-const dirPath = path.join(process.cwd(), 'public/');
+const dirPath = path.join(process.cwd(), 'public/data/');
 fs.mkdirSync(dirPath, { recursive: true });
 
 export default async function main() {
@@ -70,7 +70,7 @@ export function writeKeywordFiles() {
   keywordsByTag["전체"] = globalRank;
 
   fs.writeFileSync(
-    path.join(dirPath, 'top-keywords-tag.json'),
+    path.join(dirPath, 'top_keywords_tag.json'),
     JSON.stringify(keywordsByTag, null, 2)
   );
 }

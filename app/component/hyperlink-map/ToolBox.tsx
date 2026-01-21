@@ -14,6 +14,7 @@ import ThemeButton from "../atoms/theme-button";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
 import LocalMapWController from "../map/LocalMapWController";
+import MusicCmp from "../music/MusicCmp";
 
 export function ToolComponents({
   isEnabled, cmp, children, hovered
@@ -49,6 +50,7 @@ export const tools = [
   { value: 'graph', name: '하이퍼링크 맵' },
   { value: 'toc', name: '목차' },
   { value: 'map', name: '세계지도'},
+  { value: 'music', name: '음악'},
 ]
 
 export default function ToolBox({
@@ -178,6 +180,15 @@ export default function ToolBox({
               }
             </ToolComponents>
           }
+
+          {/* music */}
+          <ToolComponents
+            isEnabled={isEnabled[tools[3].value]}
+            cmp={tools[3]}
+            hovered={hovered}
+          >
+            <MusicCmp />
+          </ToolComponents>
         </div>
 
       </aside>

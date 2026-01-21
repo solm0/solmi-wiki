@@ -181,6 +181,11 @@ const GET_POST_BY_ID = gql`
           internalBacklinks { id title }
         }
       }
+      playlists {
+        id
+        title
+        songs { id }
+      }
     }
   }
 `;

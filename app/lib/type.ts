@@ -287,3 +287,22 @@ export type ComponentPreviewNode = {
   }[],
   component: 'componentPreview',
 }
+
+export type Playlist = {
+  id: string;
+  title: string;
+  posts: Post[];
+  songs: Song[];
+}
+
+export type Song = {
+  id: string;
+  title: string;
+  artist: string;
+  album: string;
+  thumbnailId: string;
+  youtubeVideoId: string;
+  desc: string;
+  lyric: JSON;
+  playlist: Playlist[];
+}

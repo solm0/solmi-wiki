@@ -30,7 +30,7 @@ async function main() {
     const data:{posts: Post[]} = await client.request(GET_ALL_POSTS);
     const posts = data.posts.filter(post => post.status === 'published');
 
-    const outputPath = path.join(process.cwd(), "public/_all_posts.json");
+    const outputPath = path.join(process.cwd(), "public/data/all_posts.json");
     fs.writeFileSync(outputPath, JSON.stringify(posts, null, 2));
 
     console.log("Saved to public/_all_posts.json");
