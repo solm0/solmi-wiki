@@ -67,7 +67,7 @@ export default async function RootLayout({
           <InternalLinkTooltip />
 
           {/* 음악 */}
-          {/* <YoutubePlayer /> */}
+          <YoutubePlayer />
         </ThemeProvider>
       </body>
     </html>

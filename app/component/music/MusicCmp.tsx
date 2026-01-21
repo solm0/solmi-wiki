@@ -5,6 +5,7 @@ import { ChevronLeft, Info, ListMusic, Maximize2, Minimize2, Pause, Play } from 
 import { useEffect, useMemo, useState } from "react";
 import { RandItem } from "../inspector/inspect-result-list";
 import { useRouter } from "next/navigation";
+import ControllerBar from "./ControllerBar";
 
 export default function MusicCmp({
   playlistIds, allPlaylists,
@@ -21,12 +22,13 @@ export default function MusicCmp({
   const {
     songIdx,
     playlist,
+    isReady,
+    duration,
+    currentTime,
     setPlaylist,
     setSongIdx,
-    setReady,
     setPlaying,
     setCurrentTime,
-    setDuration,
   } = usePlayerStore();
   
   const localPlaylist = useMemo(() => {
@@ -62,10 +64,32 @@ export default function MusicCmp({
   const [hovered, setHovered] = useState<string | null>(null);
   const router = useRouter();
   
-  // 가사 폭포: 현재 플레이시간 가져와서 그만큼 가사 state저장하고 렌더
+  // youtubeplayer에는 영상 가져오는걸 비동기 함수로해서 playerstate 바뀌었을 때만 호출
+  // 컨트롤러로 setplaying, setCurrenttime 컨트롤
+  // duration, ready받기
+  // currenttime받아서 컨트롤러위치렌더
+
+  // 가사 폭포: 가사가 있을경우. 현재 currenttime 받아서 그만큼 가사 state 업데이트하고 렌더
+  // 음악 정보(앨범명,가수명,국가,연도)도 musicbrains에서가져오기
+  // 새로운페이지가 playlist가져도 바로 set하지말고 set하는 버튼을 제공하기
   // play버튼/song 처음 누를 때 안내문(로컬스토리지), 오케이 누를때 playerstate바꾸기.
     // 유튜브 영상이 재생되니 음악 재생은 와이파이 환경에서 하는것을 권장합니다. 알겠고, 재생하기/취소
-  // youtubeplayer에는 영상 가져오는 함수를 두어 playerstate 바뀌었을 때만 호출
+  // 플레이리스트 페이지
+  // 글에 플레이리스트 있으면 넛지 버튼 좀 있다가 사라지기
+
+  // ui
+  // isReady면 재생버튼/컨트롤러 활성화
+
+  // current time, duration ui
+  const secToMin = (seconds: number) => {
+    const mm = Math.floor(seconds / 60);
+    const ss = Math.floor(seconds % 60);
+    return `${mm}:${ss.toString().padStart(2, '0')}`;
+  }
+
+  // current time / duration * 컨트롤러 width
+
+  
 
   return (
     <div className="w-full h-auto flex flex-col gap-2">
@@ -171,27 +195,29 @@ export default function MusicCmp({
 
         <div className="w-full flex gap-2 items-start">
           {/* 컨트롤 버튼 */}
-          <div
-            onClick={() => setPaused(!paused)}
-            className="w-6 h-6 p-1 flex items-center justify-center"
+          <button
+            onClick={() => isReady ? setPaused(!paused) : null}
+            className={`
+              w-6 h-6 p-1 flex items-center justify-center hover:text-text-700 transition-colors duration-300
+              ${isReady ? 'text-text-900' : 'text-text-700'}
+            `}
+            disabled={!isReady}
           >
             {paused
-              ? <Pause className="text-text-900 hover:text-text-700 transition-colors duration-300" />
-              : <Play className="text-text-900 hover:text-text-700 transition-colors duration-300" />
+              ? <Pause />
+              : <Play />
             }
-          </div>
+          </button>
           {/* 진행 */}
           <div className="w-full flex flex-col gap-1 text-text-800 pt-2">
-            <div className="relative w-full h-2 flex items-center">
-              <div className="relative w-full h-1 flex items-center rounded-full overflow-hidden">
-                <div className="w-full h-full absolute bg-button-200" />
-                <div className="w-1/2 h-full absolute bg-green-500" />
-              </div>
-              <div className="w-3 h-3 bg-green-500 rounded-full absolute left-1/2 hover:scale-130 transition-all duration-300" />
-            </div>
+            <ControllerBar
+              currentTime={currentTime}
+              duration={duration}
+              setCurrentTime={setCurrentTime}
+            />
             <div className="w-full flex justify-between text-xs">
-              <span>1:23</span>
-              <span>4:32</span>
+              <span>{secToMin(currentTime)}</span>
+              <span>{secToMin(duration)}</span>
             </div>
           </div>
         </div>
