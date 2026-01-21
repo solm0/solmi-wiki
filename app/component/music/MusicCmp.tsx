@@ -1,16 +1,71 @@
 import { maruburi, maruburi_bold, pretendard } from "@/app/lib/localfont";
+import { Playlist, Song } from "@/app/lib/type";
+import { usePlayerStore } from "@/app/lib/zustand/youtubePlayerStore";
 import { ChevronLeft, Info, ListMusic, Maximize2, Minimize2, Pause, Play } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { RandItem } from "../inspector/inspect-result-list";
+import { useRouter } from "next/navigation";
 
-export default function MusicCmp() {
-  // zustand에서 music 받아옴
-  // if (!music) 어쩌고
-  // music들을 빌드시 다 fetch해놨다가? 묶인 글이랑 플레이리스트 정보를 가져와야?
+export default function MusicCmp({
+  playlistIds, allPlaylists,
+}: {
+  playlistIds?: Playlist[];
+  allPlaylists: Playlist[];
+}) {
   const [paused, setPaused] = useState(false);
   const [lyricOpen, setLyricOpen] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [listOpen, setListOpen] = useState(false);
   const [postListOpen, setPostListOpen] = useState(false);
+
+  const {
+    songIdx,
+    playlist,
+    setPlaylist,
+    setSongIdx,
+    setReady,
+    setPlaying,
+    setCurrentTime,
+    setDuration,
+  } = usePlayerStore();
+  
+  const localPlaylist = useMemo(() => {
+    if (!playlistIds) return null;
+    return allPlaylists.find(p => p.id === playlistIds[0]?.id) ?? null;
+  }, [playlistIds, allPlaylists]);
+  
+  // playlist가 바뀌면 song이 있을 때만 setPlaylist, setSong
+  useEffect(() => {
+    if (!localPlaylist?.songs?.length) return;
+    const randomIndex = Math.floor(Math.random() * localPlaylist.songs.length);
+    setPlaylist(localPlaylist);
+    setSongIdx(randomIndex);
+  }, [localPlaylist]);
+  
+  const songData = (songIdx !== null && playlist) ? {
+    title: playlist.songs[songIdx].title,
+    artist: playlist.songs[songIdx].artist,
+    album: playlist.songs[songIdx].album,
+    thumbnailSrc: `https://coverartarchive.org/release/${playlist.songs[songIdx].thumbnailId}/front`,
+    desc: playlist.songs[songIdx].desc,
+    lyric: playlist.songs[songIdx].lyric,
+  } : {
+    title: '선택된 음악이 없습니다',
+    artist: '-',
+    album: '-',
+    thumbnailSrc: '/globe.svg',
+    desc: '-',
+    lyric: {},
+  }
+
+  // 플레이리스트 연관 post 목록
+  const [hovered, setHovered] = useState<string | null>(null);
+  const router = useRouter();
+  
+  // 가사 폭포: 현재 플레이시간 가져와서 그만큼 가사 state저장하고 렌더
+  // play버튼/song 처음 누를 때 안내문(로컬스토리지), 오케이 누를때 playerstate바꾸기.
+    // 유튜브 영상이 재생되니 음악 재생은 와이파이 환경에서 하는것을 권장합니다. 알겠고, 재생하기/취소
+  // youtubeplayer에는 영상 가져오는 함수를 두어 playerstate 바뀌었을 때만 호출
 
   return (
     <div className="w-full h-auto flex flex-col gap-2">
@@ -72,13 +127,13 @@ export default function MusicCmp() {
           <div className="relative flex gap-2 h-10 items-center">
             {/* 앨범커버 */}
             <div className="w-10 h-full rounded-sm bg-button-200">
-              <img src='/globe.svg' className="object-cover" />
+              <img src={songData.thumbnailSrc} className="object-cover" />
             </div>
 
             {/* 제목 & 아티스트 */}
             <div className="h-full flex flex-col justify-between">
-              <p className={`text-base ${maruburi_bold.className} text-text-900`}>Valasy</p>
-              <p className="text-xs text-text-700">Nürnberg</p>
+              <p className={`text-base ${maruburi_bold.className} text-text-900`}>{songData.title}</p>
+              <p className="text-xs text-text-700">{songData.artist}</p>
             </div>
 
             {/* 플레이리스트 펼침 버튼 */}
@@ -107,10 +162,10 @@ export default function MusicCmp() {
           {/* 상세 */}
           <div className={`${pretendard.className} text-xs w-full ${infoOpen ? 'h-auto' : 'h-0 hidden'} transition-[height] duration-300 overflow-hidden py-2 flex flex-col gap-2`}>
             <p>
-              <span>언어: </span>
-              <span>벨라루스어</span>
+              <span>앨범: </span>
+              <span>{songData.album}</span>
             </p>
-            <p>이노래는 어쩌고저쩌고</p>
+            <p>{songData.desc}</p>
           </div>
         </div>
 
@@ -150,7 +205,7 @@ export default function MusicCmp() {
         `}
       >
         <div className="w-full flex justify-between">
-          <p className="text-xs text-text-800">Valasy 외 10곡</p>
+          <p className="text-xs text-text-800">{`${playlist?.title} 전체 ${playlist?.songs.length}곡`}</p>
           <p
             onClick={() => setPostListOpen(!postListOpen)}
             className="text-xs hover:text-text-700 transition-colors duration-300 flex items-center"
@@ -159,26 +214,41 @@ export default function MusicCmp() {
             <ChevronLeft className={`w-4 h-4 ${postListOpen ? '-rotate-90' : 'rotate-0'} transition-[rotate] duration-300`} />
           </p>
         </div>
-        {postListOpen &&
-          <div>
-            <p>글 1</p>
-            <p>글 2</p>
-            <p>글 3</p>
-          </div>
-        }
+        <div>
+          {postListOpen && playlist?.posts.map((post) => (
+            <div
+              key={post.id}
+              className={`
+                shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2
+                ${hovered && hovered !== post.id && "opacity-40!"}
+              `}
+              onMouseEnter={() => setHovered(post.id)}
+              onMouseLeave={() => setHovered(null)}
+              onClick={() => router.push(`/${post.id}`) }
+            >
+              <RandItem hovered={hovered} note={post} />
+            </div>
+          ))}
+        </div>
         <div className="flex flex-col custom-scrollbar">
-          {Array.from({length: 10}).map((_, i) =>
-            <div key={i} className="p-2 hover:bg-button-100 rounded-md transition-colors duration-300">
-              <div className="relative flex gap-2 h-10 items-center">
-                <div className="w-10 h-full rounded-sm bg-button-200">
-                  <img src='/globe.svg' className="object-cover" />
-                </div>
-                <div className="h-full flex flex-col justify-between">
-                  <p className={`text-base ${maruburi_bold.className} ${i === 1 ? 'text-green-600' : 'text-text-900'}`}>Valasy</p>
-                  <p className="text-xs text-text-700">Nürnberg</p>
+          {playlist?.songs
+            .map((song, i) => (
+              <div
+                key={i}
+                className="p-2 hover:bg-button-100 rounded-md transition-colors duration-300"
+                onClick={() => setSongIdx(i)}
+              >
+                <div className="relative flex gap-2 h-10 items-center">
+                  <div className="w-10 h-full rounded-sm bg-button-200">
+                    <img src={song.thumbnailId ? `https://coverartarchive.org/release/${song.thumbnailId}/front` : '/globe.svg'} className="object-cover" />
+                  </div>
+                  <div className="h-full flex flex-col justify-between">
+                    <p className={`text-base ${maruburi_bold.className} ${i === 1 ? 'text-green-600' : 'text-text-900'}`}>{song.title}</p>
+                    <p className="text-xs text-text-700">{song.artist}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            )
           )}
         </div>
       </div>

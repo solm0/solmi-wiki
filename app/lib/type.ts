@@ -21,6 +21,7 @@ export type Post = {
   internalLinks?: Post[];
   internalBacklinks?: Post[];
   places?: Place[];
+  playlists: Playlist[];
 };
 
 export type User = {
@@ -295,6 +296,17 @@ export type Playlist = {
   songs: Song[];
 }
 
+export type Lyric = {
+  lyric?: {
+    tr?: string;
+    or?: string;
+  }[];
+  time?: {
+    start: number;
+    end: number;
+  }[];
+}
+
 export type Song = {
   id: string;
   title: string;
@@ -303,6 +315,6 @@ export type Song = {
   thumbnailId: string;
   youtubeVideoId: string;
   desc: string;
-  lyric: JSON;
+  lyric: Lyric;
   playlist: Playlist[];
 }

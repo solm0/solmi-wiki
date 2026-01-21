@@ -4,7 +4,7 @@ import { Suspense, useEffect, useState } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
-import { Place, Post } from "@/app/lib/type";
+import { Place, Playlist, Post } from "@/app/lib/type";
 import GraphController from "./graph-controller";
 import { ChevronRight, SettingsIcon } from "lucide-react";
 import Toc from "../toc";
@@ -54,13 +54,14 @@ export const tools = [
 ]
 
 export default function ToolBox({
-  post, selectedPlace
+  post, selectedPlace, allPlaylists
 }: {
   post?: Post;
   selectedPlace?: {
     idx: number;
     data?: Place;
   }; // map 페이지 전용
+  allPlaylists: Playlist[];
 }) {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
 
@@ -187,7 +188,7 @@ export default function ToolBox({
             cmp={tools[3]}
             hovered={hovered}
           >
-            <MusicCmp />
+            <MusicCmp playlistIds={post?.playlists} allPlaylists={allPlaylists} />
           </ToolComponents>
         </div>
 

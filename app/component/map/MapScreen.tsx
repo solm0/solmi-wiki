@@ -1,14 +1,15 @@
 'use client'
 
-import { Place } from "@/app/lib/type"
+import { Place, Playlist } from "@/app/lib/type"
 import ToolBox from "../hyperlink-map/ToolBox"
 import GlobalMap from "./GlobalMap"
 import { useState } from "react";
 
 export default function MapScreen({
-  allPlaces,
+  allPlaces, allPlaylists
 }: {
   allPlaces: Place[];
+  allPlaylists: Playlist[];
 }) {
   const [clickedId, setClickedId] = useState<string | null>(null);
   const index = allPlaces.findIndex(p => p.id === clickedId);
@@ -25,7 +26,7 @@ export default function MapScreen({
       </section>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox selectedPlace={{idx: index+1, data: data}} />
+      <ToolBox selectedPlace={{idx: index+1, data: data}} allPlaylists={allPlaylists} />
     </>
   )
 }

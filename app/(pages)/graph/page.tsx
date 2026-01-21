@@ -5,6 +5,8 @@ import { Suspense } from "react";
 import BackButton from "../../component/atoms/back-button";
 import { Post } from "@/app/lib/type";
 import ToolBox from "@/app/component/hyperlink-map/ToolBox";
+import path from "path";
+import fs from 'fs';
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -40,6 +42,10 @@ export default async function GraphPage() {
   const data: {posts: Post[]} = await client.request(GET_ALL_POSTS_GRAPH);
   const posts = data.posts;
 
+  // read all playlist from file
+  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
+  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
+
   return (
     <>
       <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center">
@@ -51,7 +57,7 @@ export default async function GraphPage() {
 
       <div className="relative gap-8 w-full pointer-events-none"></div>
       {/* 오른쪽 사이드바 */}
-      <ToolBox />
+      <ToolBox allPlaylists={playlists} />
     </>
   )
 }

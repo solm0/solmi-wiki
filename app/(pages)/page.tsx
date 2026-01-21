@@ -5,6 +5,8 @@ import { CardSm, CardMd, CardLg, CardXl } from "../component/cards";
 import ToolBox from "../component/hyperlink-map/ToolBox";
 import { Post } from "../lib/type";
 import { maruburi, maruburi_bold } from "../lib/localfont";
+import path from "path";
+import fs from 'fs';
 
 export const metadata: Metadata = {
   title: "solmi.wiki",
@@ -88,7 +90,11 @@ export default async function HomePage() {
   const travel = minimalData.posts.filter(post => post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
   const code = minimalData.posts.filter(post => post.tags.name === '코딩');
   const unsorted = minimalData.posts.filter(post => (post.tags.name === '미분류' && post.meta === false));
-  const exchange = exchangeData.posts
+  const exchange = exchangeData.posts;
+
+  // read all playlist from file
+  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
+  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
 
   return (
     <>
@@ -130,7 +136,7 @@ export default async function HomePage() {
       </section>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox />
+      <ToolBox allPlaylists={playlists} />
     </>
   )
 }

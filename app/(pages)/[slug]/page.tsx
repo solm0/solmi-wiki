@@ -5,6 +5,8 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Post } from '@/app/lib/type';
 import ToolBox from '@/app/component/hyperlink-map/ToolBox';
+import path from 'path';
+import fs from 'fs';
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL ?? '');
 
@@ -234,7 +236,11 @@ export default async function Page({
   const post = data.post;
 
   if (!post.content) return;
-  post.content.document = mergeInlineInternalLinks(post.content.document)
+  post.content.document = mergeInlineInternalLinks(post.content.document);
+
+  // read all playlist from file
+  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
+  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
 
   return (
     <>
@@ -249,7 +255,7 @@ export default async function Page({
       </div>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox post={post}/>
+      <ToolBox post={post} allPlaylists={playlists} />
     </>
   )
 }

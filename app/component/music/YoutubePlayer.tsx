@@ -5,12 +5,15 @@ import YouTube from 'react-youtube';
 
 export default function YoutubePlayer() {
   const {
-    videoId,
+    songIdx,
+    playlist,
     setReady,
     setPlaying,
     setCurrentTime,
     setDuration,
   } = usePlayerStore();
+
+  const videoId = playlist && songIdx!=null && playlist.songs[songIdx].youtubeVideoId;
 
   let player: YT.Player;
 

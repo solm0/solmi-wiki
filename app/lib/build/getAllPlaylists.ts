@@ -23,6 +23,7 @@ const GET_ALL_PLAYLISTS = gql`
       }
       songs {
         id
+        title
         artist
         album
         thumbnailId
