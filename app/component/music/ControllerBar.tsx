@@ -16,8 +16,6 @@ export default function ControllerBar({
   const [left, setLeft] = useState(0);
   const [hovered, setHovered] = useState(false);
 
-  // 호버
-
   return (
     <div
       className="relative w-full h-2 flex items-center"

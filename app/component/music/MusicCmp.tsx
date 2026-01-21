@@ -1,8 +1,8 @@
 import { maruburi, maruburi_bold, pretendard } from "@/app/lib/localfont";
-import { Playlist, Song } from "@/app/lib/type";
+import { Lyric, Playlist } from "@/app/lib/type";
 import { usePlayerStore } from "@/app/lib/zustand/youtubePlayerStore";
 import { ChevronLeft, Info, ListMusic, Maximize2, Minimize2, Pause, Play } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { RandItem } from "../inspector/inspect-result-list";
 import { useRouter } from "next/navigation";
 import ControllerBar from "./ControllerBar";
@@ -21,12 +21,12 @@ export function Alert({
     play();
   }
   return (
-    <div className="fixed w-64 bg-green-500 px-3 py-2 z-80 h-auto rounded-sm bottom-5 left-5 md:bottom-8 md:left-8 text-sm text-text-900 flex flex-col items-start gap-2">
+    <div className="fixed w-64 bg-green-500 px-3 py-2.5 py-2 z-80 h-auto rounded-sm bottom-5 left-5 md:bottom-8 md:left-8 text-sm text-text-900 flex flex-col items-start gap-2">
       <p className="break-keep">이 음악은 유튜브 영상을 통해 재생되니 데이터를 많이 쓰고 싶지 않다면 와이파이 환경에서 재생하는 것을 권장합니다.</p>
       <div className="flex gap-2">
         <button
           onClick={onAlertConfirm}
-          className="bg-green-500 border-text-900 px-3 py-1 border rounded-sm hover:bg-green-600 transition-colors duration-300"
+          className="bg-green-500 border-text-900 px-3 py-2.5 py-1 border rounded-sm hover:bg-green-600 transition-colors duration-300"
         >
           알겠고, 재생하기
         </button>
@@ -83,13 +83,19 @@ export default function MusicCmp({
     thumbnailSrc: `https://coverartarchive.org/release/${playlist.songs[songIdx].thumbnailId}/front`,
     desc: playlist.songs[songIdx].desc,
     lyric: playlist.songs[songIdx].lyric,
+    language: playlist.songs[songIdx].language,
+    country: playlist.songs[songIdx].country,
+    releaseYear: playlist.songs[songIdx].releaseYear,
   } : {
     title: '선택된 음악이 없습니다',
     artist: '-',
     album: '-',
     thumbnailSrc: '/globe.svg',
     desc: '-',
-    lyric: {},
+    lyric: [],
+    language: '-',
+    country: '-',
+    releaseYear: '-'
   }
 
   // 플레이리스트 연관 post 목록
@@ -99,8 +105,34 @@ export default function MusicCmp({
   // 처음 재생할 때 경고창 후
   const [alertOpen, setAlertOpen] = useState(false);
 
-  // 가사 폭포: 가사가 있을경우. 현재 currenttime 받아서 그만큼 가사 state 업데이트하고 렌더
-  // 플레이리스트 페이지
+  // 가사 싱크
+  const [visibleLyrics, setVisibleLyrics] = useState<Lyric[]>([]);
+  const indexRef = useRef(0);
+
+  useEffect(() => {
+    const lyrics = songData.lyric;
+    if (!lyrics.length) return;
+
+    // currentTime이 뒤로 간 경우
+    if (
+      indexRef.current > 0 &&
+      lyrics[indexRef.current - 1].time > currentTime
+    ) {
+      // currentTime보다 큰 첫 index 찾기
+      const newIndex = lyrics.findIndex(l => l.time > currentTime);
+      indexRef.current = newIndex === -1 ? lyrics.length : newIndex;
+    }
+
+    // currentTime이 앞으로 간 경우
+    while (
+      indexRef.current < lyrics.length &&
+      lyrics[indexRef.current].time <= currentTime
+    ) {
+      indexRef.current++;
+    }
+
+    setVisibleLyrics(lyrics.slice(0, indexRef.current));
+  }, [currentTime, songData.lyric]);
 
   // current time, duration ui
   const secToMin = (seconds: number) => {
@@ -122,7 +154,7 @@ export default function MusicCmp({
       {/* 가사 폭포 */}
       <div
         className={`
-          relative flex flex-col-reverse gap-1 overflow-y-scroll custom-scrollbar transition-[height] duration-300
+          relative flex flex-col-reverse gap-1 overflow-y-scroll custom-scrollbar transition-[height] duration-300 rounded-md
           ${lyricOpen ? 'h-120' : 'h-40'}
         `}
       >
@@ -144,29 +176,13 @@ export default function MusicCmp({
           </div>
         </div>
 
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае рукі ў тваіх</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내 손은 당신 머리카락에 있고</p>
-        </div>
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае рукі ў тваіх валасах а ў вочах адчай</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내 손은 당신 머리카락에 있고, 당신 눈에는 절망이 담겨 있어요.</p>
-        </div>
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내</p>
-        </div>
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае рукі ў тваіх</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내 손은 당신 머리카락에 있고</p>
-        </div>
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае рукі ў тваіх валасах а ў вочах адчай</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내 손은 당신 머리카락에 있고, 당신 눈에는 절망이 담겨 있어요.</p>
-        </div>
-        <div className="inline-flex flex-col px-4 py-3 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-r-3xl rounded-tl-3xl rounded-bl-sm break-words gap-1 shadow-md">
-          <p className="font-medium leading-[1.3em] max-w-[18em] break-words">Мае</p>
-          <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">내</p>
+        <div className="flex flex-col gap-1">
+          {visibleLyrics.map((e, i) => (
+            <div key={i} className="inline-flex px-3 py-2.5 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-md break-words gap-1 shadow-md flex-col">
+              <p className="font-medium leading-[1.3em] max-w-[18em] break-words">{e.lyric.or}</p>
+              <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">{e.lyric.tr}</p>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -210,11 +226,13 @@ export default function MusicCmp({
           </div>
 
           {/* 상세 */}
-          <div className={`${pretendard.className} text-xs w-full ${infoOpen ? 'h-auto' : 'h-0 hidden'} transition-[height] duration-300 overflow-hidden py-2 flex flex-col gap-2`}>
-            <p>
-              <span>앨범: </span>
-              <span>{songData.album}</span>
-            </p>
+          <div className={`${pretendard.className} text-xs w-full ${infoOpen ? 'h-auto' : 'h-0 hidden'} transition-[height] duration-300 overflow-hidden py-2 flex flex-col gap-4`}>
+            <div className="flex flex-col gap-1">
+              <p>앨범: {songData.album}</p>
+              <p>언어: {songData.language}</p>
+              <p>국가: {songData.country}</p>
+              <p>발매 연도: {songData.releaseYear}</p>
+            </div>
             <p>{songData.desc}</p>
           </div>
         </div>

@@ -297,14 +297,11 @@ export type Playlist = {
 }
 
 export type Lyric = {
-  lyric?: {
-    tr?: string;
-    or?: string;
-  }[];
-  time?: {
-    start: number;
-    end: number;
-  }[];
+  lyric: {
+    or: string;
+    tr: string;
+  };
+  time: number;
 }
 
 export type Song = {
@@ -314,7 +311,10 @@ export type Song = {
   album: string;
   thumbnailId: string;
   youtubeVideoId: string;
+  language: string;
+  country: string;
+  releaseYear: string;
   desc: string;
-  lyric: Lyric;
+  lyric: Lyric[];
   playlist: Playlist[];
 }

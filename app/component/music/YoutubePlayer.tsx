@@ -55,6 +55,7 @@ export default function YoutubePlayer() {
     if (!seeking) return;
 
     playerRef.current.seekTo(currentTime, true);
+    if (!isPlaying) playerRef.current.pauseVideo();
     setSeeking(false);
   }, [currentTime, seeking]);
 

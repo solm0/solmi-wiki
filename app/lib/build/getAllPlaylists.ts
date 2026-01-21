@@ -28,6 +28,9 @@ const GET_ALL_PLAYLISTS = gql`
         album
         thumbnailId
         youtubeVideoId
+        language
+        country
+        releaseYear
         desc
         lyric
       }
