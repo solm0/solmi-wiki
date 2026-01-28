@@ -19,7 +19,7 @@ export default function Notice({
 
   return (
     <div
-      className={`rounded-sm p-4 flex items-start gap-4 text ${config.text} text-text-950`}
+      className={`rounded-sm p-4 flex items-start gap-4 text ${config.text} text-text-950 my-1`}
       style={{
         background: config.bg,
         border: `1px solid ${config.border}`,
@@ -28,9 +28,11 @@ export default function Notice({
       <div style={{color: config.text,}}>
         {config.icon}
       </div>
-      {notice.children?.[0].children.map((ch, idx) => (
-        <Paragraph key={idx} p={ch} />
-      ))}
+      <div className="text-[0.95em] flex flex-col gap-3">
+        {notice.children?.[0].children.map((ch, idx) => (
+          <Paragraph key={idx} p={ch} />
+        ))}
+      </div>
     </div>
   )
 }
