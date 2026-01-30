@@ -240,6 +240,7 @@ export type CarouselNode = {
       alt: string,
       imageSrc: string,
       type: string,
+      fit: string,
     }[],
   },
 }

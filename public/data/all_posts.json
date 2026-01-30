@@ -96129,6 +96129,811 @@
     }
   },
   {
+    "id": "cmkvbp05y0000c62keuw38p2q",
+    "title": "라즈베리파이 조립부터 os 설치, ssh 연결",
+    "status": "published",
+    "excerpt": "웹사이트 셀프호스팅 해보려고 라즈베리파이를 샀다. 개강 전까지 짬내서 solmi.wiki 서버를 여기로 옮겨 놓으려고 한다. 구매 목록 라즈베리파이 5 4gb 5V 5A 어댑...",
+    "publishedAt": "2026-01-25T15:00:00.000Z",
+    "tags": {
+      "name": "코딩"
+    },
+    "keywords": [
+      {
+        "name": "라즈베리파이"
+      },
+      {
+        "name": "연결"
+      },
+      {
+        "name": "카드"
+      },
+      {
+        "name": "다시"
+      },
+      {
+        "name": "sd"
+      },
+      {
+        "name": "ssh"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "웹사이트 셀프호스팅 해보려고 라즈베리파이를 샀다. 개강 전까지 짬내서 solmi.wiki 서버를 여기로 옮겨 놓으려고 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "구매 목록"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "라즈베리파이 5 4gb"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "5V 5A 어댑터"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "ElectroCookie 케이스"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Sandisk High Endurance sd카드 32gb ← sd카드가 잘 망가진다는데 뭔가 난 ssd를 사도 망가뜨릴 것 같아서 첫 시작은 sd카드로 했다. 그나마 튼튼하다는 high endurance로 샀다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "1000035976_cqgqrv",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "조립"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "케이스에 라즈베리파이 보드를 나사로 고정하고 조립하는 방식이었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "보드에 쿨러를 붙일 때 끝부분에 걸쇠가 있어 한 번 넣으면 안 빠지는 핀을 잘못된 구멍에 박아 버리는 사고가 발생했다. 다행히 작은 부품들은 여분 한 개씩이 더 주어져서 가위로 걸쇠 부분을 잘라 겨우 뺐다. 그리고 십자 드라이버가 없어서 가위 날로 나사를 돌리느라 고생했다. 결국 앞쪽 나사 4개가 끝까지 들어가지 않아 아래 사진처럼 앞판이 약간 들린 상태로 완성되었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "핀 빼려고 힘 줄 때 보드가 망가졌을까 걱정했는데 다행히도 전원을 연결했더니 팬이 돌아가고 초록불이 들어왔다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "1000035981_xocuhj",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "OS 설치"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "라즈베리파이에 스토리지가 없어서 sd카드에 os를 깔아서 꽂아야 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "os를 설치하기 위해 "
+            },
+            {
+              "href": "https://www.raspberrypi.com/software/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "라즈베리파이 사이트"
+                }
+              ]
+            },
+            {
+              "text": "에서 Imager를 다운받는다. Device, OS, Storage를 선택하고 Customisation에서는"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Hostname 설정"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Localisation은 서울로, 키보드 설정은 혹시 몰라 us로 했다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "User에서는 username과 비밀번호를 설정한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Wi-Fi에는 집 와이파이의 SSID와 비밀번호를 적었다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Remote access에서 ssh 설정을 체크해준다. "
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "설정이 끝나고 write 과정을 기다리면 완료된다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "sd카드를 라즈베리파이에 꽂고 전원을 연결하면 부팅이 시작된다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "부팅의 신호"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "전원 초록불이 깜빡거린다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "쿨러 팬 led가 잠시 꺼졌다가 켜진다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "팬도 멈췄다가 다시 돌아간다"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "부팅이 끝나면 초록불이 깜빡이지 않는다. 당연..?한 소리지만 부팅 중에는 ssh 연결 시도하면 안된다. 부팅 중에 계속 연결 시도해서 실패를 반복하기도 했다. 이 글에는 마치 하나의 길로 쭈욱 간 것처럼 깔끔하게 정리해 뒀지만 이런 어처구니 없는 삽질을 정말 많이 했다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "SSH 연결"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "모니터나 키보드가 따로 없어서 맥북에서 ssh를 연결해 쓰기로 했다. 와이파이 설정은 Imager에서 했으니 부팅할 때 자동으로 연결된다고 한다. 신기방기..."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이제 ssh를 연결하려면 "
+            },
+            {
+              "code": true,
+              "text": "ssh (username)@(ip)"
+            },
+            {
+              "text": " 하거나 라즈베리파이의 ip주소를 모를 경우 "
+            },
+            {
+              "code": true,
+              "text": "ssh (username)@(hostname).local"
+            },
+            {
+              "text": " 명령어를 쳐야 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "기기에 할당된 ip주소는 공유기 관리자 페이지에 들어가서 확인할 수 있다는데, 어째서인지 나는 그 페이지에 들어갈 수가 없었다. 그래서 hostname.local을 사용했다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "실패들"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "기대하며 명령어를 친 결과, 타임아웃만 떴다. 와이파이 설정을 잘못한 건지, 와이파이는 연결되었는데 ssh만 안되는 건지 알 수 없었다. 그래서 휴대폰 핫스팟으로도 시도해 봤는데 아예 라즈베리파이가 잡히지 않았다. 각종 설정(os, locale, hostname, username, 와이파이 대역폭, sd카드 꽂는 타이밍)을 바꾸며 여러 번 sd카드를 다시 구워 봐도 안 됐다. 실패가 반복되다 보니 죄 없는 Imager 소프트웨어나 우리집 인터넷 제공자의 정책, 라즈베리파이와 sd카드의 하드웨어 상태까지 의심하기도 했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "os를 바꿔가며 연결을 시도하다 보니 host key가 바뀌었다고 man in the middle 경고문도 나왔다. 네트워크 수업 듣고 나니 이곳저곳에서 반가운 키워드들이 많이 보인다 ㅎㅎ"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "caption": null,
+            "code": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ],
+              "propPath": [
+                "caption"
+              ]
+            },
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Someone could be eavesdropping on you right now (man-in-the-middle attack)!"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "It is also possible that a host key has just been changed."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "The fingerprint for the ___ key sent by the remote host is"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "___."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Please contact your system administrator."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Add correct host key in ___/.ssh/known_hosts to get rid of this message."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "code"
+              ]
+            }
+          ],
+          "component": "codeBlock"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이건 "
+            },
+            {
+              "code": true,
+              "text": "ssh-keygen -R hostname.local"
+            },
+            {
+              "text": " 로 문제 키를 삭제해서 해결했다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "첫 번째 성공"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그러다 우연히 처음으로 ssh 연결에 성공했다. Imager에서 설정한 비밀번호를 치니 라즈베리파이의 터미널에 들어가졌다! 색깔이 칠해진 로그들이 얼마나 반가웠는지. 이것으로 Imager나 인터넷정책이나 하드웨어 문제는 배제되었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "sd카드를 빼기 전에 "
+            },
+            {
+              "code": true,
+              "text": "sudo shutdown -h now"
+            },
+            {
+              "text": " 로 종료해야 안전하게 뺄 수 있다는 것도 알게 되었다. 이제 다 된 줄 알고 최종 원하는 설정으로 sd카드를 다시 구우려고 연결을 끊었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그런데 다음번 시도에 다시 실패했다. 문제는 성공한 이유가 뭔지 모른다는 거였다. 또 지옥의 sd카드 다시 굽기가 시작되었다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "이어진 성공들과 문제점"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그러다가 두번째 성공을 했다. 마지막으로 안 됐을 때와 다른 점은 내가 알기로는 이것이었다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Imager에서 와이파이 비밀번호를 복붙하지 않고 직접 타이핑했다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "os 설치 전에 sd카드의 모든 파일을(숨김파일까지) 삭제했다"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 둘 중 결정적 해결책이 뭐였는지, 아니면 둘 다 해결책이 아니었는지 지금도 확실하지 않다. 저걸 지켜서 몇 번 더 sd카드 구웠을 때는 계속 성공하긴 했다. 나중에 다시 노가다로 실험해봐야 할 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그런데 터미널을 닫고 다시 열어서 연결 시도하면 연결이 안 된다. 내 추측인데, 부팅 시에만 딱 mDNS 브로드캐스트를 맥북이 받는 타이밍이 맞아서 "
+            },
+            {
+              "code": true,
+              "text": "hostname.local"
+            },
+            {
+              "text": "로 ssh 연결이 되는 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "전원버튼으로 강제 종료 후 다시 켜서 접속했더니 연결 성공했다. 명령어로 종료했을 때는 2번 실패하고 3번 성공했는데, 끄고 나서 좀 기다렸다 켜야 성공하는 것 같은 느낌이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "다음에 할 것"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "ssh 연결 실패했던 이유 확정하기, 핫스팟으로도 다시 연결해 보기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "공유기 관리자 페이지 여는 법 찾기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "랜선 구매, 라즈베리파이 ip 알아내기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "고정 ip? 할 수 있으면 하기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "포트포워딩?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "그래서 언제든 ssh 접속 끊었다 연결했다 가능하게 하기"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "vscode에서도 ssh 접속할 수 있게 하기(지금은 어째선지 안된다...)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "\r"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmdd4wqk900b6mdam66tvgx8g",
     "title": "Render 무료 web service의 서버를 항상 깨워 두는 법",
     "status": "published",
@@ -99449,6 +100254,2921 @@
     }
   },
   {
+    "id": "cmkxk9f600009c62kvjlmz8pv",
+    "title": "[NLP 논문] Attention is All You Need",
+    "status": "published",
+    "excerpt": "들어가며  \"Attention Is All You Need\" (Vaswani et al., 2017)  GPT, Claude 등의 기반이 되는  트랜스포머 모델의 탄생을 상징...",
+    "publishedAt": "2026-01-27T15:00:00.000Z",
+    "tags": {
+      "name": "미분류"
+    },
+    "keywords": [
+      {
+        "name": "트랜스포머"
+      },
+      {
+        "name": "차원"
+      },
+      {
+        "name": "rnn"
+      },
+      {
+        "name": "위치"
+      },
+      {
+        "name": "어텐션"
+      },
+      {
+        "name": "인코더"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "들어가며"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://proceedings.neurips.cc/paper_files/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf",
+              "type": "link",
+              "children": [
+                {
+                  "bold": true,
+                  "text": "\"Attention Is All You Need\" (Vaswani et al., 2017)"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "GPT, Claude 등의 기반이 되는 "
+            },
+            {
+              "bold": true,
+              "text": "트랜스포머 모델의 탄생을 상징하는 전설적인 논문"
+            },
+            {
+              "text": "이라고 해서 NLP 논문 읽기 챌린지의 첫 타자로 선정했다. 논문을 읽으며 내 수준에 맞게 열화시켜 보았다. 원문 번역과 내 주관적 해석이 섞여 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "부연 설명들의 출처는 주로 다음 IBM think 문서들이다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/machine-learning#7281535",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "머신 러닝이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/natural-language-processing#1197505092",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "자연어 처리란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/convolutional-neural-networks",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "콘볼루션 신경망이란?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/recurrent-neural-networks",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "순환 신경망이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/transformer-model",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "트랜스포머 모델이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "논문 목차"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "0. "
+            },
+            {
+              "text": "Abstract",
+              "strikethrough": true
+            },
+            {
+              "text": " 트랜스포머 대박임"
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Introduction",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " RNN의 문제, 우리는 RNN 제거하고 어텐션만 남김."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Background",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 이런 건 우리가 최초임."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Model Architecture",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 어떻게 생겨먹었는지 보여줄게."
+                    }
+                  ]
+                },
+                {
+                  "type": "ordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Encoder and Decoder Stacks",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 인코더와 디코더"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Attention",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 어텐션"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Position-wise Feed-Forward Networks",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 피드포워드 네트워크"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Embeddings and Softmax",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 임베딩과 소프트맥스"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Positional Encoding",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 위치 인코딩"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Why Self-Attention",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " RNN CNN과 세 가지 기준에서 비교"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Training",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 이렇게 훈련시켰다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Results",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 훈련 결과는 이렇다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Conclusion",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 트랜스포머 대박임"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "사전 지식"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "머신 러닝이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "머신 러닝은 "
+                    },
+                    {
+                      "bold": true,
+                      "text": "학습 데이터의 패턴을 학습한 후 새로운 데이터에 대한 추론을 하는 알고리즘"
+                    },
+                    {
+                      "text": "에 초점을 맞춘 인공지능의 하위 집합이다. 다르게 말해, 학습한 내용을 관련 작업의 자율적 실행에 적용하기 위한 알고리즘의 모음이라고 생각할 수 있다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "머신 러닝을 이용하면 컴퓨터가 하드코딩된 지침 없이 결정이나 예측을 내릴 수 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "모든 머신 러닝은 AI이지만, 모든 AI가 머신 러닝은 아니다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "인공 지능은 인간의 적극적인 개입 없이 정보를 사용하여 결정이나 예측을 할 수 있는 모든 프로그램을 포괄하는 용어이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "if-then-else 명령문이나 "
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/decision-trees",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "의사 결정 트리"
+                        }
+                      ]
+                    },
+                    {
+                      "text": " 또한 가장 단순한 AI 시스템이다. 그런 규칙 기반 AI와 달리 머신 러닝 모델의 논리는 명시적이지 않고 경험을 통해 '학습'된다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "예를 들어 규칙 기반 AI는 스팸메일에 대한 기준을 수동으로 고안해야 하지만, 머신 러닝은 알고리즘과 데이터 세트만 선택하면 된다. 머신러닝 모델은 샘플을 보고 → 예측하고 → 오류를 계산하고 → 알고리즘을 조정하는 프로세스를 반복함으로써 더 정확한 결정이나 예측을 할 수 있게 된다, 즉 '학습'한다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "딥 러닝이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "이전 머신 러닝의 명시적으로 정의된 알고리즘이 아닌, 여러 층으로 구성된 "
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/neural-networks",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "신경망"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "을 사용하는 머신 러닝의 하위 집합이다. 많은 데이터와 계산 리소스가 필요해 GPU의 중요성이 높아졌다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "신경망은 인간의 뇌에서 영감을 받아 서로 연결된 뉴런의 층으로 구성되어 있다. 각 층은 고유한 수학 연산, 즉 활성화 함수를 수행한다. 각 뉴런의 활성화 함수의 아웃풋은 다음 계층의 뉴런에 대한 입력이 된다. 두 뉴런 사이의 연결에는 가중치가 부여된다. 이러한 가중치가 머신러닝을 통해 최적화해야 하는 매개변수 중 하나이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "딥 러닝 구조의 종류에는 컨볼루션 신경망(CNN), 순환 신경망(RNN), 트랜스포머 등이 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "Abstract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "현재 모델들은 인코더와 디코더를 포함하는 RNN이나 CNN에 기반해 왔다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "우리는 트랜스포머라는 새로운 간단한 네트워크 구조를 제안한다."
+            },
+            {
+              "text": " 이것은 RNN과 CNN을 버리고 어텐션 메커니즘만 쓴다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "두 기계번역 작업 실험이 이 모델들의 병행성과 시간 절약으로 인한 우수성을 보여줄 거다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "1 Introduction"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "RNN은, 특히 LSTM과 Gated recurrent 신경망은 언어 모델링과 기계번역 같은 시퀀스 모델링과 Transduction problem 작업에 훌륭한 접근을 해왔다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "시퀀스란? 순서가 중요한 원소들의 나열이다. 순서가 바뀔 때 의미가 바뀌는 문장, 음성 신호, 멜로디 등이 시퀀스이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Transduction problem이란? "
+                    },
+                    {
+                      "href": "https://dos-tacos.github.io/translation/transductive-learning/",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "Transduction"
+                        }
+                      ]
+                    },
+                    {
+                      "text": "라는 단어는 누군가가 귀납(Induction)이라는 단어가 부족하다고 생각해서 만든 것으로 여러 분야에서 제각기 다르게 사용되고 있어서 번역이 애매하다. 이 논문을 이해하는 데 중요한 단어는 아닌 것 같고, 그냥 "
+                    },
+                    {
+                      "bold": true,
+                      "text": "입력을 출력으로 매핑하는 문제"
+                    },
+                    {
+                      "text": "라고 보면 될 것 같다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "→ 언어는 시퀀스다 → 언어 모델링과 기계번역 작업은 입력 시퀀스를 출력 시퀀스로 변환하는 작업, 즉 Transduction이다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "RNN (Recurrent Neueal Network=순환 신경망)이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "RNN은 "
+                    },
+                    {
+                      "bold": true,
+                      "text": "순차적 데이터로 훈련된 신경망"
+                    },
+                    {
+                      "text": "이다. 순차적 입력을 기반으로 순차적 예측 또는 결론을 내리는 모델을 만든다. 홍수 예측, 언어 번역, 음성 인식과 같은 "
+                    },
+                    {
+                      "bold": true,
+                      "text": "순서적 또는 시간적 문제 해결"
+                    },
+                    {
+                      "text": "에 사용할 수 있다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "RNN은 '숨겨진 상태', 즉 이전 입력을 저장하는 메모리를 유지하며 컨텍스트를 추적한다. 그리고 현재 입력을 그 '숨겨진 상태'와 함께 처리하는 방식으로 다음 순서에 올 단어를 예측한다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "아웃풋에 영향을 주는 입력이 가까운 이전 데이터에 한정된다는 '장거리 종속성' 문제가 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "LSTM과 Gated recurrent란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "장거리 종속성 문제를 해결하기 위해 변형된 RNN 방식이다. LSTM(Long Short-Term Memory)은 고정된 크기의 숨겨진 상태 대신 입력 게이트, 출력 게이트, 망각 게이트로 구성된 '셀'을 도입한다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "게이트는 아웃풋에 필요한 정보의 흐름을 제어한다. 예를 들어 성별 대명사 she가 이전 문장에서 여러 번 반복된 경우 셀 상태에서 이 단어를 제외할 수 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그러나 RNN의 순차적 본질 때문에 훈련을 병행적으로 할 수 없는데, 그건 시퀀스 길이가 길수록 문제가 된다. ‘숨겨진 상태’ 메모리의 한계가 입력들을 널리 보지 못하게 하기 때문이다. 최근 연구들이 여러 트릭을 통해 효율과 성능을 개선해 왔지만, 순차적 계산의 근본적인 한계는 여전하다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "어텐션 메커니즘은 인풋/아웃풋 시퀀스와의 거리와 상관없는 부분과의 종속성을 다룰 수 있게 함으로써 시퀀스 모델링에 필수적인 부분이 되었다. 그러나 그렇게 좋은데도 여전히 RNN과 결합해서 쓰이고 있다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "어텐션 메커니즘이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "모델이 특정 시점에 어떤 데이터 시퀀스의 부분에 '주의를 기울여야' 할지 판단하도록 설계된 알고리즘이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "code": true,
+                      "text": "On Friday, the judge issued a sentence."
+                    },
+                    {
+                      "text": " 라는 문장에서 "
+                    },
+                    {
+                      "code": true,
+                      "text": "the"
+                    },
+                    {
+                      "text": "는 "
+                    },
+                    {
+                      "code": true,
+                      "text": "judge"
+                    },
+                    {
+                      "text": "가 명사로 사용되었음을 시사한다. "
+                    },
+                    {
+                      "code": true,
+                      "text": "judge"
+                    },
+                    {
+                      "text": "와 "
+                    },
+                    {
+                      "code": true,
+                      "text": "issued"
+                    },
+                    {
+                      "text": "의 영향으로 "
+                    },
+                    {
+                      "code": true,
+                      "text": "sentence"
+                    },
+                    {
+                      "text": "는 '문장'이 아닌 '법적 처벌'로 해석된다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "이와 같이 "
+                    },
+                    {
+                      "code": true,
+                      "text": "sentence"
+                    },
+                    {
+                      "text": "라는 단어를 해석할 때 모델은 "
+                    },
+                    {
+                      "code": true,
+                      "text": "judge"
+                    },
+                    {
+                      "text": ", "
+                    },
+                    {
+                      "code": true,
+                      "text": "issued"
+                    },
+                    {
+                      "text": "에 주의를 기울이고, "
+                    },
+                    {
+                      "code": true,
+                      "text": "Friday"
+                    },
+                    {
+                      "text": "에도 어느 정도 주의를 기울일 수 있다. 나머지 단어들은 무시해도 된다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그래서 우리는 "
+            },
+            {
+              "bold": true,
+              "text": "어텐션 메커니즘에만 의존하는 모델 구조 '트랜스포머'"
+            },
+            {
+              "text": "를 제안한다. 트랜스포머는 병행을 가능하게 하고, 훈련 시간과 GPU를 적게 써서 훨씬 좋은 번역 퀄리티를 낸다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "2 Background"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "RNN을 없애는 것은 Extended Neural GPU, ByteNet, ConvS2S과 같은 모델들의 목표이기도 했다. 이들은 대신 CNN을 사용해서 모든 인풋/아웃풋 위치에 대해 병렬적으로 숨겨진 관계들을 계산하려고 했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "하지만 이 모델들에서는 두 임의의 인풋/아웃풋 위치에서의 신호를 연관시키기 위한 작업의 횟수가 두 위치 사이의 거리에 따라 늘어난다. 우리의 트랜스포머에서는 작업 횟수가 거리에 상관없이 일정하다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "CNN (Convolutional Neural Network=컨볼루션 신경망)이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "CNN은 3차원 데이터를 사용하여 이미지 분류 및 오브젝트 인식 작업을 수행한다. CNN에는 세 개의 계층이 있는데, 컨볼루션 계층에서 다음과 같은 주요 계산이 이루어진다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "입력"
+                    },
+                    {
+                      "text": "이 3D 행렬(RGB)로 구성된 이미지라고 가정하자. "
+                    },
+                    {
+                      "bold": true,
+                      "text": "필터"
+                    },
+                    {
+                      "text": "가 입력을 가로질러 이동하며 특징이 있는지 확인한다. 필터는 가중치의 2차원 배열이고 주로 3x3 크기이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "필터가 입력의 일부 영역에 적용되면 입력 픽셀과 필터 사이에서 Dot product가 계산되어 출력 배열로 공급된다. 필터가 한 칸씩 이동하며 입력 전체를 스윕할 때까지 이를 반복한다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "셀프 어텐션"
+            },
+            {
+              "text": "은 단일 시퀀스의 서로 다른 위치들을 연관시켜 그 시퀀스의 ‘표현’(representation)을 계산하는 어텐션 메커니즘이다. "
+            },
+            {
+              "bold": true,
+              "text": "End-to-end 메모리 네트워크"
+            },
+            {
+              "text": "는 순차 정렬 순환 대신 순환 어텐션 메커니즘을 기반으로 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리가 알기로는 트랜스포머는 RNN과 CNN 없이 셀프 어텐션만으로 인풋과 아웃풋의 표현을 계산하는 최초의 transduction 모델이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "3 Model Architecture"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "성능 좋은 대부분의 신경망 기반 sequence transduction 모델은 "
+            },
+            {
+              "bold": true,
+              "text": "인코더-디코더 구조"
+            },
+            {
+              "text": "를 가지고 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "인코더"
+            },
+            {
+              "text": "는 벡터 임베딩 "
+            },
+            {
+              "code": true,
+              "text": "(x1, … xn)"
+            },
+            {
+              "text": "을 문맥 정보를 반영한 "
+            },
+            {
+              "code": true,
+              "text": "z = (z1, ... zn)"
+            },
+            {
+              "text": "로 매핑한다. "
+            },
+            {
+              "bold": true,
+              "text": "디코더"
+            },
+            {
+              "text": "는 "
+            },
+            {
+              "code": true,
+              "text": "z"
+            },
+            {
+              "text": "를 입력으로 받아 아웃풋 시퀀스 "
+            },
+            {
+              "code": true,
+              "text": "(y1, … ym)"
+            },
+            {
+              "text": "을 생성한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "벡터 임베딩이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "머신 러닝은 수학을 통해 작동한다. 따라서 각 데이터는 숫자로 표현되어야 알고리즘에 공급될 수 있다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "데이터 세트 내 특정 값을 나타내는 단일 정보를 데이터 포인트라고 한다. 머신 러닝의 데이터 포인트는 일반적으로 벡터 형식으로 표시된다. 벡터로 표현된 데이터 포인트를 벡터 임베딩이라고 한다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "벡터 임베딩을 왜 '연속적'이라고 할까?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "토큰은 원래 이산적이다. "
+                    },
+                    {
+                      "code": true,
+                      "text": "I"
+                    },
+                    {
+                      "text": ", "
+                    },
+                    {
+                      "code": true,
+                      "text": "love"
+                    },
+                    {
+                      "text": ", "
+                    },
+                    {
+                      "code": true,
+                      "text": "you"
+                    },
+                    {
+                      "text": "는 모델 입장에서 서로 완전히 구분되는 기호(symbol)이다. 따라서 "
+                    },
+                    {
+                      "code": true,
+                      "text": "doc - cat"
+                    },
+                    {
+                      "text": "과 같은 연산이 불가능했다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "하지만 임베딩 이후에는 "
+                    },
+                    {
+                      "code": true,
+                      "text": "\"I\"    → [ 0.13, -0.72,  1.04, ... ]"
+                    },
+                    {
+                      "text": ", "
+                    },
+                    {
+                      "code": true,
+                      "text": "\"love\" → [-0.55,  0.81,  0.22, ... ]"
+                    },
+                    {
+                      "text": " 각 차원 값이 실수가 되고, 값의 변화가 연속적이 되고, 미분/거리/각도/내적 계산이 가능해진다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "= 연속 공간에 올렸다"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "→ 신경망이 경사 하강법과 같은 연산을 통해 '학습'할 수 있게 된다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "각 단계에서 모델은 과거에 자신이 생성한 값을 다시 인풋으로 사용한다, 즉 자기회귀적이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머는 이런 전체적인 구조를 따른다. 근데 첩첩이 쌓인 셀프어텐션과 피드포워드 레이어들을 사용해서. 그게 뭔지 이제부터 알아보자."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.1 Encoder and Decoder Stacks"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "The Transformer - model architecture.",
+                "imageSrc": "encoder-decoder-stacks_kdyf4p",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "children": [
+            {
+              "text": "인코더"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "인코더는 서로 같은 6개의 레이어로 구성된다. 각 레이어는 두 개의 서브레이어를 가진다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "첫 번째는 "
+            },
+            {
+              "bold": true,
+              "text": "셀프 어텐션"
+            },
+            {
+              "text": ", 두 번째는 위치별 완전연결 "
+            },
+            {
+              "bold": true,
+              "text": "피드포워드 네트워크"
+            },
+            {
+              "text": "이다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "위치별(position-wise): 시퀀스의 각 위치(토큰)마다 독립적으로."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "완전연결(fully connected): 입력 벡터의 모든 차원이 출력 벡터의 모든 차원과 연결"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "피드포워드 네트워크(Feed-forward Network, FNN)란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "순환 없이 입력 → 출력 한 방향으로 전달되는 구조"
+                    },
+                    {
+                      "text": "를 가진 네트워크이다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "각 서브레이어에 Residual connection(잔류 연결)을 적용한 다음 레이어 정규화를 한다. "
+            },
+            {
+              "code": true,
+              "text": "LayerNorm(x + Sublayer(x))"
+            },
+            {
+              "text": " Residual connection의 덧셈을 위해서 모델의 모든 서브레이어들의 아웃풋 차원은 512로 통일되었다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "Residual connection란 무엇이고 왜 필요할까?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "레이어가 완전히 새로운 출력을 하지 않도록 입력을 출력에 섞어 주는 것이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "레이어가 깊어질수록 gradient vanishing으로 정보가 소실될 수 있다. 어텐션은 토큰을 새로 만드는 것이 아니라 기존 표현을 문맥에 맞게 조정하는 것이다. 그래서 원래 정보를 유지하며 문맥 정보를 더하는 residual connection이 없으면 어텐션이 과하게 왜곡할 수 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "레이어 정규화란 무엇이고 왜 필요할까?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "레이어 정규화는 각 토큰의 벡터를 정규화하는 것이다. 벡터 내부 차원들에 대해 평균을 0으로, 분산을 1로 만드는 것이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "한 레이어에서 출력되는 벡터의 분포가 흔들리면 다음 레이어는 입력이 큰지 작은지에 계속 적응해야 한다. 그래서 정규화를 통해 평균과 분산을 고정시켜 레이어들이 안정된 입력을 받을 수 있도록 한다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "children": [
+            {
+              "text": "디코더"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "디코더도 서로 같은 6개의 레이어로 구성되는데, 인코더와 다른 점은 어텐션 서브레이어가 하나 더 있다는 것이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "첫 번째 서브레이어는 "
+            },
+            {
+              "bold": true,
+              "text": "Masked 셀프 어텐션"
+            },
+            {
+              "text": "이다. 원래 셀프 어텐션에서는 모든 위치가 서로를 볼 수 있지만, 디코더에서는 미래 토큰을 보면 안된다. 그래서 masking을 적용하여 어떤 위치가 자신 뒤의 위치를 보는 것을 막는다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "두 번째는 "
+            },
+            {
+              "bold": true,
+              "text": "인코더-디코더 어텐션"
+            },
+            {
+              "text": "이다. 인코더의 아웃풋에 어텐션을 적용한다. 이것은 지금 생성하려는 토큰이 입력 문장의 어느 부분을 봐야 하는지 결정한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "마지막으로 "
+            },
+            {
+              "bold": true,
+              "text": "피드포워드"
+            },
+            {
+              "text": "."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "인코더와 마찬가지로 각 서브레이어에 residual connection을 적용한 다음 레이어 정규화를 한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "디코더에서는 왜 미래 토큰을 보면 안될까?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "디코더가 미래 토큰을 보는 것은 답안을 보고 푸는 거랑 같기 때문이다. 미래 토큰이 없는 실제 텍스트 생성 시와 조건을 일치시키기 위해서이다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.2 Attention"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "어텐션은 "
+            },
+            {
+              "bold": true,
+              "text": "쿼리(Q), 키(K), 값(V)"
+            },
+            {
+              "text": "을 "
+            },
+            {
+              "bold": true,
+              "text": "아웃풋"
+            },
+            {
+              "text": "에 매핑하는 함수이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머 모델은 각 레이어에서 입력 토큰 표현을 선형 변환하여 Q/K/V 벡터를 생성한다. 어텐션은 compatibility function으로 쿼리-키 간의 호환도를 계산해 가중치를 얻고, 이를 값 벡터들의 가중합으로 출력한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "쿼리는 무엇을 참고할지, 키는 어떤 특징을 가지고 있는지, 값은 실제 전달될 정보를 담는다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "attention_o0atzf",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "children": [
+            {
+              "text": "3.2.1 Scaled Dot-Product Attention"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머에서는 어텐션을 Scaled Dot-Product Attention 방식으로 계산한다. 이름 그대로 키와 쿼리의 Dot-Product를 키와 쿼리의 차원 d_k를 이용해 scaling한 것이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "어텐션의 흔한 두 방법은 additive와 Dot-product인데, Dot-product 어텐션은 차원이 커질수록 점수 값이 커진다. dot product 값이 너무 커지는 것을 방지하기 위해 임베딩 차원의 제곱근 √d_k으로 나눈다. "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그 후 소프트맥스 함수를 적용하여 "
+            },
+            {
+              "code": true,
+              "text": "[1, 2, 3]"
+            },
+            {
+              "text": " 에서 "
+            },
+            {
+              "code": true,
+              "text": "[0.09, 0.24, 0.67]"
+            },
+            {
+              "text": " 와 같이 값들이 0-1 사이이고 합이 1이 되도록 바꾼다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "scaled-dot-product_srb36m",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "children": [
+            {
+              "text": "3.2.2 Multi-Head Attention"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "멀티헤드 어텐션은 같은 입력을 여러 관점으로 쪼개서 동시에 본 다음 다시 합치는 것이다. 비유를 하자면 single-head는 한 사람의 관점에서 모든 관계를 한 번에 보는 것이고, multi-head는 서로 다른 사람 8명이 각자 다른 관점으로 같은 물체를 동시에 보고 나중에 종합해서 판단하는 것과 같다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "d_model 차원(512)의 쿼리, 키, 값을 사용해 단일 어텐션 함수를 수행하는 것보다 쿼리, 키, 값을 서로 다른 선형변환으로 h번 변형하는 게 좋다는 걸 발견했다고 한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이런 과정으로 진행된다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "서로 다른 역할(문법적 관계, 장거리 의존성, 의미적 유사성, …)을 가진 각 head가 자기만의 선형 변환으로 아웃풋을 낸다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "그 아웃풋 벡터들은 "
+                    },
+                    {
+                      "code": true,
+                      "text": "[64 | 64 | 64 | 64 | 64 | 64 | 64 | 64] = 512차원"
+                    },
+                    {
+                      "text": " 이렇게 이어붙여진(concat) 다음"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "다시 d_model로 선형 변환된다 =다음 레이어로 넘기기 위해 차원이 맞춰진다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "multi-head_m7f79v",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "차원이 여러 헤드로 분화되어 한 헤드의 차원이 적어졌기 때문에, 전체 계산 비용은 풀차원 쓰는 싱글헤드 어텐션과 비슷하다. 멀티헤드가 싱글헤드보다 병렬적이어서 GPU를 효율적으로 사용하나? 했는데 아니었다. GPU는 큰 행렬 연산에 최적화된 거고, 싱글헤드도 512차원 행렬을 쓰니 이미 병렬적이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "그럼 왜 멀티헤드를 쓸까?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "퀄리티 때문이다. 싱글헤드에서는 모든 관계는 하나의 어텐션 분포로 압축된다. 문법, 의미, 장거리 의존성, 위치 관계가 평균되어 섞인다. 반면 멀티헤드는 각 헤드가 서로 다른 subspace에서 서로 다른 어텐션 패턴을 학습해 동시에 여러 관계를 분리해서 볼 수 있기 때문에 표현력이 올라간다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 논문에서는 헤드를 8개, 차원을 64개로 한다. 그건 임의의 값이 아니라 저자들이 찾은 표현력과 효율의 균형점이다. BERT와 GPT도 헤드당 64차원을 유지하고 있다고 한다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 4,
+          "children": [
+            {
+              "text": "3.2.3 Applications of Attention in our Model"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머는 멀티헤드 어텐션을 세 가지 방법으로 사용한다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "인코더의 셀프 어텐션 레이어"
+                    },
+                    {
+                      "text": "에서는 모든 키, 값, 쿼리가 같은 장소, 즉 인코더의 이전 레이어의 아웃풋에서 온다. 인코더의 각 위치는 인코더의 이전 레이어의 모든 위치에 관련될 수 있다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "디코더의 Masked 셀프 어텐션 레이어"
+                    },
+                    {
+                      "text": "에서는 디코더의 모든 위치가 그 위치 포함 이전까지의 모든 위치에 관련될 수 있다. 위에서 말했듯이 디코더에서는 자기회귀를 유지하기 위해서 정보가 왼쪽으로 흐르는 것을 방지해야 한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "디코더의 인코더-디코더 어텐션 레이어"
+                    },
+                    {
+                      "text": "에서는 쿼리가 이전 디코더 레이어에서 오고, 키와 값이 인코더의 아웃풋에서 온다. 디코더의 각 위치는 인풋 시퀀스의 모든 위치에 관련될 수 있다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.3 Position-wise Feed-Forward Networks"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "인코더와 디코더 레이어에는 FFN이 하나씩 있다. ReLU 활성화 함수가 사이에 낀 두 개의 선형 변환으로 구성된다. "
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "어텐션이 다른 토큰들 중 중요한 것들만 골라 가중합으로 가져옴으로써 위치 간 정보를 섞는다면, FFN은 각 위치에 독립적으로 적용되어 어텐션의 결과를 사용해 표현을 재구성하는 역할이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "ReLU(Rectified Linear Unit) 활성화 함수란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "딥러닝에서 가장 널리 사용되는 활성화 함수로, 입력값이 0보다 작으면 0을, 0 이상이면 입력값 그대로를 출력하는 f(x)=max(0,x) 형태의 함수이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "활성화 함수란 신경망에서 뉴런이 입력을 받아서 활성화 또는 비활성화를 결정하는 데 사용하는 함수로, 시그모이드(Sigmoid), 하이퍼볼릭 탄젠트(Tanh), ReLU(Rectified Linear Unit), 소프트맥스 등이 있다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "FFN의 첫 번째 선형 변환이 입력 공간을 다른 좌표계로 회전 → ReLU가 음수 방향을 잘라냄 → 두 번째 선형 변환이 잘린 조각들을 다시 조합"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 부분이 제일 이해가 안 된다. 선형 변환이 머릿속에 안 그려져서일까? ReLU가 공간을 잘라내는 게 왜 표현력을 만들어낸다는 건지, 어텐션이 준 가중치 정보를 어떻게 FFN이 적용한다는 건지 잘 모르겠다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "ffn_bhbm17",
+                "type": "image"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.4 Embeddings and Softmax"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "다른 모델들처럼 인풋, 아웃풋 토큰을 d_model 차원의 벡터로 변환하기 위해 학습 가능한(모델이 학습시킬) 임베딩을 사용한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "디코더의 출력은 학습된 선형 변환을 거친 뒤 소프트맥스를 통해 다음 토큰의 확률 분포로 변환된다. 예시: 다음 단어는 '먹었다'가 70%, '보았다'가 10%"
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.5 Positional Encoding"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "CNN도 RNN도 없기 때문에 모델이 시퀀스의 순서를 사용할 수 있게 하기 위해서 시퀀스 내 토큰의 상대적 또는 절대적 위치 정보를 삽입해야 한다. 셀프 어텐션은 토큰 순서를 모르고 그저 집합처럼 볼 뿐이다. I love You나 You love I가 똑같이 취급된다는 거다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그래서 인코더와 디코더의 입구에서 인풋 임베딩에 ‘위치 인코딩’을 한 번만 더해 준다. 위치 인코딩은 d_model과 같은 차원을 가지기 때문에 임베딩과 덧셈할 수 있다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "4 Why Self-Attention"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "셀프 어텐션은"
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "계산 복잡도가 낮고"
+                    },
+                    {
+                      "text": ": 셀프어텐션은 O(n² · d), RNN은 O(n · d²)인데 실제 번역에서 문장길이 n < 표현 차원 d인 경우가 많아서 셀프어텐션이 더 빠르다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "병렬화가 잘 되며"
+                    },
+                    {
+                      "text": ": 순차 연산 수가 셀프어텐션은 모든 토큰을 동시에 계산 가능해서 O(1)이고 RNN은 이전 토큰의 결과를 기다려야 해서 O(n)이다. 그래서 셀프어텐션이 GPU 활용 더 잘한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "장거리 의존성을 가장 짧은 경로로 학습할 수 있다"
+                    },
+                    {
+                      "text": ": 두 토큰 사이 경로가 짧을수록 장거리 의존성 학습이 쉬운데, 최대 경로 길이가 셀프어텐션은 O(1), RNN은 O(n), CNN은 O(n/k) 또는 O(log n)이라서 셀프어텐션 승리."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "→ RNN, CNN보다 유리하다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "5 Training"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "데이터"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "WMT14 EN–DE: "
+                    },
+                    {
+                      "bold": true,
+                      "text": "4.5M 문장"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "WMT14 EN–FR: "
+                    },
+                    {
+                      "bold": true,
+                      "text": "36M 문장"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "BPE / word-piece 사용 (≈32k~37k vocab)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "길이 비슷한 문장끼리 묶어 "
+                    },
+                    {
+                      "bold": true,
+                      "text": "큰 토큰 배치(≈25k tokens)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "하드웨어 & 시간"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "8× NVIDIA P100 GPU"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Base: "
+                    },
+                    {
+                      "bold": true,
+                      "text": "100k steps, 12시간"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Big: "
+                    },
+                    {
+                      "bold": true,
+                      "text": "300k steps, 3.5일"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "옵티마이저"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Adam (β₁=0.9, β₂=0.98)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "warmup 4000 steps + inverse sqrt decay"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "정규화"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Dropout (base: 0.1)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Label smoothing (ε=0.1)"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "6 Results"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "성능 (BLEU)"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "EN–DE"
+                    }
+                  ]
+                },
+                {
+                  "type": "unordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Transformer "
+                            },
+                            {
+                              "bold": true,
+                              "text": "base"
+                            },
+                            {
+                              "text": ": 27.3"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Transformer "
+                            },
+                            {
+                              "bold": true,
+                              "text": "big"
+                            },
+                            {
+                              "text": ": "
+                            },
+                            {
+                              "bold": true,
+                              "text": "28.4 (SOTA)"
+                            },
+                            {
+                              "text": "→ 기존 최고 모델보다 "
+                            },
+                            {
+                              "bold": true,
+                              "text": "+2 BLEU 이상"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "EN–FR"
+                    }
+                  ]
+                },
+                {
+                  "type": "unordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Transformer "
+                            },
+                            {
+                              "bold": true,
+                              "text": "big"
+                            },
+                            {
+                              "text": ": "
+                            },
+                            {
+                              "bold": true,
+                              "text": "41.0"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "기존 최고 단일 모델보다 높고, "
+                            },
+                            {
+                              "bold": true,
+                              "text": "훈련 비용은 1/4 이하"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "비용 대비 효율"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "훨씬 적은 FLOPs"
+                    },
+                    {
+                      "text": "로"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "RNN / CNN / 앙상블 모델보다 성능 우수"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "Ablation (모델 변형 실험)"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "멀티헤드 중요"
+                    }
+                  ]
+                },
+                {
+                  "type": "unordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "single-head → BLEU ↓"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "head 너무 많아도 성능 ↓"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "dk 줄이면 성능 하락"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "모델 크기 ↑ → 성능 ↑"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "Dropout 매우 중요"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "Sinusoidal vs learned positional encoding"
+                    }
+                  ]
+                },
+                {
+                  "type": "unordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "성능 거의 동일"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "7 Conclusion"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머는 최초이고, 대단하고, 앞으로 확장할 것이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "한줄평"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "bold": true,
+              "text": "시퀀스의 장거리 의존성은 시간적 재귀가 아니라 전역적인 어텐션으로 충분히 표현된다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "용어도 수식도 많았지만 결국 한 마디로 줄이면 아이디어만 남는다. 논문은 구현을 나열하기 위한 글이라기보다는 아이디어를 전달하기 위한 글인 것 같다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "트랜스포머에 들어간 기술적인 부품 하나하나는 대부분 원래 있었던 것인데 각 부분들의 역할을 재정의하고 구조를 다시 설계했더니 이런 완전히 새로운 갈래가 탄생했다는 게 너무 신기했다."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmdd5u9kx00bmmdamawflx3rc",
     "title": "Strapi Dynamic Zone 에러",
     "status": "published",
@@ -101671,6 +105391,1493 @@
           "children": [
             {
               "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cml0ahqbf000mc62kt78ojslw",
+    "title": "[NLP 논문] GPT의 시작 - Improving Language Understanding by Generative Pre-Training",
+    "status": "published",
+    "excerpt": "들어가며 GPT가 처음 소개된 GPT의 선언문 같은 2018년 논문이다.  Improving Language Understanding by Generative Pre-Trai...",
+    "publishedAt": "2026-01-29T15:00:00.000Z",
+    "tags": {
+      "name": "미분류"
+    },
+    "keywords": [
+      {
+        "name": "objective"
+      },
+      {
+        "name": "언어"
+      },
+      {
+        "name": "모델"
+      },
+      {
+        "name": "작업"
+      },
+      {
+        "name": "gpt"
+      },
+      {
+        "name": "task"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "들어가며"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "GPT가 처음 소개된 GPT의 선언문 같은 2018년 논문이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Improving Language Understanding by Generative Pre-Training (Radford 외, 2018)"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "선정 이유"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "대학교 1학년이던 22년, ‘컴퓨터프로그래밍’이라는 필수 교양이 있었다. 티처블 머신을 사용해 손 제스쳐 구분을 했던 기억이 난다. 그 교양은 26년 현재 보니까 ‘AI기초프로그래밍’으로 이름이 바뀌어 있었다. 내 코딩 공부는 23년 GPT의 시작과 함께했다. 디자인 학과 HTML 입문 수업에서 교수님이 코드 작성을 (당시 갓 태어난)chatGPT로 보조해 보라고 넌지시 말씀하셨다. 학교 도서관에서 GPT-3와 며칠간 팽팽한 신경전을 벌이며 만든 것이 내 첫 번째 웹사이트였다. 그로부터 지금까지 3년간 몇몇 웹사이트를 만드는 데 기술 선택에서부터 코드 작성까지 GPT의 도움을 많이 받았고, 할루시네이션이나 인지 부채 등 장/단기적인 문제점도 고스란히 겪어 왔다. 이렇게 대학 생활 내내 동고동락한 GPT를 이해하고 싶었고, GPT를 둘러싸고 일어나는 일들도 이해하고 싶었고, 다른 LLM들과 비교도 해 보고 싶었다. 그것이 이 논문을 시작으로 GPT의 계보를 따라가며 관련 논문을 읽어 보려는 동기이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "목차"
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Abstract",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 우리는 생성적사전학습+변별적미세조정을 할거야!"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Introduction",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 기존 한계, 새로운 준지도학습을 제시한다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Related Work",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 이전의 관련 연구들"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Framework",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 훈련 과정3.1 "
+                    },
+                    {
+                      "text": "Unsupervised pre-training",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 비지도 사전학습3.2 "
+                    },
+                    {
+                      "text": "Supervised fine-tuning",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 지도 미세조정3.3 "
+                    },
+                    {
+                      "text": "Task-specific input transformations",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 특정 작업을 위한 인풋 변형"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Experiments",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 이런 실험을 했다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Analysis",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 결과는 이랬다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Conclusion",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 우리가 비지도학습을 통한 개별작업 성능 향상의 스타트를 끊었으니 감사해라."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "사전 지식"
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "지도 학습과 비지도 학습이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "언어 모델링이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "Abstract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "unlabeled 데이터는 많은데, 특정 작업을 위한 labeled 데이터는 드물다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 다양한 unlabeled 텍스트에 대한 언어 모델의 생성적 사전 학습(Generative Pre-training. GPT의 약자가 Generative Pre-trained Transformer이다) 후 변별적 미세 조정을 하는 것이 이득이라는 것을 증명한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이전의 접근들과 달리, 우리는 미세 조정 단계에서 task-aware 인풋 변형을 함으로써 모델 구조를 최소한으로 변경하는 효과적인 전이를 해낸다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리의 task-agnostic 모델은 특정 작업을 위해 변별적으로 훈련된 모델들보다 성능이 좋았다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "Introduction"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "날것의 텍스트에서 효과적으로 학습하는 능력은 지도학습에 대한 의존성을 줄이는 데 필수적이다. 많은 딥러닝 방법은 labeled 데이터를 필요로 하기 때문에 주석 처리된 자료가 부족한 분야에 적용하는 데 한계가 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이런 상황에서 unlabeled 데이터로부터 언어적 정보를 뽑아낼 수 있는 모델은 시간과 비용을 들여 labeled 데이터를 늘리는 것의 대안이 될 수 있다. 또한 사용 가능한 자료의 양은 둘째 치고, 비지도 학습을 통해 얻는 representation의 효과가 좋다는 것은 이미 단어 수준에서는 증명되었다. 비지도 학습을 통해 과적합이나 편향이 낮고 재사용 가능한 보편적 패턴을 학습할 수 있기 때문이다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "과적합이란?"
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그러나 unlabeled 데이터로부터 단어 수준 이상의(문장, 문서, 언어 전체) 정보를 끌어내는 것은 두 가지 이유에 의해 쉽지 않다."
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "어떤 종류의 최적화 목표가 전이에 효과적인 텍스트 표현을 학습하는 데 가장 효과적인지 확실하지 않다"
+                    },
+                    {
+                      "text": ": 기존 모델들은 언어 모델링, 기계번역, 담화 일관성 등 특정 작업에 특화된 최적화 목표를 가졌는데 unlabeled 데이터는 작업에 상관없이 학습해야 하니까?"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "학습된 표현을 목표 작업으로 전이하는 가장 효과적인 방법에 대한 합의가 없다."
+                    },
+                    {
+                      "text": " 기존의 기술들은 모델 구조에 task-specific한 변형을 가하는 것과 보조 학습목표를 추가하는 것을 수반했다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이런 불확실성들 때문에 효율적인 준지도 학습 접근을 개발하는 것이 어려웠다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "준지도 학습이란?"
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 논문에서는 비지도 사전학습(Unsupervised pre-training)과 지도 미세조정(Supervised fine-tuning)을 결합한 "
+            },
+            {
+              "bold": true,
+              "text": "준지도(semi-supervised) 접근"
+            },
+            {
+              "text": "을 탐구한다. 그 목표는 약간의 적용으로 아주 다양한 작업들로의 전이를 할 수 있는 만능 representation을 학습하는 것이다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "전제하는 것은 방대한 unlabeled 코퍼스, 그리고 몇 개의 수동적으로 주석 처리된 훈련 예시 데이터, 즉 target task들이다. 이때 unlabeled 코퍼스와 target task의 작업 분야가 같을 필요 없다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "훈련 과정은 두 단계이다."
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "먼저 unlabeled 데이터에서 신경망의 초기 파라미터를 학습하기 위해 ‘언어 모델링’이라는 목표를 사용한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "그 후 이 파라미터를 대응하는 지도된 object와 함께 target task들에 적용한다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "모델 아키텍쳐로는 장거리 종속성을 제공하는 "
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmkxk9f600009c62kvjlmz8pv",
+              "label": "[NLP 논문] Attention is All You Need",
+              "data": {
+                "id": "cmkxk9f600009c62kvjlmz8pv",
+                "title": "[NLP 논문] Attention is All You Need",
+                "links": [],
+                "backlinks": []
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "트랜스포머"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "를 사용한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그리고 전이 동안에는 traversal-style 접근에서 유래한 task-specific 인풋 변형을 사용한다. 이것은 구조화된 텍스트 인풋을 토큰들의 단일한 연속적 시퀀스로 처리한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "traversal-style이란?"
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "2 Related Work"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "기존 NLP에서의 준지도 학습"
+                    },
+                    {
+                      "text": ": unlabeled 코퍼스에서 훈련된 단어 임베딩을 다양한 작업에서 사용하는 접근들이 있었다(Word2Vec, GloVe). 구나 문장 단위도 있었다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "비지도 사전학습"
+                    },
+                    {
+                      "text": ": 비지도 사전학습은 지도학습의 목표를 변경하는 대신 좋은 시작점을 찾는 것을 목표로 한다. 기존 연구들은 사전학습이 깊은 신경망에서 일반화 능력을 향상시키는 정규화처럼 작동함을 증명했다. 우리와 비슷하게 언어모델링을 학습 목표로 하여 신경망을 사전학습시킨 후 지도와 함께 목표 작업을 미세조정한 연구도 있었는데, 그건 LSTM 모델을 써서 예측능력이 단거리에 한정되었더라."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "보조 학습목표"
+                    },
+                    {
+                      "text": ": 어떤 연구는 품사 태깅과 같은 NLP 작업을 보조적 비지도학습 목표로 추가하기도 했다. 우리도 보조 목표를 사용하긴 하는데, 사전학습 자체가 이미 충분한 언어 관련 정보를 담는다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "3 Framework"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "훈련 과정은 위에서 말했듯 두 단계로 이루어진다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "좌: 트랜스포머와 objective, 우: 서로 다른 작업의 미세 조정을 위한 인풋 변형.",
+                "imageSrc": "gpt-architecture_cjwnbi",
+                "type": "image",
+                "fit": "hor"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.1 Unsupervised pre-training"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "원문에서 objective라고 쓰인 ‘(학습)목표’는 사실상 그 목표를 이루는 "
+            },
+            {
+              "bold": true,
+              "text": "과정"
+            },
+            {
+              "text": "이다. 함수의 형태를 하고 있기 때문이다. 언어 모델링의 목표는 다음 단어를 더 잘 맞히는 것이고, 언어 모델링의 objective는 그걸 가능하게 하는 함수인 것이다. 그냥 앞으로는 objective라고 쓰겠다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "비지도 사전학습 단계에서의 objective는 언어 모델링의 objective이다. 그 objective는 likelihood라는 스칼라 값 하나를 만드는 함수 "
+            },
+            {
+              "code": true,
+              "text": "L"
+            },
+            {
+              "text": "이다. likelihood는 모든 위치에서 ‘실제로 나온 다음 토큰’을 모델이 얼마나 높은 확률로 맞췄는가’를 뜻한다. 토큰 "
+            },
+            {
+              "code": true,
+              "text": "u_1, …, u_n"
+            },
+            {
+              "text": "으로 이루어진 코퍼스 "
+            },
+            {
+              "code": true,
+              "text": "U"
+            },
+            {
+              "text": "가 주어질 때 "
+            },
+            {
+              "code": true,
+              "text": "L(U)"
+            },
+            {
+              "text": ", 즉 "
+            },
+            {
+              "code": true,
+              "text": "U"
+            },
+            {
+              "text": "의 log-likelihood는 "
+            },
+            {
+              "code": true,
+              "text": "U"
+            },
+            {
+              "text": "의 모든 요소 "
+            },
+            {
+              "code": true,
+              "text": "u_i"
+            },
+            {
+              "text": "에 대한 "
+            },
+            {
+              "code": true,
+              "text": "log P()"
+            },
+            {
+              "text": "의 합이다. 함수 "
+            },
+            {
+              "code": true,
+              "text": "P"
+            },
+            {
+              "text": "는 파라미터 "
+            },
+            {
+              "code": true,
+              "text": "Θ"
+            },
+            {
+              "text": "가 주어졌을 때 다음 토큰의 확률을 계산한다. 학습 과정에서는 "
+            },
+            {
+              "code": true,
+              "text": "P"
+            },
+            {
+              "text": "가 만든 확률로 정의된 다음 토큰(정답 토큰)의 log-likelihood "
+            },
+            {
+              "code": true,
+              "text": "L(U)"
+            },
+            {
+              "text": "가 최대화되도록 "
+            },
+            {
+              "code": true,
+              "text": "Θ"
+            },
+            {
+              "text": "를 SGD로 조정한다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "SGD (Stochastic Gradient Descent)란?"
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "pretraining-1_w566oc",
+                "type": "image",
+                "fit": "hor"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "각 위치 "
+            },
+            {
+              "code": true,
+              "text": "i"
+            },
+            {
+              "text": "마다 "
+            },
+            {
+              "code": true,
+              "text": "P"
+            },
+            {
+              "text": "의 확률 계산은 이렇게 이루어진다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "최대 "
+                    },
+                    {
+                      "code": true,
+                      "text": "k"
+                    },
+                    {
+                      "text": " 길이까지의 이전 토큰에 대해 score(logit)를 만들고(트랜스포머 블록),"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "그 점수는 소프트맥스를 통해 확률 분포가 된다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "pretraining-2_o0ejx0",
+                "type": "image",
+                "fit": "hor"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "위 수식에서 "
+            },
+            {
+              "code": true,
+              "text": "U"
+            },
+            {
+              "text": "는 "
+            },
+            {
+              "code": true,
+              "text": "k"
+            },
+            {
+              "text": "만큼의 context 벡터, "
+            },
+            {
+              "code": true,
+              "text": "n"
+            },
+            {
+              "text": "은 레이어의 갯수, "
+            },
+            {
+              "code": true,
+              "text": "W_e"
+            },
+            {
+              "text": "는 벡터 임베딩의 행렬, "
+            },
+            {
+              "code": true,
+              "text": "W_p"
+            },
+            {
+              "text": "는 위치 임베딩의 행렬이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.2 Supervised fine-tuning"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "3.1에서 한 것과 같이 모델을 언어 모델링 objective로 훈련시킨 후, 파라미터를 지도된(=labeled) target task에 적용시킨다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "labeled 데이터셋 "
+            },
+            {
+              "code": true,
+              "text": "C"
+            },
+            {
+              "text": "의 각 인스턴스는 인풋 토큰의 시퀀스 "
+            },
+            {
+              "code": true,
+              "text": "x_1, … x_m"
+            },
+            {
+              "text": "과 라벨 "
+            },
+            {
+              "code": true,
+              "text": "y?"
+            },
+            {
+              "text": "로 이루어진다. 인풋은 사전 훈련된 모델을 통과하여 최종 트랜스포머 블록의 활성화 함수의 값 "
+            },
+            {
+              "code": true,
+              "text": "h_m"
+            },
+            {
+              "text": "을 얻는다. "
+            },
+            {
+              "code": true,
+              "text": "h_m"
+            },
+            {
+              "text": "은 추가 선형 아웃풋 레이어에 입력으로 들어간다. 그 레이어는 "
+            },
+            {
+              "code": true,
+              "text": "y"
+            },
+            {
+              "text": "를 예측하기 위한 파라미터들 "
+            },
+            {
+              "code": true,
+              "text": "W_y"
+            },
+            {
+              "text": "를 가지고 있다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "finetuning-1_x5snnd",
+                "type": "image",
+                "fit": "hor"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이것이 들어가는 이 단계의 objective는 이렇다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "",
+                "imageSrc": "finetuning-2_dmjolz",
+                "type": "image",
+                "fit": "hor"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 추가적으로, 언어 모델링을 미세 조정 단계에도 보조 objective로 포함하는 것이 지도된 모델의 일반화를 향상시키는 데, 그리고 수렴을 가속화하는 데 도움이 된다는 것을 알아냈다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "종합적으로, 미세조정에 추가적으로 필요한 파라미터는 "
+            },
+            {
+              "code": true,
+              "text": "W_y"
+            },
+            {
+              "text": "와 구분자 토큰의 임베딩밖에 없다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "3.3 Task-specific input transformations"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "텍스트 분류와 같은 어떤 작업에 대해서는 3.2에서처럼 모델을 직접 미세조정할 수 있다. 그런데 질문에 답하기와 함의 파악과 같은 작업은 구조화된 인풋을 가지고 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리의 사전 훈련된 모델이 연속적인 텍스트 시퀀스에서 훈련되었기 때문에, 이런 작업들에 적용하기 위해서는 약간의 수정이 필요하다. 우리는 이전 연구들처럼 모델구조를 바꾸고 싶진 않기 때문에, traversal-style 접근을 사용하여 구조화된 인풋을 사전 훈련된 모델이 처리할 수 있도록 순서가 있는 시퀀스로 바꾼다. 모든 변환은 랜덤하게 초기화된 시작과 끝 토큰을 추가하는 것을 포함한다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "함의: 전제와 가설 토큰 시퀀스를 구분자 토큰 "
+                    },
+                    {
+                      "code": true,
+                      "text": "$"
+                    },
+                    {
+                      "text": "과 함께 concat한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "유사성: 두 문장 사이 순서가 없으므로, 인풋 시퀀스를 가능한 두 순서로 정렬한 것을 구분자와 함께 concat하고 각각을 독립적인 시퀀스 representation 2개로 처리한 다음 요소별로 더한다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "질문에 답하기와 상식 추론: context 문서 "
+                    },
+                    {
+                      "code": true,
+                      "text": "z"
+                    },
+                    {
+                      "text": ", 질문 "
+                    },
+                    {
+                      "code": true,
+                      "text": "q"
+                    },
+                    {
+                      "text": ", 가능한 답 세트 "
+                    },
+                    {
+                      "code": true,
+                      "text": "{a_k}"
+                    },
+                    {
+                      "text": "가 주어진다. "
+                    },
+                    {
+                      "code": true,
+                      "text": "[z;q;&;a_k]"
+                    },
+                    {
+                      "text": " 이렇게 concat한다. 각 시퀀스는 모델이 독립적으로 처리한 뒤 소프트맥스 레이어를 통과시켜 가능한 답들의 확률분포를 만들어낸다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "4 Experiments"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "설정"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "긴 연속적인 텍스트와 문장 단위로 섞인 텍스트 모두 훈련에 사용했다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "하이퍼파라미터들(learning rate, batch size, number of epochs, …)"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "모델 사양: 12 레이어의 디코더만 있는 트랜스포머를 사용했다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "지도 미세조정 항목들"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "자연어 추론, 질문에 답하기와 상식 추론, 의미적 유사성, 분류 각각 여러 테스트를 했는데 거의 다 기존 기록을 뛰어넘었다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "5 Analysis"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "이동한 레이어 수의 영향: 레이어 지나갈 때마다 성능이 좋아진 걸 보니 사전 훈련된 모델의 각 레이어가 의미 있는 기능을 한다는 걸 알아냈다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Zero-shot Behaviors: 언어모델 사전학습만으로도 여러 NLP 작업을 수행하는 능력이 점점 형성된다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Ablation studies: 보조 LM objective는 데이터가 클 때 특히 도움이 된다. 트랜스포머가 LSTM보다 성능이 좋다. 사전학습을 없이면 모든 작업에서 성능이 크게 떨어져 사전학습이 핵심인 걸 알 수 있다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "6 Conclusion"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 생성적 사전학습과 변별적 미세조정을 통해 하나의 task-agnostic 모델이 자연어를 아주 잘 이해하게 할 수 있는 프레임워크를 소개했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "방대한 코퍼스에서의 사전학습을 통해 모델은 세상을 잘 이해하며 장거리 의존성을 잘 처리하게 되었고, 그래서 다양한 개별 작업도 잘한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이렇게 개별적 작업 성능을 올리는 데 비지도학습을 사용하는 건 오랫동안 머신 러닝 연구의 목표였는데, 우리가 그게 가능함을 보였다. 그리고 어떤 모델과 데이터셋이 그 접근과 잘 맞는지 힌트를 제공했다. 미래의 비지도학습 연구에 도움이 되기를 바란다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "한 줄 요약"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "언어라는 범용 모델링을 사전학습해두면 이질적으로 보였던 개별 자연어처리 작업들은 생성의 문제로 하나로 통합된다."
             }
           ]
         }
@@ -113356,13 +118563,237 @@
     }
   },
   {
+    "id": "cmdbgko8e000wmdam8p56c3fe",
+    "title": "거울 방/기약 없는 기다림",
+    "status": "published",
+    "excerpt": "방탈출을 주제로 한 Cororo 웹 릴레이 프로젝트에 ‘거울 방'으로 참여했습니다. https://solm0.github.io/escaperoom-solmi/ 링크:  htt...",
+    "publishedAt": "2023-12-31T23:00:00.000Z",
+    "tags": {
+      "name": "작업"
+    },
+    "keywords": [],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "방탈출을 주제로 한 Cororo 웹 릴레이 프로젝트에 ‘거울 방'으로 참여했습니다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/escaperoom-solmi/"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "iframe"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "링크: "
+            },
+            {
+              "href": "https://solm0.github.io/escaperoom-solmi/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/escaperoom-solmi/"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "버스정류장을 주제로 한 Cororo 웹 콜라주 프로젝트에 ‘기약 없는 기다림'으로 참여했습니다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/busstop-collage/"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "iframe"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "링크: "
+            },
+            {
+              "href": "https://solm0.github.io/busstop-collage/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/busstop-collage/"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cmdbfks15000emdamuc896vyo",
+    "title": "Cyberia",
+    "status": "published",
+    "excerpt": "애니메이션  Serial Experiments Lain 에 등장하는 클럽 Cybria의 웹사이트를 구상하고 만들었습니다. 2023년 국민대와 SK이노베이션이 주관한 '행복그린...",
+    "publishedAt": "2023-05-31T22:00:00.000Z",
+    "tags": {
+      "name": "작업"
+    },
+    "keywords": [],
+    "content": {
+      "document": [
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "애니메이션 "
+            },
+            {
+              "href": "https://www.imdb.com/title/tt0500092/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Serial Experiments Lain"
+                }
+              ]
+            },
+            {
+              "text": "에 등장하는 클럽 Cybria의 웹사이트를 구상하고 만들었습니다. 2023년 국민대와 SK이노베이션이 주관한 '행복그린디자인전'에 출품하였는데, 해당 전시의 주제가 환경이었기 때문에 웹사이트의 곳곳에 환경 관련 퀴즈를 숨겨놓았습니다. 퀴즈의 답을 입력해 점수를 얻을 수 있습니다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "items": [
+              {
+                "alt": "Cyberia 스크린샷",
+                "imageSrc": "Screenshot_2025-08-11_at_7.16.31_PM_p9at5u"
+              }
+            ]
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": ""
+                }
+              ]
+            }
+          ],
+          "component": "carousel"
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/cyberia/"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "iframe"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "링크: "
+            },
+            {
+              "href": "https://solm0.github.io/cyberia/",
+              "type": "link",
+              "children": [
+                {
+                  "text": "https://solm0.github.io/cyberia/"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmix7hrtg008wis47dymzgkqr",
     "title": "스마트폰에서 선택한 url이 아이맥에서 열리는 웹사이트 만들기",
     "status": "published",
     "excerpt": "소모임 팀원들이 만든 각자 만든 웹사이트들을 하나의 아이맥에서 전시해야 했다. 나는 각자의 웹사이트가 한 화면을 꽉 채웠으면 좋겠다고 생각했다. 그래서 선택할 수 있는 웹사이...",
     "publishedAt": "2025-12-07T15:00:00.000Z",
     "tags": {
-      "name": "미분류"
+      "name": "코딩"
     },
     "keywords": [
       {
@@ -113675,230 +119106,6 @@
           "children": [
             {
               "text": "이런 실험적인(?) 방법을 써봄으로써 새로 알게 된 게 많긴 하지만… 다시 여러 사람들의 작업을 모으는 일을 하게 된다면 실전에서 실험을 하지는 말기로, 여러 사람에게 편한 방법을 사용하기로, 그리고 오류를 수정할 기간을 넉넉히 두기로 다짐해본다"
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmdbgko8e000wmdam8p56c3fe",
-    "title": "거울 방/기약 없는 기다림",
-    "status": "published",
-    "excerpt": "방탈출을 주제로 한 Cororo 웹 릴레이 프로젝트에 ‘거울 방'으로 참여했습니다. https://solm0.github.io/escaperoom-solmi/ 링크:  htt...",
-    "publishedAt": "2023-12-31T23:00:00.000Z",
-    "tags": {
-      "name": "작업"
-    },
-    "keywords": [],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "방탈출을 주제로 한 Cororo 웹 릴레이 프로젝트에 ‘거울 방'으로 참여했습니다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/escaperoom-solmi/"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "iframe"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "링크: "
-            },
-            {
-              "href": "https://solm0.github.io/escaperoom-solmi/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/escaperoom-solmi/"
-                }
-              ]
-            },
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "버스정류장을 주제로 한 Cororo 웹 콜라주 프로젝트에 ‘기약 없는 기다림'으로 참여했습니다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/busstop-collage/"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "iframe"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "링크: "
-            },
-            {
-              "href": "https://solm0.github.io/busstop-collage/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/busstop-collage/"
-                }
-              ]
-            },
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
-            }
-          ]
-        }
-      ]
-    }
-  },
-  {
-    "id": "cmdbfks15000emdamuc896vyo",
-    "title": "Cyberia",
-    "status": "published",
-    "excerpt": "애니메이션  Serial Experiments Lain 에 등장하는 클럽 Cybria의 웹사이트를 구상하고 만들었습니다. 2023년 국민대와 SK이노베이션이 주관한 '행복그린...",
-    "publishedAt": "2023-05-31T22:00:00.000Z",
-    "tags": {
-      "name": "작업"
-    },
-    "keywords": [],
-    "content": {
-      "document": [
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "애니메이션 "
-            },
-            {
-              "href": "https://www.imdb.com/title/tt0500092/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "Serial Experiments Lain"
-                }
-              ]
-            },
-            {
-              "text": "에 등장하는 클럽 Cybria의 웹사이트를 구상하고 만들었습니다. 2023년 국민대와 SK이노베이션이 주관한 '행복그린디자인전'에 출품하였는데, 해당 전시의 주제가 환경이었기 때문에 웹사이트의 곳곳에 환경 관련 퀴즈를 숨겨놓았습니다. 퀴즈의 답을 입력해 점수를 얻을 수 있습니다."
-            }
-          ]
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "items": [
-              {
-                "alt": "Cyberia 스크린샷",
-                "imageSrc": "Screenshot_2025-08-11_at_7.16.31_PM_p9at5u"
-              }
-            ]
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": ""
-                }
-              ]
-            }
-          ],
-          "component": "carousel"
-        },
-        {
-          "type": "component-block",
-          "props": {
-            "src": null
-          },
-          "children": [
-            {
-              "type": "component-inline-prop",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/cyberia/"
-                }
-              ],
-              "propPath": [
-                "src"
-              ]
-            }
-          ],
-          "component": "iframe"
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": "링크: "
-            },
-            {
-              "href": "https://solm0.github.io/cyberia/",
-              "type": "link",
-              "children": [
-                {
-                  "text": "https://solm0.github.io/cyberia/"
-                }
-              ]
-            },
-            {
-              "text": ""
-            }
-          ]
-        },
-        {
-          "type": "paragraph",
-          "children": [
-            {
-              "text": ""
             }
           ]
         }

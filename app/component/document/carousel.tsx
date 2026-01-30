@@ -31,6 +31,7 @@ export default function Carousel({
           case 'video': ext = 'mp4'; break;
           default: ext = 'jpg';
         }
+        const horizontalFit = item.fit === 'hor';
 
         const publicId = item.imageSrc;
         const isGif = publicId.toLowerCase().startsWith('gif');
@@ -82,7 +83,10 @@ export default function Carousel({
                 src={url}
                 width={800}
                 height={800}
-                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
+                className={`
+                  object-contain rounded-sm cursor-pointer
+                  ${horizontalFit ? 'w-auto max-w-[47em] h-auto' : 'h-[22rem] md:h-[30rem] w-auto'}
+                `}
                 alt={item.alt}
                 id={`img-${carIdx}-${idx}`}
                 onClick={() => setIdx(idx)}
