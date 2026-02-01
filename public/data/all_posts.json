@@ -96934,6 +96934,1144 @@
     }
   },
   {
+    "id": "cml0pnsdg0000fq1i7nui48hb",
+    "title": "[NLP 논문] GPT-2: Language Models are Unsupervised Multitask Learners",
+    "status": "published",
+    "excerpt": "들어가며  Language Models are Unsupervised Multitask Learners (Radford, 2018)  GPT-1 논문과 같은 2018년에 나왔...",
+    "publishedAt": "2026-01-29T15:00:00.000Z",
+    "tags": {
+      "name": "미분류"
+    },
+    "keywords": [
+      {
+        "name": "학습"
+      },
+      {
+        "name": "데이터"
+      },
+      {
+        "name": "성능"
+      },
+      {
+        "name": "논문"
+      },
+      {
+        "name": "작업"
+      },
+      {
+        "name": "gpt"
+      }
+    ],
+    "content": {
+      "document": [
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "들어가며"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            },
+            {
+              "href": "https://cdn.openai.com/better-language-models/language_models_are_unsupervised_multitask_learners.pdf",
+              "type": "link",
+              "children": [
+                {
+                  "text": "Language Models are Unsupervised Multitask Learners (Radford, 2018)"
+                }
+              ]
+            },
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "GPT-1 논문과 같은 2018년에 나왔다. 역시나 chatGPT 출시 이전이다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "목차"
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Abstract",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 모델이 알아서 작업 수행하는 법을 배우기 시작했다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Introduction",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 제로샷 문제를 푸는 모델을 증명하겠다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Approach",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 인터넷에 자연스럽게 존재하는 텍스트로 학습하자"
+                    }
+                  ]
+                },
+                {
+                  "type": "ordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Training Dataset",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 새로운 훈련용 데이터셋 만들었다"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Input Representation",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 새로운 인풋 표현 방식 만들었다"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Model",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 트랜스포머 사용함"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Experiments",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 훈련과 결과"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Generalization vs Memorization",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 치팅 아님"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Related Work",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 이전 연구에서 발전한 것"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Discussion",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 전망"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "Conclusion",
+                      "strikethrough": true
+                    },
+                    {
+                      "text": " 대규모 언어모델은 명시적 지도 없이 다양한 작업을 수행할 수 있다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "부연설명 출처"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/underfitting",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "과소적합이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://wikidocs.net/22592",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "바이트 페어 인코딩 위키독스"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "0 Abstract"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 백만 개의 웹페이지에서 나온 데이터셋(WebText)에서 훈련한 언어모델이 "
+            },
+            {
+              "bold": true,
+              "text": "명시적 지도 없이도 다양한 NLP 작업을 수행"
+            },
+            {
+              "text": "하기 시작함을 보인다. 별도의 학습 없이 단순히 문서와 질문을 조건으로 주는 것만으로도 기준 시스템에 필적하는 성능을 낸다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "언어모델의 용량은 제로샷(훈련 과정에서 한 번도 보지 못한) 전이에 결정적이며, 늘릴 수록 성능이 높아진다. GPT-2는 제로샷 환경에서 테스트 결과가 좋지만 여전히 WebText 데이터에 비해 과소적합 상태다."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "과소적합(Underfitting)이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "과소적합은 모델이 인풋과 아웃풋의 관계를 정확하게 포착하지 못해 학습 데이터와 테스트 데이터 모두에서 높은 오류율을 발생시키는 상황이다. 모델이 너무 단순하거나 학습 시간이 부족할 때 나타날 수 있다. 과소적합의 지표는 높은 편향과 낮은 분산이다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이는 앞으로 언어모델의 용량을 더 키워서, 데이터에 자연스럽게 등장하는 예시들(웹에 있던 Q&A, 설명, 글쓰기 패턴)만으로도 구체적인 작업을 하는 법을 학습하게 할 수 있음을 시사한다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이전 논문과 다른 점"
+            }
+          ]
+        },
+        {
+          "type": "ordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "이전에는 BooksCorpus와 같이 비교적 정제된 텍스트에서 훈련했는데 이번에는 작업 예시와 데이터가 한데 섞여 있는 실제 웹페이지에서 훈련했다"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "이전에는 작업 지시를 fine-tuning을 통해 따로 해줬는데 이번에는 그 과정도 없이 완전히 제로샷이다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "1 Introduction"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "지금까지의 훈련은 한 우물만 판 전문가를 키우는 방식이다. 이건 데이터 분포와 작업 지시가 조금만 달라져도 쉽게 깨진다. 우리는 "
+            },
+            {
+              "bold": true,
+              "text": "전용 데이터셋도 필요 없는 만능 제네럴리스트"
+            },
+            {
+              "text": "를 키우고 싶다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "기존 방식이 일반화에 실패한 이유는 단일 도메인, 단일 작업 학습에 의존해서라고 본다. 그래서 "
+            },
+            {
+              "bold": true,
+              "text": "더 넓은 도메인과 작업을 다루는 멀티태스크 학습"
+            },
+            {
+              "text": "이 대안으로 제시된다. 그러나 멀티태스크 학습은 아직 초기 단계이며, 지금까지의 시도들은 10-17개의 (dataset, objective) 쌍을 사용했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그렇게 하면 각 작업은 하나의 학습 예제밖에 안 갖게 되는데, 일반화 가능한 함수를 학습하려면 수천개쯤의 예제는 필요하다. 이런 방식으로 데이터셋과 목표를 계속 늘리는 건 현실적으로 어렵다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ""
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cml0ahqbf000mc62kt78ojslw",
+              "label": "[NLP 논문] GPT의 시작: Improving Language Understanding by Generative Pre-Training",
+              "data": {
+                "id": "cml0ahqbf000mc62kt78ojslw",
+                "title": "[NLP 논문] GPT의 시작: Improving Language Understanding by Generative Pre-Training",
+                "links": [],
+                "backlinks": []
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "task-specific 구조가 더 이상 필요없다는 건 이미 제안했지만"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": ", 여전히 특정 작업을 위한 지도 학습이 포함된다. 이 논문에서 우리는 "
+            },
+            {
+              "bold": true,
+              "text": "구조 변경이나 추가 파라미터 없이도 언어모델이 제로샷 환경에서 사전학습 후 다양한 문제를 풀 수 있음"
+            },
+            {
+              "text": "을 증명한다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "2 Approach"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "언어 모델링은 주로 기호들의 시퀀스에 대한 비지도 확률예측으로 이해된다. 이런 접근은 대규모 데이터에서 학습 가능한 트랜스포머 같은 구조의 등장을 가능하게 했다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "code": true,
+              "text": "(answer the question, document, question, answer)"
+            },
+            {
+              "text": " 이런 포맷이 멀티태스크 설정에 사용되어 왔으며, 언어 모델링은 이론적으로는 별도의 포맷이나 지도 없이도 멀티태스크 지도 학습을 포함할 수 있다. 그러나 실제로는 지도 없이는 최적화가 매우 느리다는 한계가 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 "
+            },
+            {
+              "bold": true,
+              "text": "특정 상호작용 형식에 의존하지 않고, 인터넷에 자연스럽게 존재하는 텍스트만으로도"
+            },
+            {
+              "text": " 모델이 다양한 작업을 추론해 학습할 수 있는지 알아보고자 한다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "2.1 Training Dataset"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "우리는 최대한 방대하고 다양한 데이터셋을 구축하고자 했다. 자료 후보 중 하나는 Common Crawl과 같은 웹 스크레이프였는데, 데이터의 퀄리티가 별로 안 좋았다. 어떤 선행 연구는 원하는 데이터셋과 가장 가까운 서브샘플을 사용하는 걸로 나은 결과를 냈지만, 우리는 "
+            },
+            {
+              "bold": true,
+              "text": "작업 수행 전에 작업에 대한 전제를 하는 것을 피하고"
+            },
+            {
+              "text": " 싶었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "그래서 우리는 퀄리티가 나은 새로운 웹 스크레이프를 만들었다. 인간에 의해 필터된 웹 페이지만 포함하는 것이다. 수동으로 필터링할 수는 없으니 소셜미디어 플랫폼 레딧에서 3 karma 이상 받은, 네티즌들에게 유익하거나 재밌다고 검증받은 링크만을 스크레이프했다. 그 결과로 데이터셋 WebText가 만들어졌다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "2.2 Input Representation"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "기존 모델들은 토크나이저와 어휘 제한 때문에 표현 공간이 막혀 있었고, 이를 해결한 바이트 단위 모델 BPE는 성능이 떨어진다. GPT-2는 BPE를 정교하게 제한해 성능을 유지하면서도 어떤 텍스트든 처리 가능한 인풋 representation을 만들었다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "→ GPT-2가 웹 전체를 먹을 수 있게 됨."
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "content": null,
+            "intent": "info"
+          },
+          "children": [
+            {
+              "type": "component-block-prop",
+              "children": [
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "BPE (Byte Pair Encoding) 란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "기계에게 세상의 모든 단어를 알려줄 수는 없다. 모르는 단어로 인해 문제 푸는 것이 어려운 상황을 OOV(Out of Vocabulary) 문제라고 한다. 단어를 더 작은 의미 있는 단위로 분리하는 '서브워드 분리'로 OOV 문제를 완화할 수 있다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "BPE는 대표적인 서브워드 분리 알고리즘으로, 원래 압축 알고리즘이었다고 한다. 연속적으로 가장 많이 등장한 글자의 쌍을 찾아서 하나의 글자로 병합한다. 예를 들어 "
+                    },
+                    {
+                      "code": true,
+                      "text": "aaabdaaabac"
+                    },
+                    {
+                      "text": " 에서 가장 자주 등장하는 바이트의 쌍 aa를 하나의 바이트 Z로 치환한다 "
+                    },
+                    {
+                      "code": true,
+                      "text": "ZabdZabac"
+                    },
+                    {
+                      "text": " → ab를 Y로 치환한다 "
+                    },
+                    {
+                      "code": true,
+                      "text": "ZYdZYac"
+                    },
+                    {
+                      "text": " → ZY를 X로 치환한다 "
+                    },
+                    {
+                      "code": true,
+                      "text": "XdXac"
+                    },
+                    {
+                      "text": " = 최종."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "이와 같이 글자 단위에서 점차적으로 단어를 만들어내는 접근을 한다."
+                    }
+                  ]
+                }
+              ],
+              "propPath": [
+                "content"
+              ]
+            }
+          ],
+          "component": "notice"
+        },
+        {
+          "type": "heading",
+          "level": 3,
+          "children": [
+            {
+              "text": "2.3 Model"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "모델 아키텍쳐는 "
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmkxk9f600009c62kvjlmz8pv",
+              "label": "[NLP 논문] Attention is All You Need",
+              "data": {
+                "id": "cmkxk9f600009c62kvjlmz8pv",
+                "title": "[NLP 논문] Attention is All You Need",
+                "links": [],
+                "backlinks": []
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "트랜스포머"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": " 썼다. 설정은 예전 GPT-1이랑 비슷한데 레이어 정규화 위치와 갯수, residual 레이어의 weight, context size 등 파라미터 몇개가 좀 바뀌었다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "3 Experiments"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "네 개의 크기를 가진 모델을 각각 훈련시켜봤다. 언어모델인데 이것저것 다 하는 거 봐라"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "언어 모델링"
+                    },
+                    {
+                      "text": ": WebText로 학습한 모델을 다른 데이터셋에 그대로 적용함"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "어린이 책 테스트"
+                    },
+                    {
+                      "text": ": 빈칸 채우기 문제. 모델 크기 클수록 사람 성능에 근접."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "LAMBADA"
+                    },
+                    {
+                      "text": ": 문맥 없으면 못 맞히는 마지막 단어 예측하기."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "Winograd Schema Challenge"
+                    },
+                    {
+                      "text": ": 상식 추론 테스트."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "독해(CoQA)"
+                    },
+                    {
+                      "text": ": 문서 기반 QA. 이해한다기보다는 그럴듯하게 끌어 온다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "요약"
+                    },
+                    {
+                      "text": ": 정확도 낮음. TL;DR 같은 요약하라는 힌트 없으면 성능 하락."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "번역"
+                    },
+                    {
+                      "text": ": 전문 번역 모델보다는 못함"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "bold": true,
+                      "text": "질문에 답하기"
+                    },
+                    {
+                      "text": ": 정확도 낮지만 아는 건 맞힌다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "4 Generalization vs Memorization"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "훈련 데이터가 많아지면 훈련 데이터와 테스트 데이터가 겹쳐서 성능이 더 좋은 것처럼 보일 수 있다. 시험 문제와 답을 미리 암기하고 시험을 보는 것처럼. 그래서 테스트 결과가 진짜 모델이 일반화를 잘한 결과인지, 중복 데이터 영향으로 ‘암기’된 결과인지 의심할 수 있다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 챕터에서 저자들은 GPT-2의 성능 향상의 원인이 암기가 아닌 일반화라고 몇몇 근거를 들며 방어한다."
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "WebText와 평가 데이터 사이의 1-6% 정도 중복은 다른 비교대상들도 갖고 있는 수준이다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "중복을 전부 제거해도 전체 성능 변화는 매우 작다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "모델 사이즈가 커질수록 성능이 올라가는 걸 보면 GPT-2는 데이터를 다 외우기는커녕 아직 덜 배운 상태다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "5 Related Work"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "모델 크기와 데이터 크기를 키우면 성능이 좋아진다는 관찰은 이전에도 있었지만 GPT-2는 이게 1B+ 파라미터, 멀티태스크, 제로샷 환경에서도 유지됨을 보여준다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "언어 모델이 구조 추적, 언어 간 이름 번역 등 명시적으로 가르치지 않은 기능을 습득한다는 관찰은 있었지만 GPT-2는 이를 작업 수행 수준까지 확장했다."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": "기존 연구는 표현을 잘 배워서 파인튜닝하는 것에 집중했다면 GPT-2는 파인튜닝 없이도 작업 수행하는 방법을 실험했다."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "6 Discussion"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "GPT-2는 비지도 사전학습만으로도 일부 작업을 제로샷으로 수행하며, 이는 "
+            },
+            {
+              "bold": true,
+              "text": "사전학습이 단순 표현 학습을 넘어 작업 자체를 배우기 시작함을 보여준다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "독해와 같은 일부 과제에서는 경쟁력이 있지만 요약 등 많은 작업에서는 아직 부족하다. 하지만 제로샷은 바닥선일 뿐이며 향후 파인튜닝을 통해 어디까지 성능이 오를지는 열려 있다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "7 Conclusion"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "충분히 큰 언어모델은 대규모 웹 텍스트로 비지도 학습만 해도 다양한 NLP 작업을 제로샷으로 수행할 수 있다."
+            }
+          ]
+        },
+        {
+          "type": "heading",
+          "level": 2,
+          "children": [
+            {
+              "text": "소감"
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "제목이 흥미를 끌었었다. ‘독학으로 한 번에 여러가지를 배우는 학습자’라고 자연스럽게 의인화 표현처럼 해석되었던 것이다. 근데 내용을 읽어보니 딱히 은유는 아니었다. ‘비지도 다수 작업 학습’이라는 딱딱한 버전의 직역 자체가 내용을 완벽히 요약해 버리는 게 아닌가. Attention is All You Need에서 생긴 논문 제목에 대한 낭만이 깨졌다."
+            }
+          ]
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "이 논문은 이전에 읽은 트랜스포머나 GPT-1 논문처럼 새로운 발상 제시보다는 모두가 언어모델에 기대하던 것을 아주 공들여 실제로 구현한 방법을 세세히 풀어놓은 글이었다. 그래서 텍스트 양이 많고 읽는 재미는 덜했다. 다음 GPT-3 논문은 좀더 재밌기를…"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
     "id": "cmdd4wqk900b6mdam66tvgx8g",
     "title": "Render 무료 web service의 서버를 항상 깨워 두는 법",
     "status": "published",
@@ -105399,9 +106537,9 @@
   },
   {
     "id": "cml0ahqbf000mc62kt78ojslw",
-    "title": "[NLP 논문] GPT의 시작 - Improving Language Understanding by Generative Pre-Training",
+    "title": "[NLP 논문] GPT의 시작: Improving Language Understanding by Generative Pre-Training",
     "status": "published",
-    "excerpt": "들어가며 GPT가 처음 소개된 GPT의 선언문 같은 2018년 논문이다.  Improving Language Understanding by Generative Pre-Trai...",
+    "excerpt": "들어가며 LLM이 대중화되기도 몇 년 전인 2018년, GPT가 처음 소개된 GPT의 선언문 같은 논문이다.  Improving Language Understanding by...",
     "publishedAt": "2026-01-29T15:00:00.000Z",
     "tags": {
       "name": "미분류"
@@ -105441,7 +106579,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "GPT가 처음 소개된 GPT의 선언문 같은 2018년 논문이다."
+              "text": "LLM이 대중화되기도 몇 년 전인 2018년, GPT가 처음 소개된 GPT의 선언문 같은 논문이다."
             }
           ]
         },
@@ -105478,7 +106616,50 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "대학교 1학년이던 22년, ‘컴퓨터프로그래밍’이라는 필수 교양이 있었다. 티처블 머신을 사용해 손 제스쳐 구분을 했던 기억이 난다. 그 교양은 26년 현재 보니까 ‘AI기초프로그래밍’으로 이름이 바뀌어 있었다. 내 코딩 공부는 23년 GPT의 시작과 함께했다. 디자인 학과 HTML 입문 수업에서 교수님이 코드 작성을 (당시 갓 태어난)chatGPT로 보조해 보라고 넌지시 말씀하셨다. 학교 도서관에서 GPT-3와 며칠간 팽팽한 신경전을 벌이며 만든 것이 내 첫 번째 웹사이트였다. 그로부터 지금까지 3년간 몇몇 웹사이트를 만드는 데 기술 선택에서부터 코드 작성까지 GPT의 도움을 많이 받았고, 할루시네이션이나 인지 부채 등 장/단기적인 문제점도 고스란히 겪어 왔다. 이렇게 대학 생활 내내 동고동락한 GPT를 이해하고 싶었고, GPT를 둘러싸고 일어나는 일들도 이해하고 싶었고, 다른 LLM들과 비교도 해 보고 싶었다. 그것이 이 논문을 시작으로 GPT의 계보를 따라가며 관련 논문을 읽어 보려는 동기이다."
+              "text": "대학교 1학년이던 22년, ‘컴퓨터프로그래밍’이라는 필수 교양이 있었다. 티처블 머신을 사용해 손 제스쳐 구분을 했던 기억이 난다. 그 교양은 26년 현재 보니까 ‘AI기초프로그래밍’으로 이름이 바뀌어 있었다. 내 코딩 공부는 23년 GPT의 시작과 함께했다. 디자인 학과 HTML 입문 수업에서 교수님이 코드 작성을 (당시 갓 태어난)chatGPT로 보조해 보라고 넌지시 말씀하셨다. 학교 도서관에서 GPT-3와 며칠간 팽팽한 신경전을 벌이며 만든 것이 "
+            }
+          ]
+        },
+        {
+          "type": "component-block",
+          "props": {
+            "src": null,
+            "post": {
+              "id": "cmdbfks15000emdamuc896vyo",
+              "label": "Cyberia",
+              "data": {
+                "id": "cmdbfks15000emdamuc896vyo",
+                "title": "Cyberia",
+                "links": [],
+                "backlinks": [
+                  {
+                    "id": "cmdbfmhl6000fmdamia88beu3",
+                    "title": "분류: Serial Experiments Lain"
+                  }
+                ]
+              }
+            }
+          },
+          "children": [
+            {
+              "type": "component-inline-prop",
+              "children": [
+                {
+                  "text": "내 첫 번째 웹사이트"
+                }
+              ],
+              "propPath": [
+                "src"
+              ]
+            }
+          ],
+          "component": "internalLink"
+        },
+        {
+          "type": "paragraph",
+          "children": [
+            {
+              "text": "였다. 그로부터 지금까지 3년간 몇몇 웹사이트를 만드는 데 기술 선택에서부터 코드 작성까지 GPT의 도움을 많이 받았고, 할루시네이션이나 인지 부채 등 장/단기적인 문제점도 고스란히 겪어 왔다. 이렇게 대학 생활 내내 동고동락한 GPT를 이해하고 싶었고, GPT를 둘러싸고 일어나는 일들도 이해하고 싶었고, 다른 LLM들과 비교도 해 보고 싶었다. 그것이 이 논문을 시작으로 GPT의 계보를 따라가며 관련 논문을 읽어 보려는 동기이다."
             }
           ]
         },
@@ -105556,28 +106737,63 @@
                       "strikethrough": true
                     },
                     {
-                      "text": " 훈련 과정3.1 "
+                      "text": " 훈련 과정"
+                    }
+                  ]
+                },
+                {
+                  "type": "ordered-list",
+                  "children": [
+                    {
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Unsupervised pre-training",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 비지도 사전학습"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
-                      "text": "Unsupervised pre-training",
-                      "strikethrough": true
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Supervised fine-tuning",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 지도 미세조정"
+                            }
+                          ]
+                        }
+                      ]
                     },
                     {
-                      "text": " 비지도 사전학습3.2 "
-                    },
-                    {
-                      "text": "Supervised fine-tuning",
-                      "strikethrough": true
-                    },
-                    {
-                      "text": " 지도 미세조정3.3 "
-                    },
-                    {
-                      "text": "Task-specific input transformations",
-                      "strikethrough": true
-                    },
-                    {
-                      "text": " 특정 작업을 위한 인풋 변형"
+                      "type": "list-item",
+                      "children": [
+                        {
+                          "type": "list-item-content",
+                          "children": [
+                            {
+                              "text": "Task-specific input transformations",
+                              "strikethrough": true
+                            },
+                            {
+                              "text": " 특정 작업을 위한 인풋 변형"
+                            }
+                          ]
+                        }
+                      ]
                     }
                   ]
                 }
@@ -105667,7 +106883,23 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": ""
+                      "text": "지도 학습, 비지도 학습, 강화 학습은 학습 목표와 학습 데이터 유형에 따라 분류한 머신 러닝의 유형이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "지도 학습은 주어진 입력에 대해 '올바른' 아웃풋을 학습시킨다. 정확성이 요구되는 작업에 적용된다. 아웃풋을 비교할 레이블이 지정된(labeled) 정보 '실측 정보'가 포함된다. 지도 학습의 목적은 아웃풋과 실측 정보의 차이인 손실을 최소화하는 것이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "반면 비지도 학습은 아웃풋을 비교해야 하는 실측 정보가 포함되지 않는다. 데이터의 유사성, 상관관계, 잠재적 그룹화와 같이 패턴이 인간 관찰자에게 명확히 보이지 않는 시나리오에서 유용하다. 지도 학습과 달리 '올바른' 아웃풋을 선제하지 않아 손실 함수가 필요하지 않다."
                     }
                   ]
                 }
@@ -105680,38 +106912,92 @@
           "component": "notice"
         },
         {
-          "type": "component-block",
-          "props": {
-            "content": null,
-            "intent": "info"
-          },
+          "type": "paragraph",
           "children": [
             {
-              "type": "component-block-prop",
+              "text": "부연설명들의 출처"
+            }
+          ]
+        },
+        {
+          "type": "unordered-list",
+          "children": [
+            {
+              "type": "list-item",
               "children": [
                 {
-                  "type": "paragraph",
+                  "type": "list-item-content",
                   "children": [
                     {
-                      "text": "언어 모델링이란?"
-                    }
-                  ]
-                },
-                {
-                  "type": "paragraph",
-                  "children": [
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/machine-learning#7281535",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "머신 러닝이란 무엇인가요?"
+                        }
+                      ]
+                    },
                     {
                       "text": ""
                     }
                   ]
                 }
-              ],
-              "propPath": [
-                "content"
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/overfitting",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "과적합이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "list-item",
+              "children": [
+                {
+                  "type": "list-item-content",
+                  "children": [
+                    {
+                      "text": ""
+                    },
+                    {
+                      "href": "https://www.ibm.com/kr-ko/think/topics/stochastic-gradient-descent",
+                      "type": "link",
+                      "children": [
+                        {
+                          "text": "확률적 경사 하강법이란 무엇인가요?"
+                        }
+                      ]
+                    },
+                    {
+                      "text": ""
+                    }
+                  ]
+                }
               ]
             }
-          ],
-          "component": "notice"
+          ]
         },
         {
           "type": "heading",
@@ -105796,6 +107082,30 @@
                       "text": "과적합이란?"
                     }
                   ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "머신 러닝에서 과적합은 모델이 학습 데이터에 과하게 일치할 때 발생한다. 그 결과 학습 데이터가 아닌 다른 데이터에서 정확한 예측을 생성하거나 결론을 도출할 수 없게 된다, 즉 새로운 데이터를 효과적으로 일반화할 수 없게 된다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "원인은 모델이 학습 데이터를 너무 오래 학습하거나 모델이 너무 복잡해 데이터 내에서 '노이즈' 또는 관련 없는 정보를 학습한 것이다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "과적합을 나타내는 지표에는 학습 데이터의 낮은 오류율, 테스트 데이터의 높은 오류율, 높은 분산이 있다. 과적합에 반대되는 문제는 과소적합이다."
+                    }
+                  ]
                 }
               ],
               "propPath": [
@@ -105824,10 +107134,10 @@
                   "children": [
                     {
                       "bold": true,
-                      "text": "어떤 종류의 최적화 목표가 전이에 효과적인 텍스트 표현을 학습하는 데 가장 효과적인지 확실하지 않다"
+                      "text": "어떤 최적화 목표가 전이에 효과적인지 확실하지 않다"
                     },
                     {
-                      "text": ": 기존 모델들은 언어 모델링, 기계번역, 담화 일관성 등 특정 작업에 특화된 최적화 목표를 가졌는데 unlabeled 데이터는 작업에 상관없이 학습해야 하니까?"
+                      "text": ": 기존 모델들은 언어 모델링, 기계번역, 담화 일관성 등 특정 작업에 특화된 최적화 목표를 가졌는데 unlabeled 데이터는 자신이 무슨 작업을 할 지 모르는 상태에서 학습해야 하니까."
                     }
                   ]
                 }
@@ -105844,7 +107154,7 @@
                       "text": "학습된 표현을 목표 작업으로 전이하는 가장 효과적인 방법에 대한 합의가 없다."
                     },
                     {
-                      "text": " 기존의 기술들은 모델 구조에 task-specific한 변형을 가하는 것과 보조 학습목표를 추가하는 것을 수반했다."
+                      "text": " 기존의 기술들은 모델 구조에 task-specific한 변형을 가하는 것과 보조 학습목표를 추가하는 등, 특정 작업 전용 모델들의 집합은 많았지만 정말 '전이'를 하는 범용 모델은 사실상 없었다."
                     }
                   ]
                 }
@@ -105875,6 +107185,14 @@
                   "children": [
                     {
                       "text": "준지도 학습이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "labeled 데이터와 unlabeled 데이터를 모두 사용한다. 대체로 labeled 데이터를 사용해 unlabeled 데이터에 대한 가정을 하여 후자를 지도 학습에 통합시킨다."
                     }
                   ]
                 }
@@ -106017,6 +107335,22 @@
                   "children": [
                     {
                       "text": "traversal-style이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "traverse는 사전적으로는 '횡단'이라는 뜻이고, 프로그래밍에서는 '순회', 즉 자료구조(배열, 리스트, 트리, 그래프) 내 모든 요소를 빠짐없이 한 번씩 방문하여 처리하는 과정을 의미한다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "이 논문에서 traversal-style이란 인풋을 토큰들과 구분자의 시퀀스로 만들어 그것을 순회하는 것을 의미하는 듯하다."
                     }
                   ]
                 }
@@ -106271,7 +107605,31 @@
                   "type": "paragraph",
                   "children": [
                     {
-                      "text": "SGD (Stochastic Gradient Descent)란?"
+                      "text": "확률적 경사 하강법 (SGD, Stochastic Gradient Descent) 이란?"
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "손실 함수는 모델의 예측이 실제 데이터에서 얼마나 떨어져 있는지 측정한다. 훈련 단계에서 모델은 이러한 손실을 최소화하는 매개변수 값을 찾도록(=최적화) 설계되었다. 경사 하강은 훈련에 사용되는 최적화 기술 중 하나다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "알고리즘은 매개변수에 대한 손실의 경사를 계산하여 손실을 줄이는 방향으로 한 단계씩 나아간다. learning rate는 단계의 크기이다. 이 과정은 모델이 최소에 가까운 수렴을 달성할 때까지 반복된다."
+                    }
+                  ]
+                },
+                {
+                  "type": "paragraph",
+                  "children": [
+                    {
+                      "text": "기존 GD와 SGD의 주요 차이점은 GD는 전체 학습 데이터를 사용해 경사를 계산하지만, SGD는 한 번에 하나의 훈련 예시를 사용한다는 것이다."
                     }
                   ]
                 }
@@ -106877,7 +108235,7 @@
           "type": "paragraph",
           "children": [
             {
-              "text": "언어라는 범용 모델링을 사전학습해두면 이질적으로 보였던 개별 자연어처리 작업들은 생성의 문제로 하나로 통합된다."
+              "text": "언어라는 범용 모델링을 사전학습해두면 서로 이질적으로 보였던 개별 자연어처리 작업들은 생성의 문제로 하나로 통합된다."
             }
           ]
         }
