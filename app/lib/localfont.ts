@@ -7,13 +7,13 @@ export const pretendard = localFont({
 })
 
 export const maruburi = localFont({
-  src: '../fonts/MaruBuriot-SemiBold.woff2',
+  src: '../fonts/maruburiot-semibold.woff2',
   weight: '500',
   variable: '--font-maruburi',
 })
 
 export const maruburi_bold = localFont({
-  src: '../fonts/Maruburiot-Bold.woff2',
+  src: '../fonts/maruburiot-bold.woff2',
   weight: '700',
   variable: '--font-maruburi-bold',
 })
