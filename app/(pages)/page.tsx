@@ -7,6 +7,8 @@ import { Post } from "../lib/type";
 import { maruburi, maruburi_bold } from "../lib/localfont";
 import path from "path";
 import fs from 'fs';
+import Link from "next/link";
+import { FlaskConical, Funnel, Settings } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "solmi.wiki",
@@ -68,13 +70,13 @@ export default async function HomePage() {
     'cmera1z1w004ktf6moamgro7r',
 
     // 코딩
-    'cmder5t660000tf6m7kyppin6',
-    'cmjiezvf00000d2plng81x5ea',
-    'cmix14nk2008tis47qdxc60cp',
     'cmiet1w8n0005kcwpbwuo3i75',
+    'cmlrod57v001mfq1i8pp8dyku',
+    'cmkl98g3l000jd2pl5631vgs9',
+    'cml7n52ej000mfq1iu6vwab46',
 
     // 미분류
-    'cmdbofzbb0063mdamktnoe9t0',
+    'cmlaxhg5m000zfq1im0z26gbe',
     'cmdbhzcw20029mdamef7fb909',
     'cmdbj0tkg0031mdamqu9pq9mv',
     'cmdbhketi001vmdam8rxmr4a6',
@@ -99,10 +101,17 @@ export default async function HomePage() {
   return (
     <>
       <section className={`${maruburi.className} relative flex flex-col gap-24 text-text-900 w-full pt-[20vh] pb-[20vh] overflow-y-scroll overflow-x-hidden focus:outline-hidden custom-scrollbar`}>
-        <h2>반갑습니다.</h2>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>대해서</b><span className="text-text-800"> 이 웹사이트 &apos;solmi.wiki&apos;와 저에 대한 정보입니다.</span></h2>
+          <div className="flex flex-col gap-[1em] break-keep max-w-[47em] leading-[2em]">
+            <p>반갑습니다.</p>
+            <p>
+              <b className={maruburi_bold.className}>처음 오신 분을 위한 간략한 가이드 — </b>
+              맨 위, 맨 왼쪽 아이콘 <Funnel className="inline w-4 h-4 mx-1" />을 클릭하면 태그, 문자열 검색, 키워드를 통해 이 웹사이트의 노트들을 탐색할 수 있는 '노트 탐색기'가 열립니다.
+              맨 위, 맨 오른쪽 아이콘 <FlaskConical className="inline w-4 h-4 mx-1" />을 클릭하면 도구 상자가 열립니다. 여기에는 현재 노트에서 사용 가능한 도구들이 나타납니다.
+              <Settings className="inline w-4 h-4 mx-1" />톱니바퀴 아이콘을 클릭해 웹사이트 테마를 바꾸거나 도구를 숨길 수 있습니다.
+            </p>
+          </div>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             <CardMd post={meta[2]} label="웹사이트에 대해서" />
             <CardMd post={meta[1]} />
@@ -111,23 +120,35 @@ export default async function HomePage() {
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>작업</b><span className="text-text-800"> 제가 만든 것들입니다.</span></h2>
+          <h2 className="flex flex-col gap-4 items-start">
+            <Link href={'/work'} className={`${maruburi_bold.className} text-3xl hover:text-text-700 transition-colors duration-300`}>작업</Link>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">주로 웹과 서체를 가지고 작업합니다.</p>
+          </h2>
           <CardXl posts={work} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>방랑</b><span className="text-text-800"> 교환학생 기간의 배낭여행 기록입니다.</span></h2>
+          <h2 className="flex flex-col gap-4 items-start">
+            <div className={`${maruburi_bold.className} text-3xl`}>방랑</div>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">교환학생 기간의 배낭여행 기록입니다.</p>
+          </h2>
           <CardSm posts={exchange} />
           <CardLg posts={travel} />
         </article>
         
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>코딩</b><span className="text-text-800"> 공부하고 기록합니다.</span></h2>
+          <h2 className="flex flex-col gap-4 items-start">
+            <div className={`${maruburi_bold.className} text-3xl`}>코딩</div>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">공부하고 기록합니다. 모든 정보의 정확성은 보장하지 않습니다.</p>
+          </h2>
           <CardSm posts={code} />
         </article>
 
         <article className="flex flex-col gap-4">
-          <h2><b className={`${maruburi_bold.className}`}>미분류</b><span className="text-text-800"> 기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</span></h2>
+          <h2 className="flex flex-col gap-4 items-start">
+            <div className={`${maruburi_bold.className} text-3xl`}>미분류</div>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</p>
+          </h2>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             {unsorted.map((post, i) => <CardMd key={i} post={post} />)}
           </div>

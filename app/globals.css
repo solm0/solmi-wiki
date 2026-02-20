@@ -62,8 +62,8 @@
 
 @theme {
   --font-sans: var(--font-pretendard), sans-serif;
-  --font-serif: var(--font-maruburi), sans-serif;
-  --font-serif-bold: var(--font-maruburi-bold), sans-serif;
+  --font-serif: var(--font-maruburi), serif;
+  --font-serif-bold: var(--font-maruburi-bold), serif;
 }
 
 body {

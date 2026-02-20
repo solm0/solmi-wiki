@@ -41,7 +41,7 @@ export function CardMd({post, label}: {post: Post, label?: string}) {
       className={`shrink-0 w-full md:w-60 h-auto md:h-36 rounded-sm p-4 flex justify-between hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[colors, transform] duration-300
         ${post.id === 'cmdc92ytj008gmdamgb3x47wl' || post.id ==='cmdc93fii008hmdam1nvhb1c2' ? 'bg-green-500 hover:bg-green-600' : 'bg-button-100 hover:bg-button-200' }`}
     >
-      <h3 className="self-end break-keep">{label ? label : post.title}</h3>
+      <h3 className="self-end break-keep max-h-full overflow-hidden">{label ? label : post.title}</h3>
       <ArrowUpRight className="shrink-0 self-start w-5 h-5" />
     </Link>
   )
