@@ -40,7 +40,7 @@ export default function ThumbnailList({
     <div
       key={note.id}
       className={`
-        relative bg-background hover:cursor-pointer flex items-center justify-center overflow-hidden
+        relative bg-background hover:cursor-pointer flex items-center justify-center overflow-hidden hover:scale-130 hover:z-80 hover:rounded-sm transition-all duration-300
         ${noColumn ? 'w-1/3 md:w-1/6 lg:w-1/9 h-auto aspect-square' : 'w-full md:w-1/2 lg:w-1/3 h-auto aspect-square'}
       `}
       onMouseEnter={() => onMouseEnter(note.id)}

@@ -105,14 +105,14 @@ export default async function HomePage() {
         <article className="flex flex-col gap-4">
           <div className="flex flex-col gap-[1em] break-keep max-w-[47em] leading-[2em] text-text-800">
             <p>반갑습니다.</p>
-            <p>
+            <div>
               <b className={`${maruburi_bold.className} text-text-900`}>처음 오신 분을 위한 (진짜로) 간략한 가이드</b>
               <ol className="list-decimal pl-4.5">
                 <li className="pl-2">위 · 왼쪽 아이콘 <Funnel className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 이 웹사이트의 노트들을 탐색할 수 있는 <strong className="text-text-900">노트 탐색기</strong>가 열립니다.</li>
                 <li className="pl-2">위 · 오른쪽 아이콘 <FlaskConical className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 열리는 <strong className="text-text-900">도구 상자</strong>에는 현재 노트에서 사용 가능한 도구들이 나타납니다.</li>
                 <li className="pl-2">그 옆의 <Settings className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 나오는 <strong className="text-text-900">설정</strong> 창에서는 테마를 바꾸거나 도구들을 숨김/표시할 수 있습니다.</li>
               </ol>
-            </p>
+            </div>
           </div>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             <CardMd post={meta[2]} label="웹사이트에 대해서" />

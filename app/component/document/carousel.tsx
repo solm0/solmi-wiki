@@ -53,6 +53,7 @@ export default function Carousel({
                 height={800}
                 className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
                 controls
+                loop
               />
               {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
             </div>
