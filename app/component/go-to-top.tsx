@@ -19,7 +19,7 @@ export default function GoToTop({
   return (
     <button
       onClick={goToTop}
-      className='text-left leading-[1.5em] mb-1 text-xs h-auto w-full pointer-events-auto break-keep hover:text-text-700 transition-all duration-300'
+      className='text-left leading-[1.5em] mb-1 text-xs h-auto w-full pointer-events-auto break-keep hover:text-text-700 transition-all duration-300 opacity-80'
     >
       <ArrowUpToLine className="w-3 h-3 inline mr-1" />
       {title}

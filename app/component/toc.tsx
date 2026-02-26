@@ -102,10 +102,8 @@ export default function Toc({
               const elementTop = el.getBoundingClientRect().top;
 
               el.style.color = "var(--green-600)";
-              el.style.transform = 'scale(1.2)';
               setTimeout(() => {
                 el.style.color = "var(--text-950)";
-                el.style.transform = 'scale(1)';
               }, 1500);
 
               const offset = elementTop - containerTop + page.scrollTop - 80;
@@ -119,19 +117,19 @@ export default function Toc({
             }
           }}
         >
-          <div className="flex items-center justify-center w-3 h-3">
+          <div className="flex items-center justify-center w-auto h-full">
             <div
               className={clsx(
-                "rounded-full transition-all duration-300 shrink-0",
+                "transition-all duration-300 shrink-0 h-full",
                 slug === hoverHeading ? 'bg-green-500' : 'bg-button-200',
-                slug === activeHeading ? 'w-3 h-3': 'w-[5px] h-[5px]'
+                slug === activeHeading ? 'w-1': 'w-px'
               )}
             ></div>
           </div>
           <p
             className={`
-              leading-7 truncate bg-background rounded-sm px-2 transition-all duration-300
-              ${hoverHeading ? slug === hoverHeading ? 'text-text-900': 'text-text-700' : 'text-text-900'}
+              leading-7 truncate bg-background rounded-sm px-1 transition-all duration-300
+              ${hoverHeading ? slug === hoverHeading ? 'text-text-900 opacity-100': 'text-text-700' : 'text-text-900 opacity-80'}
             `}
           >
             {text}

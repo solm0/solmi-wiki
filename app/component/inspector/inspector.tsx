@@ -71,8 +71,8 @@ export default function Inspector({
 
       <section
         className={clsx(
-        "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-sm transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
-        isEnabled ? 'w-[calc(100%-3rem)] md:w-80 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
+        "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
+        isEnabled ? 'w-[calc(100%-3rem)] md:w-64 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
         {/* 작은화면 창닫기 */}
@@ -84,7 +84,7 @@ export default function Inspector({
         </button>
 
         {/* 필터링 */}
-        <div className="w-full h-auto flex flex-col gap-8 pt-16 md:pt-0 pointer-events-auto overflow-y-scroll custom-scrollbar">
+        <div className="w-full h-auto flex flex-col gap-6 pt-16 md:pt-0 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar">
           <FilterComponents
             icon={<TagIcon className='w-3 h-3' />}
             cmp={{ value: 'tag', name: '태그' }}

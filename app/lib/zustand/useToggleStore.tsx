@@ -15,7 +15,7 @@ export const useToggleStore = create<State>((set) => ({
     graph: true,
     toc: true,
     map: true,
-    music: true,
+    music: false,
   },
 
   setToggle: (key, value) => {

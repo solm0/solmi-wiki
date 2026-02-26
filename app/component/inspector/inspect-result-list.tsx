@@ -52,13 +52,14 @@ export default function InspectResultList({
   }
 
   return (
-    <div className="flex w-full flex-col overflow-y-scroll gap-1 custom-scrollbar pointer-events-auto ">
+    <div className="flex w-full flex-col overflow-y-scroll custom-scrollbar pointer-events-auto ">
       {posts && posts.map((note) => (
         <div
           key={note.id}
           className={clsx (
-            "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2",
-            hovered && hovered !== note.id && "opacity-40!"
+            "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2 text-text-800 opacity-80",
+            hovered && hovered !== note.id && "opacity-40!",
+            hovered && hovered === note.id && "opacity-100",
           )}
           onMouseEnter={() => setHovered(note.id)}
           onMouseLeave={() => setHovered(null)}
@@ -73,6 +74,7 @@ export default function InspectResultList({
           <RandItem hovered={hovered} note={note} />
         </div>
       ))}
+      <div className="w-full h-6 shrink-0"></div>
     </div>
   )
 }

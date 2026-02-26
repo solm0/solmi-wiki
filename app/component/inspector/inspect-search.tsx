@@ -53,7 +53,7 @@ export default function InspectSearch() {
         <button
           onClick={handleClear}
           className={clsx(
-            "w-auto h-full bg-button-100 text-text-900 px-3 flex items-center rounded-sm hover:bg-button-200 transition-[opacity] duration-300 delay-200",
+            "w-auto h-[2.3em] bg-button-100 text-text-900 px-[0.8em] flex items-center rounded-sm hover:bg-button-200 transition-[opacity] duration-300 delay-200 text-xs",
             value ? 'opacity-100' : 'opacity-0'
           )}
         >

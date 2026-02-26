@@ -29,7 +29,7 @@ export function ToolComponents({
   else return (
     <div
       className={`
-        bg-background p-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
+        bg-background px-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
         ${hovered === cmp.value ? 'brightness-95' : 'brightness-100'}
       `}
     >
@@ -47,8 +47,8 @@ export function NoPost({
 }
 
 export const tools = [
-  { value: 'graph', name: '하이퍼링크 맵' },
   { value: 'toc', name: '목차' },
+  { value: 'graph', name: '하이퍼링크 맵' },
   { value: 'map', name: '세계지도'},
   { value: 'music', name: '음악'},
 ]
@@ -84,7 +84,7 @@ export default function ToolBox({
       }
 
       {/* 설정 */}
-      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-4 z-70 w-8">
+      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-2 z-70 w-8">
         {isOpen &&
           <ExpandButton name={<SettingsIcon className="w-4 h-4 shrink-0"/>}>
 
@@ -116,7 +116,7 @@ export default function ToolBox({
       <aside className={clsx(
         `${pretendard.className}
         absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
-        isOpen ? 'w-[calc(100%-3rem)] md:w-80 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 md:w-20 translate-x-88 opacity-0 pointer-events-none flex'
+        isOpen ? 'w-[calc(100%-3rem)] md:w-76 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
         {/* 작은화면 창닫기 */}
         <button
@@ -129,20 +129,7 @@ export default function ToolBox({
         {noOpenTools && <div className="text-text-700 pt-4 break-keep">활성화된 도구가 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 도구를 활성화하세요.</div>}
         {!post && <div className="text-text-700 pt-14 md:pt-5 break-keep">더 많은 도구를 보려면 노트를 선택하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-4 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
-
-          {/* local graph */}
-          {post &&
-            <ToolComponents
-              isEnabled={isEnabled[tools[0].value]}
-              cmp={tools[0]}
-              hovered={hovered}
-            >
-              <Suspense>
-                <GraphController post={post} />
-              </Suspense>
-            </ToolComponents>
-          }
+        <div className="w-full h-auto flex flex-col gap-6 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
           {post &&
@@ -154,6 +141,19 @@ export default function ToolBox({
               <GoToTop title={post.title} />
               <Suspense>
                 <Toc post={post} />
+              </Suspense>
+            </ToolComponents>
+          }
+
+          {/* local graph */}
+          {post &&
+            <ToolComponents
+              isEnabled={isEnabled[tools[0].value]}
+              cmp={tools[0]}
+              hovered={hovered}
+            >
+              <Suspense>
+                <GraphController post={post} />
               </Suspense>
             </ToolComponents>
           }

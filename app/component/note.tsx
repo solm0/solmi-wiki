@@ -88,7 +88,7 @@ export default function Note({
       <h1
         ref={headRef}
         className={`
-          leading-[1.5em] text-4xl text-text-950 ${maruburi_bold.className} max-w-[47em]`}
+          leading-[1.5em] text-3xl md:text-4xl text-text-950 ${maruburi_bold.className} max-w-[25em]`}
       >
         {post?.title}
       </h1>

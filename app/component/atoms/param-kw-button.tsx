@@ -32,7 +32,7 @@ export default function ParamKwButton({
       <button
       key={idx}
       className={clsx(
-        "w-auto h-8 text-text-900 font-medium px-3 flex items-center rounded-sm transition-colors duration-300 pointer-events-auto",
+        "w-auto h-[2.3em] px-[0.8em] text-text-900 font-medium flex items-center rounded-sm transition-colors duration-300 pointer-events-auto",
         currentKeywords.includes(kw) ? "bg-green-500 hover:bg-green-600" : "bg-button-100 hover:bg-button-200",
       )}
       onClick={() => handleClick(kw)}

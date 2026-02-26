@@ -18,7 +18,7 @@ export function ToolBoxIcons() {
     <div className={`
       flex h-8 transition-[width] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]
       items-start origin-top
-      ${isEnabled ? 'w-85' : 'w-8'}
+      ${isEnabled ? 'w-80' : 'w-8'}
     `}>
       <EnableButton
         value={{

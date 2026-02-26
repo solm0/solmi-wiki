@@ -21,7 +21,7 @@ export default function InspectKeyword({
 
   return (
     <>
-      <div className="w-72 flex gap-1 flex-wrap py-1">
+      <div className="w-64 flex gap-1 flex-wrap py-1">
         <ParamKwButton keywords={keywords} />
       </div>
     </>

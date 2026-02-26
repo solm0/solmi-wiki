@@ -39,7 +39,7 @@ export default function PostList({
     <div
       key={note.id}
       className={`
-        text-nowrap h-12 w-full transition-colors duration-300 hover:cursor-pointer flex items-center gap-6 font-normal rounded-sm pl-2
+        text-nowrap h-12 w-full transition-colors duration-300 hover:cursor-pointer flex items-center gap-6 font-normal rounded-sm md:pl-2
         ${hovered === note.id && "bg-button-100"}
       `}
       onMouseEnter={() => onMouseEnter(note.id)}
@@ -47,9 +47,9 @@ export default function PostList({
       onClick={() => handleClick(note.id)}
     >
       <div className="flex gap-6 text-sm font-bold items-center text-text-700">
-        <div className="w-8 shrink-0">{note.chron.year && `${note.chron.year}`}</div>
-        <div className="w-4 shrink-0">{note.chron.month && `${note.chron.month}`}</div>
-        <div className="w-4 shrink-0">{note.chron.day && `${note.chron.day}`}</div>
+        <div className="w-5 md:w-8 shrink-0">{note.chron.year && `${note.chron.year}`}</div>
+        <div className="w-1 md:w-4 shrink-0">{note.chron.month && `${note.chron.month}`}</div>
+        <div className="w-2 md:w-4 shrink-0">{note.chron.day && `${note.chron.day}`}</div>
       </div>
       <p className="col-span-11 w-full text-text-900 truncate">{note.title}</p>
     </div>
