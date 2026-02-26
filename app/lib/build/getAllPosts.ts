@@ -25,6 +25,8 @@ const GET_ALL_POSTS = gql`
 `;
 
 async function main() {
+  console.log('get-all-post start');
+
   try {
     console.log("Fetching posts...");
     const data:{posts: Post[]} = await client.request(GET_ALL_POSTS);
@@ -38,6 +40,7 @@ async function main() {
     console.error("Failed to fetch posts:", e);
     process.exit(1);
   }
+  console.log('get-all-post end');
 }
 
 main();

@@ -39,6 +39,7 @@ const GET_ALL_PLAYLISTS = gql`
 `;
 
 async function main() {
+  console.log('get-all-playlist start');
   try {
     console.log("Fetching playlists...");
     const data:{playlists: Playlist[]} = await client.request(GET_ALL_PLAYLISTS);
@@ -51,6 +52,8 @@ async function main() {
     console.error("Failed to fetch posts:", e);
     process.exit(1);
   }
+  console.log('get-all-playlist end');
 }
+
 
 main();
