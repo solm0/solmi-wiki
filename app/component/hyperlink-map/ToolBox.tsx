@@ -135,7 +135,7 @@ export default function ToolBox({
           {post &&
             <ToolComponents
               isEnabled={isEnabled[tools[1].value]}
-              cmp={tools[1]}
+              cmp={tools[0]}
               hovered={hovered}
             >
               <GoToTop title={post.title} />
@@ -149,7 +149,7 @@ export default function ToolBox({
           {post &&
             <ToolComponents
               isEnabled={isEnabled[tools[0].value]}
-              cmp={tools[0]}
+              cmp={tools[1]}
               hovered={hovered}
             >
               <Suspense>
