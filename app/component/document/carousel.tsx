@@ -34,8 +34,7 @@ export default function Carousel({
         const horizontalFit = item.fit === 'hor';
 
         const publicId = item.imageSrc;
-        const isGif = publicId.toLowerCase().startsWith('gif');
-        const transformations = isGif
+        const transformations = item.isGif
           ? "f_auto,q_auto"
           : "f_auto,q_auto,c_fill";
         

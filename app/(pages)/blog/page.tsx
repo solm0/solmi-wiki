@@ -17,6 +17,7 @@ const GET_ALL_POSTS = gql`
       title
       status
       publishedAt
+      tags { name }
     }
   }
 `;

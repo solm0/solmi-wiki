@@ -29,7 +29,7 @@ export function ToolComponents({
   else return (
     <div
       className={`
-        bg-background px-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
+        bg-background p-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
         ${hovered === cmp.value ? 'brightness-95' : 'brightness-100'}
       `}
     >
@@ -129,12 +129,12 @@ export default function ToolBox({
         {noOpenTools && <div className="text-text-700 pt-4 break-keep">활성화된 도구가 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 도구를 활성화하세요.</div>}
         {!post && <div className="text-text-700 pt-14 md:pt-5 break-keep">더 많은 도구를 보려면 노트를 선택하세요.</div>}
 
-        <div className="w-full h-auto flex flex-col gap-6 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+        <div className="w-full h-auto flex flex-col gap-2 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
           {post &&
             <ToolComponents
-              isEnabled={isEnabled[tools[1].value]}
+              isEnabled={isEnabled[tools[0].value]}
               cmp={tools[0]}
               hovered={hovered}
             >
@@ -148,7 +148,7 @@ export default function ToolBox({
           {/* local graph */}
           {post &&
             <ToolComponents
-              isEnabled={isEnabled[tools[0].value]}
+              isEnabled={isEnabled[tools[1].value]}
               cmp={tools[1]}
               hovered={hovered}
             >

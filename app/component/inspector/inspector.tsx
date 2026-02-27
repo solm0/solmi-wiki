@@ -93,17 +93,17 @@ export default function Inspector({
           </FilterComponents>
 
           <FilterComponents
-            icon={<Search className='w-3 h-3' />}
-            cmp={{ value: 'search', name: '문자열' }}
+            icon={<Key className='w-3 h-3' />}
+            cmp={{ value: 'keyword', name: '자주 쓰인 단어' }}
           >
-            <InspectSearch />
+            <InspectKeyword kwByTag={kwByTag} />
           </FilterComponents>
 
           <FilterComponents
-            icon={<Key className='w-3 h-3' />}
-            cmp={{ value: 'keyword', name: '키워드' }}
+            icon={<Search className='w-3 h-3' />}
+            cmp={{ value: 'search', name: '검색' }}
           >
-            <InspectKeyword kwByTag={kwByTag} />
+            <InspectSearch />
           </FilterComponents>
 
           {/* 결과 */}

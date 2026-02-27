@@ -16,7 +16,6 @@ const GET_POST_BY_ID = gql`
       id
       title
       publishedAt
-      meta
       order
       status
       content {

@@ -33,8 +33,9 @@ export function CardSm({posts}: {posts: Post[] | Post}) {
   )
 }
 
-export function CardMd({post, label}: {post: Post, label?: string}) {
-  return (
+export function CardMd({post, label}: {post: Post | null, label?: string}) {
+  if (post === null) return <div>post를 찾을 수 없습니다</div>;
+  else return (
     <Link
       key={post.id}
       href={post.id}

@@ -18,7 +18,7 @@ export default function Metadata({
   const keywords = post.keywords.map(kw => kw.name);
 
   return (
-    <section className={`relative ${pretendard.className} flex flex-col w-full h-auto items-start text-text-900 text-sm px-4 py-3 rounded-sm -left-4`}>
+    <section className={`relative ${pretendard.className} flex flex-col w-full h-auto items-start text-text-900 text-xs px-4 py-3 rounded-sm -left-4`}>
       <div className="flex gap-3 h-8 items-center">
         <Calendar className='w-3 h-3' />
         <div className="flex gap-1 h-full items-center">
@@ -26,10 +26,6 @@ export default function Metadata({
           <p>{month}월</p>
           <p>{day}일</p>
         </div>
-      </div>
-      <div className="flex gap-3 h-8 items-center">
-        <Tag className='w-3 h-3' />
-        {post.tags.name}
       </div>
       {post.keywords?.length > 1 &&
         <div className="flex gap-3 items-start">

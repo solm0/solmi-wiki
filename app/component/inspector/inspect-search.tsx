@@ -41,7 +41,7 @@ export default function InspectSearch() {
           handleSearch(term);
         }}
         className="h-8 bg-transparent focus:outline-none placeholder-text-700 text-text-900 font-medium pr-8"
-        placeholder="문자열을 입력하세요."
+        placeholder="검색어를 입력하세요."
         spellCheck="false"
       />
       <div

@@ -89,6 +89,7 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+/* 초록색 세로 */
 .custom-scrollbar::-webkit-scrollbar {
   width: 1px;
 }
@@ -98,8 +99,23 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: #00EB95;
+  background-color: var(--color-green-500);
 }
+
+/* 회색 세로 */
+.custom-scrollbar-gray::-webkit-scrollbar {
+  width: 1px;
+}
+
+.custom-scrollbar-gray::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar-gray::-webkit-scrollbar-thumb {
+  background-color: var(--color-button-200);
+}
+
+/* 가로 */
 
 .custom-hor-scrollbar::-webkit-scrollbar {
   height: 1px;
@@ -114,5 +130,14 @@
 }
 
 .custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: #D1D1D180;
+  background-color: var(--color-green-500);
+}
+
+@keyframes fadeInOnce {
+  0% { opacity: 0; transform: translateY(4px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+.animate-fadeInOnce {
+  animation: fadeInOnce 0.4s ease forwards;
 }

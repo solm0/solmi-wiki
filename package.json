@@ -5,10 +5,10 @@
   "scripts": {
     "get-all-tags": "tsx app/lib/build/getAllTags.ts",
     "get-all-playlists": "tsx app/lib/build/getAllPlaylists.ts",
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "prebuild": "tsx app/lib/build/getAllPosts.ts",
     "build": "npm run get-all-tags && npm run get-all-playlists && next build",
-    "start": "next start",
+    "start": "next start -p 3001",
     "lint": "next lint"
   },
   "dependencies": {

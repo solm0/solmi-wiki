@@ -5,6 +5,7 @@ import { ChevronRight } from "lucide-react";
 import { Post } from "@/app/lib/type";
 import clsx from "clsx";
 import { usePathname, useSearchParams, useRouter} from "next/navigation";
+import TagIcon from "../atoms/tag-icon";
 
 export function RandItem({
   hovered,
@@ -14,8 +15,9 @@ export function RandItem({
   note: Post
 }) {
   return (
-    <p className="w-full text-text-600 truncate">
-      <span className="text-text-900">{note.title}</span>
+    <div className="w-full h-full text-text-600 truncate flex items-center">
+      {note.tags && <TagIcon tagname={note.tags.name} />}
+      <span className="ml-1 text-text-900">{note.title}</span>
       <span className={clsx (
         "ml-2 text-text-800 opacity-40 transition-[colors, opacity] duration-300",
         hovered && hovered !== note.id && 'opacity-0!',
@@ -24,7 +26,7 @@ export function RandItem({
       >
         {note.excerpt}
       </span>
-    </p>
+    </div>
   )
 }
 
@@ -52,7 +54,7 @@ export default function InspectResultList({
   }
 
   return (
-    <div className="flex w-full flex-col overflow-y-scroll custom-scrollbar pointer-events-auto ">
+    <div className="flex w-full flex-col overflow-y-scroll custom-scrollbar-gray pointer-events-auto ">
       {posts && posts.map((note) => (
         <div
           key={note.id}

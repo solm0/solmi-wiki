@@ -36,7 +36,6 @@ const GET_MINIMAL_POSTS_BY_ID = gql`
       id
       title
       thumbnail
-      meta
       tags {
         name
       }
@@ -54,9 +53,9 @@ export default async function HomePage() {
 
   const minimalIds = [
     // 대해서
-    'cmdc93fii008hmdam1nvhb1c2',
-    'cmdc92ytj008gmdamgb3x47wl',
-    'cmdc93ok7008imdam853f86o2',
+    'cmdc93fii008hmdam1nvhb1c2', // 웹사이트에 대해서
+    'cmdc92ytj008gmdamgb3x47wl', // 웹사이트 뒤 사람에 대해서
+    'cmdc93ok7008imdam853f86o2', // changelog
 
     // 방랑
     'cmdc6ricb0084mdamubfs2zbp',
@@ -88,10 +87,9 @@ export default async function HomePage() {
   const exchangeData = await client.request(GET_MINIMAL_POSTS_BY_ID, {ids: ['cmdbmtpt8005omdamericlkia']});
 
   const work = hydratedData.posts;
-  const meta = minimalData.posts.filter(post => post.meta === true);
-  const travel = minimalData.posts.filter(post => post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
-  const code = minimalData.posts.filter(post => post.tags.name === '코딩');
-  const unsorted = minimalData.posts.filter(post => (post.tags.name === '미분류' && post.meta === false));
+  const travel = minimalData.posts.filter(post => post.tags && post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
+  const code = minimalData.posts.filter(post => post.tags && post.tags.name === '코딩');
+  const unsorted = minimalData.posts.filter(post => post.tags && post.tags.name === '미분류');
   const exchange = exchangeData.posts;
 
   // read all playlist from file
@@ -115,9 +113,9 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
-            <CardMd post={meta[2]} label="웹사이트에 대해서" />
-            <CardMd post={meta[1]} />
-            <CardMd post={meta[0]} />
+            <CardMd post={minimalData.posts.find(post=>post.id==='cmdc93fii008hmdam1nvhb1c2') ?? null} label="웹사이트에 대해서" />
+            <CardMd post={minimalData.posts.find(post=>post.id==='cmdc92ytj008gmdamgb3x47wl') ?? null} />
+            <CardMd post={minimalData.posts.find(post=>post.id==='cmdc93ok7008imdam853f86o2') ?? null} />
           </div>
         </article>
 
@@ -138,23 +136,14 @@ export default async function HomePage() {
           <CardLg posts={travel} />
         </article>
         
-        <article className="flex flex-col gap-4">
+        {/* <article className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-4 items-start">
-            <div className={`${maruburi_bold.className} text-3xl`}>코딩</div>
-            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">공부하고 기록합니다. 모든 정보의 정확성은 보장하지 않습니다.</p>
+            <div className={`${maruburi_bold.className} text-3xl`}>시리즈</div>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">'OpenGL', '셀프호스팅', 'NLP 논문' 등 기존 '코딩' 태그를 세분화시키려고 함, 아직 공사 중...</p>
           </h2>
           <CardSm posts={code} />
-        </article>
+        </article> */}
 
-        <article className="flex flex-col gap-4">
-          <h2 className="flex flex-col gap-4 items-start">
-            <div className={`${maruburi_bold.className} text-3xl`}>미분류</div>
-            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">기타 관심사를 다루거나, 목적 없이 잡다한 생각을 모읍니다.</p>
-          </h2>
-          <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
-            {unsorted.map((post, i) => <CardMd key={i} post={post} />)}
-          </div>
-        </article>
         <Copyright />
       </section>
 

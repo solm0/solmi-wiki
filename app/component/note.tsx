@@ -11,6 +11,7 @@ import SequenceNav from "./sequence-nav";
 import { useClickedPlace } from "../lib/zustand/useClickedPlace";
 import Nudge from "./music/Nudge";
 import { useToggleStore } from "../lib/zustand/useToggleStore";
+import TagButton from "./atoms/tag-button";
 
 export default function Note({
   post,
@@ -85,13 +86,15 @@ export default function Note({
         flex flex-col gap-12 w-full leading-[2em] font-serif
       `}
     >
-      <h1
-        ref={headRef}
-        className={`
-          leading-[1.5em] text-3xl md:text-4xl text-text-950 ${maruburi_bold.className} max-w-[25em]`}
-      >
-        {post?.title}
-      </h1>
+      <div className="relative h-auto w-auto">
+        <h1
+          ref={headRef}
+          className={`leading-[1.5em] text-3xl md:text-4xl text-text-950 ${maruburi_bold.className} max-w-[25em]`}
+        >
+          {post?.title}
+        </h1>
+        {post.tags && <TagButton tagname={post.tags.name} />}
+      </div>
 
       <div
         className={`

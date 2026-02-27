@@ -8,7 +8,7 @@ export type Post = {
   author?: User | null;
   tags: Tag;
   keywords: Keyword[];
-  meta: boolean;
+  work: boolean;
   status: 'published' | 'draft';
   chron: {
     year?: string;
@@ -241,6 +241,7 @@ export type CarouselNode = {
       imageSrc: string,
       type: string,
       fit: string,
+      isGif: boolean,
     }[],
   },
 }

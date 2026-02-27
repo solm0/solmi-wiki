@@ -16,10 +16,9 @@ export default function ImageModal({
     const cloudName = "dpqjfptr6";
     const publicId = carousel.props.items[idx]?.imageSrc;
     console.log(publicId)
-    const isGif = publicId.toLowerCase().startsWith('gif');
-        const transformations = isGif
-          ? "f_auto,q_auto"
-          : "f_auto,q_auto,c_fill";
+    const transformations = carousel.props.items[idx]?.isGif
+      ? "f_auto,q_auto"
+      : "f_auto,q_auto,c_fill";
     return `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}.jpg`;
   }
 
