@@ -24,8 +24,8 @@ const GET_ALL_POSTS = gql`
 `;
 
 export const metadata: Metadata = {
-  title: "작업",
-  description: "작업",
+  title: "진열창",
+  description: "시각적 작업물들을 전시하는 곳",
 };
 
 type Data = {

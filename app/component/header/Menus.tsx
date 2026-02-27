@@ -8,7 +8,7 @@ import { Suspense, useEffect } from "react";
 const menus = [
   { href: '', name: 'solmi.wiki' },
   { href: 'blog', name: '블로그' },
-  { href: 'work', name: '작업' },
+  { href: 'work', name: '진열창' },
   { href: 'graph', name: '하이퍼링크 맵' },
   { href: 'map', name: '세계지도' },
 ]

@@ -3,6 +3,7 @@
 import { tagsWColors } from "@/app/lib/data/tags";
 import { pretendard } from "@/app/lib/localfont";
 import { useHoveredLiquid } from "@/app/lib/zustand/useHoveredLiquid";
+import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 // metadata의 tag button
@@ -28,6 +29,9 @@ export default function TagButton({tagname}: {tagname: string}) {
     }
   }
 
+  const isInspectorOpen = useToggleStore((s) => s.toggles['noteInspector']);
+  const setToggle = useToggleStore(s => s.setToggle);
+
   return (
     <div
       className={`
@@ -35,7 +39,10 @@ export default function TagButton({tagname}: {tagname: string}) {
         ${pretendard.className}
       `}
       style={{ backgroundColor: tagsWColors.find(tag=>tag.name &&tag.name === tagname)?.color}}
-      onClick={() => handleClick(tagname)}
+      onClick={() => {
+        if (!isInspectorOpen) setToggle('noteInspector', true);
+        handleClick(tagname)
+      }}
     >
       <div className='relative top-0 left-0 w-1.5 h-1.5 rounded-sm bg-background mr-1.5 z-20' />
       {tagname}

@@ -45,7 +45,7 @@ const GET_MINIMAL_POSTS_BY_ID = gql`
 
 export default async function HomePage() {
   const hydratedIds = [
-    // 작업
+    // 진열창
     'cmdbh1znz0018mdam9bp6amgl',
     'cmdbgrn950013mdamemjflr33',
     'cmdbg5oms000kmdam5vx87wxu',
@@ -88,8 +88,6 @@ export default async function HomePage() {
 
   const work = hydratedData.posts;
   const travel = minimalData.posts.filter(post => post.tags && post.tags.name === '방랑').sort((a, b) => a.title.localeCompare(b.title));
-  const code = minimalData.posts.filter(post => post.tags && post.tags.name === '코딩');
-  const unsorted = minimalData.posts.filter(post => post.tags && post.tags.name === '미분류');
   const exchange = exchangeData.posts;
 
   // read all playlist from file
@@ -103,14 +101,8 @@ export default async function HomePage() {
         <article className="flex flex-col gap-4">
           <div className="flex flex-col gap-[1em] break-keep max-w-[47em] leading-[2em] text-text-800">
             <p>반갑습니다.</p>
-            <div>
-              <b className={`${maruburi_bold.className} text-text-900`}>처음 오신 분을 위한 (진짜로) 간략한 가이드</b>
-              <ol className="list-decimal pl-4.5">
-                <li className="pl-2">위 · 왼쪽 아이콘 <Funnel className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 이 웹사이트의 노트들을 탐색할 수 있는 <strong className="text-text-900">노트 탐색기</strong>가 열립니다.</li>
-                <li className="pl-2">위 · 오른쪽 아이콘 <FlaskConical className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 열리는 <strong className="text-text-900">도구 상자</strong>에는 현재 노트에서 사용 가능한 도구들이 나타납니다.</li>
-                <li className="pl-2">그 옆의 <Settings className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 나오는 <strong className="text-text-900">설정</strong> 창에서는 테마를 바꾸거나 도구들을 숨김/표시할 수 있습니다.</li>
-              </ol>
-            </div>
+            <p>헤더의 <Funnel className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 이 웹사이트의 노트들을 탐색할 수 있는 <strong className={`text-green-900 ${maruburi_bold.className}`}>노트 탐색기</strong>가 열립니다. <FlaskConical className="inline w-4 h-4 mx-1 text-text-900" />을 클릭하면 열리는 <strong className={`text-green-900 ${maruburi_bold.className}`}>도구 상자</strong>에는 현재 노트에서 사용 가능한 도구들이 나타납니다. 그 옆의 <Settings className="inline w-4 h-4 mx-1 text-text-900" />에서 테마를 바꾸거나 도구들을 숨김/표시할 수 있습니다.</p>
+            <p>'블로그'에는 웹사이트의 노트들이 시간 순으로 정렬됩니다. '진열창'에는 시각적 작업물들이 전시되어 있습니다. '하이퍼링크 맵'은 노트들 사이의 연결 관계를 보여줍니다. '세계지도'는 이 웹사이트에서 언급된 장소들을 보여줍니다.</p>
           </div>
           <div className="flex flex-col md:flex-row gap-2 w-full flex-wrap">
             <CardMd post={minimalData.posts.find(post=>post.id==='cmdc93fii008hmdam1nvhb1c2') ?? null} label="웹사이트에 대해서" />
@@ -121,7 +113,6 @@ export default async function HomePage() {
 
         <article className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-4 items-start">
-            <Link href={'/work'} className={`${maruburi_bold.className} text-3xl hover:text-text-700 transition-colors duration-300`}>작업</Link>
             <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">주로 웹과 서체를 가지고 작업합니다.</p>
           </h2>
           <CardXl posts={work} />
@@ -129,8 +120,7 @@ export default async function HomePage() {
 
         <article className="flex flex-col gap-4">
           <h2 className="flex flex-col gap-4 items-start">
-            <div className={`${maruburi_bold.className} text-3xl`}>방랑</div>
-            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">교환학생 기간의 배낭여행 기록입니다.</p>
+            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">'방랑' 태그의 노트들은 교환학생 기간의 배낭여행 기록입니다.</p>
           </h2>
           <CardSm posts={exchange} />
           <CardLg posts={travel} />

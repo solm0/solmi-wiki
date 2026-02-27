@@ -14,6 +14,7 @@ export default function Carousel({
   carousel: CarouselNode,
 }) {
   const [idx, setIdx] = useState<number | null>(null);
+  const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
 
   return (
     <div
@@ -79,20 +80,36 @@ export default function Carousel({
               className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
               title="클릭하여 확대"
             >
-              <Image
-                src={url}
-                width={800}
-                height={800}
+              <div
                 className={`
-                  object-contain rounded-sm cursor-pointer
-                  ${horizontalFit ? 'w-auto max-w-[47em] h-auto' : 'h-[22rem] md:h-[30rem] w-auto'}
+                  relative rounded-sm overflow-hidden
+                  ${!loadedMap[idx] ? 'bg-button-100 animate-pulse' : ''}
                 `}
-                alt={item.alt}
-                id={`img-${carIdx}-${idx}`}
-                onClick={() => setIdx(idx)}
-                unoptimized
-              />
-              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+              >
+                <Image
+                  src={url}
+                  width={800}
+                  height={800}
+                  className={`
+                    object-contain rounded-sm cursor-pointer transition-opacity duration-300
+                    ${horizontalFit ? 'w-auto max-w-[47em] h-auto' : 'h-[22rem] md:h-[30rem] w-auto'}
+                    ${loadedMap[idx] ? 'opacity-100' : 'opacity-0'}
+                  `}
+                  alt={item.alt}
+                  id={`img-${carIdx}-${idx}`}
+                  onClick={() => setIdx(idx)}
+                  onLoadingComplete={() =>
+                    setLoadedMap(prev => ({ ...prev, [idx]: true }))
+                  }
+                  unoptimized
+                />
+              </div>
+
+              {item.alt && (
+                <p className={`${pretendard.className} text-sm h-4 text-text-700`}>
+                  {item.alt}
+                </p>
+              )}
             </div>
           )
         }
