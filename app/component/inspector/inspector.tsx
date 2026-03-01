@@ -114,7 +114,7 @@ export default function Inspector({
               결과: {finalPosts.length}건
             </label>
               <div
-                className="flex w-full flex-col gap-2 overflow-hidden"
+                className="relative flex w-full flex-col gap-2 overflow-hidden"
                 onClick={() => {
                   if (window.innerWidth < 768) {
                     setIsEnabled('noteInspector', false)
