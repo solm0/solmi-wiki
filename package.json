@@ -7,7 +7,7 @@
     "get-all-playlists": "tsx app/lib/build/getAllPlaylists.ts",
     "dev": "next dev -p 3001",
     "prebuild": "tsx app/lib/build/getAllPosts.ts",
-    "build": "npm run get-all-tags && npm run get-all-playlists && next build",
+    "build": "rm -rf .next && npm run get-all-tags && npm run get-all-playlists && next build",
     "start": "next start -p 3001",
     "lint": "next lint"
   },
