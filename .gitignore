@@ -33,18 +33,10 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 
-# vercel
-.vercel
-
 # typescript
 *.tsbuildinfo
 next-env.d.ts
 
-Dockerfile
-
 public/data/all_playlists.json
 public/data/all_posts.json
 public/data/top_keywords_tag.json
-
-# devlog
-/devlog
