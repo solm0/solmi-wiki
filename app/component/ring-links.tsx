@@ -28,7 +28,7 @@ export default function RingLinks({
       <div className="flex gap-4 items-center">
         <FlagTriangleRight className="w-4 h-4 shrink-0" />
         <Link
-          href={`${backlink.id}/?${newParams}`}
+          href={`/${backlink.id}/?${newParams}`}
           target="_self"
           onMouseEnter={() => {
             if (backlink.id === id) {
@@ -51,7 +51,7 @@ export default function RingLinks({
         {sortedLinks && sortedLinks.map((link) => (
             <Link
               key={link.id}
-              href={`${link.id}/?${newParams}`}
+              href={`/${link.id}/?${newParams}`}
               target="_self"
               onMouseEnter={() => {
                 if (link.id === id) {

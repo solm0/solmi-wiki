@@ -13,7 +13,7 @@ export function CardSm({posts}: {posts: Post[] | Post}) {
       {Array.isArray(posts) ? posts.map((post) => (
         <Link
         key={post.id}
-        href={post.id}
+        href={`/${post.id}`}
         className={`shrink-0 w-full bg-button-100 h-auto flex items-center rounded-sm p-4 justify-between hover:bg-button-200 hover:translate-x-1 transition-[colors, transform] duration-300`}
         >
           <h3 className="self-end break-keep">{post.title}</h3>
@@ -22,7 +22,7 @@ export function CardSm({posts}: {posts: Post[] | Post}) {
       )) : (
         <Link
           key={posts.id}
-          href={posts.id}
+          href={`/${posts.id}`}
           className={`shrink-0 w-full bg-button-100 h-auto flex items-center rounded-sm p-4 justify-between hover:bg-button-200 hover:translate-x-1 transition-[colors, transform] duration-300`}
         >
           <h3 className="self-end break-keep">{posts.title}</h3>
@@ -38,7 +38,7 @@ export function CardMd({post, label}: {post: Post | null, label?: string}) {
   else return (
     <Link
       key={post.id}
-      href={post.id}
+      href={`/${post.id}`}
       className={`shrink-0 w-full md:w-60 h-auto md:h-36 rounded-sm p-4 flex justify-between hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[colors, transform] duration-300
         ${post.id === 'cmdc92ytj008gmdamgb3x47wl' || post.id ==='cmdc93fii008hmdam1nvhb1c2' ? 'bg-green-500 hover:bg-green-600' : 'bg-button-100 hover:bg-button-200' }`}
     >
@@ -64,7 +64,7 @@ export function CardLg({posts}: {posts: Post[]}) {
       {posts.map((post) => (
         <Link
           key={post.id}
-          href={post.id}
+          href={`/${post.id}`}
           className={`relative shrink-0 w-full h-32 md:w-61 md:h-61 rounded-sm hover:translate-x-1 md:hover:translate-x-0 md:hover:translate-y-1 transition-[filter, transform] duration-300 overflow-clip`}
           onMouseEnter={() => setHovered(post.id)}
           onMouseLeave={() => setHovered(null)}
@@ -142,7 +142,7 @@ export function CardXl({posts}: {posts: Post[]}) {
 
             <Link
               className="absolute flex flex-col w-60 md:w-80 pr-4 h-auto bg-button-100 p-4 rounded-br-sm rounded-tl-sm gap-[1rem] shrink-0 cursor-pointer hover:bg-button-200 transition-colors duration-300"
-              href={post.id}
+              href={`/${post.id}`}
             >
               <div className="flex h-auto justify-between">
                 <h3 className={`${maruburi_bold.className} break-keep`}>{post.title}</h3>

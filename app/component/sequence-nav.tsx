@@ -23,7 +23,7 @@ export default function SequenceNav({
     <div className="flex w-full h-auto gap-2 text-sm leading-6">
       {prev ?
         <Link
-          href={`${prev.id}/?${newParams}`}
+          href={`/${prev.id}/?${newParams}`}
           className="p-4 break-words flex-1 flex flex-col gap-2 min-h-20 bg-button-50 rounded-sm hover:bg-button-100 transition-colors duration-300"
           onMouseEnter={() => setHoveredId(prev.title || null, prev.id || null, false)}
           onMouseLeave={() => setHoveredId(null, null)}
@@ -37,7 +37,7 @@ export default function SequenceNav({
       }
       {next ?
         <Link
-          href={`${next.id}/?${newParams}`}
+          href={`/${next.id}/?${newParams}`}
           className="p-4 break-words flex-1 flex flex-col gap-2 min-h-20 bg-button-50 rounded-sm hover:bg-button-100 transition-colors duration-300"
           onMouseEnter={() => setHoveredId(next.title || null, next.id || null, false)}
           onMouseLeave={() => setHoveredId(null, null)}

@@ -21,7 +21,7 @@ export default function InlineInternalLink({
     return (
       <span>
         <Link
-          href={`${internalLink.id}/?${newParams}`}
+          href={`/${internalLink.id}/?${newParams}`}
           target="_self"
           className="inline underline underline-offset-[0.4em] decoration-text-900 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
           onMouseEnter={() => setHoveredId(internalLink.children?.[0].title || null, internalLink.id || null, true)}
@@ -37,7 +37,7 @@ export default function InlineInternalLink({
     return (
       <span>
         <Link
-          href={`${internalLinkComponent.props.post.id}/?${newParams}`}
+          href={`/${internalLinkComponent.props.post.id}/?${newParams}`}
           target="_self"
           className="inline underline underline-offset-[0.4em] decoration-text-900 decoration-[1px] hover:text-text-700 hover:decoration-text-700 hover:cursor-ne-resize transition-colors duration-300"
           onMouseEnter={() => setHoveredId(internalLinkComponent.props.post.label || null, internalLinkComponent.props.post.id || null, true)}
