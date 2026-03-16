@@ -10,7 +10,7 @@ export default function InlineLink({
   return (
     <span>
       <Link
-        href={`/${link.href}`}
+        href={`${link.href}`}
         target="_blank"
         className="underline underline-offset-[0.4em] decoration-text-900 decoration-[1px] hover:text-text-700 hover:decoration-text-700 transition-colors duration-300"
       >
