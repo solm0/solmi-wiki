@@ -12,7 +12,7 @@ const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 const GET_ALL_POSTS = gql`
   query {
     posts (where: {
-      meta: {equals: true}
+      work: {equals: true}
     }) {
       id
       title
