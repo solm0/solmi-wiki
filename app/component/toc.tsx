@@ -59,7 +59,7 @@ export default function Toc({
 
   // heading 뽑아내서 매핑하기
   const headings: Heading[] | undefined = post.content?.document
-  .filter(doc => doc.type === "heading" && [2, 3].includes(doc.level))
+  .filter(doc => doc.type === "heading" && [2, 3, 4].includes(doc.level))
   .map(doc => {
     const text = (doc.children?.[0] as FormattedText).text || 'undefined-heading';
     return {
@@ -68,7 +68,6 @@ export default function Toc({
       level: (doc as HeadingNode).level,
     };
   });
-  const isThereHeading2 = headings?.find(h => h.level === 2);
 
   const [hoverHeading, setHoverHeading] = useState<string | null>();
   const [activeHeading, setActiveHeading] = useState<string | null>();
@@ -87,7 +86,9 @@ export default function Toc({
           key={idx}
           className={`
             w-auto flex items-center gap-2 cursor-pointer
-            ${isThereHeading2 && level === 3 ? 'ml-7' : 'ml-0'}
+            ${level === 2 && 'ml-0'}
+            ${level === 3 && 'ml-7'}
+            ${level === 4 && 'ml-14'}
           `}
           style={{ top: `calc(2rem * ${idx})` }}
           onMouseEnter={() => setHoverHeading(slug)}
