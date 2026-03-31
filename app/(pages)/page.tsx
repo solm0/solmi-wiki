@@ -125,15 +125,6 @@ export default async function HomePage() {
           <CardSm posts={exchange} />
           <CardLg posts={travel} />
         </article>
-        
-        {/* <article className="flex flex-col gap-4">
-          <h2 className="flex flex-col gap-4 items-start">
-            <div className={`${maruburi_bold.className} text-3xl`}>시리즈</div>
-            <p className="text-text-800 break-keep max-w-[47em] leading-[2em]">'OpenGL', '셀프호스팅', 'NLP 논문' 등 기존 '코딩' 태그를 세분화시키려고 함, 아직 공사 중...</p>
-          </h2>
-          <CardSm posts={code} />
-        </article> */}
-
         <Copyright />
       </section>
 

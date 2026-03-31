@@ -16,7 +16,7 @@ export const tagsWColors = [
   },
   {
     "id": "cmm3lsael00024vnu4v0n1rbx",
-    "name": "NLP 논문 읽기",
+    "name": "NLP",
     "color": "#71ff61",
   }
 ]
