@@ -18,7 +18,10 @@ export default function Carousel({
 
   return (
     <div
-      className="w-full overflow-y-hidden overflow-x-scroll flex gap-1 snap-x h-auto overscroll-auto custom-hor-scrollbar my-4"
+      className={`
+        ${carousel.props.items[0].fit === 'hor' ? 'overflow-x-hidden' : 'overflow-x-scroll flex'}
+        w-full gap-1  h-auto overscroll-auto custom-hor-scrollbar my-4
+      `}
     >
       {carousel.props.items.map((item, idx) => {
         const cloudName = "dpqjfptr6";
@@ -92,7 +95,7 @@ export default function Carousel({
                   height={800}
                   className={`
                     object-contain rounded-sm cursor-pointer transition-opacity duration-300
-                    ${horizontalFit ? 'w-auto max-w-[47em] h-auto' : 'h-[22rem] md:h-[30rem] w-auto'}
+                    ${horizontalFit ? 'w-full h-auto' : 'h-[22rem] md:h-[30rem] w-auto'}
                     ${loadedMap[idx] ? 'opacity-100' : 'opacity-0'}
                   `}
                   alt={item.alt}
