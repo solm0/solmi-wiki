@@ -1,0 +1,143 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+@import "tailwindcss";
+
+@layer base {
+  ul, ol {
+    list-style: rehor;
+  }
+}
+
+:root {
+  --text-xs: 12.5px;
+  --background: #F8F7FB;
+  --foreground: #171717;
+  --button-50: #F5F4F8;
+  --button-100: #EBEBEB;
+  --button-200: #D1D1D1;
+  --node: #00EB95;
+  --green-100: #B8FFCA;
+  --green-500: #00EB95;
+  --green-600: #00B975;
+  --green-900: #009B71;
+  --text-950: #394A54;
+  --text-900: #52636E;
+  --text-800: #646464;
+  --text-700: #B5B5B5;
+  --text-600: #DADADA;
+}
+
+[data-theme="dark"]:root {
+  --background: #121212;
+  --foreground: #202830;
+  --button-50: #111416;
+  --button-100: #1A2026;
+  --button-200: #2D3842;
+  --node: #00AC73;
+  --green-100: #004636;
+  --green-500: #006B48;
+  --green-600: #008E5F;
+  --green-900: #00B371;
+  --text-950: #C6CFDE;
+  --text-900: #A6ACB6;
+  --text-800: #828B9A;
+  --text-700: #5A626F;
+  --text-600: #383F4A;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-button-50: var(--button-50);
+  --color-button-100: var(--button-100);
+  --color-button-200: var(--button-200);
+  --color-green-100: var(--green-100);
+  --color-green-500: var(--green-500);
+  --color-green-600: var(--green-600);
+  --color-green-900: var(--green-900);
+  --color-text-950: var(--text-950);
+  --color-text-900: var(--text-900);
+  --color-text-800: var(--text-800);
+  --color-text-700: var(--text-700);
+  --color-text-600: var(--text-600);
+}
+
+@theme {
+  --font-sans: var(--font-pretendard), sans-serif;
+  --font-serif: var(--font-maruburi), serif;
+  --font-serif-bold: var(--font-maruburi-bold), serif;
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14.7px;
+  }
+}
+
+*::selection {
+  background-color: var(--color-button-100);
+  color: var(--color-text-800);
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* 초록색 세로 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 1px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-500);
+}
+
+/* 회색 세로 */
+.custom-scrollbar-gray::-webkit-scrollbar {
+  width: 1px;
+}
+
+.custom-scrollbar-gray::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-scrollbar-gray::-webkit-scrollbar-thumb {
+  background-color: var(--color-button-200);
+}
+
+/* 가로 */
+
+.custom-hor-scrollbar::-webkit-scrollbar {
+  height: 1px;
+}
+
+.custom-hor-scrollbar::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-hor-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
+  background-color: var(--color-green-500);
+}
+
+@keyframes fadeInOnce {
+  0% { opacity: 0; transform: translateY(4px) }
+  100% { opacity: 1; transform: translateY(0) }
+}
+
+.animate-fadeInOnce {
+  animation: fadeInOnce 0.4s ease forwards;
+}

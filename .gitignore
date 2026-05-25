@@ -1,0 +1,53 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+node_modules
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+coverage
+
+# next.js
+front/.next
+
+# production
+build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+public/data/all_playlists.json
+public/data/all_posts.json
+public/data/all_graph_posts.json
+public/data/top_keywords_tag.json
+public/data/all_tags.json
+.vercel
+
+# keystone
+.keystone/
+keystone.db
+*.log
+**/.env
+
+schema.graphql
+schema.prisma

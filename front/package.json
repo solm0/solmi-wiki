@@ -1,0 +1,51 @@
+{
+  "name": "nextjs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf .next out",
+    "get-all-graph-posts": "tsx app/lib/build/getAllGraphPosts.ts",
+    "get-all-tags": "tsx app/lib/build/getAllTags.ts",
+    "get-all-playlists": "tsx app/lib/build/getAllPlaylists.ts",
+    "dev": "next dev -p 3001",
+    "prebuild": "npm run get-all-posts && npm run get-all-graph-posts && npm run get-all-tags && npm run get-all-playlists",
+    "build": "npm run clean && next build",
+    "get-all-posts": "tsx app/lib/build/getAllPosts.ts",
+    "start": "next start -p 3001",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.13.8",
+    "clsx": "^2.1.1",
+    "dotenv": "^17.2.0",
+    "fs-extra": "^11.3.0",
+    "graphql": "^16.11.0",
+    "graphql-request": "^7.2.0",
+    "lucide-react": "^0.519.0",
+    "maplibre-gl": "^5.13.0",
+    "next": "16.0.10",
+    "next-themes": "^0.4.6",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1",
+    "react-force-graph-2d": "^1.28.0",
+    "react-map-gl": "^8.1.0",
+    "react-youtube": "^10.1.0",
+    "use-debounce": "^10.0.5",
+    "zustand": "^5.0.5"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@types/youtube": "^0.1.2",
+    "baseline-browser-mapping": "^2.10.10",
+    "eslint": "^9",
+    "eslint-config-next": "15.3.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "tailwindcss": "^4.1.11",
+    "tsx": "^4.20.3",
+    "typescript": "^5"
+  }
+}

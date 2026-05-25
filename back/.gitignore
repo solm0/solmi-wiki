@@ -1,0 +1,8 @@
+node_modules
+.keystone/
+keystone.db
+*.log
+**/.env
+
+schema.graphql
+schema.prisma
