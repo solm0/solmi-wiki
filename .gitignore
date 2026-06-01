@@ -36,7 +36,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/data/*.json
+front/public/data/*.json
 .vercel
 
 # keystone
