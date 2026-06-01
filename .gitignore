@@ -36,11 +36,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-public/data/all_playlists.json
-public/data/all_posts.json
-public/data/all_graph_posts.json
-public/data/top_keywords_tag.json
-public/data/all_tags.json
+public/data/*.json
 .vercel
 
 # keystone
