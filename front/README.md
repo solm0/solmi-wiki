@@ -7,3 +7,5 @@
 /front `npx vercel@latest pull --environment=production` `npx vercel@latest build --prod`
 `npx vercel@latest deploy --prebuilt --prod`...가 아니고
 `npx vercel deploy --prebuilt --prod --archive=tgz`
+
+글로벌그래프 `npm run build`

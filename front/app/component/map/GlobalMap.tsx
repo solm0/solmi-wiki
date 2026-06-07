@@ -11,6 +11,7 @@ import type {
   GeoJsonProperties
 } from 'geojson';
 import { useToggleStore } from '@/app/lib/zustand/useToggleStore';
+import { useTheme } from 'next-themes';
 
 export default function GlobalMap({
   places, clickedId, setClickedId
@@ -27,9 +28,13 @@ export default function GlobalMap({
 
   const [viewState, setViewState] = useState(hochschuleKempten);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const { resolvedTheme } = useTheme();
 
   const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
   const setIsToolBoxOpen = useToggleStore(s => s.setToggle);
+  const mapStyle = resolvedTheme === 'dark'
+    ? 'https://api.maptiler.com/maps/streets-v2-dark/style.json?key=5WUNujbtty6Dt1NUzT6r'
+    : 'https://api.maptiler.com/maps/019aafb1-6648-769c-889b-369294610c89/style.json?key=5WUNujbtty6Dt1NUzT6r';
 
   const mapRef = useRef<MapRef>(null);
 
@@ -84,7 +89,7 @@ export default function GlobalMap({
       }}
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}
-      mapStyle={`https://api.maptiler.com/maps/019aafb1-6648-769c-889b-369294610c89/style.json?key=5WUNujbtty6Dt1NUzT6r`}
+      mapStyle={mapStyle}
     >
       <Source id='marker-layer' type='geojson' data={geojson}>
         <Layer

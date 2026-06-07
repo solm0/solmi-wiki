@@ -13,6 +13,7 @@ import type {
 import { useClickedPlace } from '@/app/lib/zustand/useClickedPlace';
 import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
 import { usePlaceList } from '@/app/lib/zustand/usePlaceList';
+import { useTheme } from 'next-themes';
 
 export default function LocalMap({
   setLoading,
@@ -23,6 +24,7 @@ export default function LocalMap({
 }) {
   const places = usePlaceList(s => s.places);
   const hasLoadedRoutes = useRef(false);
+  const { resolvedTheme } = useTheme();
 
   // 디폴트 위치
   const hochschuleKempten = {
@@ -230,6 +232,9 @@ export default function LocalMap({
   const stablePlaceIds = useMemo(() => placeIds ?? [''], [placeIds]);
   const stableRouteData = useMemo(() => routeData, [routeData]);
   const { currentIndex, progressPoint, progressLine } = useRouteProgress(stablePlaceIds, stableRouteData);
+  const mapStyle = resolvedTheme === 'dark'
+    ? 'https://api.maptiler.com/maps/streets-v2-dark/style.json?key=5WUNujbtty6Dt1NUzT6r'
+    : 'https://api.maptiler.com/maps/019aafb1-6648-769c-889b-369294610c89/style.json?key=5WUNujbtty6Dt1NUzT6r';
 
   useEffect(() => {
     const start = places[currentIndex-1];
@@ -289,7 +294,7 @@ export default function LocalMap({
       }}
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}
-      mapStyle={`https://api.maptiler.com/maps/019aafb1-6648-769c-889b-369294610c89/style.json?key=5WUNujbtty6Dt1NUzT6r`}
+      mapStyle={mapStyle}
     >
       <Source id='marker-layer' type='geojson' data={geojson}>
         {/* 마커 레이어 */}

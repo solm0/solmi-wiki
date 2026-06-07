@@ -61,7 +61,7 @@ export default function InspectResultList({
             className={clsx(
               "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2 text-text-800 opacity-80",
               hovered && hovered !== note.id && "opacity-40!",
-              hovered === note.id ? "z-20 opacity-100" : "z-0",
+              hovered === note.id || rootPath === note.id ? "z-20 opacity-100" : "z-0",
             )}
             onMouseEnter={() => setHovered(note.id)}
             onMouseLeave={() => setHovered(null)}
