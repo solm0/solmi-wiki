@@ -1,11 +1,11 @@
-import { Info } from "lucide-react";
+import { TriangleAlert } from "lucide-react";
 import { pretendard } from "../lib/localfont";
 
 export default function Disclaimer() {
   return (
     <div className={`${pretendard.className} rounded-sm p-3 md:p-4 flex items-start gap-2 bg-button-100/50 text-text-950 my-1`}>
       <div>
-        <Info className="shrink-0 w-3 h-5" />
+        <TriangleAlert className="shrink-0 w-3 h-5" />
       </div>
       <div className="flex flex-col gap-1 max-w-[48ch] opacity-80">
         <p className="text-sm break-keep">신뢰할 수 없는 정보입니다.</p>

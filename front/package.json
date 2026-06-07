@@ -9,7 +9,7 @@
     "get-all-playlists": "tsx app/lib/build/getAllPlaylists.ts",
     "dev": "next dev -p 3001",
     "prebuild": "npm run get-all-posts && npm run get-all-graph-posts && npm run get-all-tags && npm run get-all-playlists",
-    "build": "npm run clean && next build",
+    "build": "npm run clean && node scripts/build.mjs",
     "get-all-posts": "tsx app/lib/build/getAllPosts.ts",
     "start": "next start -p 3001",
     "lint": "next lint"
@@ -40,7 +40,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/youtube": "^0.1.2",
-    "baseline-browser-mapping": "^2.10.10",
+    "baseline-browser-mapping": "^2.10.34",
     "eslint": "^9",
     "eslint-config-next": "15.3.3",
     "mini-css-extract-plugin": "^2.9.2",

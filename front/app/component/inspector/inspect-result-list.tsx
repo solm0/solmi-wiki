@@ -14,9 +14,9 @@ export function RandItem({
   note: Post
 }) {
   return (
-    <div className="w-full h-full text-text-600 truncate flex items-center">
-      {note.tags && <TagIcon tagname={note.tags.name} />}
-      <span className="ml-1 text-text-900">{note.title}</span>
+    <div className="w-full h-full text-text-600 truncate flex items-center pl-1">
+      {<TagIcon tag={note.tags} />}
+      <span className="text-text-900">{note.title}</span>
       <span className={clsx (
         "ml-2 text-text-800 opacity-40 transition-[colors, opacity] duration-300",
         hovered && hovered !== note.id && 'opacity-0!',
@@ -54,7 +54,7 @@ export default function InspectResultList({
 
   return (
     <div className="relative h-full min-h-0 w-full pointer-events-auto">
-      <div className="flex h-full min-h-0 w-full flex-col gap-1 overflow-y-scroll custom-scrollbar-gray">
+      <div className="flex h-full min-h-0 w-full flex-col overflow-y-scroll custom-scrollbar-gray">
         {posts && posts.map((note) => (
           <div
             key={note.id}

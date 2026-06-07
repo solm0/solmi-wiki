@@ -42,20 +42,6 @@ export const lists = {
 
   Post: list({
     access: allowAll,
-    hooks: {
-      // 디폴트 태그 저장
-      beforeOperation: async ({ operation, resolvedData }) => {
-        if (operation === 'create') {
-          const hasTag = resolvedData.tags?.connect?.id;
-
-          if (!hasTag) {
-            resolvedData.tags = {
-              connect: { id: process.env.DEFAULT_TAG_ID },
-            };
-          }
-        }
-      },
-    },
     fields: {
       title: text({ validation: { isRequired: true } }),
       publishedAt: timestamp({

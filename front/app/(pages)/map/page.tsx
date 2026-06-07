@@ -1,6 +1,5 @@
 import { gql, GraphQLClient } from "graphql-request";
 import { Metadata } from "next";
-import dotenv from "dotenv";
 import { Place } from "@/app/lib/type";
 import MapScreen from "@/app/component/map/MapScreen";
 import path from "path";
@@ -11,7 +10,6 @@ export const metadata: Metadata = {
   description: "세계지도",
 };
 
-dotenv.config();
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
 const GET_ALL_PLACES = gql`
