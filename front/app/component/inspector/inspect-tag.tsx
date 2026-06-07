@@ -5,7 +5,7 @@ import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useHoveredLiquid } from '@/app/lib/zustand/useHoveredLiquid';
 import { useEffect, useRef, useState } from 'react';
 import { Tag } from '@/app/lib/type';
-import { tagsWColors } from '@/app/lib/data/tags';
+import { getTagColorClass } from '@/app/lib/data/tags';
 
 export default function InspectTag({
   tags
@@ -145,7 +145,10 @@ export default function InspectTag({
         <div
           key={idx}
           id={tag.name}
-          className='relative h-[2.3em] px-[0.8em] flex items-center justify-center rounded-sm text-text-900 active:bg-button-200 transition-colors'
+          className={clsx(
+            'relative h-[2.3em] px-[0.8em] flex items-center justify-center rounded-sm active:bg-button-200 transition-colors',
+            hoveredTag === tag.name ? 'text-[var(--tag-ink)]' : 'text-text-900',
+          )}
           onClick={() => handleClick(tag.name)}
           onMouseOver={(e) => updateHandlePosition(e, tag.name)}
         >
@@ -168,9 +171,10 @@ export default function InspectTag({
           />
         </div>
       ))}
-      <span
+        <span
         className={clsx(
-          'absolute h-8 rounded-sm mix-blend-darken pointer-events-none transition-all duration-300 ease-in-out bg-green-500',
+          'absolute h-8 rounded-sm mix-blend-darken pointer-events-none transition-all duration-300 ease-in-out',
+          getTagColorClass(hoveredTag),
           hoveredTag ? 'opacity-100' : 'opacity-0',
         )}
         style={{
@@ -178,7 +182,6 @@ export default function InspectTag({
           height: `${height}px`,
           left: `${offsetX}px`,
           width: `${width}px`,
-          backgroundColor: `${tagsWColors.find(tag=>tag.name === hoveredTag)?.color}`,
         }}
       >
       </span>

@@ -4,7 +4,7 @@ import { Tag as TagIcon, Search, Key } from 'lucide-react';
 import InspectTag from './inspect-tag';
 import InspectSearch from './inspect-search';
 import InspectKeyword from './inspect-keyword';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { useToggleStore } from '../../lib/zustand/useToggleStore';
 import { Tag, KeywordsByTag, Post } from '../../lib/type';
@@ -81,6 +81,7 @@ export default function Inspector({
 
   const isEnabled = useToggleStore((s) => s.toggles['noteInspector']);
   const setIsEnabled = useToggleStore((s) => s.setToggle);
+  const swipeStartRef = useRef<{ x: number; y: number } | null>(null);
 
   const searchParams = useSearchParams();
   const tag = searchParams.get("tag");
@@ -88,6 +89,32 @@ export default function Inspector({
   const keywords = searchParams.getAll("keyword");
 
   const finalPosts = filterPosts({ posts: GenerateChron(loadedPosts), tag, search, keywords });
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    const touch = e.touches[0];
+    swipeStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+    };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLElement>) => {
+    const start = swipeStartRef.current;
+    const touch = e.changedTouches[0];
+
+    swipeStartRef.current = null;
+
+    if (!start || window.innerWidth >= 768) return;
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+
+    if (Math.abs(deltaX) < 56) return;
+    if (Math.abs(deltaX) <= Math.abs(deltaY) * 1.2) return;
+    if (deltaX < 0) {
+      setIsEnabled('noteInspector', false);
+    }
+  };
 
   return (
     <>
@@ -97,6 +124,8 @@ export default function Inspector({
       }
 
       <section
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
         className={clsx(
         "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
         isEnabled ? 'w-[calc(100%-3rem)] md:w-64 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'

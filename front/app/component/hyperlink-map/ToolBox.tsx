@@ -1,6 +1,6 @@
 'use client'
 
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
@@ -72,9 +72,36 @@ export default function ToolBox({
   const isOpen = useToggleStore((s) => s.toggles['toolBox']);
   const setIsEnabled = useToggleStore((s) => s.setToggle);
   const isEnabled = useToggleStore((s) => s.toggles);
+  const swipeStartRef = useRef<{ x: number; y: number } | null>(null);
   const noOpenTools = Array.from(Object.entries(isEnabled)).filter(tool => Array.from(tools.map(t => t.value)).includes(tool[0])).filter(tool => tool[1] === true).length === 0;
 
   const [hovered, setHovered] = useState<string | null>(null); // 호버된 도구
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
+    const touch = e.touches[0];
+    swipeStartRef.current = {
+      x: touch.clientX,
+      y: touch.clientY,
+    };
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent<HTMLElement>) => {
+    const start = swipeStartRef.current;
+    const touch = e.changedTouches[0];
+
+    swipeStartRef.current = null;
+
+    if (!start || window.innerWidth >= 768) return;
+
+    const deltaX = touch.clientX - start.x;
+    const deltaY = touch.clientY - start.y;
+
+    if (Math.abs(deltaX) < 56) return;
+    if (Math.abs(deltaX) <= Math.abs(deltaY) * 1.2) return;
+    if (deltaX > 0) {
+      setIsEnabled('toolBox', false);
+    }
+  };
 
   return (
     <>
@@ -113,7 +140,10 @@ export default function ToolBox({
         }
       </div>
 
-      <aside className={clsx(
+      <aside
+        onTouchStart={handleTouchStart}
+        onTouchEnd={handleTouchEnd}
+        className={clsx(
         `${pretendard.className}
         absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-76 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'

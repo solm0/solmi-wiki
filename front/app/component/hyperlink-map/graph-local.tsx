@@ -13,6 +13,7 @@ export default function LocalGraph({
   graphData: Graph;
   divRef: RefObject<HTMLDivElement | null>
 }) {
+  const [themeKey, setThemeKey] = useState('light');
   const [colors, setColors] = useState<{nodeGreen: string, text800: string, text700: string, text600: string, bg: string}>({
     nodeGreen: '#FFFFFF',
     text800: '#000000',
@@ -21,22 +22,45 @@ export default function LocalGraph({
     bg: '#000000'
   })
   useEffect(() => {
-    const nodeGreen = getComputedStyle(document.documentElement)
-      .getPropertyValue('--node')
-      .trim();
-    const text800 = getComputedStyle(document.documentElement)
-      .getPropertyValue('--text-800')
-      .trim();
-    const text700 = getComputedStyle(document.documentElement)
-      .getPropertyValue('--text-700')
-      .trim();
-    const text600 = getComputedStyle(document.documentElement)
-      .getPropertyValue('--text-600')
-      .trim();
-    const bg = getComputedStyle(document.documentElement)
-      .getPropertyValue('--background')
-      .trim();
-    if (nodeGreen && text800 && text700) setColors({nodeGreen: nodeGreen, text800: text800, text700: text700, text600: text600, bg: bg});
+    const updateColors = () => {
+      const nodeGreen = getComputedStyle(document.documentElement)
+        .getPropertyValue('--node')
+        .trim();
+      const text800 = getComputedStyle(document.documentElement)
+        .getPropertyValue('--text-800')
+        .trim();
+      const text700 = getComputedStyle(document.documentElement)
+        .getPropertyValue('--text-700')
+        .trim();
+      const text600 = getComputedStyle(document.documentElement)
+        .getPropertyValue('--text-600')
+        .trim();
+      const bg = getComputedStyle(document.documentElement)
+        .getPropertyValue('--background')
+        .trim();
+      const nextThemeKey = document.documentElement.getAttribute('data-theme') ?? 'light';
+
+      if (nodeGreen && text800 && text700) {
+        setColors({nodeGreen: nodeGreen, text800: text800, text700: text700, text600: text600, bg: bg});
+      }
+      setThemeKey(nextThemeKey);
+    };
+
+    let frame = requestAnimationFrame(updateColors);
+    const observer = new MutationObserver(() => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updateColors);
+    });
+
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme', 'class', 'style'],
+    });
+
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, []);
 
   const router = useRouter();
@@ -82,6 +106,7 @@ export default function LocalGraph({
 
   return (
     <ForceGraph2D
+      key={themeKey}
       graphData={graphData as GraphData<NodeObject<Node>, LinkObject<Node>>}
       width={divRef.current?.clientWidth}
       height={divRef.current?.clientHeight}

@@ -2,6 +2,7 @@
 
 import { Post } from "../lib/type";
 import Content from '@/app/component/content';
+import Disclaimer from '@/app/component/disclaimer';
 import Footer from '@/app/component/footer';
 import Metadata from '@/app/component/metadata';
 import { maruburi, maruburi_bold } from '@/app/lib/localfont';
@@ -103,6 +104,7 @@ export default function Note({
       >
         <RingLink />
         <Metadata post={post} />
+        {post.disclaimerOn && <Disclaimer />}
       </div>
       
       <div className="flex flex-col w-full">

@@ -1,7 +1,6 @@
 'use client'
 
 import { useState} from "react"
-import { ChevronRight } from "lucide-react";
 import { Post } from "@/app/lib/type";
 import clsx from "clsx";
 import { usePathname, useSearchParams, useRouter} from "next/navigation";
@@ -54,29 +53,35 @@ export default function InspectResultList({
   }
 
   return (
-    <div className="flex w-full flex-col overflow-y-scroll custom-scrollbar-gray pointer-events-auto ">
-      {posts && posts.map((note) => (
-        <div
-          key={note.id}
-          className={clsx (
-            "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2 text-text-800 opacity-80",
-            hovered && hovered !== note.id && "opacity-40!",
-            hovered && hovered === note.id && "opacity-100",
-          )}
-          onMouseEnter={() => setHovered(note.id)}
-          onMouseLeave={() => setHovered(null)}
-          onClick={() => handleClick(note.id)}
-        >
-          {rootPath === note.id &&
-            <ChevronRight className={clsx(
-              "left-0 text-text-900 w-4 h-4",
-              hovered && hovered !== note.id && "text-text-600",
-            )} />
-          }
-          <RandItem hovered={hovered} note={note} />
-        </div>
-      ))}
-      <div className="w-full h-6 shrink-0"></div>
+    <div className="relative h-full min-h-0 w-full pointer-events-auto">
+      <div className="flex h-full min-h-0 w-full flex-col gap-1 overflow-y-scroll custom-scrollbar-gray">
+        {posts && posts.map((note) => (
+          <div
+            key={note.id}
+            className={clsx(
+              "shrink-0 relative text-nowrap h-8 rounded-sm w-full transition-[opacity] duration-300 hover:cursor-pointer flex items-center font-normal backdrop-blur-lg gap-2 text-text-800 opacity-80",
+              hovered && hovered !== note.id && "opacity-40!",
+              hovered === note.id ? "z-20 opacity-100" : "z-0",
+            )}
+            onMouseEnter={() => setHovered(note.id)}
+            onMouseLeave={() => setHovered(null)}
+            onClick={() => handleClick(note.id)}
+          >
+            {rootPath === note.id &&
+              <div className="left-0 w-4 h-4" />
+            }
+            <RandItem hovered={hovered} note={note} />
+          </div>
+        ))}
+        <div className="w-full h-6 shrink-0"></div>
+      </div>
+
+      <div
+        className="absolute top-0 right-0 z-10 h-full w-1/5 pointer-events-none"
+        style={{
+          background: "linear-gradient(to left, color-mix(in srgb, var(--background) 100%, transparent) 0%, color-mix(in srgb, var(--background) 10%, transparent) 100%)",
+        }}
+      />
     </div>
   )
 }

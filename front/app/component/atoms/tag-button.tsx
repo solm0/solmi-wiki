@@ -1,6 +1,7 @@
 'use client'
 
-import { tagsWColors } from "@/app/lib/data/tags";
+import clsx from "clsx";
+import { getTagColorClass } from "@/app/lib/data/tags";
 import { pretendard } from "@/app/lib/localfont";
 import { useHoveredLiquid } from "@/app/lib/zustand/useHoveredLiquid";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
@@ -34,11 +35,11 @@ export default function TagButton({tagname}: {tagname: string}) {
 
   return (
     <div
-      className={`
-        absolute -top-7 rotate-12 left-5 text-xs h-[2.3em] px-[0.8em] flex items-center justify-center rounded-sm text-text-900 hover:rotate-5 active:translate-y-3 transition-all duration-300
-        ${pretendard.className}
-      `}
-      style={{ backgroundColor: tagsWColors.find(tag=>tag.name &&tag.name === tagname)?.color}}
+      className={clsx(
+        "absolute -top-7 left-5 flex h-[2.3em] rotate-12 items-center justify-center rounded-sm px-[0.8em] text-xs text-[var(--tag-ink)] transition-all duration-300 hover:rotate-5 active:translate-y-3",
+        pretendard.className,
+        getTagColorClass(tagname),
+      )}
       onClick={() => {
         if (!isInspectorOpen) setToggle('noteInspector', true);
         handleClick(tagname)

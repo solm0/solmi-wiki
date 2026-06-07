@@ -1,10 +1,13 @@
-import { tagsWColors } from "@/app/lib/data/tags";
+import clsx from "clsx";
+import { getTagColorClass } from "@/app/lib/data/tags";
 
 export default function TagIcon({tagname}: {tagname: string}){
   return (
     <div
-      className="ml-1 w-8 h-5 rotate-12 rounded-sm text-text-900 shrink-0 flex items-center justify-start"
-      style={{backgroundColor: `${tagsWColors.find(tag=>tag.name===tagname)?.color}`}}
+      className={clsx(
+        "ml-1 flex h-5 w-8 shrink-0 rotate-12 items-center justify-start rounded-sm text-[var(--tag-ink)]",
+        getTagColorClass(tagname),
+      )}
     >
       <div className='relative top-0 left-0 w-1.5 h-1.5 rounded-sm bg-background ml-1.5 z-20' />
     </div>

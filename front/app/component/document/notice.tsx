@@ -19,7 +19,7 @@ export default function Notice({
 
   return (
     <div
-      className={`rounded-sm p-4 flex items-start gap-4 text ${config.text} text-text-950 my-1`}
+      className={`rounded-sm p-3 md:p-4 flex items-start gap-3 md:gap-4 text ${config.text} text-text-950 my-1`}
       style={{
         background: config.bg,
         border: `1px solid ${config.border}`,

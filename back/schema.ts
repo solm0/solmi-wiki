@@ -232,11 +232,11 @@ export const lists = {
         }
       }),
 
-      meta: checkbox({
+      work: checkbox({
         defaultValue: false,
       }),
 
-      work: checkbox({
+      disclaimerOn: checkbox({
         defaultValue: false,
       }),
 

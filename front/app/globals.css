@@ -24,14 +24,19 @@
   --text-800: #646464;
   --text-700: #B5B5B5;
   --text-600: #DADADA;
+  --tag-ink: #52636E;
+  --tag-travel: #cea8ff;
+  --tag-self-hosting: #a5b2ff;
+  --tag-opengl: #63d5ff;
+  --tag-nlp: #71ff61;
 }
 
 [data-theme="dark"]:root {
-  --background: #121212;
+  --background: #1b1d1f;
   --foreground: #202830;
   --button-50: #111416;
-  --button-100: #1A2026;
-  --button-200: #2D3842;
+  --button-100: #2f3235;
+  --button-200: #3b4045;
   --node: #00AC73;
   --green-100: #004636;
   --green-500: #006B48;
@@ -42,6 +47,11 @@
   --text-800: #828B9A;
   --text-700: #5A626F;
   --text-600: #383F4A;
+  --tag-ink: #000000;
+  --tag-travel: #7f5ab8;
+  --tag-self-hosting: #4e68b8;
+  --tag-opengl: #1d7ea2;
+  --tag-nlp: #3f8f4d;
 }
 
 @theme inline {
@@ -140,4 +150,20 @@
 
 .animate-fadeInOnce {
   animation: fadeInOnce 0.4s ease forwards;
+}
+
+.tag-color-travel {
+  background-color: var(--tag-travel);
+}
+
+.tag-color-self-hosting {
+  background-color: var(--tag-self-hosting);
+}
+
+.tag-color-opengl {
+  background-color: var(--tag-opengl);
+}
+
+.tag-color-nlp {
+  background-color: var(--tag-nlp);
 }

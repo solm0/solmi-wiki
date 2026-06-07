@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { CarouselNode } from "../lib/type";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { pretendard } from "../lib/localfont";
 
 export default function ImageModal({
@@ -12,10 +12,12 @@ export default function ImageModal({
   setIdx: (idx: number | null) => void;
   carousel: CarouselNode;
 }) {
+  const MIN_SCALE = 0.3;
+  const MAX_SCALE = 5;
+
   const generateUrl = (idx: number) => {
     const cloudName = "dpqjfptr6";
     const publicId = carousel.props.items[idx]?.imageSrc;
-    console.log(publicId)
     const transformations = carousel.props.items[idx]?.isGif
       ? "f_auto,q_auto"
       : "f_auto,q_auto,c_fill";
@@ -23,23 +25,88 @@ export default function ImageModal({
   }
 
   const [scale, setScale] = useState(0.8);
+  const pinchStateRef = useRef<{
+    distance: number;
+    scale: number;
+  } | null>(null);
+
+  const clampScale = useCallback((next: number) => {
+    if (next < MIN_SCALE) return MIN_SCALE;
+    if (next > MAX_SCALE) return MAX_SCALE;
+    return next;
+  }, []);
+
+  useEffect(() => {
+    if (idx !== null) {
+      setScale(0.8);
+      pinchStateRef.current = null;
+    }
+  }, [idx]);
 
   const handleWheel = useCallback((e: React.WheelEvent) => {
     e.preventDefault();
-    setScale((prev) => {
-      let next = prev - e.deltaY * 0.001; // scroll up → zoom in
-      if (next < 0.3) next = 0.3; // min zoom
-      if (next > 5) next = 5;     // max zoom
-      return next;
-    });
-  }, []);
+    setScale((prev) => clampScale(prev - e.deltaY * 0.001));
+  }, [clampScale]);
+
+  const getTouchDistance = (touches: React.TouchList) => {
+    if (touches.length < 2) return null;
+
+    const [firstTouch, secondTouch] = [touches[0], touches[1]];
+    return Math.hypot(
+      secondTouch.clientX - firstTouch.clientX,
+      secondTouch.clientY - firstTouch.clientY,
+    );
+  };
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    const distance = getTouchDistance(e.touches);
+
+    if (distance === null) {
+      pinchStateRef.current = null;
+      return;
+    }
+
+    pinchStateRef.current = {
+      distance,
+      scale,
+    };
+  }, [scale]);
+
+  const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    const distance = getTouchDistance(e.touches);
+    const pinchState = pinchStateRef.current;
+
+    if (distance === null || !pinchState) {
+      return;
+    }
+
+    e.preventDefault();
+    setScale(clampScale(pinchState.scale * (distance / pinchState.distance)));
+  }, [clampScale]);
+
+  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
+    const distance = getTouchDistance(e.touches);
+
+    if (distance === null) {
+      pinchStateRef.current = null;
+      return;
+    }
+
+    pinchStateRef.current = {
+      distance,
+      scale,
+    };
+  }, [scale]);
 
   if (idx === null) {
     return null;
   } else return (
     <div
-      className="fixed backdrop-blur-2xl w-screen h-screen top-0 left-0 z-80 flex items-center justify-center"
+      className="fixed backdrop-blur-2xl w-screen h-screen top-0 left-0 z-80 flex items-center justify-center touch-none"
       onWheel={handleWheel}
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
     >
       {/* 배경 */}
       <div
@@ -48,8 +115,8 @@ export default function ImageModal({
       />
 
       {/* 안내문구 */}
-      <p className={`${pretendard.className} absolute top-10 left-1/2 -translate-x-1/2 text-text-800 animate-pulse z-80`}>
-        스크롤하여 확대 / 축소
+      <p className={`${pretendard.className} absolute top-10 text-text-800 animate-pulse z-80 leading-tight`}>
+        스크롤하거나 두 손가락으로 확대 / 축소
       </p>
 
       {/* 이미지 */}
@@ -77,7 +144,7 @@ export default function ImageModal({
           {carousel.props.items[idx]?.alt}
         </p>
 
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex justify-center items-center gap-4 mb-16 md:mb-0">
           <button
             className={`
               px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200

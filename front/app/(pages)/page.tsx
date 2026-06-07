@@ -7,7 +7,6 @@ import { Post } from "../lib/type";
 import { maruburi, maruburi_bold } from "../lib/localfont";
 import path from "path";
 import fs from 'fs';
-import Link from "next/link";
 import { FlaskConical, Funnel, Settings } from "lucide-react";
 
 export const metadata: Metadata = {

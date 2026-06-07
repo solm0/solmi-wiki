@@ -19,8 +19,10 @@ export default function Carousel({
   return (
     <div
       className={`
-        ${carousel.props.items[0].fit === 'hor' ? 'overflow-x-hidden' : 'overflow-x-scroll flex'}
-        w-full gap-1  h-auto overscroll-auto custom-hor-scrollbar my-4
+        flex w-full items-start gap-1 my-4 h-auto
+        overflow-x-auto overflow-y-hidden
+        overscroll-x-contain 
+        touch-pan-x custom-hor-scrollbar
       `}
     >
       {carousel.props.items.map((item, idx) => {
@@ -58,7 +60,7 @@ export default function Carousel({
                 controls
                 loop
               />
-              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+              {item.alt && <p className={`${pretendard.className} min-h-4 shrink-0 text-sm text-text-700`}>{item.alt}</p>}
             </div>
           )
         } else if (item.type === 'audio') {
@@ -73,7 +75,7 @@ export default function Carousel({
                   Your browser does not support the audio tag.
                 </audio>
               </div>
-              {item.alt && <p className={`${pretendard.className} text-sm h-4 text-text-700`}>{item.alt}</p>}
+              {item.alt && <p className={`${pretendard.className} min-h-4 shrink-0 text-sm text-text-700`}>{item.alt}</p>}
             </div>
           )
         } else {
@@ -81,7 +83,7 @@ export default function Carousel({
             <div
               key={idx}
               className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
-              title="클릭하여 확대"
+              title="탭하거나 클릭하여 확대"
             >
               <div
                 className={`
@@ -109,7 +111,7 @@ export default function Carousel({
               </div>
 
               {item.alt && (
-                <p className={`${pretendard.className} text-sm h-4 text-text-700`}>
+                <p className={`${pretendard.className} min-h-4 shrink-0 text-sm text-text-700`}>
                   {item.alt}
                 </p>
               )}

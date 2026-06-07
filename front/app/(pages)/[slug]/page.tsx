@@ -16,6 +16,7 @@ const GET_POST_BY_ID = gql`
     post(where: { id: $id }) {
       id
       title
+      disclaimerOn
       publishedAt
       order
       status

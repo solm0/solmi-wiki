@@ -9,6 +9,7 @@ export type Post = {
   tags: Tag;
   keywords: Keyword[];
   work: boolean;
+  disclaimerOn: boolean;
   status: 'published' | 'draft';
   chron: {
     year?: string;

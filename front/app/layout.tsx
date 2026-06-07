@@ -25,7 +25,7 @@ export default async function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body
-        className={`${pretendard.variable} antialiased font-normal md:overflow-hidden overflow-x-hidden bg-background`}
+        className={`antialiased font-normal md:overflow-hidden overflow-x-hidden bg-background`}
       >
         <Script
           src="//gc.zgo.at/count.js"
