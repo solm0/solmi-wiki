@@ -23,6 +23,7 @@ export type Post = {
   internalBacklinks?: Post[];
   places?: Place[];
   playlists: Playlist[];
+  externalLink?: string;
 };
 
 export type PostLinkSummary = {

@@ -17,6 +17,7 @@ const GET_ALL_POSTS = gql`
       id
       title
       status
+      externalLink
       publishedAt
       thumbnail
     }

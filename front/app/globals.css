@@ -11,7 +11,7 @@
   --text-xs: 12.5px;
   --background: #F8F7FB;
   --foreground: #171717;
-  --button-50: #F5F4F8;
+  --button-50: #f2f2f2;
   --button-100: #EBEBEB;
   --button-200: #D1D1D1;
   --node: #00EB95;
@@ -43,8 +43,8 @@
   --green-600: #008E5F;
   --green-900: #00B371;
   --text-950: #C6CFDE;
-  --text-900: #A6ACB6;
-  --text-800: #828B9A;
+  --text-900: #b8bec7;
+  --text-800: #98a0ae;
   --text-700: #5A626F;
   --text-600: #383F4A;
   --tag-ink: #000000;

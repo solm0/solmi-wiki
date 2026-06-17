@@ -45,7 +45,10 @@ export default function ThumbnailList({
       `}
       onMouseEnter={() => onMouseEnter(note.id)}
       onMouseLeave={onMouseLeave}
-      onClick={() => handleClick(note.id)}
+      onClick={() => note.externalLink
+        ? window.open(note.externalLink, "_blank", "noopener,noreferrer")
+        : handleClick(note.id)
+      }
     >
       <Image
         src={imageUrl}
