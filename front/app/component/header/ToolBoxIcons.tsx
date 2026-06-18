@@ -4,15 +4,23 @@ import EnableButton from "../atoms/enable-button";
 import { FlaskConical } from "lucide-react";
 import { useEffect } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
+import { usePathname } from "next/navigation";
+
+const nonNoteRootPaths = new Set(["", "blog", "work", "graph", "map"]);
 
 export function ToolBoxIcons() {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
+  const pathname = usePathname();
 
   useEffect(() => {
     initializeToggles();
   }, [initializeToggles]);
 
   const isEnabled = useToggleStore((s) => s.toggles['toolBox']);
+  const rootPath = pathname.split('/').slice(1, 2).toString();
+  const shouldHideToolBoxIcon = nonNoteRootPaths.has(rootPath);
+
+  if (shouldHideToolBoxIcon) return null;
 
   return (
     <div className={`

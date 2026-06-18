@@ -1,14 +1,20 @@
 'use client'
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDebouncedCallback } from "use-debounce";
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import clsx from "clsx";
 
 export default function InspectSearch() {
   const { replace } = useRouter();
   const pathname = usePathname();
-  const [value, setValue] = useState('');
+  const searchParams = useSearchParams();
+  const search = searchParams.get("search") ?? "";
+  const [value, setValue] = useState(search);
+
+  useEffect(() => {
+    setValue(search);
+  }, [search]);
 
   const handleSearch = useDebouncedCallback((term: string) => {
     const params = new URLSearchParams(window.location.search);

@@ -2,8 +2,6 @@ import { gql, GraphQLClient } from "graphql-request";
 import { Metadata } from "next";
 import { Place } from "@/app/lib/type";
 import MapScreen from "@/app/component/map/MapScreen";
-import path from "path";
-import fs from 'fs';
 
 export const metadata: Metadata = {
   title: "세계지도",
@@ -42,11 +40,7 @@ export default async function MapPage() {
   const data = await getAllPlaces();
   const places = data.places;
 
-  // read all playlist from file
-  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
-  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
-
   return (
-    <MapScreen allPlaces={places} allPlaylists={playlists} />
+    <MapScreen allPlaces={places} />
   )
 }

@@ -10,7 +10,7 @@ import { useToggleStore } from '../../lib/zustand/useToggleStore';
 import { Tag, KeywordsByTag, Post } from '../../lib/type';
 import GenerateChron from "../../lib/gererate-chron";
 import InspectResultList from "./inspect-result-list";
-import { useSearchParams } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import filterPosts from "../../lib/filter-posts";
 import { ChevronLeft } from 'lucide-react';
 
@@ -83,10 +83,13 @@ export default function Inspector({
   const setIsEnabled = useToggleStore((s) => s.setToggle);
   const swipeStartRef = useRef<{ x: number; y: number } | null>(null);
 
+  const pathname = usePathname();
   const searchParams = useSearchParams();
   const tag = searchParams.get("tag");
   const search = searchParams.get("search");
   const keywords = searchParams.getAll("keyword");
+  const hasActiveFilters = Boolean(tag || search || keywords.length > 0);
+  const shouldHideInspector = pathname === "/map";
 
   const finalPosts = filterPosts({ posts: GenerateChron(loadedPosts), tag, search, keywords });
 
@@ -119,7 +122,7 @@ export default function Inspector({
   return (
     <>
       {/* 배경 */}
-      {isEnabled &&
+      {isEnabled && !shouldHideInspector &&
         <div className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'></div>
       }
 
@@ -128,7 +131,7 @@ export default function Inspector({
         onTouchEnd={handleTouchEnd}
         className={clsx(
         "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
-        isEnabled ? 'w-[calc(100%-3rem)] md:w-64 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
+        isEnabled && !shouldHideInspector ? 'w-[calc(100%-3rem)] md:w-64 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
         {/* 작은화면 창닫기 */}
@@ -163,23 +166,25 @@ export default function Inspector({
           </FilterComponents>
 
           {/* 결과 */}
-          <div className='flex flex-col gap-1 w-full overflow-hidden items-start select-none pb-8'>
-            <label
-              className='flex items-center gap-2 text-text-700'
-            >
-              결과: {finalPosts.length}건
-            </label>
-              <div
-                className="relative flex w-full flex-col gap-2 overflow-hidden"
-                onClick={() => {
-                  if (window.innerWidth < 768) {
-                    setIsEnabled('noteInspector', false)
-                  }
-                }}
+          {hasActiveFilters && (
+            <div className='flex flex-col gap-1 w-full overflow-hidden items-start select-none pb-8'>
+              <label
+                className='flex items-center gap-2 text-text-700'
               >
-                <InspectResultList posts={finalPosts} />
-              </div>
-          </div>
+                결과: {finalPosts.length}건
+              </label>
+                <div
+                  className="relative flex w-full flex-col gap-2 overflow-hidden"
+                  onClick={() => {
+                    if (window.innerWidth < 768) {
+                      setIsEnabled('noteInspector', false)
+                    }
+                  }}
+                >
+                  <InspectResultList posts={finalPosts} />
+                </div>
+            </div>
+          )}
         </div>
       </section>
     </>

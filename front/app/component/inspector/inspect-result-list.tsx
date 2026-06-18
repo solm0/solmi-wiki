@@ -8,14 +8,21 @@ import TagIcon from "../atoms/tag-icon";
 
 export function RandItem({
   hovered,
-  note
+  note,
+  isCurrentPost = false,
+  hideTag = false
 }: {
   hovered: string | null,
   note: Post
+  isCurrentPost?: boolean;
+  hideTag?: boolean
 }) {
   return (
     <div className="w-full h-full text-text-600 truncate flex items-center pl-1">
-      {<TagIcon tag={note.tags} />}
+      {!hideTag && <TagIcon tag={note.tags} />}
+      {isCurrentPost &&
+        <div className="w-4 h-full shrink-0"></div>
+      }
       <span className="text-text-900">{note.title}</span>
       <span className={clsx (
         "ml-2 text-text-800 opacity-40 transition-[colors, opacity] duration-300",
@@ -54,7 +61,7 @@ export default function InspectResultList({
 
   return (
     <div className="relative h-full min-h-0 w-full pointer-events-auto">
-      <div className="flex h-full min-h-0 w-full flex-col overflow-y-scroll custom-scrollbar-gray">
+      <div className="flex h-full min-h-0 w-full flex-col overflow-y-scroll custom-scrollbar">
         {posts && posts.map((note) => (
           <div
             key={note.id}
@@ -67,10 +74,7 @@ export default function InspectResultList({
             onMouseLeave={() => setHovered(null)}
             onClick={() => handleClick(note.id)}
           >
-            {rootPath === note.id &&
-              <div className="left-0 w-4 h-4" />
-            }
-            <RandItem hovered={hovered} note={note} />
+            <RandItem hovered={hovered} note={note} isCurrentPost={rootPath === note.id} />
           </div>
         ))}
         <div className="w-full h-6 shrink-0"></div>

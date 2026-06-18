@@ -87,8 +87,6 @@ export default function InspectTag({
   // 그것도 없으면 url에 있는 태그
   useEffect(() => {
     if (!hoveredTag && !tag) {
-      const params = new URLSearchParams(window.location.search);
-      const currentTag = params.get("tag");
       if (!currentTag) return;
 
       const el = document.getElementById(currentTag);
@@ -106,7 +104,7 @@ export default function InspectTag({
 
       setHoveredTag(currentTag, left-containerLeft, width, top-containerTop, height);
     }
-  }, [hoveredTag, setHoveredTag]);
+  }, [currentTag, hoveredTag, setHoveredTag, tag, tags]);
 
   // from note
   useEffect(() => {
@@ -138,7 +136,7 @@ export default function InspectTag({
   return (
     <div
       ref={tagContainerRef}
-      className='h-auto w-auto flex flex-wrap gap-1 backdrop-blur-md pointer-events-auto'
+      className='relative h-auto w-auto flex flex-wrap gap-1 pointer-events-auto'
       onMouseLeave={() => setHoveredTag(null, null, null, null, null)}
     >
       {tags.map((tag, idx) => (

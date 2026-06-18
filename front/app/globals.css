@@ -24,6 +24,7 @@
   --text-800: #646464;
   --text-700: #B5B5B5;
   --text-600: #DADADA;
+  --scrollbar-thumb: #d1d1d150;
   --tag-ink: #52636E;
   --tag-travel: #cea8ff;
   --tag-self-hosting: #a5b2ff;
@@ -47,6 +48,7 @@
   --text-800: #98a0ae;
   --text-700: #5A626F;
   --text-600: #383F4A;
+  --scrollbar-thumb: #3b404550;
   --tag-ink: #000000;
   --tag-travel: #7f5ab8;
   --tag-self-hosting: #4e68b8;
@@ -99,9 +101,9 @@
   scrollbar-width: none;  /* Firefox */
 }
 
-/* 초록색 세로 */
+/* 회색 세로 */
 .custom-scrollbar::-webkit-scrollbar {
-  width: 1px;
+  width: 5px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
@@ -109,20 +111,7 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--color-green-500);
-}
-
-/* 회색 세로 */
-.custom-scrollbar-gray::-webkit-scrollbar {
-  width: 1px;
-}
-
-.custom-scrollbar-gray::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-.custom-scrollbar-gray::-webkit-scrollbar-thumb {
-  background-color: var(--color-button-200);
+  background-color: var(--scrollbar-thumb);
 }
 
 /* 가로 */

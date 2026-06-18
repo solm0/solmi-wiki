@@ -10,7 +10,6 @@ import type {
   Geometry,
   GeoJsonProperties
 } from 'geojson';
-import { useToggleStore } from '@/app/lib/zustand/useToggleStore';
 import { useTheme } from 'next-themes';
 
 export default function GlobalMap({
@@ -30,8 +29,6 @@ export default function GlobalMap({
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const { resolvedTheme } = useTheme();
 
-  const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
-  const setIsToolBoxOpen = useToggleStore(s => s.setToggle);
   const mapStyle = resolvedTheme === 'dark'
     ? 'https://api.maptiler.com/maps/streets-v2-dark/style.json?key=5WUNujbtty6Dt1NUzT6r'
     : 'https://api.maptiler.com/maps/019aafb1-6648-769c-889b-369294610c89/style.json?key=5WUNujbtty6Dt1NUzT6r';
@@ -85,7 +82,6 @@ export default function GlobalMap({
       onClick={(e) => {
         const feature = e.features?.[0];
         if (feature) setClickedId(feature.properties.id);
-        if (!isToolBoxOpen) setIsToolBoxOpen('toolBox', true);
       }}
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}
@@ -97,7 +93,7 @@ export default function GlobalMap({
           type='circle'
           source='marker'
           paint={{
-            'circle-radius': 13,
+            'circle-radius': 11,
             'circle-color': '#00EB95',
             'circle-opacity': [
               'case',
@@ -116,7 +112,7 @@ export default function GlobalMap({
           source='marker'
           layout={{
             'text-field': ['get', 'i'],
-            'text-size': 14,
+            'text-size': 10,
             'text-offset': [0, 0],
           }}
           paint={{
@@ -134,7 +130,7 @@ export default function GlobalMap({
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 우측 사이드바의 &apos;세계지도&apos;에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 노트 목록 보기</div>
+          <div>클릭하여 {places.find(p => p.id === hoveredId)?.name}가 언급된 노트 목록 보기</div>
         </Popup>
       )}
     </Map>

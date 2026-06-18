@@ -1,15 +1,14 @@
 'use client'
 
-import { Place, Playlist } from "@/app/lib/type"
-import ToolBox from "../hyperlink-map/ToolBox"
+import { Place } from "@/app/lib/type"
 import GlobalMap from "./GlobalMap"
 import { useState } from "react";
+import SelectedPlacePanel from "./SelectedPlacePanel";
 
 export default function MapScreen({
-  allPlaces, allPlaylists
+  allPlaces
 }: {
   allPlaces: Place[];
-  allPlaylists: Playlist[];
 }) {
   const [clickedId, setClickedId] = useState<string | null>(null);
   const index = allPlaces.findIndex(p => p.id === clickedId);
@@ -17,7 +16,7 @@ export default function MapScreen({
 
   return (
     <>
-      <section className="w-full h-[calc(100vh)] text-text-800 overflow-hidden focus:outline-hidden">
+      <section className="fixed top-0 left-0 w-full h-full flex justify-center items-center">
         <GlobalMap
           places={allPlaces}
           clickedId={clickedId}
@@ -25,8 +24,11 @@ export default function MapScreen({
         />
       </section>
 
-      {/* 오른쪽 사이드바 */}
-      <ToolBox selectedPlace={{idx: index+1, data: data}} allPlaylists={allPlaylists} />
+      <div className="relative gap-8 w-full pointer-events-none"></div>
+      <SelectedPlacePanel
+        selectedPlace={{idx: index+1, data: data}}
+        onClose={() => setClickedId(null)}
+      />
     </>
   )
 }

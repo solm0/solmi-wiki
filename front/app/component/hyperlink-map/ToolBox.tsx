@@ -17,7 +17,7 @@ import LocalMapWController from "../map/LocalMapWController";
 import MusicCmp from "../music/MusicCmp";
 
 export function ToolComponents({
-  isEnabled, cmp, children, hovered
+  isEnabled, cmp, children, hovered,
 }: {
   isEnabled: boolean,
   cmp: {value: string, name: string},
@@ -76,6 +76,12 @@ export default function ToolBox({
   const noOpenTools = Array.from(Object.entries(isEnabled)).filter(tool => Array.from(tools.map(t => t.value)).includes(tool[0])).filter(tool => tool[1] === true).length === 0;
 
   const [hovered, setHovered] = useState<string | null>(null); // 호버된 도구
+
+  useEffect(() => {
+    if (isOpen && (noOpenTools || !post)) {
+      setIsEnabled('toolBox', false);
+    }
+  }, [isOpen, noOpenTools, post, setIsEnabled]);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
     const touch = e.touches[0];
@@ -156,9 +162,6 @@ export default function ToolBox({
           <ChevronRight />
         </button>
 
-        {noOpenTools && <div className="text-text-700 pt-4 break-keep">활성화된 도구가 없습니다. <SettingsIcon className="inline pb-0.5 w-4.5 h-4.5" />를 클릭해 도구를 활성화하세요.</div>}
-        {!post && <div className="text-text-700 pt-14 md:pt-5 break-keep">더 많은 도구를 보려면 노트를 선택하세요.</div>}
-
         <div className="w-full h-auto flex flex-col gap-2 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
@@ -196,15 +199,17 @@ export default function ToolBox({
               hovered={hovered}
             >
               {selectedPlace && selectedPlace.data ?
-                <div className="w-full h-auto flex flex-col gap-1">
-                  <div className="flex gap-1 items-center">
+                <div className="w-full h-auto flex flex-col gap-3 p-1 pr-0">
+                  <div className="flex gap-2 items-center">
                     <PlaceIndexIcon idx={selectedPlace.idx} />
-                    {selectedPlace.data.name}: 언급된 노트들
+                    {selectedPlace.data.name}
                   </div>
-                  <RelatedPostLists
-                    posts={selectedPlace.data.posts}
-                    placeId={selectedPlace.data.id}
-                  />
+                  <div>
+                    <RelatedPostLists
+                      posts={selectedPlace.data.posts}
+                      placeId={selectedPlace.data.id}
+                    />
+                  </div>
                 </div>
                 :
                 <LocalMapWController />

@@ -31,7 +31,7 @@ export default function RelatedPostLists({
             setFromMapPage(placeId);
           }}
         >
-          <RandItem hovered={hovered} note={note} />
+          <RandItem hovered={hovered} note={note} hideTag />
         </div>
       ))}
     </>

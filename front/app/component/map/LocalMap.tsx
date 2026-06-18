@@ -303,7 +303,7 @@ export default function LocalMap({
           type='circle'
           source='marker'
           paint={{
-            'circle-radius': 13,
+            'circle-radius': 11,
             'circle-color': '#00EB95',
             'circle-opacity': [
               'case',
@@ -324,7 +324,7 @@ export default function LocalMap({
           source='marker'
           layout={{
             'text-field': ['get', 'i'],
-            'text-size': 14,
+            'text-size': 10,
             'text-offset': [0, 0],
           }}
           paint={{

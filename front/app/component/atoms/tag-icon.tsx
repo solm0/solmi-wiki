@@ -14,7 +14,7 @@ export default function TagIcon({tag}: {tag?: Tag}){
         )}
       ></div>
       <div className={`
-      absolute w-1.5 h-1.5 rounded-full z-20 bg-amber-700
+      absolute w-1.5 h-1.5 rounded-full z-20
       ${tag ? getTagColorClass(tag.name) : 'bg-button-100'}
         `} />
     </div>
