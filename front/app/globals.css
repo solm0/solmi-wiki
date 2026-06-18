@@ -24,7 +24,7 @@
   --text-800: #646464;
   --text-700: #B5B5B5;
   --text-600: #DADADA;
-  --scrollbar-thumb: #d1d1d150;
+  --scrollbar-thumb: #d1d1d190;
   --tag-ink: #52636E;
   --tag-travel: #cea8ff;
   --tag-self-hosting: #a5b2ff;
@@ -48,7 +48,7 @@
   --text-800: #98a0ae;
   --text-700: #5A626F;
   --text-600: #383F4A;
-  --scrollbar-thumb: #3b404550;
+  --scrollbar-thumb: #3b404590;
   --tag-ink: #000000;
   --tag-travel: #7f5ab8;
   --tag-self-hosting: #4e68b8;
@@ -139,6 +139,17 @@
 
 .animate-fadeInOnce {
   animation: fadeInOnce 0.4s ease forwards;
+}
+
+::view-transition-group(*) {
+  animation-duration: 320ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*) {
+    animation-duration: 0.01ms;
+  }
 }
 
 .tag-color-travel {

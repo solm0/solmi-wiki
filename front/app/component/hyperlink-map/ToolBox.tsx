@@ -6,7 +6,7 @@ import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
 import { Place, Playlist, Post } from "@/app/lib/type";
 import GraphController from "./graph-controller";
-import { ChevronRight, SettingsIcon } from "lucide-react";
+import { SettingsIcon } from "lucide-react";
 import Toc from "../toc";
 import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
@@ -113,7 +113,10 @@ export default function ToolBox({
     <>
       {/* 배경 */}
       {isOpen &&
-        <div className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'></div>
+        <div
+          className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'
+          onClick={() => setIsEnabled('toolBox', false)}
+        ></div>
       }
 
       {/* 설정 */}
@@ -152,17 +155,10 @@ export default function ToolBox({
         className={clsx(
         `${pretendard.className}
         absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
-        isOpen ? 'w-[calc(100%-3rem)] md:w-76 border-l border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
+        isOpen ? 'w-[calc(100%-3rem)] md:w-76 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
-        {/* 작은화면 창닫기 */}
-        <button
-          onClick={() => setIsEnabled('toolBox', false)}
-          className='fixed top-4 left-4 md:hidden w-8 h-8 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-background hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
-        >
-          <ChevronRight />
-        </button>
 
-        <div className="w-full h-auto flex flex-col gap-2 pt-16 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+        <div className="w-full h-auto flex flex-col gap-2 pt-7 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
           {post &&

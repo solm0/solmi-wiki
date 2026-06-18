@@ -74,34 +74,64 @@ export default function WorkGrid({
 
   const matrix = getPostsByCell(posts, years, medias);
 
+  function YearLabel({
+    year,
+    className = '',
+  }: {
+    year: string;
+    className?: string;
+  }) {
+    return (
+      <p
+        className={`absolute left-0 z-30 whitespace-nowrap bg-background pr-1 text-xs ${className}`}
+        style={{
+          transformOrigin: 'top left',
+          transform: 'rotate(-90deg) translateX(-100%)',
+        }}
+      >
+        {year}
+      </p>
+    );
+  }
+
   let grids;
 
   // 1) year + media 동시에 활성화 → Year × Media 매트릭스
   if (filters.year && filters.media) {
     grids = (
       <Suspense>
-        {years.map((year, row) =>
-          medias.map((media, col) => (
-            <div
-              key={`${year}-${media}`}
-              className={`row-start-${row + 1} col-start-${col + 1}`}
-            >
-              {row === 0 &&<p>{media}</p>}
-              {!isEmpty(year) && <p className={`bg-button-100 ${col === 0 ? 'text-text-900' : 'text-button-100'}`}>{year}</p>}
+        {years.map((year, row) => (
+          <div
+            key={year}
+            className={`relative row-start-${row + 1} col-span-3 pl-5`}
+          >
+            <div className={`pointer-events-none absolute inset-x-0 z-20 h-px bg-text-600 ${row === 0 ? 'top-5' : 'top-0'}`} />
+            {!isEmpty(year) && <YearLabel year={year} className={row === 0 ? 'top-6' : 'top-1'} />}
 
-              <div className="flex flex-wrap">
-                {matrix[year][media].map(post =>
-                  <ThumbnailList
-                    key={post.id}
-                    note={post}
-                    hovered={hovered}
-                    setHovered={setHovered}
-                  />
-                )}
-              </div>
+            <div className="relative grid grid-cols-3">
+              {medias.map((media, col) => (
+                <div
+                  key={`${year}-${media}`}
+                  className={`relative col-start-${col + 1}`}
+                >
+                  <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-20 w-px bg-text-600" />
+                  {row === 0 && <p className="relative z-30 ml-1 inline-block bg-background">{media}</p>}
+
+                  <div className="relative flex flex-wrap">
+                    {matrix[year][media].map(post =>
+                      <ThumbnailList
+                        key={post.id}
+                        note={post}
+                        hovered={hovered}
+                        setHovered={setHovered}
+                      />
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-          ))
-        )}
+          </div>
+        ))}
       </Suspense>
     );
   }
@@ -113,11 +143,12 @@ export default function WorkGrid({
         {years.map((year, row) => (
           <div
             key={year}
-            className={`row-start-${row + 1} col-start-1`}
+            className={`relative row-start-${row + 1} col-start-1 pl-5`}
           >
-            {!isEmpty(year) && <p className={`bg-button-100`}>{year}</p>}
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-20 h-px bg-text-600" />
+            {!isEmpty(year) && <YearLabel year={year} className="top-1" />}
 
-            <div className="flex flex-wrap">
+            <div className="relative flex flex-wrap">
               {posts
                 .filter(post => getYear(post) === year)
                 .map(post =>
@@ -143,10 +174,11 @@ export default function WorkGrid({
         {medias.map((media, col) => (
           <div
             key={media}
-            className={`col-start-${col + 1} row-start-1`}
+            className={`relative col-start-${col + 1} row-start-1`}
           >
-            <p>{media}</p>
-            <div className="flex flex-wrap">
+            <div className="pointer-events-none absolute bottom-0 left-0 top-0 z-20 w-px bg-text-600" />
+            <p className="relative z-30 ml-1 inline-block bg-background">{media}</p>
+            <div className="relative flex flex-wrap">
               {posts
                 .filter(post => getMedia(post) === media)
                 .map(post =>

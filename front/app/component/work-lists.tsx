@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react"
+import { flushSync } from "react-dom";
 import { Post } from "../lib/type";
 import WorkGrid from "./WorkGrid";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -17,6 +18,23 @@ export default function WorkLists({
 
   const router = useRouter();
   const searchParams = useSearchParams();
+
+  const updateFilters = (updater: (prev: Record<string, boolean>) => Record<string, boolean>) => {
+    const documentWithTransition = document as Document & {
+      startViewTransition?: (updateCallback: () => void) => void;
+    };
+
+    if (!documentWithTransition.startViewTransition) {
+      setFilters(updater);
+      return;
+    }
+
+    documentWithTransition.startViewTransition(() => {
+      flushSync(() => {
+        setFilters(updater);
+      });
+    });
+  };
 
   useEffect(() => {
     const year = searchParams.get('year');
@@ -44,41 +62,38 @@ export default function WorkLists({
   }, [filters, router]);
 
   return (
-    <section className='relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar'>
+    <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar pr-4'>
 
-      <div className="flex gap-4 h-auto text-sm items-center text-text-900 flex-wrap mb-2">
-        <div className="flex gap-2 leading-5 items-center">
+      <div className="flex flex-col gap-1 text-sm items-end text-text-900 flex-wrap mb-32">
+        <div className="flex gap-2 items-center">
+          <label htmlFor='year-filter'>연도</label>
           <button
-            className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
+            className="w-3 h-3 border border-text-600 hover:border-text-700 p-px transition-colors duration-300"
             onClick={() => {
-              setFilters(prev => ({
+              updateFilters(prev => ({
                 ...prev,
-                year: !filters['year']
+                year: !prev.year
               }))
-
             }}
             id='year-filter'
           >
-            <div className={`w-full h-full rounded-full ${filters['year'] ? 'bg-green-400' : 'bg-transparent'} transition-colors duration-300`} />
+            <div className={`w-full h-full ${filters['year'] ? 'bg-text-800' : 'bg-transparent'} transition-colors duration-300`} />
           </button>
-          <label htmlFor='year-filter'>연도</label>
         </div>
 
-        <div className="flex gap-2 leading-5 items-center">
+        <div className="flex gap-2 items-center">
+          <label htmlFor='media-filter'>분야</label>
           <button
-            className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
-            onClick={() => setFilters(prev => ({
+            className="w-3 h-3 border border-text-600 hover:border-text-700 p-px transition-colors duration-300"
+            onClick={() => updateFilters(prev => ({
               ...prev,
-              media: !filters['media']
+              media: !prev.media
             }))}
             id='media-filter'
           >
-            <div className={`w-full h-full rounded-full ${filters['media'] ? 'bg-green-400' : 'bg-transparent'} transition-colors duration-300`} />
+            <div className={`w-full h-full ${filters['media'] ? 'bg-text-800' : 'bg-transparent'} transition-colors duration-300`} />
           </button>
-          <label htmlFor='media-filter'>분야</label>
         </div>
-
-        <p>에 따라 모아 보기</p>
       </div>
 
       <div className="flex flex-wrap justify-center md:justify-start">

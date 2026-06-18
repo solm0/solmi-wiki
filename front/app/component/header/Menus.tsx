@@ -16,8 +16,7 @@ const menus = [
 export default function Menus() {
   const pathname = usePathname();
   const rootPath = pathname.split('/').slice(1, 2).toString();
-  const smallScreenVisible = menus.find(menu => menu.href === rootPath) ?? menus[0];
-  const smallScreenHidden = menus.filter(menu => menu.href !== smallScreenVisible.href);
+  const smallScreenHidden = menus.filter(menu => menu.href !== '');
 
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
 
@@ -41,7 +40,7 @@ export default function Menus() {
       {/* sm */}
       <div className={`flex md:hidden absolute left-14 lg:translate-0 h-4 w-auto gap-1 text-sm items-center text-nowrap transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]`}>
         <Suspense>
-          <SmallMenuButton visible={smallScreenVisible} hidden={smallScreenHidden} rootPath={rootPath} />
+          <SmallMenuButton hidden={smallScreenHidden} />
         </Suspense>
       </div>
     </>

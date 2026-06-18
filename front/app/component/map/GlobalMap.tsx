@@ -86,6 +86,7 @@ export default function GlobalMap({
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}
       mapStyle={mapStyle}
+      projection="globe"
     >
       <Source id='marker-layer' type='geojson' data={geojson}>
         <Layer

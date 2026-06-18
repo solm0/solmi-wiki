@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from "clsx";
-import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Post } from "../lib/type";
 import Image from "next/image";
 
@@ -38,11 +38,11 @@ export default function ThumbnailList({
 
   return (
     <div
-      key={note.id}
       className={`
-        relative bg-background hover:cursor-pointer flex items-center justify-center overflow-hidden hover:scale-130 hover:z-80 hover:rounded-sm transition-all duration-300
+        relative bg-background hover:cursor-pointer flex items-center justify-center overflow-hidden transition-all duration-300
         ${noColumn ? 'w-1/3 md:w-1/6 lg:w-1/9 h-auto aspect-square' : 'w-full md:w-1/2 lg:w-1/3 h-auto aspect-square'}
       `}
+      style={{ viewTransitionName: `work-thumbnail-${note.id}` }}
       onMouseEnter={() => onMouseEnter(note.id)}
       onMouseLeave={onMouseLeave}
       onClick={() => note.externalLink

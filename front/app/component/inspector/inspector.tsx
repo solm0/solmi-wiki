@@ -12,7 +12,6 @@ import GenerateChron from "../../lib/gererate-chron";
 import InspectResultList from "./inspect-result-list";
 import { usePathname, useSearchParams } from "next/navigation";
 import filterPosts from "../../lib/filter-posts";
-import { ChevronLeft } from 'lucide-react';
 
 export function FilterComponents({
   icon,
@@ -123,7 +122,10 @@ export default function Inspector({
     <>
       {/* 배경 */}
       {isEnabled && !shouldHideInspector &&
-        <div className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'></div>
+        <div
+          className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'
+          onClick={() => setIsEnabled('noteInspector', false)}
+        ></div>
       }
 
       <section
@@ -131,19 +133,15 @@ export default function Inspector({
         onTouchEnd={handleTouchEnd}
         className={clsx(
         "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
-        isEnabled && !shouldHideInspector ? 'w-[calc(100%-3rem)] md:w-64 border-r border-text-600 md:border-0 translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
+        isEnabled && !shouldHideInspector ? 'w-[calc(100%-3rem)] md:w-64 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
-        {/* 작은화면 창닫기 */}
-        <button
-          onClick={() => setIsEnabled('noteInspector', false)}
-          className='fixed top-4 right-4 md:hidden w-8 h-8 text-text-900 hover:text-text-700 pointer-events-auto transition-colors duration-200 bg-transparent hover:bg-button-100 border border-text-600 rounded-sm flex items-center justify-center z-80'
-        >
-          <ChevronLeft />
-        </button>
-
         {/* 필터링 */}
-        <div className="w-full h-auto flex flex-col gap-6 pt-16 md:pt-0 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar">
+        <div
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
+          className="w-full min-h-full flex-1 flex flex-col gap-6 pt-7 md:pt-0 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar"
+        >
           <FilterComponents
             icon={<TagIcon className='w-3 h-3' />}
             cmp={{ value: 'tag', name: '태그' }}
