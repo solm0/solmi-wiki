@@ -109,7 +109,7 @@ export default function Note({
       
       <div className="flex flex-col w-full">
         {post.status === 'draft'
-          ? <p>아직 공개되지 않은 노트입니다.</p>
+          ? <p>공개되지 않은 노트입니다.</p>
           : post.content && <Content post={post.content.document} places={post.places} />
         }
       </div>
