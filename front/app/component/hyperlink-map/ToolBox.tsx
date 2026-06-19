@@ -154,11 +154,11 @@ export default function ToolBox({
         onTouchEnd={handleTouchEnd}
         className={clsx(
         `${pretendard.className}
-        absolute md:relative right-0 md:right-auto z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
+        absolute md:relative right-0 md:right-auto md:pr-4 z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
         isOpen ? 'w-[calc(100%-3rem)] md:w-76 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
-        <div className="w-full h-auto flex flex-col gap-2 pt-7 md:pt-5 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+        <div className="w-full h-auto flex flex-col gap-2 pt-10 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
 
           {/* toc */}
           {post &&

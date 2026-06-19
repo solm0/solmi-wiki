@@ -25,15 +25,15 @@ const GET_ALL_POSTS = gql`
 `;
 
 export const metadata: Metadata = {
-  title: "진열창",
-  description: "시각적 작업물들을 전시하는 곳",
+  title: "Work",
+  description: "작업",
 };
 
 type Data = {
   posts: Post[]
 }
 
-export default async function BlogPage() {
+export default async function WorkPage() {
   const data:Data = await client.request(GET_ALL_POSTS);
   const posts = data.posts;
   const finalPosts = posts

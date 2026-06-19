@@ -3,7 +3,7 @@
 import clsx from 'clsx';
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useHoveredLiquid } from '@/app/lib/zustand/useHoveredLiquid';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Tag } from '@/app/lib/type';
 import { getTagColorClass } from '@/app/lib/data/tags';
 
@@ -15,14 +15,8 @@ export default function InspectTag({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-
-  const tagContainerRef = useRef<HTMLDivElement | null>(null);
   
   const hoveredTag = useHoveredLiquid((state) => state.value);
-  const offsetX = useHoveredLiquid((state) => state.offsetX);
-  const width = useHoveredLiquid((state) => state.width);
-  const offsetY = useHoveredLiquid((state) => state.offsetY);
-  const height = useHoveredLiquid((state) => state.height);
   const setHoveredTag = useHoveredLiquid((state) => state.setValue);
   const fromNote = useHoveredLiquid(state=>state.fromNote);
   const setFromNote = useHoveredLiquid(state=>state.setFromNote);
@@ -46,41 +40,14 @@ export default function InspectTag({
     }
   }
 
-  // 호버한 태그
-  const updateHandlePosition = (
-    e: React.MouseEvent<HTMLDivElement, MouseEvent>,
-    value: string
-  ) => {
-    if (!tagContainerRef.current) return;
-    const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
-    const containerTop = Math.floor(tagContainerRef.current.getBoundingClientRect().top);
-
-    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
-    const left = Math.floor(rect.left);
-    const width = rect.width;
-    const top = Math.floor(rect.top);
-    const height = rect.height;
-
-    setHoveredTag(value, left-containerLeft, width, top-containerTop, height)
+  const updateHandlePosition = (value: string) => {
+    setHoveredTag(value, null, null, null, null)
   };
 
   // 현재 호버중인 태그 없으면 직전에 클릭했던 태그
   useEffect(() => {
     if (!hoveredTag && tag) {
-      const el = document.getElementById(tag);
-      if (!el) return;
-
-      if (!tagContainerRef.current) return;
-      const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
-      const containerTop = Math.floor(tagContainerRef.current.getBoundingClientRect().top);
-      
-      const rect = el.getBoundingClientRect();
-      const left = Math.floor(rect.left);
-      const width = rect.width;
-      const top = Math.floor(rect.top);
-      const height = rect.height;
-
-      setHoveredTag(tag, left-containerLeft, width, top-containerTop, height);
+      setHoveredTag(tag, null, null, null, null);
     } else return;
   }, [hoveredTag, tag]);
 
@@ -88,21 +55,7 @@ export default function InspectTag({
   useEffect(() => {
     if (!hoveredTag && !tag) {
       if (!currentTag) return;
-
-      const el = document.getElementById(currentTag);
-      if (!el) return;
-
-      if (!tagContainerRef.current) return;
-      const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
-      const containerTop = Math.floor(tagContainerRef.current.getBoundingClientRect().top);
-      
-      const rect = el.getBoundingClientRect();
-      const left = Math.floor(rect.left);
-      const width = rect.width;
-      const top = Math.floor(rect.top);
-      const height = rect.height;
-
-      setHoveredTag(currentTag, left-containerLeft, width, top-containerTop, height);
+      setHoveredTag(currentTag, null, null, null, null);
     }
   }, [currentTag, hoveredTag, setHoveredTag, tag, tags]);
 
@@ -110,20 +63,7 @@ export default function InspectTag({
   useEffect(() => {
     if (fromNote) {
       if (currentTag) {
-        const el = document.getElementById(currentTag);
-        if (!el) return;
-  
-        if (!tagContainerRef.current) return;
-        const containerLeft = Math.floor(tagContainerRef.current.getBoundingClientRect().left);
-        const containerTop = Math.floor(tagContainerRef.current.getBoundingClientRect().top);
-        
-        const rect = el.getBoundingClientRect();
-        const left = Math.floor(rect.left);
-        const width = rect.width;
-        const top = Math.floor(rect.top);
-        const height = rect.height;
-  
-        setHoveredTag(currentTag, left-containerLeft, width, top-containerTop, height);
+        setHoveredTag(currentTag, null, null, null, null);
       } else {
         console.log('no currenttag')
         setHoveredTag(null, null, null, null, null)
@@ -135,7 +75,6 @@ export default function InspectTag({
 
   return (
     <div
-      ref={tagContainerRef}
       className='relative h-auto w-auto flex flex-wrap gap-1 pointer-events-auto'
       onMouseLeave={() => setHoveredTag(null, null, null, null, null)}
     >
@@ -144,22 +83,14 @@ export default function InspectTag({
           key={idx}
           id={tag.name}
           className={clsx(
-            'relative h-[2.3em] px-[0.8em] flex items-center justify-center rounded-sm active:bg-button-200 transition-colors',
+            'relative h-[2.2em] px-2 flex items-center justify-center rounded-xs active:bg-button-200 transition-colors',
+            hoveredTag === tag.name ? getTagColorClass(tag.name) : 'bg-button-100',
             hoveredTag === tag.name ? 'text-[var(--tag-ink)]' : 'text-text-900',
           )}
           onClick={() => handleClick(tag.name)}
-          onMouseOver={(e) => updateHandlePosition(e, tag.name)}
+          onMouseOver={() => updateHandlePosition(tag.name)}
         >
-          <div
-            className={`
-              absolute top-0 left-0 w-full h-full -z-10 rounded-sm
-              ${hoveredTag === tag.name ? 'bg-transparent' : 'bg-button-100 animate-pulse duration-100'}
-            `}
-            style={{
-              animationDelay: `${Math.random() * 3}s`,
-            }}
-          />
-          <div className='relative top-0 left-0 w-1.5 h-1.5 rounded-sm bg-background mr-1.5 z-20' />
+          <div className='relative top-0 left-0 w-1.5 h-1.5 rounded-full bg-background mr-1 z-20' />
           <label htmlFor={`${tag.name}-input`}>{tag.name}</label>
           <input
             id={`${tag.name}-input`}
@@ -169,20 +100,6 @@ export default function InspectTag({
           />
         </div>
       ))}
-        <span
-        className={clsx(
-          'absolute h-8 rounded-sm mix-blend-darken pointer-events-none transition-all duration-300 ease-in-out',
-          getTagColorClass(hoveredTag),
-          hoveredTag ? 'opacity-100' : 'opacity-0',
-        )}
-        style={{
-          top: `${offsetY}px`,
-          height: `${height}px`,
-          left: `${offsetX}px`,
-          width: `${width}px`,
-        }}
-      >
-      </span>
     </div>
   )
 }

@@ -64,11 +64,11 @@ export default function WorkLists({
   return (
     <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar pr-4'>
 
-      <div className="flex flex-col gap-1 text-sm items-end text-text-900 flex-wrap mb-32">
-        <div className="flex gap-2 items-center">
-          <label htmlFor='year-filter'>연도</label>
+      <div className="flex flex-col gap-1 text-base md:text-sm items-end text-text-900 flex-wrap mb-32">
+        <div className="flex items-center">
+          <label htmlFor='year-filter' className="pr-2">연도</label>
           <button
-            className="w-3 h-3 border border-text-600 hover:border-text-700 p-px transition-colors duration-300"
+            className="w-4 h-4 md:w-3 md:h-3 border border-text-700 hover:border-text-900 transition-colors duration-300"
             onClick={() => {
               updateFilters(prev => ({
                 ...prev,
@@ -77,21 +77,21 @@ export default function WorkLists({
             }}
             id='year-filter'
           >
-            <div className={`w-full h-full ${filters['year'] ? 'bg-text-800' : 'bg-transparent'} transition-colors duration-300`} />
+            <div className={`w-full h-full ${filters['year'] ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
           </button>
         </div>
 
-        <div className="flex gap-2 items-center">
-          <label htmlFor='media-filter'>분야</label>
+        <div className="flex items-center">
+          <label htmlFor='media-filter' className="pr-2">분야</label>
           <button
-            className="w-3 h-3 border border-text-600 hover:border-text-700 p-px transition-colors duration-300"
+            className="w-4 h-4 md:w-3 md:h-3 border border-text-700 hover:border-text-900 transition-colors duration-300"
             onClick={() => updateFilters(prev => ({
               ...prev,
               media: !prev.media
             }))}
             id='media-filter'
           >
-            <div className={`w-full h-full ${filters['media'] ? 'bg-text-800' : 'bg-transparent'} transition-colors duration-300`} />
+            <div className={`w-full h-full ${filters['media'] ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
           </button>
         </div>
       </div>

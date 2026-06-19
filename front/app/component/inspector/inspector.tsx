@@ -140,7 +140,7 @@ export default function Inspector({
         <div
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
-          className="w-full min-h-full flex-1 flex flex-col gap-6 pt-7 md:pt-0 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar"
+          className="w-full min-h-full flex-1 flex flex-col gap-6 pt-7 md:pt-2 pointer-events-auto overflow-y-scroll overflow-x-hidden custom-scrollbar"
         >
           <FilterComponents
             icon={<TagIcon className='w-3 h-3' />}

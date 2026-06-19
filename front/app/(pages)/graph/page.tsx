@@ -7,8 +7,8 @@ import path from "path";
 import fs from 'fs';
 
 export const metadata: Metadata = {
-  title: "하이퍼링크 맵",
-  description: "하이퍼링크 맵",
+  title: "Graph",
+  description: "하이퍼링크 그래프",
 };
 
 export default async function GraphPage() {

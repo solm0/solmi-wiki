@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { usePathname } from "next/navigation";
 
-const nonNoteRootPaths = new Set(["", "blog", "work", "graph", "map"]);
+const nonNoteRootPaths = new Set(["", "timeline", "work", "graph", "map", "photobook", 'shop']);
 
 export function ToolBoxIcons() {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
@@ -31,7 +31,7 @@ export function ToolBoxIcons() {
       <EnableButton
         value={{
           value: 'toolBox',
-          name: <FlaskConical className="w-4 h-4 shrink-0"/>,
+          name: <FlaskConical className="w-4 h-4 shrink-0 z-10"/>,
           title: "도구 상자",
         }}
       />

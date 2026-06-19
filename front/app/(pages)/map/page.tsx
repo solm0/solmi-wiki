@@ -4,7 +4,7 @@ import { Place } from "@/app/lib/type";
 import MapScreen from "@/app/component/map/MapScreen";
 
 export const metadata: Metadata = {
-  title: "세계지도",
+  title: "Map",
   description: "세계지도",
 };
 

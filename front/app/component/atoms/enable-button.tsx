@@ -23,7 +23,7 @@ export default function EnableButton({
 
   return (
     <div
-      className={`${isEnabled ? `text-green-500`: `text-text-900`} w-8 h-8 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:bg-button-100`}
+      className={`${isEnabled ? `text-green-500`: `text-text-900`} w-8 h-8 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:bg-button-100 z-10`}
       onClick={handleClick}
       title={value.title}
     >
