@@ -119,7 +119,7 @@ export default function ToolBox({
       }
 
       {/* 설정 */}
-      <div className="fixed top-1 right-2 origin-top-right md:top-1 md:right-2 z-70 w-8">
+      <div className="fixed origin-top-right top-2 right-2 z-70 w-8">
         {isOpen &&
           <ExpandButton name={<SettingsIcon className="w-4 h-4 md:w-3.5 md:h-3.5 shrink-0"/>}>
 

@@ -9,7 +9,7 @@ export default function Ul({
   return (
     <ul className="list-none flex flex-col gap-2">
       {ul.children.map((child, idx) => (
-        <li key={idx} className="flex flex-col leading-[1.7em] pl-1">
+        <li key={idx} className="flex flex-col pl-1">
           {child.children.map((ch, idx) => {
             if (ch.type === 'list-item-content') {
               return (

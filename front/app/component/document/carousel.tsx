@@ -21,7 +21,7 @@ export default function Carousel({
       className={`
         flex w-full items-start gap-1 my-4 h-auto
         overflow-x-auto overflow-y-hidden
-        custom-hor-scrollbar
+        custom-hor-scrollbar-visible
       `}
     >
       {carousel.props.items.map((item, idx) => {

@@ -25,6 +25,7 @@
   --text-700: #B5B5B5;
   --text-600: #DADADA;
   --scrollbar-thumb: #d1d1d190;
+  --notice-alpha: 20%;
   --tag-ink: #52636E;
   --tag-travel: #cea8ff;
   --tag-self-hosting: #a5b2ff;
@@ -49,6 +50,7 @@
   --text-700: #5A626F;
   --text-600: #383F4A;
   --scrollbar-thumb: #3b404590;
+  --notice-alpha: 10%;
   --tag-ink: #000000;
   --tag-travel: #7f5ab8;
   --tag-self-hosting: #4e68b8;
@@ -129,7 +131,25 @@
 }
 
 .custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: var(--color-green-500);
+  background-color: var(--scrollbar-thumb);
+}
+
+.custom-hor-scrollbar-visible {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) transparent;
+}
+
+.custom-hor-scrollbar-visible::-webkit-scrollbar {
+  height: 6px;
+}
+
+.custom-hor-scrollbar-visible::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.custom-hor-scrollbar-visible::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 9999px;
 }
 
 @keyframes fadeInOnce {

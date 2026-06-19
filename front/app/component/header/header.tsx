@@ -1,4 +1,4 @@
-import { Funnel } from "lucide-react";
+import { Search } from "lucide-react";
 import EnableButton from "../atoms/enable-button";
 import Menus from "./Menus";
 import { ToolBoxIcons } from "./ToolBoxIcons";
@@ -14,7 +14,7 @@ export default function Header() {
         <EnableButton
           value={{
             value: 'noteInspector',
-            name: <Funnel className="w-4 h-4 md:w-3.5 md:h-3.5" />,
+            name: <Search className="w-4 h-4 md:w-3.5 md:h-3.5" />,
             title: '노트 탐색기'
           }} 
         />

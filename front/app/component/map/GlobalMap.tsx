@@ -103,8 +103,6 @@ export default function GlobalMap({
               1
             ],
             'circle-opacity-transition': { duration: 300 },
-            'circle-stroke-color': '#009B71',
-            'circle-stroke-width': 0.5
           }}
         />
         <Layer

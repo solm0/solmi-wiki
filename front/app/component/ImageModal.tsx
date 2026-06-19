@@ -116,12 +116,12 @@ export default function ImageModal({
     >
       {/* 배경 */}
       <div
-        className="absolute z-[121] w-full h-full backdrop-blur-2xl bg-background opacity-70"
+        className="absolute z-121 w-full h-full backdrop-blur-2xl bg-button-100/50 opacity-70"
         onClick={() => setIdx(null)}
       />
 
       {/* 안내문구 */}
-      <p className={`${pretendard.className} absolute top-10 z-[122] text-text-800 animate-pulse leading-tight`}>
+      <p className={`${pretendard.className} absolute top-10 z-[122] text-text-800 animate-pulse leading-tight text-sm`}>
         스크롤하거나 두 손가락으로 확대 / 축소
       </p>
 
@@ -153,8 +153,8 @@ export default function ImageModal({
         <div className="flex justify-center items-center gap-4 mb-16 md:mb-0">
           <button
             className={`
-              px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
-              ${idx < 1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
+              px-2 h-8 rounded-sm transition-filter duration-300 hover:opacity-50
+              ${idx < 1 ? 'pointer-events-none opacity-10' : 'pointer-events-auto text-text-800'}
             `}
             onClick={() => setIdx(idx-1)}
             disabled={idx < 1}
@@ -162,12 +162,12 @@ export default function ImageModal({
             <ChevronLeft className="w-4 h-4" />
           </button>
 
-          <span>{`${idx+1}/${items.length}`}</span>
+          <span className="text-text-800">{`${idx+1} / ${items.length}`}</span>
           
           <button
             className={`
-              px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
-              ${idx >= items.length-1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
+              px-2 h-8 rounded-sm transition-filter duration-300 hover:opacity-50
+              ${idx >= items.length-1 ? 'pointer-events-none opacity-10' : 'pointer-events-auto text-text-800'}
             `}
             onClick={() => setIdx(idx+1)}
             disabled={idx >= items.length-1}

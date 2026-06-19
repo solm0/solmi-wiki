@@ -1,7 +1,7 @@
 'use client'
 
 import EnableButton from "../atoms/enable-button";
-import { FlaskConical } from "lucide-react";
+import { Ellipsis } from "lucide-react";
 import { useEffect } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { usePathname } from "next/navigation";
@@ -32,7 +32,7 @@ export function ToolBoxIcons() {
       <EnableButton
         value={{
           value: 'toolBox',
-          name: <FlaskConical className="w-4 h-4 md:w-3.5 md:h-3.5 shrink-0 z-10"/>,
+          name: <Ellipsis className="w-4 h-4 md:w-3.5 md:h-3.5 shrink-0 z-10"/>,
           title: "도구 상자",
         }}
       />

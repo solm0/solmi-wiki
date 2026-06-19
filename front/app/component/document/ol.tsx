@@ -9,7 +9,7 @@ export default function Ol({
   return (
     <ol className="list-decimal pl-4.5 flex flex-col gap-2">
       {ol.children.map((child, idx) => (
-        <li key={idx} className="leading-[1.7em] pl-2">
+        <li key={idx} className="pl-2">
           {child.children.map((ch, idx) => {
             if (ch.type === 'list-item-content') {
               return (

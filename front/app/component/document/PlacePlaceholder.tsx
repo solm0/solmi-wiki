@@ -3,9 +3,10 @@ import { useClickedPlace } from "@/app/lib/zustand/useClickedPlace";
 import { useEffect, useRef, useState } from "react";
 import ToolTip from "../atoms/ToolTip";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
+import { pretendard } from "@/app/lib/localfont";
 
 export function PlaceIndexIcon({idx}:{idx:number}){
-  return <div className="w-6 h-6 bg-green-500 rounded-full border-[0.5px] border-green-900 text-green-900 flex items-center justify-center shrink-0 text-[12px]">{idx}</div>
+  return <div className="w-5 h-5 bg-green-500 rounded-full text-green-900 flex items-center justify-center shrink-0 text-[12px]">{idx}</div>
 }
 
 export default function PlacePlaceholder({
@@ -57,7 +58,7 @@ export default function PlacePlaceholder({
           if (!isToolBoxOpen) setToggle('toolBox', true);
           if (!isMapEnabled) setToggle('map', true);
         }}
-        className="border border-text-600 bg-button-50 hover:bg-button-100 pl-2 pr-3 py-1 rounded-full transition-colors duration-300 flex items-center gap-2 leading-[1.5em] text-left min-h-10"
+        className={`pl-7 pr-3 py-1 my-3 rounded-sm duration-300 flex items-center gap-2 hover:opacity-50 transition-opacity text-sm ${pretendard.className}`}
       >
         <PlaceIndexIcon idx={index+1} />
         {label}
