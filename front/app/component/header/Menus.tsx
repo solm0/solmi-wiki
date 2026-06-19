@@ -116,7 +116,7 @@ export default function Menus() {
       <div
         ref={containerRef}
         className={clsx(
-          isEnabled ? "lg:left-72" : "lg:left-30",
+          isEnabled ? "md:left-72" : "md:left-30",
           "absolute left-14 top-1 block",
           "text-sm text-text-900 transition-[left] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]"
         )}

@@ -122,7 +122,7 @@ export default function Carousel({
       <ImageModal
         idx={idx}
         setIdx={setIdx}
-        carousel={carousel}
+        items={carousel.props.items}
       />
     </div>
   )

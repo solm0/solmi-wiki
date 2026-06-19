@@ -256,14 +256,16 @@ export type CarouselNode = {
     children: ParagraphNode[],
   }[],
   props: {
-    items: {
-      alt: string,
-      imageSrc: string,
-      type: string,
-      fit: string,
-      isGif: boolean,
-    }[],
+    items: CarouselItem[],
   },
+}
+
+export type CarouselItem = {
+  alt: string,
+  imageSrc: string,
+  type: string,
+  fit: string,
+  isGif: boolean,
 }
 
 export type IframeNode = {

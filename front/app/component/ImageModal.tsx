@@ -1,24 +1,24 @@
 import Image from "next/image";
-
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { CarouselNode } from "../lib/type";
+import { CarouselItem } from "../lib/type";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { pretendard } from "../lib/localfont";
 
 export default function ImageModal({
-  idx, setIdx, carousel
+  idx, setIdx, items
 }: {
   idx: number | null;
   setIdx: (idx: number | null) => void;
-  carousel: CarouselNode;
+  items: CarouselItem[];
 }) {
   const MIN_SCALE = 0.3;
   const MAX_SCALE = 5;
 
   const generateUrl = (idx: number) => {
     const cloudName = "dpqjfptr6";
-    const publicId = carousel.props.items[idx]?.imageSrc;
-    const transformations = carousel.props.items[idx]?.isGif
+    const publicId = items[idx]?.imageSrc;
+    const transformations = items[idx]?.isGif
       ? "f_auto,q_auto"
       : "f_auto,q_auto,c_fill";
     return `https://res.cloudinary.com/${cloudName}/image/upload/${transformations}/${publicId}.jpg`;
@@ -100,9 +100,15 @@ export default function ImageModal({
 
   if (idx === null) {
     return null;
-  } else return (
+  }
+
+  if (typeof document === 'undefined') {
+    return null;
+  }
+
+  return createPortal((
     <div
-      className="fixed backdrop-blur-2xl w-screen h-screen top-0 left-0 z-80 flex items-center justify-center touch-none"
+      className="fixed backdrop-blur-2xl w-screen h-screen top-0 left-0 z-[120] flex items-center justify-center touch-none"
       onWheel={handleWheel}
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -110,18 +116,18 @@ export default function ImageModal({
     >
       {/* 배경 */}
       <div
-        className="absolute w-full h-full backdrop-blur-2xl bg-background opacity-70"
+        className="absolute z-[121] w-full h-full backdrop-blur-2xl bg-background opacity-70"
         onClick={() => setIdx(null)}
       />
 
       {/* 안내문구 */}
-      <p className={`${pretendard.className} absolute top-10 text-text-800 animate-pulse z-80 leading-tight`}>
+      <p className={`${pretendard.className} absolute top-10 z-[122] text-text-800 animate-pulse leading-tight`}>
         스크롤하거나 두 손가락으로 확대 / 축소
       </p>
 
       {/* 이미지 */}
       <div
-        className='fixed flex items-center justify-center'
+        className='fixed z-[122] flex items-center justify-center'
         onClick={() => setIdx(null)}
         style={{
           transform: `scale(${scale})`,
@@ -133,15 +139,15 @@ export default function ImageModal({
           height={800}
           src={generateUrl(idx)}
           className="w-auto h-auto object-left-top rounded-sm cursor-pointer"
-          alt={carousel.props.items[idx]?.alt}
+          alt={items[idx]?.alt}
           unoptimized
         />
       </div>
 
       {/* alt, 컨트롤 */}
-      <div className="fixed w-screen mb-8 left-0 bottom-0 text-sm flex flex-col gap-7 items-center">
+      <div className="fixed left-0 bottom-0 z-[122] mb-8 flex w-screen flex-col items-center gap-7 text-sm">
         <p className={`${pretendard.className} text-text-800`}>
-          {carousel.props.items[idx]?.alt}
+          {items[idx]?.alt}
         </p>
 
         <div className="flex justify-center items-center gap-4 mb-16 md:mb-0">
@@ -156,20 +162,20 @@ export default function ImageModal({
             <ChevronLeft className="w-4 h-4" />
           </button>
 
-          <span>{`${idx+1}/${carousel.props.items.length}`}</span>
+          <span>{`${idx+1}/${items.length}`}</span>
           
           <button
             className={`
               px-2 h-8 rounded-sm transition-filter duration-300 backdrop-blur-sm bg-button-100 hover:bg-button-200
-              ${idx >= carousel.props.items.length-1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
+              ${idx >= items.length-1 ? 'pointer-events-none text-text-600' : 'pointer-events-auto text-text-800'}
             `}
             onClick={() => setIdx(idx+1)}
-            disabled={idx >= carousel.props.items.length-1}
+            disabled={idx >= items.length-1}
           >
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
       </div>
     </div>
-  )
+  ), document.body)
 }

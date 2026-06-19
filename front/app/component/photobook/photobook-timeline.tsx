@@ -4,7 +4,8 @@ import { useRef, useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PhotobookImage } from '@/app/lib/type';
+import { CarouselItem, PhotobookImage } from '@/app/lib/type';
+import ImageModal from '@/app/component/ImageModal';
 
 const cloudName = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME || 'dpqjfptr6';
 const imageTransform = 'f_auto,q_auto,w_1200';
@@ -29,9 +30,11 @@ function buildImageUrl(image: PhotobookImage) {
 function TimelineImageItem({
   image,
   alt,
+  onClick,
 }: {
   image: PhotobookImage;
   alt: string;
+  onClick?: () => void;
 }) {
   const [loaded, setLoaded] = useState(false);
 
@@ -43,12 +46,13 @@ function TimelineImageItem({
         width={image.width}
         height={image.height}
         className={clsx(
-          'h-auto w-full rounded-none bg-button-100 transition-opacity duration-700',
+          'h-auto w-full rounded-none bg-button-100 transition-opacity duration-700 cursor-pointer',
           loaded ? 'opacity-100' : 'opacity-0',
         )}
         loading="lazy"
         unoptimized
         onLoad={() => setLoaded(true)}
+        onClick={onClick}
       />
     </div>
   );
@@ -58,10 +62,12 @@ function PhotoMosaic({
   images,
   altPrefix,
   columnCount = 2,
+  onImageClick,
 }: {
   images: PhotobookImage[];
   altPrefix: string;
   columnCount?: number;
+  onImageClick?: (idx: number) => void;
 }) {
   return (
     <div
@@ -73,6 +79,7 @@ function PhotoMosaic({
           key={image.publicId}
           image={image}
           alt={`${altPrefix} ${idx + 1}`}
+          onClick={onImageClick ? () => onImageClick(idx) : undefined}
         />
       ))}
     </div>
@@ -84,11 +91,13 @@ function DesktopEntry({
   index,
   visibleCount,
   onExpand,
+  onImageClick,
 }: {
   entry: TimelineEntry;
   index: number;
   visibleCount: number;
   onExpand: () => void;
+  onImageClick: (idx: number) => void;
 }) {
   const extraSteps = Math.max(0, Math.floor((visibleCount - initialBatchSize) / batchSize));
   const width = baseDesktopWidth + extraSteps * desktopWidthStep;
@@ -117,6 +126,7 @@ function DesktopEntry({
             images={visibleImages}
             altPrefix={entry.title}
             columnCount={columnCount}
+            onImageClick={onImageClick}
           />
         </div>
         {visibleCount < entry.images.length && (
@@ -138,11 +148,13 @@ function MobileEntry({
   index,
   visibleCount,
   onExpand,
+  onImageClick,
 }: {
   entry: TimelineEntry;
   index: number;
   visibleCount: number;
   onExpand: () => void;
+  onImageClick: (idx: number) => void;
 }) {
   const visibleImages = entry.images.slice(0, visibleCount);
   const extraSteps = Math.max(0, Math.floor((visibleCount - initialBatchSize) / batchSize));
@@ -168,6 +180,7 @@ function MobileEntry({
           images={visibleImages}
           altPrefix={entry.title}
           columnCount={2}
+          onImageClick={onImageClick}
         />
         {visibleCount < entry.images.length && (
           <button
@@ -189,6 +202,8 @@ export default function PhotobookTimeline({
   entries: TimelineEntry[];
 }) {
   const desktopScrollRef = useRef<HTMLElement | null>(null);
+  const [activeEntryId, setActiveEntryId] = useState<string | null>(null);
+  const [activeImageIdx, setActiveImageIdx] = useState<number | null>(null);
   const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>(
     Object.fromEntries(
       entries.map((entry) => [entry.id, Math.min(initialBatchSize, entry.images.length)]),
@@ -201,6 +216,19 @@ export default function PhotobookTimeline({
       [entryId]: Math.min((prev[entryId] ?? initialBatchSize) + batchSize, totalImages),
     }));
   };
+
+  const activeEntry = activeEntryId
+    ? entries.find((entry) => entry.id === activeEntryId) ?? null
+    : null;
+  const modalItems: CarouselItem[] = activeEntry
+    ? activeEntry.images.map((image, idx) => ({
+        alt: `${activeEntry.title} ${idx + 1}`,
+        imageSrc: image.publicId,
+        type: 'image',
+        fit: '',
+        isGif: image.format === 'gif',
+      }))
+    : [];
 
   return (
     <>
@@ -224,6 +252,10 @@ export default function PhotobookTimeline({
               index={index}
               visibleCount={visibleCounts[entry.id] ?? initialBatchSize}
               onExpand={() => expandEntry(entry.id, entry.images.length)}
+              onImageClick={(idx) => {
+                setActiveEntryId(entry.id);
+                setActiveImageIdx(idx);
+              }}
             />
           ))}
         </div>
@@ -237,9 +269,24 @@ export default function PhotobookTimeline({
             index={index}
             visibleCount={visibleCounts[entry.id] ?? initialBatchSize}
             onExpand={() => expandEntry(entry.id, entry.images.length)}
+            onImageClick={(idx) => {
+              setActiveEntryId(entry.id);
+              setActiveImageIdx(idx);
+            }}
           />
         ))}
       </section>
+
+      <ImageModal
+        idx={activeImageIdx}
+        setIdx={(idx) => {
+          setActiveImageIdx(idx);
+          if (idx === null) {
+            setActiveEntryId(null);
+          }
+        }}
+        items={modalItems}
+      />
     </>
   );
 }

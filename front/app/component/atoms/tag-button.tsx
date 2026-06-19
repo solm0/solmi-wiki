@@ -2,7 +2,6 @@
 
 import clsx from "clsx";
 import { getTagColorClass } from "@/app/lib/data/tags";
-import { pretendard } from "@/app/lib/localfont";
 import { useHoveredLiquid } from "@/app/lib/zustand/useHoveredLiquid";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
@@ -36,7 +35,7 @@ export default function TagButton({tagname}: {tagname: string}) {
   return (
     <div
       className={clsx(
-        'inline-flex w-3 h-3 -translate-y-6 ml-2 rounded-full hover:opacity-50 transition-opacity',
+        'inline-flex w-3 h-3 -translate-y-5 ml-1 rounded-full hover:opacity-50 transition-opacity',
         getTagColorClass(tagname),
       )}
       onClick={() => {
