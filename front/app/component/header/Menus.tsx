@@ -16,7 +16,7 @@ const menuColumns = [
     { href: "shop", name: "상점" },
   ],
   [
-    { href: "photobook", name: "사진" },
+    { href: "photobook", name: "사진집" },
     { href: "map", name: "세계지도" },
   ],
 ];

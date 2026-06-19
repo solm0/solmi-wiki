@@ -22,8 +22,6 @@ export default async function ShopPage() {
 
   return (
     <>
-
-
       {/* 오른쪽 사이드바 */}
       <ToolBox allPlaylists={playlists} />
     </>

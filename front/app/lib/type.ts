@@ -340,3 +340,17 @@ export type Song = {
   lyric: Lyric[];
   playlist: Playlist[];
 }
+
+export type PhotobookImage = {
+  publicId: string;
+  format: string;
+  width: number;
+  height: number;
+  createdAt: string;
+}
+
+export type PhotobookEntry = {
+  postId: string;
+  folder: string;
+  images: PhotobookImage[];
+}

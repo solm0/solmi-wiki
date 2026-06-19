@@ -36,8 +36,7 @@ export default function TagButton({tagname}: {tagname: string}) {
   return (
     <div
       className={clsx(
-        "absolute -top-8 left-5 flex h-7 -rotate-6 items-center justify-center rounded-xs px-[0.7em] text-xs text-[var(--tag-ink)] transition-all duration-300 hover:rotate-5 active:translate-y-3",
-        pretendard.className,
+        'inline-flex w-3 h-3 -translate-y-6 ml-2 rounded-full hover:opacity-50 transition-opacity',
         getTagColorClass(tagname),
       )}
       onClick={() => {
@@ -45,8 +44,6 @@ export default function TagButton({tagname}: {tagname: string}) {
         handleClick(tagname)
       }}
     >
-      <div className='relative top-0 left-0 w-1.5 h-1.5 rounded-sm bg-background mr-1.5 z-20' />
-      {tagname}
     </div>
   )
 }

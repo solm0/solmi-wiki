@@ -25,7 +25,7 @@ export function FilterComponents({
   return (
     <div className='flex flex-col gap-1 w-full items-start select-none'>
       <label
-        className='flex items-center gap-2 text-text-800'
+        className='flex items-center gap-1.5 text-text-800/80'
         htmlFor={`${cmp.value}-input`}
       >
         {icon}
@@ -88,7 +88,7 @@ export default function Inspector({
   const search = searchParams.get("search");
   const keywords = searchParams.getAll("keyword");
   const hasActiveFilters = Boolean(tag || search || keywords.length > 0);
-  const shouldHideInspector = pathname === "/map";
+  const shouldHideInspector = pathname === "/map" || pathname === "/photobook";
 
   const finalPosts = filterPosts({ posts: GenerateChron(loadedPosts), tag, search, keywords });
 
