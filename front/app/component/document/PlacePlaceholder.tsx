@@ -31,12 +31,12 @@ export default function PlacePlaceholder({
         behavior: 'smooth',
         block: 'nearest'
       })
-      buttonRef.current.classList.add("bg-green-500");
-      buttonRef.current.classList.add("hover:bg-green-500");
+      buttonRef.current.classList.add("opacity-50");
+      buttonRef.current.classList.add("opacity-50");
       setTimeout(() => {
         if (buttonRef.current) {
-          buttonRef.current.classList.remove("bg-green-500");
-          buttonRef.current.classList.remove("hover:bg-green-500");
+          buttonRef.current.classList.remove("opacity-50");
+          buttonRef.current.classList.remove("opacity-50");
         };
       }, 800);
     }
