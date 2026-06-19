@@ -17,7 +17,7 @@ export default function ExpandButton({
       {/* 버튼 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`${isOpen ? `text-green-500`: `text-text-900`} w-8 h-8 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:bg-button-100`}
+        className={`${isOpen ? `text-green-500`: `text-text-900`} w-8 h-8 flex items-center justify-center rounded-sm transition-colors duration-300 pointer-events-auto hover:text-text-700`}
       >
         {name}
       </button>
@@ -26,7 +26,7 @@ export default function ExpandButton({
       <div
         onMouseLeave={() => setIsOpen(false)}
         className={`
-          bg-button-100 h-auto w-40 flex flex-col p-3 mt-2 items-start gap-1 overflow-clip rounded-sm text-xs z-70
+          bg-button-100 shadow-xl h-auto w-32 flex flex-col p-3 items-start gap-1 overflow-clip rounded-sm text-xs z-70 mr-2
           ${isOpen ? "block max-h-96" : "hidden max-h-0"}
         `}
        >

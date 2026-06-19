@@ -133,7 +133,7 @@ export default function Inspector({
         onTouchEnd={handleTouchEnd}
         className={clsx(
         "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
-        isEnabled && !shouldHideInspector ? 'w-[calc(100%-3rem)] md:w-64 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
+        isEnabled && !shouldHideInspector ? 'w-80 md:w-64 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-0' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
         {/* 필터링 */}

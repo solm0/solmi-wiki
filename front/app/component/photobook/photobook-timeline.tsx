@@ -27,6 +27,18 @@ function buildImageUrl(image: PhotobookImage) {
   return `https://res.cloudinary.com/${cloudName}/image/upload/${imageTransform}/${image.publicId}.${image.format}`;
 }
 
+function canScrollVertically(el: HTMLElement, deltaY: number) {
+  if (deltaY > 0) {
+    return el.scrollTop + el.clientHeight < el.scrollHeight - 1;
+  }
+
+  if (deltaY < 0) {
+    return el.scrollTop > 1;
+  }
+
+  return false;
+}
+
 function TimelineImageItem({
   image,
   alt,
@@ -71,7 +83,7 @@ function PhotoMosaic({
 }) {
   return (
     <div
-      className="[column-gap:0.35rem]"
+      className="gap-1"
       style={{ columnCount }}
     >
       {images.map((image, idx) => (
@@ -118,10 +130,13 @@ function DesktopEntry({
         </Link>
       </div>
 
-      <div className="relative flex min-h-0 flex-1 flex-col border-t border-text-900/60 pt-8 pr-4">
-        <span className="absolute left-0 top-0 h-3 -translate-y-1/2 border-l border-text-900/60" />
+      <div className="relative flex min-h-0 flex-1 flex-col border-t border-text-900/60 pt-4 pr-1">
+        <span className="absolute left-0 top-0 h-6 -translate-y-1/2 border-l border-text-900/60" />
 
-        <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden pr-2 custom-scrollbar">
+        <div
+          className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar"
+          data-photobook-vertical-scroll="true"
+        >
           <PhotoMosaic
             images={visibleImages}
             altPrefix={entry.title}
@@ -129,15 +144,18 @@ function DesktopEntry({
             onImageClick={onImageClick}
           />
         </div>
-        {visibleCount < entry.images.length && (
-          <button
-            type="button"
-            className="mt-2 block self-start text-lg p-2 hover:text-text-700 transition-colors"
-            onClick={onExpand}
-          >
-            +
-          </button>
-        )}
+        <button
+          type="button"
+          className={`
+            block self-start text-lg p-2 pb-4 transition-colors
+            ${visibleCount < entry.images.length ? 'opacity-100 hover:text-text-700' : 'opacity-20'}
+          `}
+          onClick={onExpand}
+          disabled={visibleCount >= entry.images.length}
+        >
+          +
+        </button>
+        
       </div>
     </article>
   );
@@ -165,14 +183,14 @@ function MobileEntry({
       className="grid grid-cols-[max-content_1px_minmax(0,1fr)] gap-x-3"
       style={{ minHeight: sectionHeight }}
     >
-      <div className="max-w-25 shrink-0 break-keep pt-7 text-left text-xs">
+      <div className="w-25 shrink-0 break-keep pt-7 text-left text-xs">
         <Link href={`/${entry.id}`} className="flex flex-col">
           <span>{entry.title}</span>
         </Link>
       </div>
 
       <div className="relative h-full bg-text-900/60">
-        <span className="absolute left-1/2 top-8 w-3 -translate-x-1/2 -translate-y-1/2 border-t border-text-900/60" />
+        <span className="absolute left-1/2 top-8 w-6 -translate-x-1/2 -translate-y-1/2 border-t border-text-900/60" />
       </div>
 
       <div className="flex min-h-0 flex-col pt-8">
@@ -182,15 +200,17 @@ function MobileEntry({
           columnCount={2}
           onImageClick={onImageClick}
         />
-        {visibleCount < entry.images.length && (
-          <button
-            type="button"
-            className="mt-2 block text-lg hover:text-text-700 transition-colors"
-            onClick={onExpand}
-          >
-            +
-          </button>
-        )}
+        <button
+          type="button"
+          className={`
+            mt-2 block text-lg hover:text-text-700 transition-colors self-end px-1
+            ${visibleCount < entry.images.length ? 'opacity-100 hover:text-text-700' : 'opacity-20'}
+          `}
+          onClick={onExpand}
+          disabled={visibleCount >= entry.images.length}
+        >
+          +
+        </button>
       </div>
     </article>
   );
@@ -240,11 +260,20 @@ export default function PhotobookTimeline({
           if (!container) return;
           if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
 
+          const target = e.target;
+          if (target instanceof HTMLElement) {
+            const verticalScroller = target.closest('[data-photobook-vertical-scroll="true"]');
+
+            if (verticalScroller instanceof HTMLElement && canScrollVertically(verticalScroller, e.deltaY)) {
+              return;
+            }
+          }
+
           e.preventDefault();
           container.scrollLeft += e.deltaY;
         }}
       >
-        <div className="flex h-full min-w-max items-start px-8 pt-12 box-border">
+        <div className="flex h-full min-w-max items-start px-8 pt-12 box-border custom-hor-scrollbar">
           {entries.map((entry, index) => (
             <DesktopEntry
               key={entry.id}
@@ -261,7 +290,7 @@ export default function PhotobookTimeline({
         </div>
       </section>
 
-      <section className="h-[100svh] w-full overflow-y-auto px-4 pt-20 md:hidden">
+      <section className="h-[100svh] w-full overflow-y-auto custom-scrollbar pl-4 pr-2 pt-20 md:hidden">
         {entries.map((entry, index) => (
           <MobileEntry
             key={entry.id}

@@ -81,12 +81,16 @@ export default function Carousel({
           return (
             <div
               key={idx}
-              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+              className={`
+                relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0
+                ${horizontalFit ? 'w-full md:w-auto' : ''}
+              `}
               title="탭하거나 클릭하여 확대"
             >
               <div
                 className={`
                   relative rounded-sm overflow-hidden
+                  ${horizontalFit ? 'w-full' : ''}
                   ${!loadedMap[idx] ? 'bg-button-100 animate-pulse' : ''}
                 `}
               >
@@ -96,7 +100,7 @@ export default function Carousel({
                   height={800}
                   className={`
                     object-contain rounded-sm cursor-pointer transition-opacity duration-300
-                    ${horizontalFit ? 'w-full h-auto max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
+                    ${horizontalFit ? 'w-full h-auto md:max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
                     ${loadedMap[idx] ? 'opacity-100' : 'opacity-0'}
                   `}
                   alt={item.alt}

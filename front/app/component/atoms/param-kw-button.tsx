@@ -2,6 +2,7 @@
 
 import { usePathname, useSearchParams, useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useToggleStore } from '@/app/lib/zustand/useToggleStore';
 
 export default function ParamKwButton({
   keywords,
@@ -11,6 +12,8 @@ export default function ParamKwButton({
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
+  const setToggle = useToggleStore((s) => s.setToggle);
+  const isInspectorOpen = useToggleStore((s) => s.toggles['noteInspector']);
   const currentKeywords = searchParams.getAll("keyword");
   const [animVersion, setAnimVersion] = useState(0);
 
@@ -23,6 +26,10 @@ export default function ParamKwButton({
       updated.forEach(keyword => newParams.append("keyword", keyword));
     } else {
       newParams.append("keyword", kw);
+    }
+
+    if (!isInspectorOpen) {
+      setToggle('noteInspector', true);
     }
 
     router.push(`${pathname}?${newParams.toString()}`);

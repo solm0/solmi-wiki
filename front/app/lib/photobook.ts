@@ -1,13 +1,13 @@
 export const photobookRootFolder = 'travel';
 
 export const photobookFolders = {
-  cmdbjl1ny003jmdamx4sp3240: 'munchen_to_kempten',
-  cmdbj4vag003dmdam7i43xoow: 'napcab',
   cmdbodrx2005umdammo3ivnhz: 'flight_to_germany',
+  cmdbj4vag003dmdam7i43xoow: 'napcab',
+  cmdbjl1ny003jmdamx4sp3240: 'munchen_to_kempten',
+  cmdbkhogg004bmdammzptpv2c: 'kempten',
   cmdboix9q006gmdamvxxb3kcx: 'dachau',
   cmdc6ricb0084mdamubfs2zbp: 'berlin',
   cmdc6ffot007rmdamyxjls5rl: 'albania',
-  cmdbkhogg004bmdammzptpv2c: 'kempten',
   cmdc68f28007jmdamfoomxsbi: 'swiss',
   cmdbmmhdl0056mdamzuugzdgh: 'immenstadt',
   cmdc5xxvn007dmdam3qkfh6ks: 'frankfurt',

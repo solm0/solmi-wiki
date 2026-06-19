@@ -71,10 +71,10 @@ export function SmallMenuButton({
             setIsOpen(true);
           }}
           className={clsx(
-            "flex w-auto h-auto items-center rounded-sm px-2 py-1 transition-all duration-300",
+            "flex w-auto h-auto items-center px-2 py-1 transition-all duration-300 text-xs",
             isOpen
               ? "bg-background text-text-950"
-              : "bg-transparent text-sm hover:bg-button-100",
+              : "bg-transparent hover:bg-button-100",
           )}
         >
           solmi.wiki

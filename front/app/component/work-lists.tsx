@@ -68,7 +68,7 @@ export default function WorkLists({
         <div className="flex items-center">
           <label htmlFor='year-filter' className="pr-2">연도</label>
           <button
-            className="w-4 h-4 md:w-3 md:h-3 border border-text-700 hover:border-text-900 transition-colors duration-300"
+            className="w-4 h-4 md:w-3 md:h-3 border border-text-600 hover:border-text-700 transition-colors duration-300"
             onClick={() => {
               updateFilters(prev => ({
                 ...prev,
@@ -84,7 +84,7 @@ export default function WorkLists({
         <div className="flex items-center">
           <label htmlFor='media-filter' className="pr-2">분야</label>
           <button
-            className="w-4 h-4 md:w-3 md:h-3 border border-text-700 hover:border-text-900 transition-colors duration-300"
+            className="w-4 h-4 md:w-3 md:h-3 border border-text-600 hover:border-text-700 transition-colors duration-300"
             onClick={() => updateFilters(prev => ({
               ...prev,
               media: !prev.media

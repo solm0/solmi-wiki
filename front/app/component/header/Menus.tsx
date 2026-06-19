@@ -191,7 +191,7 @@ function CollapsedMenus({
         className="flex h-10 shrink-0 items-start px-2 pt-2"
         onMouseEnter={onOpen}
       >
-        <span className="cursor-default">solmi.wiki</span>
+        <span className="cursor-default text-sm md:text-xs">solmi.wiki</span>
       </div>
       <div className={clsx(!hasMatchedMenu && "hidden")}>
         <div
@@ -200,7 +200,7 @@ function CollapsedMenus({
             event.stopPropagation();
           }}
         >
-          <div className="flex items-center gap-1">
+          <div className="flex items-center gap-1 text-sm md:text-xs">
             {activeColumn.map((menu) => (
               <MenuLink
                 key={menu.href}
@@ -231,10 +231,10 @@ function ExpandedMenus({
         event.stopPropagation();
       }}
     >
-      <span className="shrink-0 px-2 pt-2">solmi.wiki</span>
+      <span className="shrink-0 px-2 pt-2 text-sm md:text-xs">solmi.wiki</span>
       <div className="flex flex-col gap-2 py-1">
         {menuColumns.map((column, index) => (
-          <div key={index} className="flex items-center gap-1">
+          <div key={index} className="flex items-center gap-1 text-sm md:text-xs">
             {column.map((menu) => (
               <MenuLink
                 key={menu.href}

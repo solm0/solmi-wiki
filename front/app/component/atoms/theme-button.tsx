@@ -25,19 +25,17 @@ export default function ThemeButton() {
   }
 
   return (
-    <div
-      className='leading-5 w-auto gap-2 text-text-900 flex items-center justify-center rounded-sm pointer-events-auto'
+    <button
+      className='flex h-8 w-8 items-center justify-center rounded-sm text-text-900 pointer-events-auto transition-colors duration-300 hover:text-text-700 z-10'
+      onClick={handleTheme}
+      id='theme-button'
+      title='테마 전환'
+      type='button'
     >
-      <label htmlFor='theme-button'>테마:</label>
-      <button
-        className='w-auto h-auto hover:text-text-700 transition-colors duration-300'
-        onClick={handleTheme}
-        id='theme-button'
-      >
-        {theme === 'dark' ?
-          <Moon className='h-3.5 w-3.5' /> : <SunMedium className='h-3.5 w-3.5' />
-        }
-      </button>
-    </div>
+      {theme === 'dark'
+        ? <Moon className='w-4 h-4 md:w-3.5 md:h-3.5' />
+        : <SunMedium className='w-4 h-4 md:w-3.5 md:h-3.5' />
+      }
+    </button>
   )
 }

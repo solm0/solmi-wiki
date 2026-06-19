@@ -10,7 +10,6 @@ import { SettingsIcon } from "lucide-react";
 import Toc from "../toc";
 import GoToTop from "../go-to-top";
 import ExpandButton from "../atoms/expand-button";
-import ThemeButton from "../atoms/theme-button";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
 import LocalMapWController from "../map/LocalMapWController";
@@ -120,31 +119,30 @@ export default function ToolBox({
       }
 
       {/* 설정 */}
-      <div className="fixed top-3 right-4 scale-120 md:scale-100 origin-top-right md:top-1 md:right-2 z-70 w-8">
+      <div className="fixed top-1 right-2 origin-top-right md:top-1 md:right-2 z-70 w-8">
         {isOpen &&
-          <ExpandButton name={<SettingsIcon className="w-4 h-4 shrink-0"/>}>
-
-            {/* theme */}
-            <ThemeButton />
+          <ExpandButton name={<SettingsIcon className="w-4 h-4 md:w-3.5 md:h-3.5 shrink-0"/>}>
 
             {/* tools */}
-            {tools.map((tool, i) => 
-              <div
-                key={i}
-                className="flex gap-2 leading-5 text-text-900 items-center"
-                onMouseEnter={() => setHovered(tool.value)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                <button
-                  className="rounded-full w-4 h-4 border border-text-600 hover:border-text-700 p-0.5 transition-colors duration-300"
-                  onClick={() => setIsEnabled(tool.value, !isEnabled[tool.value])}
-                  id={`${tool.value}-button`}
+            <div className="flex flex-col gap-2">
+              {tools.map((tool, i) => 
+                <div
+                  key={i}
+                  className="flex leading-5 text-text-900 items-center w-full"
+                  onMouseEnter={() => setHovered(tool.value)}
+                  onMouseLeave={() => setHovered(null)}
                 >
-                  <div className={`w-full h-full rounded-full ${isEnabled[tool.value] ? 'bg-green-400' : 'bg-transparent'} transition-colors duration-300`} />
-                </button>
-                <label htmlFor={`${tool.value}-button`}>{tool.name}</label>
-              </div>
-            )}
+                  <button
+                    className="w-4 h-4 md:w-3 md:h-3 border border-text-600 hover:border-text-700 transition-colors duration-300"
+                    onClick={() => setIsEnabled(tool.value, !isEnabled[tool.value])}
+                    id={`${tool.value}-button`}
+                  >
+                    <div className={`w-full h-full ${isEnabled[tool.value] ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
+                  </button>
+                  <label htmlFor={`${tool.value}-button`} className="pl-2">{tool.name}</label>
+                </div>
+              )}
+            </div>
           </ExpandButton>
         }
       </div>
@@ -155,7 +153,7 @@ export default function ToolBox({
         className={clsx(
         `${pretendard.className}
         absolute md:relative right-0 md:right-auto md:pr-4 z-60 pointer-events-none h-full flex flex-col items-start text-sm gap-8 text-text-900 transition-all duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] shrink-0 overflow-hidden`,
-        isOpen ? 'w-[calc(100%-3rem)] md:w-76 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
+        isOpen ? 'w-96 md:w-76 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex px-4 md:px-0' : 'w-0 translate-x-88 opacity-0 pointer-events-none flex'
       )}>
 
         <div className="w-full h-auto flex flex-col gap-2 pt-10 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
