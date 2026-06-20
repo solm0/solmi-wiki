@@ -115,6 +115,8 @@ export default function ToolBox({
         <div
           className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'
           onClick={() => setIsEnabled('toolBox', false)}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         ></div>
       }
 

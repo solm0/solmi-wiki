@@ -10,7 +10,7 @@ export default function Header() {
 
       </div>
       {/* note inspector 아이콘 */}
-      <div className="justify-self-start z-10">
+      <div className="justify-self-start shrink-0 z-10">
         <EnableButton
           value={{
             value: 'noteInspector',
@@ -24,7 +24,7 @@ export default function Header() {
       <Menus />
 
       {/* tool box 아이콘 */}
-      <div className="ml-auto pt-1">
+      <div className="ml-auto shrink-0 pt-1">
         <ToolBoxIcons />
       </div>
 
