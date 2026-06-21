@@ -88,7 +88,13 @@ export default function Inspector({
   const search = searchParams.get("search");
   const keywords = searchParams.getAll("keyword");
   const hasActiveFilters = Boolean(tag || search || keywords.length > 0);
-  const shouldHideInspector = pathname === "/map" || pathname === "/photobook";
+  const hasInspectorBackground = pathname === "/map" || pathname === "/photobook";
+
+  useEffect(() => {
+    if (hasInspectorBackground) {
+      setIsEnabled('noteInspector', false);
+    }
+  }, [hasInspectorBackground, setIsEnabled]);
 
   const finalPosts = filterPosts({ posts: GenerateChron(loadedPosts), tag, search, keywords });
 
@@ -121,7 +127,7 @@ export default function Inspector({
   return (
     <>
       {/* 배경 */}
-      {isEnabled && !shouldHideInspector &&
+      {isEnabled &&
         <div
           className='fixed top-0 left-0 w-screen h-screen z-60 opacity-50 bg-text-600 block md:hidden'
           onClick={() => setIsEnabled('noteInspector', false)}
@@ -133,7 +139,8 @@ export default function Inspector({
         onTouchEnd={handleTouchEnd}
         className={clsx(
         "absolute md:relative left-0 md:left-auto z-70 pointer-events-none h-full flex-col mt-0 md:mt-10 items-start text-xs transition-[transform, opacity] duration-200 ease-[cubic-bezier(0.75,0.05,0.45,0.95)] gap-8",
-        isEnabled && !shouldHideInspector ? 'w-80 md:w-64 shadow-2xl md:shadow-none translate-x-0 opacity-100 bg-background md:bg-transparent pointer-events-auto flex pl-4 md:pl-1' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex'
+        isEnabled ? 'w-80 md:w-64 shadow-2xl md:shadow-none translate-x-0 opacity-100 pointer-events-auto flex pl-4 md:pl-1' : 'w-0 md:w-20 -translate-x-88 opacity-0 pointer-events-none flex',
+        hasInspectorBackground ? 'bg-background rounded-sm' : 'bg-background md:bg-transparent'
       )}>
 
         {/* 필터링 */}

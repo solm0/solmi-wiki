@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.8",
+    "@tosspayments/tosspayments-sdk": "^2.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.0",
     "fs-extra": "^11.3.0",

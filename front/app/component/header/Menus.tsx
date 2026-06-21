@@ -14,6 +14,7 @@ const menuColumns = [
   [
     { href: "work", name: "작업" },
     { href: "shop", name: "상점" },
+    { href: "inquiry", name: "문의" },
   ],
   [
     { href: "photobook", name: "사진집" },
