@@ -7,7 +7,7 @@ import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { usePathname } from "next/navigation";
 import ThemeButton from "../atoms/theme-button";
 
-const nonNoteRootPaths = new Set(["", "timeline", "work", "graph", "map", "photobook", 'shop', 'inquiry']);
+const nonNoteRootPaths = new Set(["", "timeline", "work", "graph", "map", "photobook", 'shop']);
 
 export function ToolBoxIcons() {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);

@@ -26,7 +26,7 @@ const GET_ALL_POSTS = gql`
 
 export const metadata: Metadata = {
   title: "Work",
-  description: "작업",
+  description: "진열대",
 };
 
 type Data = {
