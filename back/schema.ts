@@ -11,7 +11,6 @@ import {
   checkbox,
   integer,
   virtual,
-  json,
 } from '@keystone-6/core/fields'
 
 import { document } from '@keystone-6/fields-document'
@@ -294,7 +293,8 @@ export const lists = {
   Playlist: list({
     access: allowAll,
     fields: {
-      title: text(),
+      title: text({ validation: { isRequired: true } }),
+      youtubePlaylistId: text({ validation: { isRequired: true } }),
       posts: relationship({
         ref: 'Post.playlists',
         many: true,
@@ -303,47 +303,6 @@ export const lists = {
           cardFields: ['title'],
           linkToItem: true,
           inlineConnect: true,
-        }
-      }),
-      songs: relationship({
-        ref: 'Song.playlists',
-        many: true,
-        ui: {
-          displayMode: 'cards',
-          cardFields: ['title', 'artist'],
-          linkToItem: true,
-          inlineConnect: true,
-          inlineCreate: { fields: ['title', 'youtubeVideoId'] },
-        }
-      })
-    }
-  }),
-
-  Song: list({
-    access: allowAll,
-    fields: {
-      title: text({ validation: { isRequired: true }}),
-      artist: text(),
-      album: text(),
-      thumbnailId: text(),
-      youtubeVideoId: text(),
-      language: text(),
-      country: text(),
-      releaseYear: text(),
-      desc: text(),
-      lyric: json({
-        defaultValue: {},
-        db: { map: 'lyric_json' },
-      }),
-      playlists: relationship({
-        ref: 'Playlist.songs',
-        many: true,
-        ui: {
-          displayMode: 'cards',
-          cardFields: ['title'],
-          linkToItem: true,
-          inlineConnect: true,
-          inlineCreate: { fields: ['title'] },
         }
       })
     }

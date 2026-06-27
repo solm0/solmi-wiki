@@ -16,23 +16,11 @@ const GET_ALL_PLAYLISTS = gql`
     playlists {
       id
       title
+      youtubePlaylistId
       posts {
         id
         title
         excerpt
-      }
-      songs {
-        id
-        title
-        artist
-        album
-        thumbnailId
-        youtubeVideoId
-        language
-        country
-        releaseYear
-        desc
-        lyric
       }
     }
   }

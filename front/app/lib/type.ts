@@ -316,32 +316,26 @@ export type ComponentPreviewNode = {
 export type Playlist = {
   id: string;
   title: string;
+  youtubePlaylistId: string;
   posts: Post[];
-  songs: Song[];
 }
 
 export type Lyric = {
   lyric: {
     or: string;
-    tr: string;
+    tr?: string;
   };
   time: number;
 }
 
-export type Song = {
-  id: string;
+export type TrackMeta = {
+  videoId: string;
   title: string;
-  artist: string;
-  album: string;
-  thumbnailId: string;
-  youtubeVideoId: string;
-  language: string;
-  country: string;
-  releaseYear: string;
-  desc: string;
-  lyric: Lyric[];
-  playlist: Playlist[];
+  author: string;
+  thumbnailSrc: string;
 }
+
+export type LyricsMode = 'none' | 'loading' | 'plain' | 'synced';
 
 export type PhotobookImage = {
   publicId: string;

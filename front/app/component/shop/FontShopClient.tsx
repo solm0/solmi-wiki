@@ -42,6 +42,9 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
   const [fontStates, setFontStates] = useState<Record<string, FontState>>(
     () => buildInitialState(fonts),
   );
+  const [loadedFontIds, setLoadedFontIds] = useState<Record<string, boolean>>(
+    {},
+  );
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [editingId, setEditingId] = useState<string | null>(null);
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
@@ -105,6 +108,43 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
     textarea.focus();
     textarea.setSelectionRange(textarea.value.length, textarea.value.length);
   }, [editingId]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    const loadFonts = async () => {
+      await Promise.all(
+        fonts.map(async (font) => {
+          try {
+            await document.fonts.load(
+              `${font.defaultSize}px "shop-font-${font.id}"`,
+              font.sampleText,
+            );
+
+            if (cancelled) return;
+
+            setLoadedFontIds((prev) => ({
+              ...prev,
+              [font.id]: true,
+            }));
+          } catch {
+            if (cancelled) return;
+
+            setLoadedFontIds((prev) => ({
+              ...prev,
+              [font.id]: true,
+            }));
+          }
+        }),
+      );
+    };
+
+    loadFonts();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [fonts]);
 
   useEffect(() => {
     if (!selectedCount) {
@@ -312,9 +352,10 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
           color: var(--color-stone-800)
         }
       `}</style>
-      <div ref={containerRef} className="flex flex-col gap-4 w-full pb-48">
+      <div ref={containerRef} className="flex flex-col gap-4 w-full pb-72">
         {fonts.map((font) => {
           const fontState = fontStates[font.id];
+          const isFontLoaded = loadedFontIds[font.id];
           const expanded = hoveredId === font.id || editingId === font.id;
           const variationSettings = makeVariationSettings(fontState.axes);
           const isSelected = selectedIds.includes(font.id);
@@ -432,8 +473,17 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   </div>
                 </div>
               </div>
-              <div className="pl-7 pr-0 pb-7 pt-4">
-                {editingId === font.id ? (
+              <div
+                className="pl-7 pr-0 pb-7 pt-4"
+                style={{
+                  minHeight: "1.2em",
+                }}
+              >
+                {!isFontLoaded ? (
+                  <div className="w-full h-full min-h-[1.2em] flex items-center justify-center text-sm text-stone-700">
+                    loading
+                  </div>
+                ) : editingId === font.id ? (
                   <textarea
                     ref={(node) => {
                       textareaRefs.current[font.id] = node;
@@ -481,8 +531,8 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
           }}
         >
           <div
-            className={`pointer-events-auto w-full bg-green-500 rounded-t-3xl text-stone-900 overflow-hidden transition-all duration-300 ${
-              isPanelOpen ? "min-h-56" : "min-h-16"
+            className={`pointer-events-auto w-full bg-green-500 rounded-t-3xl text-stone-900 overflow-hidden transition-all duration-300 origin-bottom ${
+              isPanelOpen ? "max-h-56" : "max-h-16"
             } ${isPanelOpen ? "hover:translate-y-0" : "hover:translate-y-1"}`}
             onTouchStart={(event) => {
               panelTouchStartY.current = event.touches[0]?.clientY ?? null;

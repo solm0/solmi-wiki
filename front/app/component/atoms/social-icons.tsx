@@ -28,22 +28,8 @@ function IconBase({
 
 export function EmailIcon({ className }: IconProps) {
   return (
-    <IconBase className={className} viewBox="0 0 100 100">
-      <defs>
-        <clipPath id="email-favicon-clip">
-          <circle cx="50" cy="50" r="50" />
-        </clipPath>
-      </defs>
-      <g clipPath="url(#email-favicon-clip)">
-        <image
-          href="/favicon.png"
-          x="-8"
-          y="-8"
-          width="116"
-          height="116"
-          preserveAspectRatio="xMidYMid slice"
-        />
-      </g>
+    <IconBase className={className} viewBox="0 0 233.74 200.49">
+      <path d="M0,24.03h233.74v176.46H0V24.03ZM109.49,123.37c4.66,4.56,11.49,4.18,15.87-.12l35.85-36.17,46.34-46.76-179.72.04,56.94,57.87,24.72,25.15ZM75.64,111.92L16.12,51.95l.06,120.45,59.46-60.48ZM217.54,172.35l.02-119.11-58.8,59.3,58.78,59.8ZM147.45,123.97l-12,11.95c-10.55,9.12-25.73,9.02-36.36-.04l-12.25-12.36-59.34,60.71h178.94s-58.98-60.26-58.98-60.26Z" />
     </IconBase>
   );
 }

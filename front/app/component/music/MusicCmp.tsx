@@ -50,80 +50,60 @@ export default function MusicCmp({
   const [postListOpen, setPostListOpen] = useState(false);
 
   const {
-    songIdx,
     playlist,
     isReady,
     duration,
     currentTime,
     isPlaying,
+    currentTrack,
+    playlistVideoIds,
+    currentPlaylistIndex,
+    lyrics,
+    plainLyrics,
+    lyricsMode,
     setPlaylist,
-    setSongIdx,
     setPlaying,
     setCurrentTime,
     setSeeking,
+    requestPlaylistIndex,
   } = usePlayerStore();
   
   const localPlaylist = useMemo(() => {
     if (!playlistIds) return null;
-    return allPlaylists.find(p => p.id === playlistIds[0]?.id) ?? null;
+    return allPlaylists.find((item) => item.id === playlistIds[0]?.id) ?? null;
   }, [playlistIds, allPlaylists]);
-  
-  // playlist가 바뀌면 song이 있을 때만 setPlaylist, setSong
-  useEffect(() => {
-    if (!localPlaylist?.songs?.length) return;
-    const randomIndex = Math.floor(Math.random() * localPlaylist.songs.length);
-    setPlaylist(localPlaylist);
-    setSongIdx(randomIndex);
-  }, [localPlaylist]);
-  
-  const songData = (songIdx !== null && playlist) ? {
-    title: playlist.songs[songIdx].title,
-    artist: playlist.songs[songIdx].artist,
-    album: playlist.songs[songIdx].album,
-    thumbnailSrc: `https://coverartarchive.org/release/${playlist.songs[songIdx].thumbnailId}/front`,
-    desc: playlist.songs[songIdx].desc,
-    lyric: playlist.songs[songIdx].lyric,
-    language: playlist.songs[songIdx].language,
-    country: playlist.songs[songIdx].country,
-    releaseYear: playlist.songs[songIdx].releaseYear,
-  } : {
-    title: '선택된 음악이 없습니다',
-    artist: '-',
-    album: '-',
-    thumbnailSrc: '/globe.svg',
-    desc: '-',
-    lyric: [],
-    language: '-',
-    country: '-',
-    releaseYear: '-'
-  }
 
-  // 플레이리스트 연관 post 목록
+  useEffect(() => {
+    if (!playlist && localPlaylist?.youtubePlaylistId) {
+      setPlaylist(localPlaylist);
+    }
+  }, [localPlaylist, playlist, setPlaylist]);
+
   const [hovered, setHovered] = useState<string | null>(null);
   const router = useRouter();
-  
-  // 처음 재생할 때 경고창 후
   const [alertOpen, setAlertOpen] = useState(false);
-
-  // 가사 싱크
   const [visibleLyrics, setVisibleLyrics] = useState<Lyric[]>([]);
   const indexRef = useRef(0);
 
   useEffect(() => {
-    const lyrics = songData.lyric;
-    if (!lyrics.length) return;
+    indexRef.current = 0;
+    setVisibleLyrics([]);
+  }, [currentTrack?.videoId]);
 
-    // currentTime이 뒤로 간 경우
+  useEffect(() => {
+    if (lyricsMode !== "synced" || !lyrics.length) {
+      setVisibleLyrics([]);
+      return;
+    }
+
     if (
       indexRef.current > 0 &&
       lyrics[indexRef.current - 1].time > currentTime
     ) {
-      // currentTime보다 큰 첫 index 찾기
-      const newIndex = lyrics.findIndex(l => l.time > currentTime);
+      const newIndex = lyrics.findIndex((line) => line.time > currentTime);
       indexRef.current = newIndex === -1 ? lyrics.length : newIndex;
     }
 
-    // currentTime이 앞으로 간 경우
     while (
       indexRef.current < lyrics.length &&
       lyrics[indexRef.current].time <= currentTime
@@ -132,18 +112,24 @@ export default function MusicCmp({
     }
 
     setVisibleLyrics(lyrics.slice(0, indexRef.current));
-  }, [currentTime, songData.lyric]);
+  }, [currentTime, lyrics, lyricsMode]);
 
-  // current time, duration ui
   const secToMin = (seconds: number) => {
     const mm = Math.floor(seconds / 60);
     const ss = Math.floor(seconds % 60);
     return `${mm}:${ss.toString().padStart(2, '0')}`;
   }
 
+  const displayedPlaylist = playlist ?? localPlaylist;
+  const plainLyricsLines = plainLyrics
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const showSwitchButton = Boolean(localPlaylist && playlist?.id !== localPlaylist.id);
+  const noPlaylistSelected = !displayedPlaylist?.youtubePlaylistId;
+
   return (
     <div className="w-full h-auto flex flex-col gap-2">
-      {/* 경고창 */}
       {alertOpen &&
         <Alert
           setAlertOpen={setAlertOpen}
@@ -151,7 +137,15 @@ export default function MusicCmp({
         />
       }
 
-      {/* 가사 폭포 */}
+      {showSwitchButton &&
+        <button
+          onClick={() => setPlaylist(localPlaylist!)}
+          className="w-full rounded-sm border border-green-600 px-3 py-2 text-left text-xs text-green-700 hover:bg-green-50 transition-colors duration-300"
+        >
+          이 글의 플레이리스트로 전환하기
+        </button>
+      }
+
       <div
         className={`
           relative flex flex-col-reverse gap-1 overflow-y-scroll custom-scrollbar transition-[height] duration-300 rounded-md
@@ -169,40 +163,50 @@ export default function MusicCmp({
             onClick={() => setLyricOpen(!lyricOpen)}
             className="w-6 h-6 p-1 flex items-center justify-center hover:bg-button-100 rounded-sm transition-colors duration-300"
           >
-            {lyricOpen
-              ? <Minimize2 />
-              : <Maximize2 />
-            }
+            {lyricOpen ? <Minimize2 /> : <Maximize2 />}
           </div>
         </div>
 
         <div className="flex flex-col gap-1">
-          {visibleLyrics.map((e, i) => (
-            <div key={i} className="inline-flex px-3 py-2.5 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-md break-words gap-1 shadow-md flex-col">
-              <p className="font-medium leading-[1.3em] max-w-[18em] break-words">{e.lyric.or}</p>
-              <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">{e.lyric.tr}</p>
+          {lyricsMode === "synced" && visibleLyrics.map((line, index) => (
+            <div key={`${line.time}-${index}`} className="inline-flex px-3 py-2.5 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-md break-words gap-1 shadow-md flex-col">
+              <p className="font-medium leading-[1.3em] max-w-[18em] break-words">{line.lyric.or}</p>
+              {line.lyric.tr &&
+                <p className="w-auto opacity-80 max-w-[15em] leading-[1.5em] text-xs break-keep">{line.lyric.tr}</p>
+              }
             </div>
           ))}
+
+          {lyricsMode === "plain" && plainLyricsLines.map((line, index) => (
+            <div key={`${line}-${index}`} className="inline-flex px-3 py-2.5 bg-linear-to-t from-text-800 to-text-950 text-background w-fit max-w-[80%] rounded-md break-words shadow-md">
+              <p className="font-medium leading-[1.3em] max-w-[18em] break-words">{line}</p>
+            </div>
+          ))}
+
+          {lyricsMode === "loading" &&
+            <p className="px-3 py-2 text-xs text-text-700">LRCLIB에서 가사를 찾는 중입니다.</p>
+          }
+
+          {lyricsMode === "none" &&
+            <p className="px-3 py-2 text-xs text-text-700">가사를 찾지 못했습니다.</p>
+          }
         </div>
       </div>
 
-      {/* 음악정보 & 컨트롤러 */}
       <div className={`flex flex-col gap-2 ${maruburi.className} bg-button-100 rounded-sm p-2`}>
         <div className="w-full h-auto flex flex-col gap-2">
-          {/* 개요 */}
           <div className="relative flex gap-2 h-10 items-center">
-            {/* 앨범커버 */}
-            <div className="w-10 h-full rounded-sm bg-button-200">
-              <img src={songData.thumbnailSrc} className="object-cover" />
+            <div className="w-10 h-full rounded-sm bg-button-200 overflow-hidden">
+              <img src={currentTrack?.thumbnailSrc ?? '/globe.svg'} className="object-cover w-full h-full" />
             </div>
 
-            {/* 제목 & 아티스트 */}
-            <div className="h-full flex flex-col justify-between">
-              <p className={`text-base ${maruburi_bold.className} text-text-900`}>{songData.title}</p>
-              <p className="text-xs text-text-700">{songData.artist}</p>
+            <div className="h-full flex flex-col justify-between min-w-0">
+              <p className={`text-base ${maruburi_bold.className} text-text-900 truncate`}>
+                {currentTrack?.title ?? (displayedPlaylist?.title ? `${displayedPlaylist.title} 재생 준비 중` : '선택된 플레이리스트가 없습니다')}
+              </p>
+              <p className="text-xs text-text-700 truncate">{currentTrack?.author ?? '-'}</p>
             </div>
 
-            {/* 플레이리스트 펼침 버튼 */}
             <div className="ml-auto flex gap-1">
               <div
                 onClick={() => setInfoOpen(!infoOpen)}
@@ -225,25 +229,22 @@ export default function MusicCmp({
             </div>
           </div>
 
-          {/* 상세 */}
           <div className={`${pretendard.className} text-xs w-full ${infoOpen ? 'h-auto' : 'h-0 hidden'} transition-[height] duration-300 overflow-hidden py-2 flex flex-col gap-4`}>
             <div className="flex flex-col gap-1">
-              <p>앨범: {songData.album}</p>
-              <p>언어: {songData.language}</p>
-              <p>국가: {songData.country}</p>
-              <p>발매 연도: {songData.releaseYear}</p>
+              <p>플레이리스트: {displayedPlaylist?.title ?? '-'}</p>
+              <p>유튜브 플레이리스트 ID: {displayedPlaylist?.youtubePlaylistId ?? '-'}</p>
+              <p>현재 영상 ID: {currentTrack?.videoId ?? '-'}</p>
+              <p>재생 위치: {playlistVideoIds.length > 0 ? `${currentPlaylistIndex + 1} / ${playlistVideoIds.length}` : '-'}</p>
             </div>
-            <p>{songData.desc}</p>
+            <p>곡 정보와 가사는 현재 재생 중인 유튜브 영상 메타데이터를 기준으로 불러옵니다.</p>
           </div>
         </div>
 
         <div className="w-full flex gap-2 items-start">
-          {/* 컨트롤 버튼 */}
           <button
             onClick={() => {
               if (!isReady) return;
               const dismissed = localStorage.getItem('music-alert-dismissed');
-              console.log(dismissed)
               if (dismissed === 'true') {
                 setPlaying(!isPlaying);
               } else {
@@ -252,16 +253,12 @@ export default function MusicCmp({
             }}
             className={`
               w-6 h-6 p-1 flex items-center justify-center hover:text-text-700 transition-colors duration-300
-              ${isReady ? 'text-text-900' : 'text-text-700'}
+              ${isReady && !noPlaylistSelected ? 'text-text-900' : 'text-text-700'}
             `}
-            disabled={!isReady}
+            disabled={!isReady || noPlaylistSelected}
           >
-            {isPlaying
-              ? <Pause />
-              : <Play />
-            }
+            {isPlaying ? <Pause /> : <Play />}
           </button>
-          {/* 진행 */}
           <div className="w-full flex flex-col gap-1 text-text-800 pt-2">
             <ControllerBar
               currentTime={currentTime}
@@ -277,7 +274,6 @@ export default function MusicCmp({
         </div>
       </div>
 
-      {/* 플레이리스트 */}
       <div
         className={`
           flex flex-col gap-2 transition-[height] duration-300
@@ -285,7 +281,11 @@ export default function MusicCmp({
         `}
       >
         <div className="w-full flex justify-between">
-          <p className="text-xs text-text-800">{`${playlist?.title} 전체 ${playlist?.songs.length}곡`}</p>
+          <p className="text-xs text-text-800">
+            {displayedPlaylist
+              ? `${displayedPlaylist.title} 전체 ${playlistVideoIds.length || 0}곡`
+              : '플레이리스트가 선택되지 않았습니다'}
+          </p>
           <p
             onClick={() => setPostListOpen(!postListOpen)}
             className="text-xs hover:text-text-700 transition-colors duration-300 flex items-center"
@@ -295,7 +295,7 @@ export default function MusicCmp({
           </p>
         </div>
         <div>
-          {postListOpen && playlist?.posts.map((post) => (
+          {postListOpen && displayedPlaylist?.posts.map((post) => (
             <div
               key={post.id}
               className={`
@@ -311,25 +311,30 @@ export default function MusicCmp({
           ))}
         </div>
         <div className="flex flex-col custom-scrollbar">
-          {playlist?.songs
-            .map((song, i) => (
+          {playlistVideoIds.map((videoId, index) => {
+            const isCurrent = currentPlaylistIndex === index;
+            return (
               <div
-                key={i}
+                key={`${videoId}-${index}`}
                 className="p-2 hover:bg-button-100 rounded-md transition-colors duration-300"
-                onClick={() => setSongIdx(i)}
+                onClick={() => requestPlaylistIndex(index)}
               >
                 <div className="relative flex gap-2 h-10 items-center">
-                  <div className="w-10 h-full rounded-sm bg-button-200">
-                    <img src={song.thumbnailId ? `https://coverartarchive.org/release/${song.thumbnailId}/front` : '/globe.svg'} className="object-cover" />
+                  <div className="w-10 h-full rounded-sm bg-button-200 overflow-hidden">
+                    <img src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`} className="object-cover w-full h-full" />
                   </div>
-                  <div className="h-full flex flex-col justify-between">
-                    <p className={`text-base ${maruburi_bold.className} ${songIdx === i ? 'text-green-600' : 'text-text-900'}`}>{song.title}</p>
-                    <p className="text-xs text-text-700">{song.artist}</p>
+                  <div className="h-full flex flex-col justify-between min-w-0">
+                    <p className={`text-base ${maruburi_bold.className} ${isCurrent ? 'text-green-600' : 'text-text-900'} truncate`}>
+                      {isCurrent && currentTrack?.title ? currentTrack.title : `영상 ${index + 1}`}
+                    </p>
+                    <p className="text-xs text-text-700 truncate">
+                      {isCurrent && currentTrack?.author ? currentTrack.author : videoId}
+                    </p>
                   </div>
                 </div>
               </div>
-            )
-          )}
+            );
+          })}
         </div>
       </div>
     </div>
