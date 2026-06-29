@@ -58,7 +58,7 @@ export default function PlacePlaceholder({
           if (!isToolBoxOpen) setToggle('toolBox', true);
           if (!isMapEnabled) setToggle('map', true);
         }}
-        className={`pl-7 pr-3 py-1 my-3 rounded-sm duration-300 flex items-center gap-2 hover:opacity-50 transition-opacity text-sm ${pretendard.className}`}
+        className={`-translate-x-.5 pr-3 py-1 my-3 rounded-sm duration-300 flex items-center gap-2 hover:opacity-50 transition-opacity text-sm ${pretendard.className}`}
       >
         <PlaceIndexIcon idx={index+1} />
         {label}

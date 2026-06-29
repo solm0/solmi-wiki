@@ -38,7 +38,7 @@ export default async function TimelinePage() {
 
   return (
     <>
-      <div className="flex h-full min-h-0 w-full flex-1 overflow-y-auto px-4 md:px-0 md:pl-5 custom-scrollbar">
+      <div className="flex h-full min-h-0 w-full flex-1 overflow-y-auto pl-4 pr-4 md:pl-32 md:pr-0  ">
         <Suspense>
           <BlogLists posts={finalPosts} />
         </Suspense>

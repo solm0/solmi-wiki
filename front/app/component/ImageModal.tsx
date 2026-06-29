@@ -28,6 +28,8 @@ export default function ImageModal({
 
   const [scale, setScale] = useState(0.8);
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
+  const scaleRef = useRef(scale);
+  const translateRef = useRef(translate);
   const pinchStateRef = useRef<{
     distance: number;
     scale: number;
@@ -65,10 +67,50 @@ export default function ImageModal({
     }
   }, [idx]);
 
+  useEffect(() => {
+    scaleRef.current = scale;
+  }, [scale]);
+
+  useEffect(() => {
+    translateRef.current = translate;
+  }, [translate]);
+
+  const getViewportCenter = () => ({
+    x: window.innerWidth / 2,
+    y: window.innerHeight / 2,
+  });
+
+  const getZoomedTranslate = useCallback((params: {
+    anchor: { x: number; y: number };
+    baseAnchor?: { x: number; y: number };
+    baseScale: number;
+    nextScale: number;
+    baseTranslate: { x: number; y: number };
+  }) => {
+    const { anchor, baseAnchor = anchor, baseScale, nextScale, baseTranslate } = params;
+    const viewportCenter = getViewportCenter();
+    const localX = (baseAnchor.x - viewportCenter.x - baseTranslate.x) / baseScale;
+    const localY = (baseAnchor.y - viewportCenter.y - baseTranslate.y) / baseScale;
+
+    return {
+      x: anchor.x - viewportCenter.x - localX * nextScale,
+      y: anchor.y - viewportCenter.y - localY * nextScale,
+    };
+  }, []);
+
   const handleWheel = useCallback((e: React.WheelEvent) => {
     e.preventDefault();
-    setScale((prev) => clampScale(prev - e.deltaY * 0.001));
-  }, [clampScale]);
+    const baseScale = scaleRef.current;
+    const nextScale = clampScale(baseScale - e.deltaY * 0.001);
+    const nextTranslate = getZoomedTranslate({
+      anchor: { x: e.clientX, y: e.clientY },
+      baseScale,
+      nextScale,
+      baseTranslate: translateRef.current,
+    });
+    setScale(nextScale);
+    setTranslate(nextTranslate);
+  }, [clampScale, getZoomedTranslate]);
 
   const getTouchDistance = (touches: React.TouchList) => {
     if (touches.length < 2) return null;
@@ -150,12 +192,16 @@ export default function ImageModal({
 
     e.preventDefault();
     lastMultiTouchAtRef.current = Date.now();
-    setScale(clampScale(pinchState.scale * (distance / pinchState.distance)));
-    setTranslate({
-      x: pinchState.translate.x + (center.x - pinchState.center.x),
-      y: pinchState.translate.y + (center.y - pinchState.center.y),
-    });
-  }, [clampScale]);
+    const nextScale = clampScale(pinchState.scale * (distance / pinchState.distance));
+    setScale(nextScale);
+    setTranslate(getZoomedTranslate({
+      anchor: center,
+      baseAnchor: pinchState.center,
+      baseScale: pinchState.scale,
+      nextScale,
+      baseTranslate: pinchState.translate,
+    }));
+  }, [clampScale, getZoomedTranslate]);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
     if (e.touches.length === 1) {

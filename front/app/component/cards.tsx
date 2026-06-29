@@ -108,7 +108,7 @@ export function CardXl({posts}: {posts: Post[]}) {
         return (
           <div
             key={post.id}
-            className="flex h-[50vh] md:h-[60vh] w-full overflow-x-scroll cursor-default overscroll-x-none custom-hor-scrollbar rounded-sm"
+            className="flex h-[50vh] md:h-[60vh] w-full overflow-x-scroll cursor-default overscroll-x-none   rounded-sm"
           >
             <div className="flex gap-1 ml-72">
               {carousels.map((img, idx) => {

@@ -113,7 +113,7 @@ export default async function Page({
     <>
       <div
         id="note_wrapper"
-        className='flex gap-4 w-full pt-[40vh] text-text-900 break-normal md:break-keep overflow-y-scroll overflow-x-hidden custom-scrollbar focus:outline-0 pr-4 md:pl-5'
+        className='flex-1 min-w-0 flex gap-4 pt-[40vh] text-text-900 break-normal md:break-keep overflow-y-scroll overflow-x-hidden focus:outline-0'
       >
         {/* 본문 */}
         <Suspense>

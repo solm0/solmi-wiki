@@ -112,55 +112,6 @@
   scrollbar-width: none;
 }
 
-/* 회색 세로 */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 5px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-}
-
-/* 가로 */
-
-.custom-hor-scrollbar::-webkit-scrollbar {
-  height: 1px;
-}
-
-.custom-hor-scrollbar::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-.custom-hor-scrollbar::-webkit-scrollbar-thumb {
-  background-color: transparent;
-}
-
-.custom-hor-scrollbar:hover::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-}
-
-.custom-hor-scrollbar-visible {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-thumb) transparent;
-}
-
-.custom-hor-scrollbar-visible::-webkit-scrollbar {
-  height: 6px;
-}
-
-.custom-hor-scrollbar-visible::-webkit-scrollbar-track {
-  @apply bg-transparent;
-}
-
-.custom-hor-scrollbar-visible::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb);
-  border-radius: 9999px;
-}
-
 @keyframes fadeInOnce {
   0% { opacity: 0; transform: translateY(4px) }
   100% { opacity: 1; transform: translateY(0) }

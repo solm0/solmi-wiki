@@ -148,7 +148,7 @@ export default function MusicCmp({
 
       <div
         className={`
-          relative flex flex-col-reverse gap-1 overflow-y-scroll custom-scrollbar transition-[height] duration-300 rounded-md
+          relative flex flex-col-reverse gap-1 overflow-y-scroll   transition-[height] duration-300 rounded-md
           ${lyricOpen ? 'h-120' : 'h-40'}
         `}
       >
@@ -310,7 +310,7 @@ export default function MusicCmp({
             </div>
           ))}
         </div>
-        <div className="flex flex-col custom-scrollbar">
+        <div className="flex flex-col  ">
           {playlistVideoIds.map((videoId, index) => {
             const isCurrent = currentPlaylistIndex === index;
             return (

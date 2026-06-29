@@ -271,7 +271,7 @@ export default function PhotobookTimeline({
           container.scrollLeft += e.deltaY;
         }}
       >
-        <div className="flex h-full min-w-max items-start px-8 pt-12 box-border custom-hor-scrollbar">
+        <div className="flex h-full min-w-max items-start px-8 pt-12 box-border  ">
           {entries.map((entry, index) => (
             <DesktopEntry
               key={entry.id}
@@ -288,7 +288,7 @@ export default function PhotobookTimeline({
         </div>
       </section>
 
-      <section className="h-[100svh] w-full overflow-y-auto custom-scrollbar pl-4 pr-2 pt-20 md:hidden">
+      <section className="h-[100svh] w-full overflow-y-auto   pl-4 pr-2 pt-20 md:hidden">
         {entries.map((entry, index) => (
           <MobileEntry
             key={entry.id}

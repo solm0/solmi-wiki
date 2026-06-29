@@ -62,9 +62,9 @@ export default function WorkLists({
   }, [filters, router]);
 
   return (
-    <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar'>
+    <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden md:pr-4'>
 
-      <div className="flex flex-col gap-1 text-base md:text-sm items-end text-text-900 flex-wrap mb-32">
+      <div className="flex flex-col gap-1 text-base md:text-sm items-end text-text-900 flex-wrap mb-32 pr-4 md:pr-0">
         <div className="flex items-center">
           <label htmlFor='year-filter' className="pr-2">연도</label>
           <button

@@ -17,7 +17,7 @@ export default async function ShopPage() {
 
   return (
     <>
-      <div className="relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar">
+      <div className="relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden  ">
         <FontShopClient fonts={shopFonts} />
       </div>
       

@@ -61,7 +61,7 @@ export default function InspectResultList({
 
   return (
     <div className="relative h-full min-h-0 w-full pointer-events-auto">
-      <div className="flex h-full min-h-0 w-full flex-col overflow-y-scroll custom-scrollbar">
+      <div className="flex h-full min-h-0 w-full flex-col overflow-y-scroll  ">
         {posts && posts.map((note) => (
           <div
             key={note.id}

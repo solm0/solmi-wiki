@@ -84,7 +84,7 @@ export default function Note({
     <article
       className={`
         ${maruburi.className}
-        flex flex-col gap-12 w-full leading-[2em] font-serif
+        flex flex-col gap-12 w-full leading-[2em] font-serif pl-4 md:pl-32
       `}
     >
       <div className="relative h-auto w-auto">

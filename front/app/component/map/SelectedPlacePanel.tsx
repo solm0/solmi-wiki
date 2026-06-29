@@ -72,7 +72,7 @@ export default function SelectedPlacePanel({
           </div>
         </div>
 
-        <div className="max-h-[40vh] overflow-y-auto custom-scrollbar md:max-h-[18rem]">
+        <div className="max-h-[40vh] overflow-y-auto   md:max-h-[18rem]">
           {selectedPlace?.data && (
             <RelatedPostLists
               posts={selectedPlace.data.posts}
