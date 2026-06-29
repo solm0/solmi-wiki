@@ -14,6 +14,8 @@ export default function ImageModal({
 }) {
   const MIN_SCALE = 0.3;
   const MAX_SCALE = 5;
+  const TAP_MOVE_THRESHOLD = 8;
+  const MULTI_TOUCH_TAP_GUARD_MS = 250;
 
   const generateUrl = (idx: number) => {
     const cloudName = "dpqjfptr6";
@@ -25,10 +27,28 @@ export default function ImageModal({
   }
 
   const [scale, setScale] = useState(0.8);
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const pinchStateRef = useRef<{
     distance: number;
     scale: number;
+    translate: {
+      x: number;
+      y: number;
+    };
+    center: {
+      x: number;
+      y: number;
+    };
   } | null>(null);
+  const dragStateRef = useRef<{
+    pointerId: number | null;
+    originX: number;
+    originY: number;
+    startX: number;
+    startY: number;
+    moved: boolean;
+  } | null>(null);
+  const lastMultiTouchAtRef = useRef(0);
 
   const clampScale = useCallback((next: number) => {
     if (next < MIN_SCALE) return MIN_SCALE;
@@ -39,7 +59,9 @@ export default function ImageModal({
   useEffect(() => {
     if (idx !== null) {
       setScale(0.8);
+      setTranslate({ x: 0, y: 0 });
       pinchStateRef.current = null;
+      dragStateRef.current = null;
     }
   }, [idx]);
 
@@ -58,45 +80,165 @@ export default function ImageModal({
     );
   };
 
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    const distance = getTouchDistance(e.touches);
+  const getTouchCenter = (touches: React.TouchList) => {
+    if (touches.length < 2) return null;
 
-    if (distance === null) {
+    const [firstTouch, secondTouch] = [touches[0], touches[1]];
+    return {
+      x: (firstTouch.clientX + secondTouch.clientX) / 2,
+      y: (firstTouch.clientY + secondTouch.clientY) / 2,
+    };
+  };
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length === 1) {
+      const touch = e.touches[0];
+      pinchStateRef.current = null;
+      dragStateRef.current = {
+        pointerId: null,
+        originX: touch.clientX - translate.x,
+        originY: touch.clientY - translate.y,
+        startX: touch.clientX,
+        startY: touch.clientY,
+        moved: false,
+      };
+      return;
+    }
+
+    lastMultiTouchAtRef.current = Date.now();
+
+    const distance = getTouchDistance(e.touches);
+    const center = getTouchCenter(e.touches);
+
+    if (distance === null || center === null) {
       pinchStateRef.current = null;
       return;
     }
 
+    dragStateRef.current = null;
     pinchStateRef.current = {
       distance,
       scale,
+      translate,
+      center,
     };
-  }, [scale]);
+  }, [scale, translate]);
 
   const handleTouchMove = useCallback((e: React.TouchEvent) => {
+    if (e.touches.length === 1 && dragStateRef.current) {
+      const touch = e.touches[0];
+      e.preventDefault();
+      const deltaX = touch.clientX - dragStateRef.current.startX;
+      const deltaY = touch.clientY - dragStateRef.current.startY;
+      if (Math.hypot(deltaX, deltaY) > TAP_MOVE_THRESHOLD) {
+        dragStateRef.current.moved = true;
+      }
+      setTranslate({
+        x: touch.clientX - dragStateRef.current.originX,
+        y: touch.clientY - dragStateRef.current.originY,
+      });
+      return;
+    }
+
     const distance = getTouchDistance(e.touches);
+    const center = getTouchCenter(e.touches);
     const pinchState = pinchStateRef.current;
 
-    if (distance === null || !pinchState) {
+    if (distance === null || center === null || !pinchState) {
       return;
     }
 
     e.preventDefault();
+    lastMultiTouchAtRef.current = Date.now();
     setScale(clampScale(pinchState.scale * (distance / pinchState.distance)));
+    setTranslate({
+      x: pinchState.translate.x + (center.x - pinchState.center.x),
+      y: pinchState.translate.y + (center.y - pinchState.center.y),
+    });
   }, [clampScale]);
 
   const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    const distance = getTouchDistance(e.touches);
-
-    if (distance === null) {
+    if (e.touches.length === 1) {
+      const touch = e.touches[0];
       pinchStateRef.current = null;
+      dragStateRef.current = {
+        pointerId: null,
+        originX: touch.clientX - translate.x,
+        originY: touch.clientY - translate.y,
+        startX: touch.clientX,
+        startY: touch.clientY,
+        moved: false,
+      };
+      return;
+    }
+
+    const distance = getTouchDistance(e.touches);
+    const center = getTouchCenter(e.touches);
+
+    if (distance === null || center === null) {
+      pinchStateRef.current = null;
+      if (e.touches.length === 0) {
+        dragStateRef.current = null;
+      }
       return;
     }
 
     pinchStateRef.current = {
       distance,
       scale,
+      translate,
+      center,
     };
-  }, [scale]);
+  }, [scale, translate]);
+
+  const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    dragStateRef.current = {
+      pointerId: e.pointerId,
+      originX: e.clientX - translate.x,
+      originY: e.clientY - translate.y,
+      startX: e.clientX,
+      startY: e.clientY,
+      moved: false,
+    };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  }, [translate]);
+
+  const handlePointerMove = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStateRef.current?.pointerId !== e.pointerId) {
+      return;
+    }
+
+    e.preventDefault();
+    const deltaX = e.clientX - dragStateRef.current.startX;
+    const deltaY = e.clientY - dragStateRef.current.startY;
+    if (Math.hypot(deltaX, deltaY) > TAP_MOVE_THRESHOLD) {
+      dragStateRef.current.moved = true;
+    }
+    setTranslate({
+      x: e.clientX - dragStateRef.current.originX,
+      y: e.clientY - dragStateRef.current.originY,
+    });
+  }, []);
+
+  const handlePointerEnd = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (dragStateRef.current?.pointerId !== e.pointerId) {
+      return;
+    }
+
+    const shouldClose =
+      !dragStateRef.current.moved &&
+      Date.now() - lastMultiTouchAtRef.current > MULTI_TOUCH_TAP_GUARD_MS;
+
+    dragStateRef.current = null;
+    if (e.currentTarget.hasPointerCapture(e.pointerId)) {
+      e.currentTarget.releasePointerCapture(e.pointerId);
+    }
+
+    if (shouldClose) {
+      setIdx(null);
+    }
+  }, [setIdx]);
 
   if (idx === null) {
     return null;
@@ -122,15 +264,18 @@ export default function ImageModal({
 
       {/* 안내문구 */}
       <p className={`${pretendard.className} absolute top-10 z-[122] text-text-800 animate-pulse leading-tight text-sm`}>
-        스크롤하거나 두 손가락으로 확대 / 축소
+        스크롤, 드래그 또는 두 손가락으로 확대 / 축소
       </p>
 
       {/* 이미지 */}
       <div
-        className='fixed z-[122] flex items-center justify-center'
-        onClick={() => setIdx(null)}
+        className='fixed z-[122] flex items-center justify-center touch-none'
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerEnd}
+        onPointerCancel={handlePointerEnd}
         style={{
-          transform: `scale(${scale})`,
+          transform: `translate(${translate.x}px, ${translate.y}px) scale(${scale})`,
           transformOrigin: "center center",
         }}
       >

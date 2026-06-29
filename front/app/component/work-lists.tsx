@@ -62,7 +62,7 @@ export default function WorkLists({
   }, [filters, router]);
 
   return (
-    <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar pr-4'>
+    <section className='relative w-full pt-[calc(40vh-10rem)] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar'>
 
       <div className="flex flex-col gap-1 text-base md:text-sm items-end text-text-900 flex-wrap mb-32">
         <div className="flex items-center">

@@ -38,9 +38,11 @@ export default async function TimelinePage() {
 
   return (
     <>
-      <Suspense>
-        <BlogLists posts={finalPosts} />
-      </Suspense>
+      <div className="flex h-full min-h-0 w-full flex-1 overflow-y-auto px-4 md:px-0 md:pl-5 custom-scrollbar">
+        <Suspense>
+          <BlogLists posts={finalPosts} />
+        </Suspense>
+      </div>
 
       {/* 오른쪽 사이드바 */}
       <ToolBox allPlaylists={playlists} />

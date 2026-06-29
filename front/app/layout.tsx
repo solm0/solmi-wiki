@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import Inspector from "./component/inspector/inspector";
 import Script from "next/script";
 import YoutubePlayer from "./component/music/YoutubePlayer";
+import MainContentShell from "./component/layout/MainContentShell";
 
 export const metadata: Metadata = {
   title: "solmi.wiki",
@@ -32,7 +33,7 @@ export default async function RootLayout({
           strategy="afterInteractive"
         />
         <ThemeProvider disableTransitionOnChange>
-          <div className="flex h-screen w-full pl-5 pt-0 gap-0 md:gap-7">
+          <div className="flex h-screen w-full pt-0 gap-0 md:gap-7">
 
             <h1 className="hidden">page</h1>
 
@@ -45,13 +46,9 @@ export default async function RootLayout({
             </Suspense>
 
             {/* 가운데 */}
-            <main className="flex-1 flex flex-col w-full md:w-[calc(100vw-26rem)] items-start overflow-hidden focus:outline-hidden">
-              <div
-                className='flex md:gap-4 w-full overflow-hidden focus:outline-hidden'
-              >
-                {children}
-              </div>
-            </main>
+            <MainContentShell>
+              {children}
+            </MainContentShell>
           </div>
 
           {/* 내부링크 툴팁 */}

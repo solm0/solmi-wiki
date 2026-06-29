@@ -75,11 +75,15 @@ function PhotoMosaic({
   altPrefix,
   columnCount = 2,
   onImageClick,
+  onExpand,
+  canExpand = false,
 }: {
   images: PhotobookImage[];
   altPrefix: string;
   columnCount?: number;
   onImageClick?: (idx: number) => void;
+  onExpand?: () => void;
+  canExpand?: boolean;
 }) {
   return (
     <div
@@ -94,6 +98,19 @@ function PhotoMosaic({
           onClick={onImageClick ? () => onImageClick(idx) : undefined}
         />
       ))}
+
+      {canExpand && onExpand ? (
+        <div className="mb-1 break-inside-avoid">
+          <button
+            type="button"
+            className="flex aspect-square w-full items-center justify-center bg-button-100 text-text-900 transition-opacity duration-300 hover:opacity-50"
+            onClick={onExpand}
+            aria-label={`${altPrefix} 사진 더 보기`}
+          >
+            <span className="text-lg leading-none">+</span>
+          </button>
+        </div>
+      ) : null}
     </div>
   );
 }
@@ -134,7 +151,7 @@ function DesktopEntry({
         <span className="absolute left-0 top-0 h-6 -translate-y-1/2 border-l border-text-900/60" />
 
         <div
-          className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden custom-scrollbar"
+          className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden no-scrollbar"
           data-photobook-vertical-scroll="true"
         >
           <PhotoMosaic
@@ -142,20 +159,10 @@ function DesktopEntry({
             altPrefix={entry.title}
             columnCount={columnCount}
             onImageClick={onImageClick}
+            onExpand={onExpand}
+            canExpand={visibleCount < entry.images.length}
           />
         </div>
-        <button
-          type="button"
-          className={`
-            block self-start text-lg p-2 pb-4 transition-colors
-            ${visibleCount < entry.images.length ? 'opacity-100 hover:text-text-700' : 'opacity-20'}
-          `}
-          onClick={onExpand}
-          disabled={visibleCount >= entry.images.length}
-        >
-          +
-        </button>
-        
       </div>
     </article>
   );
@@ -199,18 +206,9 @@ function MobileEntry({
           altPrefix={entry.title}
           columnCount={2}
           onImageClick={onImageClick}
+          onExpand={onExpand}
+          canExpand={visibleCount < entry.images.length}
         />
-        <button
-          type="button"
-          className={`
-            mt-2 block text-lg hover:text-text-700 transition-colors self-end px-1
-            ${visibleCount < entry.images.length ? 'opacity-100 hover:text-text-700' : 'opacity-20'}
-          `}
-          onClick={onExpand}
-          disabled={visibleCount >= entry.images.length}
-        >
-          +
-        </button>
       </div>
     </article>
   );

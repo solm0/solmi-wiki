@@ -16,7 +16,7 @@ export default function BlogLists({
   const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
   useEffect(() => {
-    if (!posts || !sectionRef.current) return;
+    if (!posts) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -51,7 +51,7 @@ export default function BlogLists({
         });
       },
       {
-        root: sectionRef.current,
+        root: null,
         rootMargin: "0px 0px 0px 0px",
         threshold: 0.12,
       }
@@ -68,7 +68,7 @@ export default function BlogLists({
   return (
     <section
       ref={sectionRef}
-      className={`${maruburi.className} font-semibold relative w-full pt-[40vh] pb-8 overflow-y-scroll focus:outline-hidden custom-scrollbar`}
+      className={`${maruburi.className} font-semibold relative min-h-0 w-full pt-[40vh] pb-8 focus:outline-hidden`}
     >
       {posts && posts.map((note, idx) => (
         <div

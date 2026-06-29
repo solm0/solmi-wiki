@@ -103,6 +103,15 @@
   scrollbar-width: none;  /* Firefox */
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /* 회색 세로 */
 .custom-scrollbar::-webkit-scrollbar {
   width: 5px;

@@ -8,7 +8,7 @@ import ImageModal from "../ImageModal";
 
 export default function Carousel({
   carIdx,
-  carousel,
+  carousel, 
 }: {
   carIdx: number,
   carousel: CarouselNode,
@@ -49,13 +49,19 @@ export default function Carousel({
           return (
             <div
               key={idx}
-              className="relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0"
+              className={`
+                relative flex flex-col gap-1 snap-start snap-normal h-auto shrink-0
+                ${horizontalFit ? 'w-full md:w-auto' : ''}
+              `}
             >
               <video
                 src={url}
                 width={800}
                 height={800}
-                className="h-[22rem] md:h-[30rem] w-auto object-contain rounded-sm cursor-pointer"
+                className={`
+                  object-contain cursor-pointer
+                  ${horizontalFit ? 'w-full h-auto md:max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
+                `}
                 controls
               />
               {item.alt && <p className={`${pretendard.className} min-h-4 shrink-0 text-sm text-text-700`}>{item.alt}</p>}
@@ -88,7 +94,7 @@ export default function Carousel({
             >
               <div
                 className={`
-                  relative rounded-sm overflow-hidden
+                  relative overflow-hidden
                   ${horizontalFit ? 'w-full' : ''}
                   ${!loadedMap[idx] ? 'bg-button-100 animate-pulse' : ''}
                 `}
@@ -98,7 +104,7 @@ export default function Carousel({
                   width={800}
                   height={800}
                   className={`
-                    object-contain rounded-sm cursor-pointer transition-opacity duration-300
+                    object-contain cursor-pointer transition-opacity duration-300
                     ${horizontalFit ? 'w-full h-auto md:max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
                     ${loadedMap[idx] ? 'opacity-100' : 'opacity-0'}
                   `}

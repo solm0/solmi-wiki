@@ -6,7 +6,7 @@ import { ToolBoxIcons } from "./ToolBoxIcons";
 export default function Header() {
   return (
     <header className="fixed top-0 left-1/2 -translate-x-1/2 w-screen h-10 px-3 md:px-3 flex items-center justify-center z-60 transition-all duration-300 pt-3">
-      <div className="w-full h-20 absolute top-0 left-0 bg-linear-to-b from-background via-background/80 to-transparent">
+      <div className="w-full h-12 absolute top-0 left-0 bg-linear-to-b from-background via-background/80 to-transparent">
 
       </div>
       {/* note inspector 아이콘 */}
