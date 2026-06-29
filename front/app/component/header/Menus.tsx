@@ -125,7 +125,7 @@ export default function Menus() {
         }}
       >
         <div
-          className="relative overflow-hidden rounded-sm transition-[width,height] duration-300 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]"
+          className="relative rounded-sm transition-[width,height] duration-300 ease-[cubic-bezier(0.75,0.05,0.45,0.95)]"
           style={{
             width: targetSize.width || undefined,
             height: targetSize.height || undefined,

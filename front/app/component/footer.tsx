@@ -4,7 +4,7 @@ import Copyright from "./copyright"
 
 export default function Footer() {
   return (
-    <footer className={`${pretendard.className} text-text-800 text-sm flex flex-col gap-24 mb-48`}>
+    <footer className={`${pretendard.className} text-text-800 text-sm flex flex-col gap-24 mb-48 pr-4 md:pr-0`}>
       <Giscus />
       <Copyright />
     </footer>

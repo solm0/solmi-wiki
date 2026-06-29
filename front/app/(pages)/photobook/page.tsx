@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { gql, GraphQLClient } from "graphql-request";
 import ToolBox from "../../component/hyperlink-map/ToolBox";
+import InspectorAwareInset from "../../component/layout/InspectorAwareInset";
 import path from "path";
 import fs from "fs";
 import PhotobookTimeline from "../../component/photobook/photobook-timeline";
@@ -56,9 +57,12 @@ export default async function PhotobookPage() {
 
   return (
     <>
-      <section className="fixed top-0 left-0 w-full h-full flex justify-center items-center text-text-800 text-xs">
+      <InspectorAwareInset
+        className="fixed top-0 left-0 w-full h-full flex justify-center items-center text-text-800 text-xs"
+        openClassName="md:pl-68"
+      >
         <PhotobookTimeline entries={timelineEntries} />
-      </section>
+      </InspectorAwareInset>
 
       <ToolBox allPlaylists={playlists} />
     </>

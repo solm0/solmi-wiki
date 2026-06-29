@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import { notFound } from 'next/navigation';
 import { Post } from '@/app/lib/type';
 import ToolBox from '@/app/component/hyperlink-map/ToolBox';
+import NoteScrollContainer from '@/app/component/layout/NoteScrollContainer';
 import path from 'path';
 import fs from 'fs';
 import stripRichTextRelationshipPayloads from '@/app/lib/strip-richtext-relationship-payloads';
@@ -111,15 +112,12 @@ export default async function Page({
 
   return (
     <>
-      <div
-        id="note_wrapper"
-        className='flex-1 min-w-0 flex gap-4 pt-[40vh] text-text-900 break-normal md:break-keep overflow-y-scroll overflow-x-hidden focus:outline-0'
-      >
+      <NoteScrollContainer>
         {/* 본문 */}
         <Suspense>
           <Note post={post} />
         </Suspense>
-      </div>
+      </NoteScrollContainer>
 
       {/* 오른쪽 사이드바 */}
       <ToolBox post={post} allPlaylists={playlists} />

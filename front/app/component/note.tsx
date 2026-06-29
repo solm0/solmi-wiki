@@ -1,5 +1,6 @@
 'use client'
 
+import clsx from "clsx";
 import { Post } from "../lib/type";
 import Content from '@/app/component/content';
 import Disclaimer from '@/app/component/disclaimer';
@@ -79,19 +80,21 @@ export default function Note({
   }
 
   const isToolBoxOpen = useToggleStore((s) => s.toggles['toolBox']);
+  const isInspectorOpen = useToggleStore((s) => s.toggles['noteInspector']);
   
   return (
     <article
-      className={`
-        ${maruburi.className}
-        flex flex-col gap-12 w-full leading-[2em] font-serif pl-4 md:pl-32
-      `}
+      className={clsx(
+        maruburi.className,
+        "flex flex-col gap-12 w-full leading-[2em] font-serif pl-4",
+        isInspectorOpen ? "md:pl-3" : "md:pl-32",
+      )}
     >
       <div className="relative h-auto w-auto">
         
         <h1
           ref={headRef}
-          className={`leading-[1.5em] text-3xl md:text-4xl text-text-950 ${maruburi_bold.className} max-w-[25em]`}
+          className={`leading-[1.5em] text-3xl md:text-4xl text-text-950 ${maruburi_bold.className} max-w-[25em] break-keep pr-4`}
         >
           {post?.title}
           {post.tags && <TagButton tagname={post.tags.name} />}

@@ -10,7 +10,7 @@ export default function Quote({
   const text = quote.children?.filter(ch => ch.type === 'component-block-prop')?.[0].children as ParagraphNode[];
 
   return (
-    <blockquote className="border-l-3 border-text-600 p-4 text-text-800 flex flex-col gap-4">
+    <blockquote className="border-l-3 border-text-600 px-3 md:px-4 py-1 my-3 text-text-800 flex flex-col gap-1">
       {text.map((t, idx) => (
         <Paragraph key={idx} p={t} />
       ))}

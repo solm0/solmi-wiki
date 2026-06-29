@@ -4,7 +4,7 @@ export default function Iframe({
   src: string
 }) {
   return (
-    <div className="w-full h-auto aspect-video my-4 rounded-sm overflow-hidden">
+    <div className="w-[calc(100%+2rem)] -mx-4 md:mx-0 md:w-full h-auto aspect-video my-4 overflow-hidden md:pr-7 max-w-[47em]">
       <iframe
         src={src}
         className="w-full h-full"

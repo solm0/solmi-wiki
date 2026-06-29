@@ -27,6 +27,17 @@ function buildImageUrl(image: PhotobookImage) {
   return `https://res.cloudinary.com/${cloudName}/image/upload/${imageTransform}/${image.publicId}.${image.format}`;
 }
 
+function shuffleImages(images: PhotobookImage[]) {
+  const next = [...images];
+
+  for (let i = next.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [next[i], next[j]] = [next[j], next[i]];
+  }
+
+  return next;
+}
+
 function canScrollVertically(el: HTMLElement, deltaY: number) {
   if (deltaY > 0) {
     return el.scrollTop + el.clientHeight < el.scrollHeight - 1;
@@ -103,11 +114,11 @@ function PhotoMosaic({
         <div className="mb-1 break-inside-avoid">
           <button
             type="button"
-            className="flex aspect-square w-full items-center justify-center bg-button-100 text-text-900 transition-opacity duration-300 hover:opacity-50"
+            className="flex aspect-square w-full items-center justify-center bg-button-100 text-text-900 transition-colors hover:bg-button-200"
             onClick={onExpand}
             aria-label={`${altPrefix} 사진 더 보기`}
           >
-            <span className="text-lg leading-none">+</span>
+            <span className="text-lg leading-none text-text-700">+</span>
           </button>
         </div>
       ) : null}
@@ -141,14 +152,14 @@ function DesktopEntry({
       <div className="flex h-32 flex-col justify-start pb-4 pr-6 pt-20 shrink-0">
         <Link
           href={`/${entry.id}`}
-          className="max-w-[18em] break-keep transition-colors hover:text-text-700"
+          className="max-w-[28em] break-keep transition-colors hover:text-text-700"
         >
           <span>{entry.title}</span>
         </Link>
       </div>
 
-      <div className="relative flex min-h-0 flex-1 flex-col border-t border-text-900/60 pt-4 pr-1">
-        <span className="absolute left-0 top-0 h-6 -translate-y-1/2 border-l border-text-900/60" />
+      <div className="relative flex min-h-0 flex-1 flex-col pr-1">
+        <span className="absolute left-0 top-0 h-4 -translate-y-4 border-l border-text-900/60" />
 
         <div
           className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden no-scrollbar"
@@ -187,20 +198,20 @@ function MobileEntry({
 
   return (
     <article
-      className="grid grid-cols-[max-content_1px_minmax(0,1fr)] gap-x-3"
+      className="grid grid-cols-[max-content_1px_minmax(0,1fr)] gap-x-1"
       style={{ minHeight: sectionHeight }}
     >
-      <div className="w-25 shrink-0 break-keep pt-7 text-left text-xs">
+      <div className="w-18 shrink-0 break-keep text-left text-[10px]">
         <Link href={`/${entry.id}`} className="flex flex-col">
           <span>{entry.title}</span>
         </Link>
       </div>
 
-      <div className="relative h-full bg-text-900/60">
-        <span className="absolute left-1/2 top-8 w-6 -translate-x-1/2 -translate-y-1/2 border-t border-text-900/60" />
+      <div className="relative h-full w-3">
+        <span className="absolute left-1/2 top-1 w-full -translate-x-3 -translate-y-1/2 border-t border-text-900/60" />
       </div>
 
-      <div className="flex min-h-0 flex-col pt-8">
+      <div className="flex min-h-0 flex-col pt-1">
         <PhotoMosaic
           images={visibleImages}
           altPrefix={entry.title}
@@ -220,6 +231,12 @@ export default function PhotobookTimeline({
   entries: TimelineEntry[];
 }) {
   const desktopScrollRef = useRef<HTMLElement | null>(null);
+  const [randomizedEntries] = useState(() =>
+    entries.map((entry) => ({
+      ...entry,
+      images: shuffleImages(entry.images),
+    })),
+  );
   const [activeEntryId, setActiveEntryId] = useState<string | null>(null);
   const [activeImageIdx, setActiveImageIdx] = useState<number | null>(null);
   const [visibleCounts, setVisibleCounts] = useState<Record<string, number>>(
@@ -236,7 +253,7 @@ export default function PhotobookTimeline({
   };
 
   const activeEntry = activeEntryId
-    ? entries.find((entry) => entry.id === activeEntryId) ?? null
+    ? randomizedEntries.find((entry) => entry.id === activeEntryId) ?? null
     : null;
   const modalItems: CarouselItem[] = activeEntry
     ? activeEntry.images.map((image, idx) => ({
@@ -252,7 +269,7 @@ export default function PhotobookTimeline({
     <>
       <section
         ref={desktopScrollRef}
-        className="hidden h-[100svh] w-full overflow-x-auto overflow-y-hidden md:block"
+        className="hidden h-[100svh] w-full overflow-x-auto overflow-y-hidden md:block overscroll-x-none"
         onWheel={(e) => {
           const container = desktopScrollRef.current;
           if (!container) return;
@@ -272,7 +289,7 @@ export default function PhotobookTimeline({
         }}
       >
         <div className="flex h-full min-w-max items-start px-8 pt-12 box-border  ">
-          {entries.map((entry, index) => (
+          {randomizedEntries.map((entry, index) => (
             <DesktopEntry
               key={entry.id}
               entry={entry}
@@ -288,8 +305,8 @@ export default function PhotobookTimeline({
         </div>
       </section>
 
-      <section className="h-[100svh] w-full overflow-y-auto   pl-4 pr-2 pt-20 md:hidden">
-        {entries.map((entry, index) => (
+      <section className="h-[100svh] w-full overflow-y-auto pl-4 pr-2 pt-20 md:hidden">
+        {randomizedEntries.map((entry, index) => (
           <MobileEntry
             key={entry.id}
             entry={entry}

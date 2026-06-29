@@ -130,7 +130,7 @@ export default function Content({
           <div
             key={idx}
             className={
-              document.type === 'component-block' && document.component === 'carousel' || document.type === 'component-block' && document.component === 'iframe'
+              document.type === 'component-block' && document.component === 'carousel' || document.type === 'component-block' && document.component === 'iframe' || document.type === 'layout'
                 ? 'w-full'
                 : 'max-w-[47em] pr-4 md:pr-7'
             }

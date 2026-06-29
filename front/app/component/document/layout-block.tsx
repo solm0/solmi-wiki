@@ -13,11 +13,12 @@ export default function LayoutBlock({
   }
 
   return (
-    <div className="flex gap-2 md:gap-4">
+    <div className="flex flex-col md:flex-row max-w-[47em]">
       {layout.layout.map((num, idx) => (
         <div
           key={idx}
-          style={{ width: `${(num / den) * 100}%` }}
+          className="w-full md:w-[var(--layout-width)]"
+          style={{ ["--layout-width" as string]: `${(num / den) * 100}%` }}
         >
           <Content post={layout.children?.[idx].children} />
         </div>

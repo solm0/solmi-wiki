@@ -224,7 +224,16 @@ export default function ImageModal({
     if (distance === null || center === null) {
       pinchStateRef.current = null;
       if (e.touches.length === 0) {
+        const shouldClose =
+          !!dragStateRef.current &&
+          !dragStateRef.current.moved &&
+          Date.now() - lastMultiTouchAtRef.current > MULTI_TOUCH_TAP_GUARD_MS;
         dragStateRef.current = null;
+        if (shouldClose) {
+          e.preventDefault();
+          e.stopPropagation();
+          setIdx(null);
+        }
       }
       return;
     }
@@ -235,7 +244,7 @@ export default function ImageModal({
       translate,
       center,
     };
-  }, [scale, translate]);
+  }, [scale, setIdx, translate]);
 
   const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
     e.preventDefault();

@@ -35,8 +35,6 @@ export default async function RootLayout({
         <ThemeProvider disableTransitionOnChange>
           <div className="flex h-screen w-full pt-0 gap-0">
 
-            <h1 className="hidden">page</h1>
-
             {/* 헤더 */}
             <Header />
 
