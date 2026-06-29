@@ -292,7 +292,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
 
         .shop-slider::-webkit-slider-runnable-track {
           height: 1px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
           border-radius: 9999px;
         }
 
@@ -302,14 +302,14 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
           width: 12px;
           height: 12px;
           border-radius: 9999px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
           margin-top: -5.5px;
           border: 0;
         }
 
         .shop-slider::-moz-range-track {
           height: 1px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
           border-radius: 9999px;
         }
 
@@ -317,13 +317,13 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
           width: 12px;
           height: 12px;
           border-radius: 9999px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
           border: 0;
         }
 
         .shop-slider::-moz-range-progress {
           height: 1px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
         }
 
         .shop-slider::-ms-track {
@@ -335,40 +335,36 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
 
         .shop-slider::-ms-fill-lower,
         .shop-slider::-ms-fill-upper {
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
         }
 
         .shop-slider::-ms-thumb {
           width: 12px;
           height: 12px;
           border-radius: 9999px;
-          background: var(--color-stone-900);
+          background: var(--color-text-900);
           border: 0;
         }
 
         .shop-preview::selection,
         .shop-preview *::selection {
-          background: var(--color-button-200);
-          color: var(--color-stone-800)
+          background: var(--color-button-100);
+          color: var(--color-text-950)
         }
       `}</style>
-      <div ref={containerRef} className="flex flex-col gap-4 w-full pb-72">
+      <div ref={containerRef} className="flex flex-col w-full pb-72">
         {fonts.map((font) => {
           const fontState = fontStates[font.id];
           const isFontLoaded = loadedFontIds[font.id];
           const expanded = hoveredId === font.id || editingId === font.id;
           const variationSettings = makeVariationSettings(fontState.axes);
           const isSelected = selectedIds.includes(font.id);
-          const previewLineCount = getPreviewLineCount(
-            font.defaultSize,
-            fontState.size,
-          );
 
           return (
             <div
               id={font.id}
               key={font.id}
-              className="w-full bg-button-100 rounded-3xl text-text-800 transition-all duration-300"
+              className="w-full border-t border-text-600 text-text-800 transition-all duration-300 pb-4"
               onMouseEnter={() => setHoveredId(font.id)}
               onMouseLeave={() => setHoveredId((current) => current === font.id ? null : current)}
               onFocus={() => setHoveredId(font.id)}
@@ -382,7 +378,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                 <div className="flex w-full flex-col gap-4 md:flex-row md:justify-between">
                   <div className="flex flex-1 flex-col gap-4 md:flex-row md:items-start md:gap-6">
                     <div className="flex w-full items-center justify-between gap-4 md:w-auto">
-                      <div className="flex gap-3 items-center text-stone-900 w-32">
+                      <div className="flex gap-3 items-center text-text-900 w-32">
                         <span className="shrink-0 md:block text-sm">{font.name}</span>
                         <Link href={font.detailHref} className="flex items-center gap-1">
                           <ScrollText size={14} className="hover:opacity-50 transition-opacity" />
@@ -402,14 +398,14 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                             type="checkbox"
                             checked={isSelected}
                             onChange={() => toggleSelected(font.id)}
-                            className="accent-stone-900 hidden"
+                            className="accent-text-900 hidden"
                           />
                         </label>
                       </div>
                     </div>
                     <div className="flex flex-1 flex-col gap-2">
-                      <div className="flex items-center justify-between gap-4 w-70">
-                        <div className="flex items-center gap-2 text-[11px] text-stone-900">
+                      <div className="flex items-center justify-between w-64">
+                        <div className="flex items-center gap-2 text-[11px] text-text-900">
                           <span>size</span>
                           <span>{fontState.size}</span>
                         </div>
@@ -428,13 +424,13 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                       {font.axes.map((axis) => (
                         <div
                           key={axis.key}
-                          className={`flex items-center justify-between gap-4 w-70 transition-all duration-300 ${
+                          className={`flex items-center justify-between w-64 transition-all duration-300 ${
                             expanded
                               ? "md:max-h-12 md:opacity-100"
                               : "md:max-h-0 md:opacity-0 md:pointer-events-none"
                           }`}
                         >
-                          <div className="flex items-center gap-2 text-[11px] text-stone-900">
+                          <div className="flex items-center gap-2 text-[11px] text-text-900">
                             <span>{axis.label}</span>
                             <span>{fontState.axes[axis.key]}</span>
                           </div>
@@ -458,7 +454,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   >
                     <label className="flex items-center">
                       <button
-                        className="w-5 h-5 border-2 border-text-700 hover:border-text-800 transition-colors duration-300 rounded-sm overflow-hidden"
+                        className="w-5 h-5 md:w-4 md:h-4 border "
                         onClick={() => toggleSelected(font.id)}
                       >
                         <div className={`w-full h-full ${isSelected ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
@@ -467,7 +463,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                         type="checkbox"
                         checked={isSelected}
                         onChange={() => toggleSelected(font.id)}
-                        className="accent-stone-900 hidden"
+                        className="accent-text-900 hidden"
                       />
                     </label>
                   </div>
@@ -480,7 +476,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                 }}
               >
                 {!isFontLoaded ? (
-                  <div className="w-full h-full min-h-[1.2em] flex items-center justify-center text-sm text-stone-700">
+                  <div className="w-full h-full min-h-[1.2em] flex items-center justify-center text-sm text-text-700">
                     loading
                   </div>
                 ) : editingId === font.id ? (
@@ -492,7 +488,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                     onChange={(event) => updateText(font.id, event.target.value)}
                     onBlur={() => setEditingId((current) => current === font.id ? null : current)}
                     rows={1}
-                    className="shop-preview w-full resize-none overflow-hidden whitespace-nowrap bg-transparent focus:outline-hidden text-stone-800"
+                    className="shop-preview w-full resize-none overflow-hidden whitespace-nowrap bg-transparent focus:outline-hidden text-text-950"
                     style={{
                       fontFamily: `shop-font-${font.id}`,
                       fontSize: `${fontState.size}px`,
@@ -505,7 +501,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   <button
                     type="button"
                     onClick={() => setEditingId(font.id)}
-                    className="shop-preview w-full overflow-hidden whitespace-nowrap bg-transparent text-left select-text text-stone-800"
+                    className="shop-preview w-full overflow-hidden whitespace-nowrap bg-transparent text-left select-text text-text-950"
                     style={{
                       fontFamily: `shop-font-${font.id}`,
                       fontSize: `${fontState.size}px`,
@@ -531,8 +527,8 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
           }}
         >
           <div
-            className={`pointer-events-auto w-full bg-green-500 rounded-t-3xl text-stone-900 overflow-hidden transition-all duration-300 origin-bottom ${
-              isPanelOpen ? "max-h-56" : "max-h-16"
+            className={`pointer-events-auto w-full bg-green-500 rounded-t-3xl text-text-900 overflow-hidden transition-all duration-300 origin-bottom ${
+              isPanelOpen ? "max-h-[32rem] md:max-h-[28rem]" : "max-h-16"
             } ${isPanelOpen ? "hover:translate-y-0" : "hover:translate-y-1"}`}
             onTouchStart={(event) => {
               panelTouchStartY.current = event.touches[0]?.clientY ?? null;
@@ -570,7 +566,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
             </button>
 
             <div
-              className={`flex flex-col gap-5 px-6 pt-2 transition-all duration-300 ${
+              className={`flex flex-col gap-5 px-6 pt-2 transition-all duration-300 overflow-y-auto ${
                 isPanelOpen
                   ? "max-h-96 opacity-100 pb-8"
                   : "max-h-0 opacity-0 pointer-events-none p-0"
@@ -594,7 +590,7 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   id="font-order-name"
                   value={customerName}
                   onChange={(event) => setCustomerName(event.target.value)}
-                  className="bg-transparent border-b border-stone-900 pb-1 focus:outline-hidden"
+                  className="bg-transparent border-b border-text-900 pb-1 focus:outline-hidden"
                   placeholder="이름"
                 />
               </div>
@@ -604,23 +600,26 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   type="email"
                   value={customerEmail}
                   onChange={(event) => setCustomerEmail(event.target.value)}
-                  className="bg-transparent border-b border-stone-900 pb-1 focus:outline-hidden"
+                  className="bg-transparent border-b border-text-900 pb-1 focus:outline-hidden"
                   placeholder="이메일"
                 />
               </div>
-              <button
-                type="button"
-                onClick={sendSelectedFonts}
-                disabled={isSending || !customerName.trim() || !customerEmail.trim()}
-                className="self-start bg-stone-900 text-background font-semibold rounded-sm px-5 py-2 disabled:opacity-60 hover:opacity-50 transition-opacity"
-              >
-                다운로드
-              </button>
-              {sendState.type !== "idle" ? (
-                <div className="text-sm text-text-800">
-                  {sendState.message}
-                </div>
-              ) : null}
+              <div className="flex gap-4 items-center">
+
+                <button
+                  type="button"
+                  onClick={sendSelectedFonts}
+                  disabled={isSending || !customerName.trim() || !customerEmail.trim()}
+                  className="self-start bg-text-900 text-background font-semibold rounded-sm px-5 py-2 disabled:opacity-60 hover:opacity-50 transition-opacity"
+                >
+                  다운로드
+                </button>
+                {sendState.type !== "idle" ? (
+                  <div className="text-sm text-text-900">
+                    {sendState.message}!
+                  </div>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
