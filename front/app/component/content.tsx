@@ -132,7 +132,7 @@ export default function Content({
             className={
               document.type === 'component-block' && document.component === 'carousel' || document.type === 'component-block' && document.component === 'iframe'
                 ? 'w-full'
-                : 'max-w-[47em]'
+                : 'max-w-[47em] pr-4 md:pr-7'
             }
           >
             <ContentItem
