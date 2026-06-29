@@ -6,6 +6,7 @@ import BlogLists from "../component/blog-lists";
 import { Post } from "@/app/lib/type";
 import ToolBox from "@/app/component/hyperlink-map/ToolBox";
 import InspectorAwareInset from "../component/layout/InspectorAwareInset";
+import PageScrollContainer from "../component/layout/PageScrollContainer";
 import path from "path";
 import fs from 'fs';
 
@@ -40,12 +41,14 @@ export default async function TimelinePage() {
   return (
     <>
       <InspectorAwareInset
-        className="flex h-full min-h-0 w-full flex-1 overflow-y-auto pl-3 pr-4"
+        className="w-full flex-1"
         closedClassName="md:pl-32 md:pr-0"
       >
-        <Suspense>
-          <BlogLists posts={finalPosts} />
-        </Suspense>
+        <PageScrollContainer className="flex h-full min-h-0 w-full flex-1 overflow-y-auto pl-3 pr-4">
+          <Suspense>
+            <BlogLists posts={finalPosts} />
+          </Suspense>
+        </PageScrollContainer>
       </InspectorAwareInset>
 
       {/* 오른쪽 사이드바 */}

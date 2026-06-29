@@ -367,7 +367,7 @@ export default function LocalMap({
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 이 노트에서 {places.find(p => p.id === hoveredId)?.name}가 언급된 위치로 이동</div>
+          <div>클릭하여 이 노트에서 {places.find(p => p.id === hoveredId)?.name}이(가) 언급된 위치로 이동</div>
         </Popup>
       )}
     </Map>

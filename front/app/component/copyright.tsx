@@ -11,23 +11,30 @@ export default function Copyright() {
   ];
 
   return (
-    <div className={`text-sm flex justify-between items-center w-full max-w-[47rem] text-text-700`}>
-      <div className="flex gap-2 items-center">
-        <span>© 2024-2026 정솔미</span>
-        <Link href={'/cmdc93ok7008imdam853f86o2'} className="hover:text-text-800 transition-colors">Changelog</Link>
+    <div className="text-sm flex flex-col w-full max-w-[47rem] text-text-700 gap-3">
+      {/* 1층 */}
+      <div className="flex w-full justify-between items-center">
+        <div className="flex gap-2 items-center">
+          <span>© 2024-2026 정솔미</span>
+        </div>
+        <div className="flex gap-3 items-center">
+          {iconButtons.map(({ label, icon, link }) => (
+            <button
+              key={label}
+              type="button"
+              aria-label={label}
+              className="flex items-center justify-center text-current hover:text-text-800 transition-colors"
+              onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
+            >
+              {icon}
+            </button>
+          ))}
+        </div>
       </div>
-      <div className="flex gap-3 items-center">
-        {iconButtons.map(({ label, icon, link }) => (
-          <button
-            key={label}
-            type="button"
-            aria-label={label}
-            className="flex items-center justify-center text-current hover:text-text-800 transition-colors"
-            onClick={() => window.open(link, "_blank", "noopener,noreferrer")}
-          >
-            {icon}
-          </button>
-        ))}
+
+      {/* 2층 */}
+      <div className="flex w-full justify-between items-center">
+        <Link href={'/cmdc93ok7008imdam853f86o2'} className="hover:text-text-800 transition-colors">여긴 뭐하는 데죠?</Link>
       </div>
     </div>
   )

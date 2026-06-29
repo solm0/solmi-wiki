@@ -13,7 +13,7 @@ export default function LayoutBlock({
   }
 
   return (
-    <div className="flex flex-col md:flex-row max-w-[47em]">
+    <div className="flex flex-col md:flex-row max-w-[47em] gap-7 md:gap-0">
       {layout.layout.map((num, idx) => (
         <div
           key={idx}

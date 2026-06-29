@@ -24,7 +24,7 @@ export default function Carousel({
       <div className="w-full overflow-visible my-4">
         <div
           className={clsx(
-            'flex h-auto items-start gap-3 overflow-x-auto overflow-y-hidden -visible -mx-4 w-[calc(100%+2rem)] overscroll-x-none',
+            'flex h-auto items-start gap-3 overflow-x-auto overflow-y-hidden -ml-4 w-[calc(100%+1rem)] overscroll-x-none',
             isInspectorOpen
               ? 'md:mx-0 md:w-full'
               : 'md:-ml-32 md:w-[calc(100%+8rem)] md:px-7',

@@ -20,7 +20,7 @@ export default function SequenceNav({
   const setHoveredId = useHoveredLink((state) => state.setId);
 
   return (
-    <div className="flex w-full h-auto gap-2 text-sm leading-6 pr-4 md:pr-0">
+    <div className="flex w-full h-auto gap-2 text-sm leading-6 pr-4 lg:pr-0">
       {prev ?
         <Link
           href={`/${prev.id}/?${newParams}`}

@@ -14,7 +14,7 @@ export default function Ul({
             if (ch.type === 'list-item-content') {
               return (
                 <div key={idx} className="flex items-start">
-                  <div className="shrink-0 w-[4px] h-[4px] mt-[0.7em] mr-[0.7em] bg-text-900 rounded-full inline" />
+                  <div className="shrink-0 w-[4px] h-[4px] mt-[0.9em] mr-[0.7em] bg-text-900 rounded-full inline" />
                   <Paragraph p={ch} />
                 </div>
               );

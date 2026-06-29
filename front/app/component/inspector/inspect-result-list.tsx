@@ -19,10 +19,7 @@ export function RandItem({
 }) {
   return (
     <div className="w-full h-full text-text-600 truncate flex items-center pl-1">
-      {!hideTag && <TagIcon tag={note.tags} />}
-      {isCurrentPost &&
-        <div className="w-4 h-full shrink-0"></div>
-      }
+      {!hideTag && <TagIcon tag={note.tags} isCurrentPost={isCurrentPost} />}
       <span className="text-text-900">{note.title}</span>
       <span className={clsx (
         "ml-2 text-text-800 opacity-40 transition-[colors, opacity] duration-300",

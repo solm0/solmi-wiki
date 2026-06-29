@@ -4,20 +4,20 @@ import { useCallback, useEffect, useLayoutEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 const MAX_SCROLL_ENTRIES = 3;
-const NOTE_SCROLL_INDEX_KEY = "note-scroll:index";
+const PAGE_SCROLL_INDEX_KEY = "page-scroll:index";
 
 function buildScrollKey(pathname: string, search: string) {
-  return `note-scroll:${pathname}${search ? `?${search}` : ""}`;
+  return `page-scroll:${pathname}${search ? `?${search}` : ""}`;
 }
 
 function rememberScrollKey(storageKey: string) {
-  const previousKeys: string[] = JSON.parse(sessionStorage.getItem(NOTE_SCROLL_INDEX_KEY) || "[]");
+  const previousKeys: string[] = JSON.parse(sessionStorage.getItem(PAGE_SCROLL_INDEX_KEY) || "[]");
   const nextKeys = [
     storageKey,
     ...previousKeys.filter((key) => key !== storageKey),
   ].slice(0, MAX_SCROLL_ENTRIES);
 
-  sessionStorage.setItem(NOTE_SCROLL_INDEX_KEY, JSON.stringify(nextKeys));
+  sessionStorage.setItem(PAGE_SCROLL_INDEX_KEY, JSON.stringify(nextKeys));
 
   const preserved = new Set(nextKeys);
   previousKeys.forEach((key) => {
@@ -27,10 +27,12 @@ function rememberScrollKey(storageKey: string) {
   });
 }
 
-export default function NoteScrollContainer({
+export default function PageScrollContainer({
   children,
+  className,
 }: {
   children: React.ReactNode;
+  className?: string;
 }) {
   const pathname = usePathname();
   const wrapperRef = useRef<HTMLDivElement | null>(null);
@@ -86,11 +88,7 @@ export default function NoteScrollContainer({
   }, [saveScrollPosition]);
 
   return (
-    <div
-      id="note_wrapper"
-      ref={wrapperRef}
-      className="flex-1 min-w-0 flex gap-4 pt-[40vh] text-text-900 break-normal md:break-keep overflow-y-scroll overflow-x-hidden focus:outline-0"
-    >
+    <div ref={wrapperRef} className={className}>
       {children}
     </div>
   );

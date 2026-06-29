@@ -243,6 +243,9 @@ function ExpandedMenus({
                 rootPath={rootPath}
                 onClick={(event) => {
                   event.stopPropagation();
+                  if (window.innerWidth < 768) {
+                    onClose();
+                  }
                 }}
               />
             ))}
