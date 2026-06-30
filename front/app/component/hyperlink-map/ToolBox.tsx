@@ -4,7 +4,7 @@ import { Suspense, useEffect, useRef, useState } from "react";
 import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 import { pretendard } from "@/app/lib/localfont";
 import clsx from "clsx";
-import { Place, Playlist, Post } from "@/app/lib/type";
+import { Place, Post } from "@/app/lib/type";
 import GraphController from "./graph-controller";
 import { SettingsIcon } from "lucide-react";
 import Toc from "../toc";
@@ -13,15 +13,16 @@ import ExpandButton from "../atoms/expand-button";
 import RelatedPostLists from "../map/RelatedPostLists";
 import { PlaceIndexIcon } from "../document/PlacePlaceholder";
 import LocalMapWController from "../map/LocalMapWController";
-import MusicCmp from "../music/MusicCmp";
+import { useTheme } from "next-themes";
 
 export function ToolComponents({
-  isEnabled, cmp, children, hovered,
+  isEnabled, cmp, children, hovered, isDarkMode
 }: {
   isEnabled: boolean,
   cmp: {value: string, name: string},
   children: React.ReactNode;
   hovered: string | null;
+  isDarkMode: boolean;
 }) {
   if (!isEnabled) return null;
 
@@ -29,7 +30,7 @@ export function ToolComponents({
     <div
       className={`
         bg-background p-2 rounded-md flex flex-col gap-1 w-full max-w-[30rem] h-auto items-start select-none pointer-events-auto transition-all duration-300
-        ${hovered === cmp.value ? 'brightness-95' : 'brightness-100'}
+        ${hovered === cmp.value ? (isDarkMode ? 'brightness-115' : 'brightness-97') : 'brightness-100'}
       `}
     >
       {children}
@@ -49,20 +50,20 @@ export const tools = [
   { value: 'toc', name: '목차' },
   { value: 'graph', name: '하이퍼링크 맵' },
   { value: 'map', name: '세계지도'},
-  { value: 'music', name: '음악'},
 ]
 
 export default function ToolBox({
-  post, selectedPlace, allPlaylists
+  post, selectedPlace
 }: {
   post?: Post;
   selectedPlace?: {
     idx: number;
     data?: Place;
   }; // map 페이지 전용
-  allPlaylists: Playlist[];
 }) {
   const initializeToggles = useToggleStore((s) => s.initializeToggles);
+  const { resolvedTheme } = useTheme();
+  const isDarkMode = resolvedTheme === "dark";
 
   useEffect(() => {
     initializeToggles();
@@ -166,6 +167,7 @@ export default function ToolBox({
               isEnabled={isEnabled[tools[0].value]}
               cmp={tools[0]}
               hovered={hovered}
+              isDarkMode={isDarkMode}
             >
               <GoToTop title={post.title} />
               <Suspense>
@@ -180,6 +182,7 @@ export default function ToolBox({
               isEnabled={isEnabled[tools[1].value]}
               cmp={tools[1]}
               hovered={hovered}
+              isDarkMode={isDarkMode}
             >
               <Suspense>
                 <GraphController postId={post.id} />
@@ -193,6 +196,7 @@ export default function ToolBox({
               isEnabled={isEnabled[tools[2].value]}
               cmp={tools[2]}
               hovered={hovered}
+              isDarkMode={isDarkMode}
             >
               {selectedPlace && selectedPlace.data ?
                 <div className="w-full h-auto flex flex-col gap-3 p-1 pr-0">
@@ -212,15 +216,6 @@ export default function ToolBox({
               }
             </ToolComponents>
           }
-
-          {/* music */}
-          <ToolComponents
-            isEnabled={isEnabled[tools[3].value]}
-            cmp={tools[3]}
-            hovered={hovered}
-          >
-            <MusicCmp playlistIds={post?.playlists} allPlaylists={allPlaylists} />
-          </ToolComponents>
         </div>
 
       </aside>

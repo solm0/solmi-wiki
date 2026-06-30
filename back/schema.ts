@@ -247,19 +247,6 @@ export const lists = {
           inlineEdit: { fields: ['name', 'lat', 'lng']},
         }
       }),
-
-      playlists: relationship({
-        ref: 'Playlist.posts',
-        many: true,
-        ui: {
-          displayMode: 'cards',
-          cardFields: ['title'],
-          linkToItem: true,
-          inlineConnect: true,
-          inlineCreate: { fields: ['title'] },
-        }
-      }),
-
       externalLink: text(),
     },
   }),
@@ -289,23 +276,4 @@ export const lists = {
       posts: relationship({ ref: 'Post.places', many: true}),
     }
   }),
-
-  Playlist: list({
-    access: allowAll,
-    fields: {
-      title: text({ validation: { isRequired: true } }),
-      youtubePlaylistId: text({ validation: { isRequired: true } }),
-      posts: relationship({
-        ref: 'Post.playlists',
-        many: true,
-        ui: {
-          displayMode: 'cards',
-          cardFields: ['title'],
-          linkToItem: true,
-          inlineConnect: true,
-        }
-      })
-    }
-  })
-
 } satisfies Lists

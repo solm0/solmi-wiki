@@ -1,6 +1,6 @@
 'use client'
 
-import Map, { Layer, Popup, Source, MapRef } from 'react-map-gl/maplibre';
+import Map, { AttributionControl, Layer, Popup, Source, MapRef } from 'react-map-gl/maplibre';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type {
@@ -15,6 +15,26 @@ import { useRouteProgress } from '@/app/lib/hooks/useRouteProgress';
 import { usePlaceList } from '@/app/lib/zustand/usePlaceList';
 import { useTheme } from 'next-themes';
 
+const DEFAULT_CENTER = {
+  longitude: 10.313611,
+  latitude: 47.715833,
+};
+
+function toFiniteNumber(value: string | number | undefined) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? parsed : null;
+}
+
+function collapseAttributionControl(map: MapRef | null) {
+  const container = map?.getContainer();
+  const attribution = container?.querySelector('.maplibregl-ctrl-attrib.maplibregl-compact-show');
+
+  if (!(attribution instanceof HTMLDetailsElement)) return;
+
+  attribution.classList.remove('maplibregl-compact-show');
+  attribution.removeAttribute('open');
+}
+
 export default function LocalMap({
   setLoading,
   setPlaceLength
@@ -26,29 +46,36 @@ export default function LocalMap({
   const hasLoadedRoutes = useRef(false);
   const { resolvedTheme } = useTheme();
 
-  // 디폴트 위치
-  const hochschuleKempten = {
-    longitude: Number(places?.[0]?.lng) ?? 10.313611,
-    latitude: Number(places?.[0]?.lat) ?? 47.715833,
+  const firstPlaceLongitude = toFiniteNumber(places?.[0]?.lng);
+  const firstPlaceLatitude = toFiniteNumber(places?.[0]?.lat);
+
+  const initialCenter = {
+    longitude: firstPlaceLongitude ?? DEFAULT_CENTER.longitude,
+    latitude: firstPlaceLatitude ?? DEFAULT_CENTER.latitude,
     zoom: 16
-  }
+  };
 
   // 호버, 클릭 관련
-  const [viewState, setViewState] = useState(hochschuleKempten);
+  const [viewState, setViewState] = useState(initialCenter);
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   // Places가 채워지면 map 이동
   useEffect(() => {
     if (places.length > 0) {
       const first = places[0];
+      const longitude = toFiniteNumber(first.lng);
+      const latitude = toFiniteNumber(first.lat);
+
+      if (longitude === null || latitude === null) return;
+
       setViewState({
-        longitude: Number(first.lng),
-        latitude: Number(first.lat),
+        longitude,
+        latitude,
         zoom: 16
       });
     }
     setPlaceLength(places.length);
-  }, [places]);
+  }, [places, setPlaceLength]);
 
   const clickedId = useClickedPlace(state => state.id);
   const setClickedId = useClickedPlace(state => state.setId);
@@ -59,7 +86,7 @@ export default function LocalMap({
   useEffect(() => {
     if (!clickedId || !mapRef.current) return;
 
-    const clickedCoord = placeData.find(p => p.properties.id === clickedId)?.geometry.coordinates ?? [hochschuleKempten.longitude, hochschuleKempten.latitude];
+    const clickedCoord = placeData.find(p => p.properties.id === clickedId)?.geometry.coordinates ?? [DEFAULT_CENTER.longitude, DEFAULT_CENTER.latitude];
     if (!clickedCoord) return;
 
     mapRef.current.flyTo({
@@ -73,20 +100,27 @@ export default function LocalMap({
   // 마커 데이터 만들기
   const placeData = useMemo(() => {
     if (!places) return [];
-    return places.map((place, i) => 
-      ({
+    return places.flatMap((place, i) => {
+      const longitude = toFiniteNumber(place.lng);
+      const latitude = toFiniteNumber(place.lat);
+
+      if (longitude === null || latitude === null) {
+        return [];
+      }
+
+      return [{
         type: 'Feature',
         geometry: {
           type: "Point",
-          coordinates: [Number(place.lng), Number(place.lat)]
+          coordinates: [longitude, latitude]
         },
         properties: {
           i: i+1,
           id: place.id,
           name: place.name,
         }
-      }),
-    )
+      }];
+    });
   }, [places]);
   
   const geojson = useMemo<FeatureCollection>(() => ({
@@ -240,10 +274,10 @@ export default function LocalMap({
     const start = places[currentIndex-1];
     const end = places[currentIndex];
 
-    const [lat1, lng1] = start ? [Number(start.lat), Number(start.lng)] : [null, null];
-    const [lat2, lng2] = end ? [Number(end.lat), Number(end.lng)] : [null, null];
+    const [lat1, lng1] = start ? [toFiniteNumber(start.lat), toFiniteNumber(start.lng)] : [null, null];
+    const [lat2, lng2] = end ? [toFiniteNumber(end.lat), toFiniteNumber(end.lng)] : [null, null];
     
-    if (!lat1 || !lng1 || !lat2 || !lng2) {
+    if (lat1 === null || lng1 === null || lat2 === null || lng2 === null) {
       setZoomLevel(14);
     } else {
       // 대략적인 거리 계산 (유클리드)
@@ -261,7 +295,7 @@ export default function LocalMap({
       const zoom = Math.max(minZoom, Math.min(maxZoom, maxZoom - (distance / maxDistance) * (maxZoom - minZoom)));
       setZoomLevel(zoom);
     }
-  }, [currentIndex]);
+  }, [currentIndex, places]);
 
   useEffect(() => {
     // console.log(zoomLevel)
@@ -282,6 +316,7 @@ export default function LocalMap({
     <Map
       ref={mapRef}
       {...viewState}
+      attributionControl={false}
       interactiveLayerIds={['marker']}
       onMouseMove={(e) => {
         const feature = e.features?.[0];
@@ -291,6 +326,9 @@ export default function LocalMap({
       onClick={(e) => {
         const feature = e.features?.[0];
         if (feature) setClickedId(feature.properties.id)
+      }}
+      onLoad={() => {
+        window.requestAnimationFrame(() => collapseAttributionControl(mapRef.current));
       }}
       onMove={(e) => setViewState(e.viewState)}
       style={{ width: '100%', height: '100%' }}
@@ -358,18 +396,19 @@ export default function LocalMap({
         </Source>
       )}
 
-      {hoveredId && (
+      {hoveredId && toFiniteNumber(places.find(p => p.id === hoveredId)?.lng) !== null && toFiniteNumber(places.find(p => p.id === hoveredId)?.lat) !== null && (
         <Popup
-          longitude={Number(places.find(p => p.id === hoveredId)?.lng)}
-          latitude={Number(places.find(p => p.id === hoveredId)?.lat)}
+          longitude={toFiniteNumber(places.find(p => p.id === hoveredId)?.lng)!}
+          latitude={toFiniteNumber(places.find(p => p.id === hoveredId)?.lat)!}
           closeButton={false}
           closeOnClick={false}
           anchor="bottom"
           offset={20}
         >
-          <div>클릭하여 이 노트에서 {places.find(p => p.id === hoveredId)?.name}이(가) 언급된 위치로 이동</div>
+          <div className="text-[var(--tag-ink)]">클릭하여 이 노트에서 {places.find(p => p.id === hoveredId)?.name}이(가) 언급된 위치로 이동</div>
         </Popup>
       )}
+      <AttributionControl compact />
     </Map>
   )
 }

@@ -6,8 +6,6 @@ import { notFound } from 'next/navigation';
 import { Post } from '@/app/lib/type';
 import ToolBox from '@/app/component/hyperlink-map/ToolBox';
 import NoteScrollContainer from '@/app/component/layout/NoteScrollContainer';
-import path from 'path';
-import fs from 'fs';
 import stripRichTextRelationshipPayloads from '@/app/lib/strip-richtext-relationship-payloads';
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL ?? '');
@@ -51,9 +49,6 @@ const GET_POST_BY_ID = gql`
           title
           order
         }
-      }
-      playlists {
-        id
       }
     }
   }
@@ -105,11 +100,6 @@ export default async function Page({
   if (!post.content) return;
   post.content.document = stripRichTextRelationshipPayloads(post.content.document);
   post.content.document = mergeInlineInternalLinks(post.content.document);
-
-  // read all playlist from file
-  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
-  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
-
   return (
     <>
       <NoteScrollContainer>
@@ -120,7 +110,7 @@ export default async function Page({
       </NoteScrollContainer>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox post={post} allPlaylists={playlists} />
+      <ToolBox post={post} />
     </>
   )
 }

@@ -4,8 +4,6 @@ import WorkLists from "@/app/component/work-lists";
 import { Post } from "@/app/lib/type";
 import ToolBox from "@/app/component/hyperlink-map/ToolBox";
 import { Suspense } from "react";
-import path from "path";
-import fs from 'fs';
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -39,10 +37,6 @@ export default async function WorkPage() {
   const finalPosts = posts
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   
-  // read all playlist from file
-  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
-  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
-
   return (
     <>
       <Suspense>
@@ -50,7 +44,7 @@ export default async function WorkPage() {
       </Suspense>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox allPlaylists={playlists} />
+      <ToolBox />
     </>
   )
 }

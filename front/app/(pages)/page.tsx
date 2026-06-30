@@ -7,8 +7,6 @@ import { Post } from "@/app/lib/type";
 import ToolBox from "@/app/component/hyperlink-map/ToolBox";
 import InspectorAwareInset from "../component/layout/InspectorAwareInset";
 import PageScrollContainer from "../component/layout/PageScrollContainer";
-import path from "path";
-import fs from 'fs';
 
 const client = new GraphQLClient(process.env.GRAPHQL_API_URL!);
 
@@ -33,11 +31,6 @@ export default async function TimelinePage() {
   const data: {posts: Post[]} = await client.request(GET_ALL_POSTS);
   const posts = data.posts.filter(post => post.status === 'published');
   const finalPosts = GenerateChron(posts);
-
-  // read all playlist from file
-  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
-  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
-
   return (
     <>
       <InspectorAwareInset
@@ -52,7 +45,7 @@ export default async function TimelinePage() {
       </InspectorAwareInset>
 
       {/* 오른쪽 사이드바 */}
-      <ToolBox allPlaylists={playlists} />
+      <ToolBox />
     </>
   )
 }

@@ -52,9 +52,6 @@ export default async function PhotobookPage() {
     })
     .filter((entry): entry is NonNullable<typeof entry> => Boolean(entry));
 
-  const playlistsPath = path.join(process.cwd(), "public/data/all_playlists.json");
-  const playlists = JSON.parse(fs.readFileSync(playlistsPath, "utf8")).playlists;
-
   return (
     <>
       <InspectorAwareInset
@@ -64,7 +61,7 @@ export default async function PhotobookPage() {
         <PhotobookTimeline entries={timelineEntries} />
       </InspectorAwareInset>
 
-      <ToolBox allPlaylists={playlists} />
+      <ToolBox />
     </>
   );
 }

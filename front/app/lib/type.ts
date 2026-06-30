@@ -22,7 +22,6 @@ export type Post = {
   internalLinks?: Post[];
   internalBacklinks?: Post[];
   places?: Place[];
-  playlists: Playlist[];
   externalLink?: string;
 };
 
@@ -312,30 +311,6 @@ export type ComponentPreviewNode = {
   }[],
   component: 'componentPreview',
 }
-
-export type Playlist = {
-  id: string;
-  title: string;
-  youtubePlaylistId: string;
-  posts: Post[];
-}
-
-export type Lyric = {
-  lyric: {
-    or: string;
-    tr?: string;
-  };
-  time: number;
-}
-
-export type TrackMeta = {
-  videoId: string;
-  title: string;
-  author: string;
-  thumbnailSrc: string;
-}
-
-export type LyricsMode = 'none' | 'loading' | 'plain' | 'synced';
 
 export type PhotobookImage = {
   publicId: string;

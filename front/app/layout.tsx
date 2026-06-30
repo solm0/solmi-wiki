@@ -6,7 +6,6 @@ import Header from "./component/header/header";
 import { Suspense } from "react";
 import Inspector from "./component/inspector/inspector";
 import Script from "next/script";
-import YoutubePlayer from "./component/music/YoutubePlayer";
 import MainContentShell from "./component/layout/MainContentShell";
 
 export const metadata: Metadata = {
@@ -51,9 +50,6 @@ export default async function RootLayout({
 
           {/* 내부링크 툴팁 */}
           <InternalLinkTooltip />
-
-          {/* 음악 */}
-          <YoutubePlayer />
         </ThemeProvider>
       </body>
     </html>
