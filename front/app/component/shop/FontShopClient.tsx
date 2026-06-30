@@ -220,6 +220,13 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
     }));
   };
 
+  const closeEditing = () => {
+    if (!editingId) return;
+
+    textareaRefs.current[editingId]?.blur();
+    setEditingId((current) => (current === editingId ? null : current));
+  };
+
   const toggleSelected = (fontId: string) => {
     setSelectedIds((prev) =>
       prev.includes(fontId)
@@ -285,8 +292,8 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
         .shop-slider {
           -webkit-appearance: none;
           appearance: none;
-          width: 10rem;
-          min-width: 10rem;
+          width: 100%;
+          min-width: 0;
           background: transparent;
         }
 
@@ -389,7 +396,8 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                       >
                         <label className="flex items-center">
                           <button
-                            className="w-5 h-5 border-2 border-text-700 hover:border-text-800 transition-colors duration-300 rounded-sm overflow-hidden"
+                            className="w-5 h-5 md:w-4 md:h-4 border"
+                            onPointerDown={closeEditing}
                             onClick={() => toggleSelected(font.id)}
                           >
                             <div className={`w-full h-full ${isSelected ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
@@ -397,34 +405,38 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                           <input
                             type="checkbox"
                             checked={isSelected}
+                            onPointerDown={closeEditing}
                             onChange={() => toggleSelected(font.id)}
-                            className="accent-text-900 hidden"
+                            className="hidden"
                           />
                         </label>
                       </div>
                     </div>
                     <div className="flex flex-1 flex-col gap-2">
-                      <div className="flex items-center justify-between w-64">
+                      <div className="flex items-center justify-between w-full md:w-64 pr-10 md:pr-0">
                         <div className="flex items-center gap-2 text-[11px] text-text-900">
                           <span>size</span>
                           <span>{fontState.size}</span>
                         </div>
-                        <input
-                          type="range"
-                          min={font.size.min}
-                          max={font.size.max}
-                          step={font.size.step}
-                          value={fontState.size}
-                          onChange={(event) =>
-                            updateSize(font.id, Number(event.target.value))
-                          }
-                          className="shop-slider shrink-0"
-                        />
+                        <div className="w-2/3 flex items-center shrink-0 md:w-40 md:min-w-[12rem]">
+                          <input
+                            type="range"
+                            min={font.size.min}
+                            max={font.size.max}
+                            step={font.size.step}
+                            value={fontState.size}
+                            onPointerDown={closeEditing}
+                            onChange={(event) =>
+                              updateSize(font.id, Number(event.target.value))
+                            }
+                            className="shop-slider"
+                          />
+                        </div>
                       </div>
                       {font.axes.map((axis) => (
                         <div
                           key={axis.key}
-                          className={`flex items-center justify-between w-64 transition-all duration-300 ${
+                          className={`flex items-center justify-between md:w-64 pr-10 md:pr-0 transition-all duration-300 ${
                             expanded
                               ? "md:max-h-12 md:opacity-100"
                               : "md:max-h-0 md:opacity-0 md:pointer-events-none"
@@ -434,17 +446,20 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                             <span>{axis.label}</span>
                             <span>{fontState.axes[axis.key]}</span>
                           </div>
-                          <input
-                            type="range"
-                            min={axis.min}
-                            max={axis.max}
-                            step={axis.step}
-                            value={fontState.axes[axis.key]}
-                            onChange={(event) =>
-                              updateAxis(font.id, axis.key, Number(event.target.value))
-                            }
-                            className="shop-slider shrink-0"
-                          />
+                          <div className="w-2/3 flex items-center shrink-0 md:w-40 md:min-w-[12rem]">
+                            <input
+                              type="range"
+                              min={axis.min}
+                              max={axis.max}
+                              step={axis.step}
+                              value={fontState.axes[axis.key]}
+                              onPointerDown={closeEditing}
+                              onChange={(event) =>
+                                updateAxis(font.id, axis.key, Number(event.target.value))
+                              }
+                              className="shop-slider"
+                            />
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -454,7 +469,8 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                   >
                     <label className="flex items-center">
                       <button
-                        className="w-5 h-5 md:w-4 md:h-4 border "
+                        className="w-5 h-5 md:w-4 md:h-4 border"
+                        onPointerDown={closeEditing}
                         onClick={() => toggleSelected(font.id)}
                       >
                         <div className={`w-full h-full ${isSelected ? 'bg-green-500' : 'bg-transparent'} transition-colors duration-300`} />
@@ -462,8 +478,9 @@ export default function FontShopClient({ fonts }: { fonts: ShopFont[] }) {
                       <input
                         type="checkbox"
                         checked={isSelected}
+                        onPointerDown={closeEditing}
                         onChange={() => toggleSelected(font.id)}
-                        className="accent-text-900 hidden"
+                        className="hidden"
                       />
                     </label>
                   </div>

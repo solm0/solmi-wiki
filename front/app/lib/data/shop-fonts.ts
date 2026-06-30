@@ -124,7 +124,7 @@ export const shopFonts: ShopFont[] = [
     axes: [
       {
         key: "ROMN",
-        label: "romanization",
+        label: "romn",
         min: 0,
         max: 100,
         step: 1,
