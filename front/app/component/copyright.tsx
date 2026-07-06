@@ -11,10 +11,10 @@ export default function Copyright() {
   ];
 
   return (
-    <div className="text-sm flex flex-col w-full max-w-[47rem] text-text-700 gap-3">
+    <div className="text-sm flex flex-col w-full max-w-[47rem] text-text-800/60 gap-3">
       {/* 1층 */}
       <div className="flex w-full justify-between items-center">
-        <div className="flex gap-2 items-center">
+        <div className="flex gap-2 items-center text-text-700">
           <span>© 2024-2026 정솔미</span>
         </div>
         <div className="flex gap-3 items-center">
@@ -33,8 +33,13 @@ export default function Copyright() {
       </div>
 
       {/* 2층 */}
-      <div className="flex w-full justify-between items-center">
-        <Link href={'/cmdc93ok7008imdam853f86o2'} className="hover:text-text-800 transition-colors">여긴 뭐하는 데죠?</Link>
+      <div className="flex w-full gap-8 items-center relative">
+        <Link href={'/cmdc93ok7008imdam853f86o2'} className="hover:text-text-800 transition-colors">여긴 뭐하는 곳인가요?</Link>
+        <nav className="flex gap-1 absolute left-1/2 -translate-x-1/2">
+          <Link href="https://iwfederation.pages.dev?site={slug}&go=prev" className="hover:text-text-800 transition-colors">{`<-`}</Link><br />
+          <Link href="https://iwfederation.pages.dev/" className="hover:text-text-800 transition-colors">독립웹연맹</Link><br />
+          <Link href="https://iwfederation.pages.dev?site={slug}&go=next" className="hover:text-text-800 transition-colors">{`->`}</Link>
+        </nav>
       </div>
     </div>
   )

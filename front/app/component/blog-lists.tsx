@@ -4,6 +4,9 @@ import { useEffect, useRef, useState } from "react"
 import PostList from "./post-list";
 import { Post } from "../lib/type";
 import { maruburi } from "../lib/localfont";
+import Footer from "./footer";
+
+const INITIAL_POST_COUNT = 20;
 
 export default function BlogLists({
   posts,
@@ -11,18 +14,25 @@ export default function BlogLists({
   posts: Post[] | null;
 }) {
   const [hovered, setHovered] = useState<string | null>(null);
+  const [isExpanded, setIsExpanded] = useState(false);
   const [visibleIds, setVisibleIds] = useState<Record<string, true>>({});
   const sectionRef = useRef<HTMLElement | null>(null);
   const itemRefs = useRef<Record<string, HTMLDivElement | null>>({});
+  const displayedPosts = isExpanded ? (posts ?? []) : (posts?.slice(0, INITIAL_POST_COUNT) ?? []);
+  const hasMorePosts = (posts?.length ?? 0) > INITIAL_POST_COUNT;
 
   useEffect(() => {
-    if (!posts) return;
+    setIsExpanded(false);
+  }, [posts]);
+
+  useEffect(() => {
+    if (!displayedPosts.length) return;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (reduceMotion) {
       setVisibleIds(
-        posts.reduce((acc, post) => {
+        displayedPosts.reduce((acc, post) => {
           acc[post.id] = true;
           return acc;
         }, {} as Record<string, true>)
@@ -57,20 +67,20 @@ export default function BlogLists({
       }
     );
 
-    posts.forEach((post) => {
+    displayedPosts.forEach((post) => {
       const el = itemRefs.current[post.id];
       if (el) observer.observe(el);
     });
 
     return () => observer.disconnect();
-  }, [posts]);
+  }, [isExpanded, posts]);
 
   return (
     <section
       ref={sectionRef}
       className={`${maruburi.className} font-semibold relative min-h-0 w-full pt-[40vh] pb-8 focus:outline-hidden`}
     >
-      {posts && posts.map((note, idx) => (
+      {displayedPosts.map((note, idx) => (
         <div
           key={note.id}
           ref={(el) => {
@@ -90,6 +100,26 @@ export default function BlogLists({
           />
         </div>
       ))}
+      {hasMorePosts && !isExpanded && (
+        <div className="h-12 w-full flex items-center font-normal rounded-sm md:pl-2">
+          <div className="flex gap-6 text-sm font-bold items-center text-text-700 mr-4 invisible">
+            <div className="w-5 md:w-6 shrink-0">0000</div>
+            <div className="w-1 md:w-3 shrink-0">00</div>
+            <div className="w-2 md:w-3 shrink-0">00</div>
+          </div>
+          <div className="shrink-0 w-2 mr-2" />
+          <button
+            type="button"
+            className="text-text-700 hover:text-text-800 transition-colors text-sm"
+            onClick={() => setIsExpanded(true)}
+          >
+            더 보기
+          </button>
+        </div>
+      )}
+      <div className={`max-w-[47em]`}>
+        <Footer giscus={false} />
+      </div>
     </section>
   )
 }
