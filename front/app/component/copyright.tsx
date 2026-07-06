@@ -36,9 +36,9 @@ export default function Copyright() {
       <div className="flex w-full gap-8 items-center relative">
         <Link href={'/cmdc93ok7008imdam853f86o2'} className="hover:text-text-800 transition-colors">여긴 뭐하는 곳인가요?</Link>
         <nav className="flex gap-1 absolute left-1/2 -translate-x-1/2">
-          <Link href="https://iwfederation.pages.dev?site={slug}&go=prev" className="hover:text-text-800 transition-colors">{`<-`}</Link><br />
+          <Link href="https://iwfederation.pages.dev?site=solmi&go=prev" className="hover:text-text-800 transition-colors">{`<-`}</Link><br />
           <Link href="https://iwfederation.pages.dev/" className="hover:text-text-800 transition-colors">독립웹연맹</Link><br />
-          <Link href="https://iwfederation.pages.dev?site={slug}&go=next" className="hover:text-text-800 transition-colors">{`->`}</Link>
+          <Link href="https://iwfederation.pages.dev?site=solmi&go=next" className="hover:text-text-800 transition-colors">{`->`}</Link>
         </nav>
       </div>
     </div>

@@ -78,10 +78,10 @@ export default function ToolBox({
   const [hovered, setHovered] = useState<string | null>(null); // 호버된 도구
 
   useEffect(() => {
-    if (isOpen && (noOpenTools || !post)) {
+    if (isOpen && !post) {
       setIsEnabled('toolBox', false);
     }
-  }, [isOpen, noOpenTools, post, setIsEnabled]);
+  }, [isOpen, post, setIsEnabled]);
 
   const handleTouchStart = (e: React.TouchEvent<HTMLElement>) => {
     const touch = e.touches[0];
@@ -160,6 +160,11 @@ export default function ToolBox({
       )}>
 
         <div className="w-full h-auto flex flex-col gap-2 pt-10 pb-8 pointer-events-auto overflow-y-scroll overflow-x-hidden scrollbar-hide">
+          {noOpenTools && (
+            <p className="break-keep text-text-800 text-sm">
+              활성화된 도구가 없습니다.
+            </p>
+          )}
 
           {/* toc */}
           {post &&
