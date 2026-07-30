@@ -19,7 +19,7 @@ export default function Notice({
 
   return (
     <div
-      className={`rounded-sm px-3 py-2  flex items-start gap-3 text ${config.text} text-text-950 my-1`}
+      className={`rounded-sm px-3 py-3 flex items-start gap-3 text ${config.text} text-text-950 my-2`}
       style={{
         background: config.bg,
 

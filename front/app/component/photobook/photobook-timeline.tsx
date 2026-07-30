@@ -50,6 +50,20 @@ function canScrollVertically(el: HTMLElement, deltaY: number) {
   return false;
 }
 
+function TimelineDescription({ className }: { className?: string }) {
+  return (
+    <p className={clsx('text-xs text-text-800 pt-6 leading-[1.6em] break-keep max-w-[50ch]', className)}>
+      <Link
+        href="/cmdbmtpt8005omdamericlkia"
+        className="underline transition-opacity hover:opacity-50 underline-offset-3"
+      >
+        2025년 독일 교환학생
+      </Link>{' '}
+      시절의 배낭여행 기록. 편견 가득한 이방인의 시선 그대로 담고 있다. 가끔 있는 배경음악은 별다른 이유 없이 당시 머리에 맴돌았거나 해당 장소와 함께 각인된 것들이다.
+    </p>
+  );
+}
+
 function TimelineImageItem({
   image,
   alt,
@@ -128,13 +142,11 @@ function PhotoMosaic({
 
 function DesktopEntry({
   entry,
-  index,
   visibleCount,
   onExpand,
   onImageClick,
 }: {
   entry: TimelineEntry;
-  index: number;
   visibleCount: number;
   onExpand: () => void;
   onImageClick: (idx: number) => void;
@@ -149,7 +161,7 @@ function DesktopEntry({
       className="flex h-full shrink-0 flex-col"
       style={{ width }}
     >
-      <div className="flex h-32 flex-col justify-start pb-4 pr-6 pt-20 shrink-0">
+      <div className="flex h-42 flex-col justify-start pb-4 pr-6 pt-28 shrink-0">
         <Link
           href={`/${entry.id}`}
           className="max-w-[28em] break-keep transition-colors hover:text-text-700"
@@ -181,13 +193,11 @@ function DesktopEntry({
 
 function MobileEntry({
   entry,
-  index,
   visibleCount,
   onExpand,
   onImageClick,
 }: {
   entry: TimelineEntry;
-  index: number;
   visibleCount: number;
   onExpand: () => void;
   onImageClick: (idx: number) => void;
@@ -267,50 +277,54 @@ export default function PhotobookTimeline({
 
   return (
     <>
-      <section
-        ref={desktopScrollRef}
-        className="hidden h-[100svh] w-full overflow-x-auto overflow-y-hidden md:block overscroll-x-none"
-        onWheel={(e) => {
-          const container = desktopScrollRef.current;
-          if (!container) return;
-          if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      <div className="relative hidden h-[100svh] w-full md:block">
+        <TimelineDescription className="absolute right-8 top-12 z-10" />
 
-          const target = e.target;
-          if (target instanceof HTMLElement) {
-            const verticalScroller = target.closest('[data-photobook-vertical-scroll="true"]');
+        <section
+          ref={desktopScrollRef}
+          className="h-full w-full overflow-x-auto overflow-y-hidden overscroll-x-none"
+          onWheel={(e) => {
+            const container = desktopScrollRef.current;
+            if (!container) return;
+            if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
 
-            if (verticalScroller instanceof HTMLElement && canScrollVertically(verticalScroller, e.deltaY)) {
-              return;
+            const target = e.target;
+            if (target instanceof HTMLElement) {
+              const verticalScroller = target.closest('[data-photobook-vertical-scroll="true"]');
+
+              if (verticalScroller instanceof HTMLElement && canScrollVertically(verticalScroller, e.deltaY)) {
+                return;
+              }
             }
-          }
 
-          e.preventDefault();
-          container.scrollLeft += e.deltaY;
-        }}
-      >
-        <div className="flex h-full min-w-max items-start px-8 pt-12 box-border  ">
-          {randomizedEntries.map((entry, index) => (
-            <DesktopEntry
-              key={entry.id}
-              entry={entry}
-              index={index}
-              visibleCount={visibleCounts[entry.id] ?? initialBatchSize}
-              onExpand={() => expandEntry(entry.id, entry.images.length)}
-              onImageClick={(idx) => {
-                setActiveEntryId(entry.id);
-                setActiveImageIdx(idx);
-              }}
-            />
-          ))}
-        </div>
-      </section>
+            e.preventDefault();
+            container.scrollLeft += e.deltaY;
+          }}
+        >
+          <div className="flex h-full min-w-max items-start px-8 pt-12 box-border  ">
+            {randomizedEntries.map((entry) => (
+              <DesktopEntry
+                key={entry.id}
+                entry={entry}
+                visibleCount={visibleCounts[entry.id] ?? initialBatchSize}
+                onExpand={() => expandEntry(entry.id, entry.images.length)}
+                onImageClick={(idx) => {
+                  setActiveEntryId(entry.id);
+                  setActiveImageIdx(idx);
+                }}
+              />
+            ))}
+          </div>
+        </section>
+      </div>
 
       <section className="h-[100svh] w-full overflow-y-auto pl-4 pr-2 pt-20 md:hidden">
-        {randomizedEntries.map((entry, index) => (
+        <TimelineDescription className="mb-12" />
+
+        {randomizedEntries.map((entry) => (
           <MobileEntry
             key={entry.id}
             entry={entry}
-            index={index}
             visibleCount={visibleCounts[entry.id] ?? initialBatchSize}
             onExpand={() => expandEntry(entry.id, entry.images.length)}
             onImageClick={(idx) => {

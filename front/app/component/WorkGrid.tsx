@@ -31,7 +31,8 @@ export default function WorkGrid({
     'cmjoygzv40006d2plj76em5iq',
     'cmjoypovl0007d2pl07vjptts',
     'cmq3she8s0002uk0qlslsr4pq',
-    'cmq3s8kjv0001uk0qlezj3ein'
+    'cmq3s8kjv0001uk0qlezj3ein',
+    'cmr91etde00002t65bswjqt5a'
   ];
   const typeface = [
     'cmdbfxchq000imdampt826hpv',

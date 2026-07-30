@@ -15,7 +15,7 @@ export default function Copyright() {
       {/* 1층 */}
       <div className="flex w-full justify-between items-center">
         <div className="flex gap-2 items-center text-text-700">
-          <span>© 2024-2026 정솔미</span>
+          <span>© 2025-2026 정솔미</span>
         </div>
         <div className="flex gap-3 items-center">
           {iconButtons.map(({ label, icon, link }) => (
