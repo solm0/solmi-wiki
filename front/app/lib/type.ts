@@ -10,6 +10,7 @@ export type Post = {
   keywords: Keyword[];
   work: boolean;
   disclaimerOn: boolean;
+  muteMedia: boolean;
   status: 'published' | 'draft';
   chron: {
     year?: string;

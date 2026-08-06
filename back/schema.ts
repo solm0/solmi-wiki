@@ -224,6 +224,10 @@ export const lists = {
         defaultValue: false,
       }),
 
+      muteMedia: checkbox({
+        defaultValue: false,
+      }),
+
       order: integer(),
 
       status: select({

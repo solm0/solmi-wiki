@@ -3,8 +3,10 @@ import Content from "../content";
 
 export default function LayoutBlock({
   layout,
+  muteMedia,
 }: {
   layout: LayoutNode;
+  muteMedia: boolean;
 }) {
   let den = 0;
 
@@ -20,7 +22,10 @@ export default function LayoutBlock({
           className="w-full md:w-[var(--layout-width)]"
           style={{ ["--layout-width" as string]: `${(num / den) * 100}%` }}
         >
-          <Content post={layout.children?.[idx].children} />
+          <Content
+            post={layout.children?.[idx].children}
+            muteMedia={muteMedia}
+          />
         </div>
       ))}
     </div>

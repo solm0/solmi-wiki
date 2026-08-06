@@ -18,11 +18,13 @@ import CmpPreview from "./document/CmpPreview";
 
 function ContentItem({
   document, idx,
-  placesData
+  placesData,
+  muteMedia,
 }:{
   document: RichTextNode;
   idx: number;
   placesData?: Place[];
+  muteMedia: boolean;
 }) {
   switch (document.type) {
     case 'heading':
@@ -53,7 +55,7 @@ function ContentItem({
       )
     case 'layout':
       return (
-        <LayoutBlock layout={document} />
+        <LayoutBlock layout={document} muteMedia={muteMedia} />
       )
     case 'component-block':
       switch (document.component) {
@@ -75,11 +77,14 @@ function ContentItem({
           )
         case 'carousel':
           return (
-            <Carousel carIdx={idx} carousel={document} />
+            <Carousel carIdx={idx} carousel={document} muteMedia={muteMedia} />
           )
         case 'iframe':
           return (
-            <Iframe src={document.children?.[0].children?.[0].text} />
+            <Iframe
+              src={document.children?.[0].children?.[0].text}
+              muted={muteMedia}
+            />
           )
         case 'place':
           const placeId = document.children?.[0].children?.[0].text;
@@ -99,10 +104,11 @@ function ContentItem({
 }
 
 export default function Content({
-  post, places
+  post, places, muteMedia = false,
 }: {
   post: RichTextNode[];
   places?: Place[];
+  muteMedia?: boolean;
 }) {
   const setGlobalPlaces = usePlaceList(s => s.setPlaces);
   let accumulated: Place[] = [];
@@ -139,6 +145,7 @@ export default function Content({
               document={document}
               idx={idx}
               placesData={placesDataForThisNode} // 순서대로 된 places
+              muteMedia={muteMedia}
             />
           </div>
         )

@@ -24,15 +24,16 @@ export default function WorkGrid({
     'cmdbgko8e000wmdam8p56c3fe',
     'cmdbgmanq000xmdamhyd07aoq',
     'cmdbh1znz0018mdam9bp6amgl',
-    'cmdbh3etx0019mdamahvx21fq',
-    'cmdc93fii008hmdam1nvhb1c2',
-    'cmfmm0h3b0067tf6m8s65tl70',
-    'cmfmm64yg0068tf6mubv7duf6',
-    'cmjoygzv40006d2plj76em5iq',
-    'cmjoypovl0007d2pl07vjptts',
-    'cmq3she8s0002uk0qlslsr4pq',
-    'cmq3s8kjv0001uk0qlezj3ein',
-    'cmr91etde00002t65bswjqt5a'
+    'cmdc93fii008hmdam1nvhb1c2', // solmiwiki
+    'cmfmm0h3b0067tf6m8s65tl70', // sudno
+    'cmfmm64yg0068tf6mubv7duf6', // los je dan
+    'cmjoygzv40006d2plj76em5iq', // throughx
+    'cmjoypovl0007d2pl07vjptts', // cpnia
+    'cmq3she8s0002uk0qlslsr4pq', // bokbokbok
+    'cmq3s8kjv0001uk0qlezj3ein', // nautilus
+    'cmr91etde00002t65bswjqt5a', // indieweb
+    'cmdd5124v00bcmdam9whgmah2', // shrine
+    'cms8fvi96000axgfzsi45fx7e', // sage
   ];
   const typeface = [
     'cmdbfxchq000imdampt826hpv',

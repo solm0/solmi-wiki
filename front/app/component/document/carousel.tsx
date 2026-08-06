@@ -10,10 +10,12 @@ import { useToggleStore } from "@/app/lib/zustand/useToggleStore";
 
 export default function Carousel({
   carIdx,
-  carousel, 
+  carousel,
+  muteMedia,
 }: {
   carIdx: number,
   carousel: CarouselNode,
+  muteMedia: boolean,
 }) {
   const [idx, setIdx] = useState<number | null>(null);
   const [loadedMap, setLoadedMap] = useState<Record<number, boolean>>({});
@@ -69,6 +71,7 @@ export default function Carousel({
                       ${horizontalFit ? 'w-full h-auto md:max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
                     `}
                     controls
+                    muted={muteMedia}
                   />
                   {item.alt && <p className={`${pretendard.className} min-h-4 shrink-0 text-sm text-text-700`}>{item.alt}</p>}
                 </div>
