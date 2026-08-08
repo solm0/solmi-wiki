@@ -47,9 +47,14 @@ export default function Carousel({
             const horizontalFit = item.fit === 'hor';
 
             const publicId = item.imageSrc;
-            const transformations = item.isGif
-              ? "f_auto,q_auto"
-              : "f_auto,q_auto,c_fill";
+            const transformations = item.type === 'video'
+              // Keep video output within an SD-sized pixel budget. Besides
+              // reducing bandwidth, this lowers Cloudinary's per-second
+              // transformation rate for the portrait videos used here.
+              ? "c_limit,w_1280,h_720/q_auto/f_auto"
+              : item.isGif
+                ? "f_auto,q_auto"
+                : "f_auto,q_auto,c_fill";
             
             const url = `https://res.cloudinary.com/${cloudName}/${type}/upload/${transformations}/${publicId}.${ext}`;
 
@@ -66,6 +71,8 @@ export default function Carousel({
                     src={url}
                     width={800}
                     height={800}
+                    preload="none"
+                    playsInline
                     className={`
                       object-contain cursor-pointer
                       ${horizontalFit ? 'w-full h-auto md:max-w-[52em]' : 'h-[22rem] md:h-[30rem] w-auto'}
